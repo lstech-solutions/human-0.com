@@ -1,23 +1,32 @@
 {
   "name": "human-zero",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251125065422",
+  "build": "20251125071910",
   "changelog": {
     "current": {
-      "version": "1.1.0",
+      "version": "1.2.0",
       "date": "2025-11-25",
       "type": "minor",
       "changes": [
-        "Add comprehensive Business Model Canvas implementation",
-        "Add PDF export functionality",
-        "Add new UI components and charts",
-        "Update CI/CD workflows",
-        "Add version management system",
+        "Added PDF download splash page with Lean Canvas and Extended Business Model options",
         "--commit"
       ]
     },
     "history": [
+      {
+        "version": "1.1.0",
+        "date": "2025-11-25",
+        "type": "minor",
+        "changes": [
+          "Add comprehensive Business Model Canvas implementation",
+          "Add PDF export functionality",
+          "Add new UI components and charts",
+          "Update CI/CD workflows",
+          "Add version management system",
+          "--commit"
+        ]
+      },
       {
         "version": "1.0.0",
         "date": "2025-01-25",
@@ -35,13 +44,13 @@
   },
   "semver": {
     "major": 1,
-    "minor": 1,
+    "minor": 2,
     "patch": 0,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-11-25T06:54:22.549Z",
+    "lastModified": "2025-11-25T07:19:10.793Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team"

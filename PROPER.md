@@ -2,7 +2,18 @@
 
 ## 📋 Version History
 
-### ✨ Version 1.1.0 **[CURRENT]**
+### ✨ Version 1.2.0 **[CURRENT]**
+**Date:** 2025-11-25  
+**Type:** minor
+
+**Changes:**
+- Added PDF download splash page with Lean Canvas and Extended Business Model options
+- --commit
+
+
+### 📚 Previous Versions
+
+### ✨ Version 1.1.0
 **Date:** 2025-11-25  
 **Type:** minor
 
@@ -15,7 +26,7 @@
 - --commit
 
 
-### 📚 Previous Versions
+---
 
 ### 🚀 Version 1.0.0
 **Date:** 2025-01-25  
