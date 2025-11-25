@@ -88,6 +88,12 @@ export default function RootLayout() {
             title: "Business Model",
           }}
         />
+        <Stack.Screen
+          name="pdf-download"
+          options={{
+            title: "PDF Downloads",
+          }}
+        />
       </Stack>
       <StatusBar style="light" />
     </ThemeProvider>

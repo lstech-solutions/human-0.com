@@ -379,35 +379,36 @@ export default function HomeScreen() {
 
   return (
     <View className="flex-1 bg-gradient-to-b from-deep-space to-space-dark">
-      {/* Navigation Only - No Logo */}
-      <View className="flex-row justify-center space-x-4 mt-4 px-6">
-        <TouchableOpacity 
-          className="bg-neon-green/20 p-3 rounded-2xl border border-neon-green/50"
-          onPress={() => router.push("/profile")}
-        >
-          <User size={20} color="#00FF9C" />
-        </TouchableOpacity>
-        <TouchableOpacity 
-          className="bg-neon-green/20 p-3 rounded-2xl border border-neon-green/50"
-          onPress={() => router.push("/impact")}
-        >
-          <TrendingUp size={20} color="#00FF9C" />
-        </TouchableOpacity>
-        <TouchableOpacity 
-          className="bg-neon-green/20 p-3 rounded-2xl border border-neon-green/50"
-          onPress={() => router.push("/nfts")}
-        >
-          <ImageIcon size={20} color="#00FF9C" />
-        </TouchableOpacity>
+      {/* Navigation Bar */}
+      <View className="flex-row justify-between items-center mt-4 px-6">
+        {/* Left side - PDF Download */}
+        <PDFExport position="navigation" />
+        
+        {/* Center - Navigation buttons */}
+        <View className="flex-row space-x-4">
+          <TouchableOpacity 
+            className="bg-neon-green/20 p-3 rounded-2xl border border-neon-green/50"
+            onPress={() => router.push("/profile")}
+          >
+            <User size={20} color="#00FF9C" />
+          </TouchableOpacity>
+          <TouchableOpacity 
+            className="bg-neon-green/20 p-3 rounded-2xl border border-neon-green/50"
+            onPress={() => router.push("/impact")}
+          >
+            <TrendingUp size={20} color="#00FF9C" />
+          </TouchableOpacity>
+          <TouchableOpacity 
+            className="bg-neon-green/20 p-3 rounded-2xl border border-neon-green/50"
+            onPress={() => router.push("/nfts")}
+          >
+            <ImageIcon size={20} color="#00FF9C" />
+          </TouchableOpacity>
+        </View>
       </View>
 
       {/* Canvas Grid */}
       <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-4">
-        {/* Floating Download Button */}
-        <View className="absolute top-4 right-4 z-10">
-          <PDFExport />
-        </View>
-        
         {/* Top Row */}
         <View className="flex-row mb-6" style={{ height: 160 }}>
           <ExpandableCanvasSection

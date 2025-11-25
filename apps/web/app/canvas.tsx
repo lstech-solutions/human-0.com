@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { ArrowLeft, Users, Target, Lightbulb, Activity, DollarSign, MessageSquare, Building2, TrendingUp, Award } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
+import PDFExport from '../components/PDFExport';
 
 const { width, height } = Dimensions.get('window');
 
@@ -284,27 +285,28 @@ export default function CanvasScreen() {
       <View className="px-6 pt-12 pb-6">
         <View className="flex-row justify-between items-center mb-6">
           <TouchableOpacity 
-            onPress={() => router.back()} 
+            onPress={() => router.push('/')} 
             className="bg-space-dark/50 backdrop-blur-lg p-3 rounded-2xl border border-neon-green/30"
           >
             <ArrowLeft size={24} color="#00FF9C" />
           </TouchableOpacity>
-          <View className="flex-1 ml-4">
-            <Animated.View style={{ opacity: titleAnim }}>
-              <Text className="text-neon-green text-3xl font-bold text-center">
-                Canvas del Modelo
-              </Text>
-              <Text className="text-neon-green text-3xl font-bold text-center">
-                de Negocio
-              </Text>
-            </Animated.View>
-          </View>
-          <View className="w-12" />
+          
+          {/* Center - HUMΛN-Ø Title */}
+          <TouchableOpacity 
+            onPress={() => router.push('/')}
+            className="flex-1 items-center justify-center"
+          >
+            <Text className="text-neon-green text-2xl font-bold tracking-wider">
+              HUMΛN-Ø
+            </Text>
+          </TouchableOpacity>
+          
+          <PDFExport position="navigation" />
         </View>
         
         <Animated.View style={{ opacity: subtitleAnim }} className="items-center">
           <Text className="text-gray-400 text-sm text-center max-w-sm leading-relaxed">
-            HUMΛN-Ø: Plataforma Web3 para impacto climático Net Zero con tracking transparente y recompensas NFT
+            Canvas del Modelo de Negocio
           </Text>
         </Animated.View>
       </View>

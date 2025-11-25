@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.23)  25 NOV 2025 01:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.23)  25 NOV 2025 02:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -599,7 +599,7 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count306
 \l__pdf_internal_box=\box73
 )
-No file business-model-canvas.aux.
+(./business-model-canvas.aux)
 \openout1 = `business-model-canvas.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
@@ -620,6 +620,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -677,6 +678,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package hyperref Info: Link coloring ON on input line 70.
+
+(./business-model-canvas.out) (./business-model-canvas.out)
 \@outlinefile=\write4
 \openout4 = `business-model-canvas.out'.
 
@@ -710,9 +713,17 @@ You may provide a definition with
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-No file business-model-canvas.toc.
+(./business-model-canvas.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+)
 \tf@toc=\write5
 \openout5 = `business-model-canvas.toc'.
+
 
 
 ! LaTeX Error: Unicode character Λ (U+039B)
@@ -734,9 +745,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 107.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -780,9 +788,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 150.
-
 [2]
 
 ! LaTeX Error: Unicode character Λ (U+039B)
@@ -804,9 +809,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 179.
 
 [3]
 
@@ -830,9 +832,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 208.
-
 [4]
 
 ! LaTeX Error: Unicode character Λ (U+039B)
@@ -854,9 +853,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-
-LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 237.
 
 [5]
 
@@ -880,9 +876,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-
-LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 266.
-
 [6]
 
 ! LaTeX Error: Unicode character Λ (U+039B)
@@ -904,9 +897,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 295.
 
 [7]
 
@@ -943,9 +933,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-
-LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 324.
-
 [8]
 
 ! LaTeX Error: Unicode character Λ (U+039B)
@@ -967,9 +954,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 353.
 
 [9]
 
@@ -993,9 +977,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-
-LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 382.
-
 [10]
 
 ! LaTeX Error: Unicode character Λ (U+039B)
@@ -1011,12 +992,6 @@ l.393 The HUMΛ
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 410.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 410.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 410.
 
 ! LaTeX Error: Command \end{itemize} invalid in math mode.
 
@@ -1084,9 +1059,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-
-LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 428.
 
 [11]
 
@@ -1230,9 +1202,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 457.
-
 [12] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./business-model-canvas.aux)
@@ -1240,30 +1209,14 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `business-model-canvas.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `business-model-canvas.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  0FEAF9EA081A2F8C220646BE33845FAF;4202.
-
-Package lastpage Warning: Rerun to get the references right on input line 457.
-
+Package rerunfilecheck Info: File `business-model-canvas.out' has not changed.
+(rerunfilecheck)             Checksum: 0FEAF9EA081A2F8C220646BE33845FAF;4202.
  ) 
 Here is how much of TeX's memory you used:
- 22104 strings out of 476120
- 427236 string characters out of 5793656
+ 22147 strings out of 476120
+ 427997 string characters out of 5793656
  1935975 words of memory out of 5000000
- 43731 multiletter control sequences out of 15000+600000
+ 43766 multiletter control sequences out of 15000+600000
  569882 words of font info for 58 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  83i,12n,87p,451b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1282,10 +1235,10 @@ e2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/ed/.texlive2
 xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on business-model-canvas.pdf (13 pages, 155758 bytes).
+Output written on business-model-canvas.pdf (13 pages, 159407 bytes).
 PDF statistics:
- 515 PDF objects out of 1000 (max. 8388607)
- 155 compressed objects within 2 object streams
+ 653 PDF objects out of 1000 (max. 8388607)
+ 292 compressed objects within 3 object streams
  50 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
