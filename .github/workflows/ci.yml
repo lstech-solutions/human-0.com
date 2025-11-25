@@ -21,15 +21,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20.19.5"
-          cache: 'pnpm'
       - name: Enable Corepack
         run: corepack enable
 
       - uses: pnpm/action-setup@v3
         with:
           version: 9
-      - name: Ensure pnpm is available
-        run: npm i -g pnpm@9
 
       - name: Install dependencies
         run: pnpm install
