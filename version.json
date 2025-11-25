@@ -1,19 +1,28 @@
 {
   "name": "human-zero",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251125072643",
+  "build": "20251125073104",
   "changelog": {
     "current": {
-      "version": "1.3.0",
+      "version": "1.4.0",
       "date": "2025-11-25",
       "type": "minor",
       "changes": [
-        "Added bilingual PDF download with improved text sizes and favicon integration",
+        "Cleaned up navigation bars with centered HUMΛN-Ø title only in canvas header",
         "--commit"
       ]
     },
     "history": [
+      {
+        "version": "1.3.0",
+        "date": "2025-11-25",
+        "type": "minor",
+        "changes": [
+          "Added bilingual PDF download with improved text sizes and favicon integration",
+          "--commit"
+        ]
+      },
       {
         "version": "1.2.0",
         "date": "2025-11-25",
@@ -53,13 +62,13 @@
   },
   "semver": {
     "major": 1,
-    "minor": 3,
+    "minor": 4,
     "patch": 0,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-11-25T07:26:43.610Z",
+    "lastModified": "2025-11-25T07:31:04.986Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team"

@@ -2,7 +2,18 @@
 
 ## 📋 Version History
 
-### ✨ Version 1.3.0 **[CURRENT]**
+### ✨ Version 1.4.0 **[CURRENT]**
+**Date:** 2025-11-25  
+**Type:** minor
+
+**Changes:**
+- Cleaned up navigation bars with centered HUMΛN-Ø title only in canvas header
+- --commit
+
+
+### 📚 Previous Versions
+
+### ✨ Version 1.3.0
 **Date:** 2025-11-25  
 **Type:** minor
 
@@ -11,7 +22,7 @@
 - --commit
 
 
-### 📚 Previous Versions
+---
 
 ### ✨ Version 1.2.0
 **Date:** 2025-11-25  
