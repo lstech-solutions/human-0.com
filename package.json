@@ -1,17 +1,31 @@
 {
   "name": "human-0-monorepo",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "web:dev": "turbo run start --filter=@human-0/web",
+    "web:build": "turbo run build --filter=@human-0/web",
+    "web:test": "turbo run test --filter=@human-0/web",
+    "web:lint": "turbo run lint --filter=@human-0/web",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "version:bump": "node scripts/version-manager.js bump",
+    "version:patch": "node scripts/version-manager.js bump patch --commit",
+    "version:minor": "node scripts/version-manager.js bump minor --commit",
+    "version:major": "node scripts/version-manager.js bump major --commit",
+    "version:current": "node scripts/version-manager.js current",
+    "version:changelog": "node scripts/version-manager.js changelog",
+    "release": "npm run version:patch && git push --follow-tags",
+    "latex:generate": "node scripts/latex-generator.js",
+    "latex:compile": "cd latex && pdflatex business-model-canvas.tex"
   },
   "devDependencies": {
     "turbo": "latest",
     "prettier": "latest"
   },
-  "packageManager": "pnpm@8.0.0"
+  "packageManager": "pnpm@8.0.0",
+  "description": "HUMΛN-Ø - Sustainable impact through Web3 technology"
 }
