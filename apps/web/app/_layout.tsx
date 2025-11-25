@@ -82,6 +82,12 @@ export default function RootLayout() {
             title: "Profile",
           }}
         />
+        <Stack.Screen
+          name="canvas"
+          options={{
+            title: "Business Model",
+          }}
+        />
       </Stack>
       <StatusBar style="light" />
     </ThemeProvider>

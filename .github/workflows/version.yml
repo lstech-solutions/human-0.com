@@ -1,0 +1,108 @@
+name: Version Management
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  version-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Check version
+        run: |
+          node scripts/version-manager.js current
+
+      - name: Generate changelog
+        run: |
+          node scripts/version-manager.js changelog > CHANGELOG.md
+
+      - name: Upload changelog
+        uses: actions/upload-artifact@v4
+        with:
+          name: changelog
+          path: CHANGELOG.md
+
+  auto-version:
+    needs: version-check
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Auto version bump
+        run: |
+          # Check if there are meaningful changes
+          if git diff --name-only HEAD~1 HEAD | grep -E "(src/|apps/|components/)" > /dev/null; then
+            echo "Meaningful changes detected, bumping patch version"
+            npm run version:patch
+          else
+            echo "No meaningful changes detected, skipping version bump"
+          fi
+
+      - name: Push changes
+        run: |
+          git push --follow-tags
+
+  release:
+    needs: auto-version
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get version
+        id: version
+        run: |
+          VERSION=$(node scripts/version-manager.js current | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          release_name: Release v${{ steps.version.outputs.version }}
+          body: |
+            ## 🚀 Release v${{ steps.version.outputs.version }}
+            
+            This is an automated release.
+            
+            ### 📋 Changes
+            See the changelog in [PROPER.md](./PROPER.md) for detailed changes.
+            
+            ### 🔗 Installation
+            ```bash
+            npm install human-0-monorepo@${{ steps.version.outputs.version }}
+            ```
+          draft: false
+          prerelease: false

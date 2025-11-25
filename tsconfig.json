@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "lib": [
+            "es2020"
+        ],
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "checkJs": false,
+        "strict": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "outDir": "dist",
+        "rootDir": "."
+    },
+    "include": [
+        "packages/**/*",
+        "apps/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "build",
+        ".next",
+        ".expo",
+        ".turbo"
+    ]
+}

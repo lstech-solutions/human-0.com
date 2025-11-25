@@ -1,0 +1,36 @@
+
+> @human-0/docs@0.0.0 build /home/ed/Documents/lsts/human-0/apps/docs
+> docusaurus build
+
+[INFO] [en] Creating an optimized production build...
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 38.63s
+[webpackbar] ✔ Client: Compiled successfully in 44.82s
+
+[ERROR] Error: Unable to build website for locale en.
+    at tryToBuildLocale (/home/ed/Documents/lsts/human-0/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.2.0__react-dom@19.1._yh5ss3apnmldmuq673ih5pwptq/node_modules/@docusaurus/core/lib/commands/build/build.js:83:15)
+    at async /home/ed/Documents/lsts/human-0/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.2.0__react-dom@19.1._yh5ss3apnmldmuq673ih5pwptq/node_modules/@docusaurus/core/lib/commands/build/build.js:35:9
+    at async mapAsyncSequential (/home/ed/Documents/lsts/human-0/node_modules/.pnpm/@docusaurus+utils@3.9.2_react-dom@19.1.0_react@19.2.0__react@19.2.0/node_modules/@docusaurus/utils/lib/jsUtils.js:21:24)
+    at async Command.build (/home/ed/Documents/lsts/human-0/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.2.0__react-dom@19.1._yh5ss3apnmldmuq673ih5pwptq/node_modules/@docusaurus/core/lib/commands/build/build.js:34:5)
+    at async Promise.all (index 0)
+    at async runCLI (/home/ed/Documents/lsts/human-0/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.2.0__react-dom@19.1._yh5ss3apnmldmuq673ih5pwptq/node_modules/@docusaurus/core/lib/commands/cli.js:56:5)
+    at async file:///home/ed/Documents/lsts/human-0/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.2.0__react-dom@19.1._yh5ss3apnmldmuq673ih5pwptq/node_modules/@docusaurus/core/bin/docusaurus.mjs:44:3 {
+  [cause]: Error: Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:
+    - react:      19.2.0
+    - react-dom:  19.1.0
+  Learn more: https://react.dev/warnings/version-mismatch
+      at ensureCorrectIsomorphicReactVersion (server.bundle.js:11503:11)
+      at 27045 (server.bundle.js:11509:1)
+      at __webpack_require__ (server.bundle.js:35293:42)
+      at 81040 (server.bundle.js:28568:7)
+      at __webpack_require__ (server.bundle.js:35293:42)
+      at 75156 (server.bundle.js:26222:18)
+      at __webpack_require__ (server.bundle.js:35293:42)
+      at 54820 (server.bundle.js:21785:74)
+      at __webpack_require__ (server.bundle.js:35293:42)
+      at 98131 (server.bundle.js:34816:71)
+}
+[INFO] Docusaurus version: 3.9.2
+Node version: v22.18.0
+ ELIFECYCLE  Command failed with exit code 1.

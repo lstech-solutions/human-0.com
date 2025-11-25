@@ -22,10 +22,11 @@ jobs:
         with:
           node-version: "20.19.5"
 
-      - uses: pnpm/action-setup@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
         with:
           version: 9
-          run_install: false
+          run_install: true
 
       - name: Install dependencies
         run: pnpm install
@@ -38,4 +39,4 @@ jobs:
 
       - name: Test
         run: pnpm test
-# Dummy commit to trigger CI
+
