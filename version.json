@@ -1,19 +1,33 @@
 {
   "name": "human-zero",
-  "version": "1.4.0",
+  "version": "1.5.1",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251125073104",
+  "build": "20251126014202",
   "changelog": {
     "current": {
-      "version": "1.4.0",
-      "date": "2025-11-25",
-      "type": "minor",
+      "version": "1.5.1",
+      "date": "2025-11-26",
+      "type": "patch",
       "changes": [
-        "Cleaned up navigation bars with centered HUMΛN-Ø title only in canvas header",
-        "--commit"
+        "Test sync functionality"
       ]
     },
     "history": [
+      {
+        "version": "1.5.0",
+        "date": "2025-11-25",
+        "type": "minor",
+        "changes": [
+          "Redesigned landing page with modern UIMIX-inspired aesthetic",
+          "Added Unicorn Studio 3D Vitruvian man animation with branding removal",
+          "Implemented ASCII animation for mobile devices",
+          "Fixed scroll animation persistence and responsiveness",
+          "Updated PDF download paths for production domain compatibility",
+          "Resolved TypeScript lint errors across components",
+          "Removed duplicate header sections conflicting with expo navigation",
+          "Enhanced branding removal with comprehensive CSS and JavaScript targeting"
+        ]
+      },
       {
         "version": "1.3.0",
         "date": "2025-11-25",
@@ -62,13 +76,13 @@
   },
   "semver": {
     "major": 1,
-    "minor": 4,
-    "patch": 0,
+    "minor": 5,
+    "patch": 1,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-11-25T07:31:04.986Z",
+    "lastModified": "2025-11-26T01:42:02.253Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team"

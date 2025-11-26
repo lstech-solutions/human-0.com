@@ -2,16 +2,32 @@
 
 ## 📋 Version History
 
-### ✨ Version 1.4.0 **[CURRENT]**
+### 🔧 Version 1.5.1 **[CURRENT]**
+**Date:** 2025-11-26  
+**Type:** patch
+
+**Changes:**
+- Test sync functionality
+
+
+### 📚 Previous Versions
+
+### ✨ Version 1.5.0
 **Date:** 2025-11-25  
 **Type:** minor
 
 **Changes:**
-- Cleaned up navigation bars with centered HUMΛN-Ø title only in canvas header
-- --commit
+- Redesigned landing page with modern UIMIX-inspired aesthetic
+- Added Unicorn Studio 3D Vitruvian man animation with branding removal
+- Implemented ASCII animation for mobile devices
+- Fixed scroll animation persistence and responsiveness
+- Updated PDF download paths for production domain compatibility
+- Resolved TypeScript lint errors across components
+- Removed duplicate header sections conflicting with expo navigation
+- Enhanced branding removal with comprehensive CSS and JavaScript targeting
 
 
-### 📚 Previous Versions
+---
 
 ### ✨ Version 1.3.0
 **Date:** 2025-11-25  
