@@ -2,7 +2,29 @@
 
 ## 📋 Version History
 
-### 🔧 Version 1.5.1 **[CURRENT]**
+### 🔧 Version 1.5.4 **[CURRENT]**
+**Date:** 2025-11-26  
+**Type:** patch
+
+**Changes:**
+- --commit
+
+
+### 📚 Previous Versions
+
+### 🔧 Version 1.5.3
+**Date:** 2025-11-26  
+**Type:** patch
+
+**Changes:**
+- Tune orbit visuals and theme-aware particles across light/dark modes
+- Improve footer frame meter stability and responsiveness
+- Update vitruvian assets and animations for clarity
+
+
+---
+
+### 🔧 Version 1.5.1
 **Date:** 2025-11-26  
 **Type:** patch
 
@@ -10,7 +32,7 @@
 - Test sync functionality
 
 
-### 📚 Previous Versions
+---
 
 ### ✨ Version 1.5.0
 **Date:** 2025-11-25  
@@ -81,4 +103,4 @@
 
 ---
 
-*Last updated: 11/25/2025*
+*Last updated: 11/26/2025*
