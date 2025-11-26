@@ -1,0 +1,20 @@
+lockfileVersion: '9.0'
+importers:
+  .:
+    devDependencies:
+      prettier:
+        specifier: latest
+        version: link:node_modules/prettier
+      turbo:
+        specifier: latest
+        version: link:node_modules/turbo
+  apps/docs:
+    specifiers: {}
+  apps/web:
+    specifiers: {}
+  packages/config:
+    specifiers: {}
+  packages/contracts:
+    specifiers: {}
+  packages/ui:
+    specifiers: {}

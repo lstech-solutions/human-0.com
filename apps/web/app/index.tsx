@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import FlickeringGrid from '../components/FlickeringGrid';
 import { H1, Body } from '../components/typography';
 import { ParticleHero } from '../components/ui/animated-hero';
+import UnicornStudioBackground from '../components/ui/unicorn-studio-background';
 import appPkg from '../package.json';
 import { useTheme } from '../theme/ThemeProvider';
 
@@ -540,6 +541,20 @@ export default function Home() {
     return (
       <div className="fixed inset-0 w-full h-full vitruvian-container z-10">
         <div className="vitruvian-wrapper" style={wrapperStyle}>
+          <UnicornStudioBackground 
+            projectId="pcwpMXrVA277X9qCtD3I" 
+            style={{
+              position: 'absolute',
+              top: '45%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: isDesktop ? '1019px' : '373px',
+              height: isDesktop ? '1019px' : '373px',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              zIndex: 1
+            }}
+          />
           <div className="absolute inset-0 flex items-center justify-center">
             {orbitConfig.map((cfg, idx) => renderOrbitRing(cfg, idx))}
             {renderElectrons()}

@@ -1,27 +1,8 @@
 
-> @human-0/web@1.0.0 build /home/ed/Documents/lsts/human-0/apps/web
+> @human-0/web@1.5.3 build /home/ed/Documents/lsts/human-0/apps/web
 > expo export -p web
 
-
-Using (experimental) base path: /human-0
 Starting Metro Bundler
 Static rendering is enabled. Learn more: https://docs.expo.dev/router/reference/static-rendering/
 Web node_modules/.pnpm/expo-router@6.0.15_ypmsqbd2jpuzzk3wgfsupe5bnu/node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
-λ node_modules/.pnpm/expo-router@6.0.15_ypmsqbd2jpuzzk3wgfsupe5bnu/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 63.6% ( 474/2152)
-λ Bundled 2515ms node_modules/.pnpm/expo-router@6.0.15_ypmsqbd2jpuzzk3wgfsupe5bnu/node_modules/expo-router/node/render.js (2643 modules)
-Web Bundled 2940ms node_modules/.pnpm/expo-router@6.0.15_ypmsqbd2jpuzzk3wgfsupe5bnu/node_modules/expo-router/entry.js (2626 modules)
-
-› web bundles (2):
-_expo/static/css/web-81abd96cfbec635db623888351d86dda.css (11.2 kB)
-_expo/static/js/web/entry-6b0062945740b56a4347b6fc14f689ba.js (3.68 MB)
-
-› Static routes (7):
-/nfts (26.5 kB)
-/ (index) (44.1 kB)
-/canvas (24.7 kB)
-/impact (28.5 kB)
-/profile (28.6 kB)
-/_sitemap (17.6 kB)
-/+not-found (17.6 kB)
-
-Exported: dist
+λ node_modules/.pnpm/expo-router@6.0.15_ypmsqbd2jpuzzk3wgfsupe5bnu/node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
