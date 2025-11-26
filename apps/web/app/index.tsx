@@ -615,10 +615,10 @@ export default function Home() {
               <div className="hidden lg:block absolute -left-3 top-0 bottom-0 w-1 dither-pattern opacity-40"></div>
               <H1 className="mb-3 lg:mb-4 tracking-widest leading-tight">
                 <span className="bg-gradient-to-r from-emerald-300 via-emerald-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]">
-                  SUSTAINABLE
+                  PROOF OF
                 </span>
                 <span className="block mt-1 lg:mt-2 bg-gradient-to-r from-cyan-300 via-emerald-400 to-emerald-200 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]">
-                  BLOCKCHAIN
+                  SUSTAINABLE HUMANITY ON BLOCKCHAIN
                 </span>
               </H1>
             </div>
