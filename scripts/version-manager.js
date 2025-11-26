@@ -27,9 +27,51 @@ class VersionManager {
 
   updatePackageVersion() {
     try {
+      // Update root package.json
       const packageData = JSON.parse(fs.readFileSync(this.packagePath, 'utf8'));
       packageData.version = this.versionData.version;
       fs.writeFileSync(this.packagePath, JSON.stringify(packageData, null, 2));
+      
+      // Update all app package.json files
+      const appsPath = path.join(__dirname, '../apps');
+      const packagesPath = path.join(__dirname, '../packages');
+      
+      // Update apps
+      if (fs.existsSync(appsPath)) {
+        const apps = fs.readdirSync(appsPath);
+        apps.forEach(app => {
+          const appPackagePath = path.join(appsPath, app, 'package.json');
+          if (fs.existsSync(appPackagePath)) {
+            try {
+              const appPackageData = JSON.parse(fs.readFileSync(appPackagePath, 'utf8'));
+              appPackageData.version = this.versionData.version;
+              fs.writeFileSync(appPackagePath, JSON.stringify(appPackageData, null, 2));
+              console.log(`✅ Updated ${app}/package.json to ${this.versionData.version}`);
+            } catch (error) {
+              console.error(`Error updating ${app}/package.json:`, error.message);
+            }
+          }
+        });
+      }
+      
+      // Update packages
+      if (fs.existsSync(packagesPath)) {
+        const packages = fs.readdirSync(packagesPath);
+        packages.forEach(pkg => {
+          const pkgPackagePath = path.join(packagesPath, pkg, 'package.json');
+          if (fs.existsSync(pkgPackagePath)) {
+            try {
+              const pkgPackageData = JSON.parse(fs.readFileSync(pkgPackagePath, 'utf8'));
+              pkgPackageData.version = this.versionData.version;
+              fs.writeFileSync(pkgPackagePath, JSON.stringify(pkgPackageData, null, 2));
+              console.log(`✅ Updated packages/${pkg}/package.json to ${this.versionData.version}`);
+            } catch (error) {
+              console.error(`Error updating packages/${pkg}/package.json:`, error.message);
+            }
+          }
+        });
+      }
+      
     } catch (error) {
       console.error('Error updating package.json:', error.message);
     }
@@ -164,8 +206,8 @@ class VersionManager {
 
   autoCommit(message) {
     try {
-      // Add files to git
-      execSync('git add version.json package.json PROPER.md', { stdio: 'inherit' });
+      // Add all package.json files to git
+      execSync('git add version.json package.json apps/*/package.json packages/*/package.json PROPER.md', { stdio: 'inherit' });
       
       // Commit with version info
       const commitMessage = message || `chore: bump version to ${this.versionData.version}`;

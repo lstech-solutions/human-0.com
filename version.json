@@ -1,18 +1,28 @@
 {
   "name": "human-zero",
-  "version": "1.5.1",
+  "version": "1.5.3",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251126014202",
+  "build": "20251126060622",
   "changelog": {
     "current": {
-      "version": "1.5.1",
+      "version": "1.5.3",
       "date": "2025-11-26",
       "type": "patch",
       "changes": [
-        "Test sync functionality"
+        "Tune orbit visuals and theme-aware particles across light/dark modes",
+        "Improve footer frame meter stability and responsiveness",
+        "Update vitruvian assets and animations for clarity"
       ]
     },
     "history": [
+      {
+        "version": "1.5.1",
+        "date": "2025-11-26",
+        "type": "patch",
+        "changes": [
+          "Test sync functionality"
+        ]
+      },
       {
         "version": "1.5.0",
         "date": "2025-11-25",
@@ -77,12 +87,12 @@
   "semver": {
     "major": 1,
     "minor": 5,
-    "patch": 1,
+    "patch": 3,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-11-26T01:42:02.253Z",
+    "lastModified": "2025-11-26T06:06:22.558Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team"

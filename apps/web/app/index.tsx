@@ -1,97 +1,368 @@
 'use client';
 
-import { useEffect } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import FlickeringGrid from '../components/FlickeringGrid';
+import { H1, Body } from '../components/typography';
+import { ParticleHero } from '../components/ui/animated-hero';
+import appPkg from '../package.json';
+import { useTheme } from '../theme/ThemeProvider';
+
+// Atomic Orbital System Component
+const AtomicOrbital: React.FC<{ colorScheme: "light" | "dark" }> = ({ colorScheme }) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    // Initialize Three.js scene
+    const scene = new (window as any).THREE.Scene();
+    scene.background = new (window as any).THREE.Color('#000');
+
+    const camera = new (window as any).THREE.PerspectiveCamera(
+      70,
+      window.innerWidth / window.innerHeight,
+      0.01,
+      100
+    );
+    camera.position.z = 5;
+    
+    const renderer = new (window as any).THREE.WebGLRenderer({ 
+      canvas: canvas,
+      alpha: true,
+      antialias: true 
+    });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    // Soft lighting
+    const light = new (window as any).THREE.PointLight(0xffffff, 1);
+    light.position.set(5, 5, 5);
+    scene.add(light);
+
+    // ELECTRONS + ORBITS (no nucleus - centered on Vitruvian man)
+    const electrons: any[] = [];
+
+    const palette =
+      colorScheme === "dark"
+        ? { primary: "#22c55e", secondary: "#16a34a" }
+        : { primary: "#0f172a", secondary: "#111827" };
+
+    const electronMaterial = new (window as any).THREE.MeshBasicMaterial({
+      color: palette.primary,
+    });
+
+    function createElectron(radius: number, axis: string) {
+      const electron = new (window as any).THREE.Mesh(
+        new (window as any).THREE.SphereGeometry(0.12, 16, 16),
+        electronMaterial
+      );
+      electron.userData = { radius, axis, angle: 0 };
+      scene.add(electron);
+      electrons.push(electron);
+    }
+
+    // 2 electrons on different orbital axes
+    createElectron(2, 'xz');  // orbit 1
+    createElectron(2, 'yz');  // orbit 2
+
+    // Orbit visualization (dots instead of lines)
+    function createOrbitDots(color: string, x: number, y: number, z: number, dotCount: number = 50) {
+      const dots: any[] = [];
+      for (let i = 0; i < dotCount; i++) {
+        const angle = (i / dotCount) * Math.PI * 2;
+        const dotGeometry = new (window as any).THREE.SphereGeometry(0.02, 8, 8);
+        const dotMaterial = new (window as any).THREE.MeshBasicMaterial({ 
+          color,
+          transparent: true,
+          opacity: 0.6
+        });
+        const dot = new (window as any).THREE.Mesh(dotGeometry, dotMaterial);
+        
+        // Create perfect circle orbit (equal radius)
+        const radius = 2;
+        dot.position.set(
+          Math.cos(angle) * radius,
+          Math.sin(angle) * radius,
+          0
+        );
+        
+        dot.userData = { 
+          originalAngle: angle,
+          radius,
+          orbitRotation: { x, y, z }
+        };
+        
+        dots.push(dot);
+        scene.add(dot);
+      }
+      return dots;
+    }
+
+    // Create 2 orbital dot rings with perfect circles
+    const orbit1Dots = createOrbitDots(palette.primary, 0, Math.PI / 3, Math.PI / 6, 40);
+    const orbit2Dots = createOrbitDots(palette.secondary, Math.PI / 4, 0, Math.PI / 3, 35);
+
+    // Animation loop
+    const animate = () => {
+      animationRef.current = requestAnimationFrame(animate);
+
+      // Animate electrons
+      electrons.forEach((e: any, i: number) => {
+        e.userData.angle += 0.02 + i * 0.01;
+        const a = e.userData.angle;
+        const r = e.userData.radius;
+
+        switch (e.userData.axis) {
+          case 'xz':
+            e.position.set(Math.cos(a) * r, 0, Math.sin(a) * r);
+            break;
+          case 'yz':
+            e.position.set(0, Math.cos(a) * r, Math.sin(a) * r);
+            break;
+        }
+      });
+
+      // Animate orbital dots with 3D parallax rotation
+      const time = Date.now() * 0.001;
+      
+      // Animate orbit 1 dots with parallax
+      orbit1Dots.forEach((dot: any, i: number) => {
+        const userData = dot.userData;
+        const angle = userData.originalAngle + time * 0.5;
+        const parallaxFactor = Math.sin(time * 2 + i * 0.1) * 0.2;
+        
+        dot.position.x = Math.cos(angle) * userData.radius * (1 + parallaxFactor);
+        dot.position.y = Math.sin(angle) * userData.radius * (1 + parallaxFactor * 0.5);
+        dot.position.z = Math.sin(time * 3 + i * 0.2) * 0.3;
+        
+        // Apply orbit rotation for 3D effect
+        dot.rotation.x = userData.orbitRotation.x + Math.sin(time) * 0.1;
+        dot.rotation.y = userData.orbitRotation.y + Math.cos(time) * 0.1;
+        dot.rotation.z = userData.orbitRotation.z + Math.sin(time * 1.5) * 0.1;
+        
+        // Pulsing opacity
+        dot.material.opacity = 0.3 + Math.sin(time * 4 + i * 0.2) * 0.3;
+      });
+
+      // Animate orbit 2 dots with different parallax
+      orbit2Dots.forEach((dot: any, i: number) => {
+        const userData = dot.userData;
+        const angle = userData.originalAngle - time * 0.7; // Counter-rotation
+        const parallaxFactor = Math.cos(time * 2.5 + i * 0.15) * 0.25;
+        
+        dot.position.x = Math.cos(angle) * userData.radius * (1 + parallaxFactor);
+        dot.position.y = Math.sin(angle) * userData.radius * (1 + parallaxFactor * 0.7);
+        dot.position.z = Math.cos(time * 2 + i * 0.25) * 0.4;
+        
+        // Apply orbit rotation for 3D effect
+        dot.rotation.x = userData.orbitRotation.x + Math.cos(time * 1.2) * 0.15;
+        dot.rotation.y = userData.orbitRotation.y + Math.sin(time * 1.2) * 0.15;
+        dot.rotation.z = userData.orbitRotation.z + Math.cos(time * 1.8) * 0.15;
+        
+        // Pulsing opacity
+        dot.material.opacity = 0.4 + Math.cos(time * 3.5 + i * 0.3) * 0.4;
+      });
+
+      renderer.render(scene, camera);
+    };
+
+    animate();
+
+    // Handle resize
+    const handleResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      renderer.dispose();
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full"
+      style={{ width: '100%', height: '100%' }}
+    />
+  );
+};
 
 export default function Home() {
-  useEffect(() => {
-    const embedScript = document.createElement('script');
-    embedScript.type = 'text/javascript';
-    embedScript.textContent = `
-      !function(){
-        if(!window.UnicornStudio){
-          window.UnicornStudio={isInitialized:!1};
-          var i=document.createElement("script");
-          i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.33/dist/unicornStudio.umd.js";
-          i.onload=function(){
-            window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)
-          };
-          (document.head || document.body).appendChild(i)
-        }
-      }();
-    `;
-    document.head.appendChild(embedScript);
+  const [mounted, setMounted] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const useThreeJS = false; // keep Vitruvian CSS as the only active layer
+  const { colorScheme } = useTheme();
+  const APP_VERSION = appPkg.version || "0.0.0";
+  const [frameRate, setFrameRate] = useState(60);
+  const lastPointer = useRef<{ x: number; y: number; t: number } | null>(null);
+  const lastScroll = useRef<{ y: number; t: number } | null>(null);
+  const meterBaseHeights = useMemo(() => [8, 12, 10, 14, 9, 11, 13, 7], []);
+  const [meterOffsets, setMeterOffsets] = useState<number[]>(meterBaseHeights.map(() => 0));
+  const meterIntervalRef = useRef<number | null>(null);
 
-    // Add CSS to hide branding elements and make canvas more persistent
+  // Simulated frame indicator based on pointer/scroll velocity
+  useEffect(() => {
+    const updateFromSpeed = (speed: number) => {
+      const fps = Math.min(144, Math.max(24, 24 + speed * 0.25));
+      setFrameRate((prev) => Math.round(prev * 0.8 + fps * 0.2));
+    };
+
+    const handlePointer = (ev: MouseEvent | TouchEvent) => {
+      const point = "touches" in ev ? ev.touches[0] : ev;
+      if (!point) return;
+      const now = performance.now();
+      const last = lastPointer.current;
+      if (last) {
+        const dt = Math.max(1, now - last.t);
+        const dx = point.clientX - last.x;
+        const dy = point.clientY - last.y;
+        const speed = Math.hypot(dx, dy) / dt * 100; // normalize
+        updateFromSpeed(speed);
+      }
+      lastPointer.current = { x: point.clientX, y: point.clientY, t: now };
+    };
+
+    const handleScroll = () => {
+      const now = performance.now();
+      const last = lastScroll.current;
+      const y = window.scrollY;
+      if (last) {
+        const dy = y - last.y;
+        const dt = Math.max(1, now - last.t);
+        const speed = Math.abs(dy) / dt * 150;
+        updateFromSpeed(speed);
+      }
+      lastScroll.current = { y, t: now };
+    };
+
+    const decay = setInterval(() => {
+      setFrameRate((prev) => Math.max(24, Math.round(prev * 0.95)));
+    }, 500);
+
+    window.addEventListener("mousemove", handlePointer, { passive: true });
+    window.addEventListener("touchmove", handlePointer, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      clearInterval(decay);
+      window.removeEventListener("mousemove", handlePointer);
+      window.removeEventListener("touchmove", handlePointer);
+      window.removeEventListener("scroll", handleScroll);
+      if (meterIntervalRef.current) clearInterval(meterIntervalRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (meterIntervalRef.current) clearInterval(meterIntervalRef.current);
+    meterIntervalRef.current = setInterval(() => {
+      setMeterOffsets((prev) => {
+        // If no recent pointer movement, keep bars steady
+        const now = performance.now();
+        const idle = lastPointer.current ? now - lastPointer.current.t > 800 : true;
+        if (idle) return prev;
+        return meterBaseHeights.map(() => Math.random() * 6 - 3);
+      });
+    }, 120);
+  }, [meterBaseHeights]);
+
+  useEffect(() => {
+    const swing = Math.max(-6, Math.min(6, (frameRate - 60) * 0.1));
+    setMeterOffsets((prev) => {
+      const now = performance.now();
+      const idle = lastPointer.current ? now - lastPointer.current.t > 800 : true;
+      if (idle) return prev;
+      return meterBaseHeights.map(() => Math.random() * 6 - 3 + swing);
+    });
+  }, [frameRate, meterBaseHeights]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+
+    const handleChange = (event: MediaQueryListEvent | MediaQueryList) => {
+      setIsDesktop(event.matches);
+    };
+
+    handleChange(mediaQuery);
+
+    const listener = (event: MediaQueryListEvent) => handleChange(event);
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', listener);
+    } else {
+      mediaQuery.addListener(listener);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', listener);
+      } else {
+        mediaQuery.removeListener(listener);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    setMounted(true);
+
+    // Add CSS for Vitruvian man image styling
     const style = document.createElement('style');
     style.textContent = `
-      [data-us-project] {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        z-index: 1 !important;
-        overflow: hidden !important;
-        pointer-events: none !important;
+      /* Vitruvian Man Container */
+      .vitruvian-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        pointer-events: none;
+        overflow: hidden;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px;
       }
       
-      [data-us-project] canvas {
-        clip-path: inset(0 0 5% 0) !important;
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
+      /* Wrapper for frames and image - positioned as unit */
+      .vitruvian-wrapper {
+        position: absolute;
+        right: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 650px;
+        height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       
-      [data-us-project] * {
-        pointer-events: none !important;
+      /* Vitruvian Man Image - Clean SVG version */
+      .vitruvian-image {
+        width: 600px;
+        height: auto;
+        max-height: 90vh;
+        object-fit: contain;
+        position: relative;
+        z-index: 2;
       }
       
-      /* Aggressively remove all Unicorn Studio branding */
-      [data-us-project] a[href*="unicorn"],
-      [data-us-project] button[title*="unicorn"],
-      [data-us-project] div[title*="Made with"],
-      [data-us-project] div[title*="made with"],
-      [data-us-project] div[title*="UNICORN"],
-      [data-us-project] div[title*="Unicorn"],
-      [data-us-project] .unicorn-brand,
-      [data-us-project] [class*="brand"],
-      [data-us-project] [class*="credit"],
-      [data-us-project] [class*="watermark"],
-      [data-us-project] [class*="logo"],
-      [data-us-project] [class*="signature"],
-      [data-us-project] [class*="attribution"],
-      [data-us-project] [data-unicorn],
-      [data-us-project] [id*="unicorn"],
-      [data-us-project] [id*="brand"],
-      [data-us-project] [id*="logo"],
-      [data-us-project] footer,
-      [data-us-project] .footer,
-      [data-us-project] .branding,
-      [data-us-project] .made-with,
-      [data-us-project] .powered-by,
-      [data-us-project] .created-by,
-      [data-us-project] *[style*="position: absolute"][style*="bottom"] {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        position: absolute !important;
-        left: -9999px !important;
-        top: -9999px !important;
-        width: 0 !important;
-        height: 0 !important;
-        overflow: hidden !important;
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotateY(0deg); }
+        50% { transform: translateY(-20px) rotateY(5deg); }
       }
       
-      /* Hide any text containing branding keywords */
-      [data-us-project] *:contains("Made with"),
-      [data-us-project] *:contains("made with"),
-      [data-us-project] *:contains("UNICORN"),
-      [data-us-project] *:contains("Unicorn"),
-      [data-us-project] *:contains("unicorn"),
-      [data-us-project] *:contains("Studio") {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
+      @keyframes glow {
+        0% { filter: drop-shadow(0 0 20px rgba(0, 255, 156, 0.2)); }
+        100% { filter: drop-shadow(0 0 40px rgba(0, 255, 156, 0.6)); }
       }
       
       /* ASCII Animation for mobile */
@@ -104,224 +375,289 @@ export default function Home() {
         z-index: 1;
         pointer-events: none;
         overflow: hidden;
-        background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+        background: transparent;
       }
       
-      .ascii-art {
+      .ascii-vitruvian {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: 'Courier New', monospace;
-        font-size: 8px;
+        font-size: 4px;
         line-height: 1;
-        color: #333;
+        color: #00FF9C;
         white-space: pre;
         text-align: center;
-        animation: float 6s ease-in-out infinite;
+        animation: glow 2s ease-in-out infinite alternate;
       }
       
-      @keyframes float {
-        0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
-        50% { transform: translate(-50%, -50%) translateY(-10px); }
+      /* Mobile ASCII Orbitals */
+      .mobile-orbitals {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Courier New', monospace;
+        font-size: 3px;
+        line-height: 1;
+        color: rgba(0, 255, 156, 0.5);
+        white-space: pre;
+        text-align: center;
+        z-index: 2;
       }
       
-      .ascii-art span {
-        display: inline-block;
-        animation: twinkle 3s ease-in-out infinite;
+      .orbital-1 {
+        animation: rotate-mobile 15s linear infinite;
       }
       
-      .ascii-art span:nth-child(even) {
-        animation-delay: 0.5s;
+      .orbital-2 {
+        animation: rotate-mobile 20s linear infinite reverse;
       }
       
-      .ascii-art span:nth-child(3n) {
-        animation-delay: 1s;
+      @keyframes rotate-mobile {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
       }
       
-      @keyframes twinkle {
-        0%, 100% { opacity: 0.3; }
-        50% { opacity: 1; }
+      @keyframes glow {
+        0% { opacity: 0.3; text-shadow: 0 0 5px #00FF9C; }
+        100% { opacity: 0.8; text-shadow: 0 0 20px #00FF9C, 0 0 30px #00FF9C; }
       }
     `;
     document.head.appendChild(style);
 
-    // Function to aggressively hide branding
-    const hideBranding = () => {
-      const projectDiv = document.querySelector('[data-us-project]');
-      if (projectDiv) {
-        // Find and remove any elements containing branding text
-        const allElements = projectDiv.querySelectorAll('*');
-        allElements.forEach(el => {
-          const htmlEl = el as HTMLElement;
-          const text = (htmlEl.textContent || '').toLowerCase();
-          const title = (htmlEl.title || '').toLowerCase();
-          const className = (htmlEl.className || '').toLowerCase();
-          const id = (htmlEl.id || '').toLowerCase();
-          
-          // Remove elements with any branding indicators
-          if (
-            text.includes('made with') || 
-            text.includes('unicorn') ||
-            text.includes('studio') ||
-            title.includes('made with') ||
-            title.includes('unicorn') ||
-            title.includes('studio') ||
-            className.includes('brand') ||
-            className.includes('credit') ||
-            className.includes('watermark') ||
-            className.includes('logo') ||
-            className.includes('signature') ||
-            className.includes('attribution') ||
-            id.includes('brand') ||
-            id.includes('logo') ||
-            id.includes('unicorn') ||
-            htmlEl.tagName.toLowerCase() === 'footer' ||
-            (htmlEl.style && htmlEl.style.position === 'absolute' && htmlEl.style.bottom)
-          ) {
-            htmlEl.remove(); // Completely remove the element
-          }
-        });
-        
-        // Also look for any elements with specific attributes
-        const brandedElements = projectDiv.querySelectorAll([
-          '[class*="brand"]',
-          '[class*="credit"]',
-          '[class*="watermark"]',
-          '[class*="logo"]',
-          '[class*="signature"]',
-          '[class*="attribution"]',
-          '[id*="brand"]',
-          '[id*="logo"]',
-          '[id*="unicorn"]',
-          '[data-unicorn]',
-          'footer',
-          '.made-with',
-          '.powered-by',
-          '.created-by'
-        ].join(','));
-        
-        brandedElements.forEach(el => (el as HTMLElement).remove());
-      }
-    };
-
-    // Run immediately and periodically
-    hideBranding();
-    const interval = setInterval(hideBranding, 100);
-    
-    // Also try after delays
-    setTimeout(hideBranding, 1000);
-    setTimeout(hideBranding, 3000);
-    setTimeout(hideBranding, 5000);
-
     return () => {
-      clearInterval(interval);
-      document.head.removeChild(embedScript);
       document.head.removeChild(style);
     };
   }, []);
 
+  const orbitPalette = colorScheme === 'dark'
+    ? { primary: '#22c55e', secondary: '#16a34a', electron: '#22c55e', shadow: '0 0 12px rgba(34, 197, 94, 0.75)' }
+    : { primary: '#0f172a', secondary: '#111827', electron: '#0f172a', shadow: '0 0 8px rgba(15, 23, 42, 0.35)' };
+
+  const baseA = isDesktop ? 229 : 80;
+  const baseB = isDesktop ? 120 : 40; // +20% height
+  const containerSize = baseA * 2;
+
+  const orbitConfig = isDesktop
+    ? [
+        { dots: 180, a: baseA, b: baseB * 0.8, color: orbitPalette.primary, opacityBase: 0.98, opacityStep: 0.03, modulo: 8, size: containerSize, duration: 10.4, reverse: false, dotSize: 3 },
+        { dots: 150, a: baseA, b: baseB * 0.8, color: orbitPalette.secondary, opacityBase: 0.95, opacityStep: 0.04, modulo: 7, size: containerSize, duration: 13, reverse: true, dotSize: 3 },
+      ]
+    : [
+        { dots: 90, a: baseA, b: baseB * 0.8, color: orbitPalette.primary, opacityBase: 0.98, opacityStep: 0.03, modulo: 8, size: containerSize, duration: 8, reverse: false, dotSize: 1.5 },
+        { dots: 75, a: baseA, b: baseB * 0.8, color: orbitPalette.secondary, opacityBase: 0.95, opacityStep: 0.04, modulo: 7, size: containerSize, duration: 10, reverse: true, dotSize: 1.5 },
+      ];
+
+  const renderOrbitRing = (cfg: (typeof orbitConfig)[number], key: number) => (
+    <div
+      key={`${cfg.color}-${key}`}
+      className="absolute animate-spin z-20"
+      style={{
+        width: `${cfg.size}px`,
+        height: `${cfg.size}px`,
+        animationDuration: `${cfg.duration}s`,
+        animationDirection: cfg.reverse ? 'reverse' : 'normal',
+        left: '50%',
+        top: '50%',
+        marginLeft: `-${cfg.size / 2}px`,
+        marginTop: `-${cfg.size / 2}px`,
+      }}
+    >
+      {Array.from({ length: cfg.dots }).map((_, i) => {
+        const angle = (i / cfg.dots) * 360;
+        const ellipseAngle = (angle * Math.PI) / 180;
+        const x = cfg.a * Math.cos(ellipseAngle);
+        const y = cfg.b * Math.sin(ellipseAngle);
+
+        return (
+          <div
+            key={i}
+            className="absolute rounded-full"
+            style={{
+              left: '50%',
+              top: '50%',
+              width: `${cfg.dotSize}px`,
+              height: `${cfg.dotSize}px`,
+              backgroundColor: cfg.color,
+              transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+              opacity: cfg.opacityBase - (i % cfg.modulo) * cfg.opacityStep,
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+
+  const renderElectrons = () =>
+    Array.from({ length: 2 }).map((_, idx) => {
+      const axis = ['xz', 'yz'][idx];
+      const orbitRadius = baseA;
+      const size = isDesktop ? 12 : 8;
+      const duration = isDesktop ? '8s' : '6s';
+
+      return (
+        <div
+          key={axis}
+            className="absolute rounded-full"
+          style={{
+            left: '50%',
+            top: '50%',
+            width: `${size}px`,
+            height: `${size}px`,
+            transform: 'translate(-50%, -50%)',
+            backgroundColor: orbitPalette.electron,
+            boxShadow: orbitPalette.shadow,
+            animation: `orbit-${axis} ${duration} linear infinite`,
+            ['--orbit-radius' as any]: `${orbitRadius}px`,
+          }}
+        />
+      );
+    });
+
+  const renderVitruvian = () => {
+    const vitruvianFilter =
+      colorScheme === 'dark'
+        ? 'drop-shadow(0 0 18px rgba(34, 197, 94, 0.4))'
+        : 'drop-shadow(0 0 12px rgba(15, 23, 42, 0.35)) brightness(0.85)';
+    const vitruvianSrc =
+      colorScheme === 'dark'
+        ? '/images/vitruvian01-dark.svg'
+        : '/images/vitruvian01-light.svg';
+
+    const wrapperStyle = isDesktop
+      ? undefined
+      : {
+          width: '320px',
+          height: '320px',
+          right: 'auto',
+          left: '78%',
+          top: '64%',
+          transform: 'translate(-50%, -50%)',
+        };
+
+    return (
+      <div className="fixed inset-0 w-full h-full vitruvian-container z-10">
+        <div className="vitruvian-wrapper" style={wrapperStyle}>
+          <div className="absolute inset-0 flex items-center justify-center">
+            {orbitConfig.map((cfg, idx) => renderOrbitRing(cfg, idx))}
+            {renderElectrons()}
+          </div>
+
+          <img
+            src={vitruvianSrc}
+            alt="Vitruvian Man"
+            className={isDesktop ? 'vitruvian-image' : 'w-[220px] h-auto max-h-[50vh] object-contain opacity-90'}
+            style={
+              isDesktop
+                ? { filter: vitruvianFilter }
+                : { position: 'relative', zIndex: 2, filter: vitruvianFilter }
+            }
+          />
+        </div>
+      </div>
+    );
+  };
+
+  if (!mounted) return null;
+
+  const gridColor =
+    colorScheme === 'dark' ? 'rgba(255, 247, 247, 1)' : 'rgba(70, 70, 70, 1)';
+  const gradientClass =
+    colorScheme === 'dark'
+      ? 'from-black/70 via-black/55 to-black/70'
+      : 'from-white/70 via-white/55 to-white/70';
+
   return (
-    <main className="relative min-h-screen overflow-hidden bg-black">
-      {/* Vitruvian man animation - fixed position for desktop */}
-      <div className="fixed inset-0 w-full h-full hidden lg:block">
-        <div 
-          data-us-project="whwOGlfJ5Rz2rHaEUgHl" 
-          style={{ width: '100vw', height: '100vh' }}
+    <main className="relative min-h-screen overflow-hidden bg-human-bg-light dark:bg-human-bg-dark">
+      {/* Global background dots */}
+      <FlickeringGrid
+      className="absolute inset-0 pointer-events-none opacity-25 mix-blend-screen"
+        color={gridColor}
+        maxOpacity={0.08}
+      />
+      <div
+        className={`absolute inset-0 bg-gradient-to-b ${gradientClass} pointer-events-none`}
+      />
+
+      {/* Particle overlay tracking full screen */}
+      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 15 }}>
+        <ParticleHero
+          particleCount={12}
+          backgroundClassName="bg-transparent"
+          className="pointer-events-none"
+          colorScheme={colorScheme}
+          showContent={false}
         />
       </div>
 
-      {/* ASCII Animation for mobile */}
-      <div className="fixed inset-0 w-full h-full lg:hidden ascii-container">
-        <div className="ascii-art">
-          <pre style={{ margin: 0, padding: 0 }}>
-            <span>    </span><span>╔════════════════════════╗</span><span>    </span>
-            <span>    </span><span>║      ◯      ◯      ║</span><span>    </span>
-            <span>    </span><span>║        ╲╱        ║</span><span>    </span>
-            <span>    </span><span>║         │         ║</span><span>    </span>
-            <span>    </span><span>║        ╱╲        ║</span><span>    </span>
-            <span>    </span><span>║      ◯      ◯      ║</span><span>    </span>
-            <span>    </span><span>║        ││        ║</span><span>    </span>
-            <span>    </span><span>║      ╱╲╱╲      ║</span><span>    </span>
-            <span>    </span><span>║     ╱      ╲     ║</span><span>    </span>
-            <span>    </span><span>║    ╱        ╲    ║</span><span>    </span>
-            <span>    </span><span>║   ╱          ╲   ║</span><span>    </span>
-            <span>    </span><span>║  ╱            ╲  ║</span><span>    </span>
-            <span>    </span><span>║ ╱              ╲ ║</span><span>    </span>
-            <span>    </span><span>╚════════════════════════╝</span><span>    </span>
-          </pre>
-        </div>
-      </div>
+      {renderVitruvian()}
 
-      {/* Mobile stars background - removed since ASCII covers it */}
-
+      
       {/* Corner Frame Accents */}
       <div className="absolute top-0 left-0 w-8 h-8 lg:w-12 lg:h-12 border-t-2 border-l-2 border-white/30 z-20"></div>
       <div className="absolute top-0 right-0 w-8 h-8 lg:w-12 lg:h-12 border-t-2 border-r-2 border-white/30 z-20"></div>
       <div className="absolute left-0 w-8 h-8 lg:w-12 lg:h-12 border-b-2 border-l-2 border-white/30 z-20" style={{ bottom: '5vh' }}></div>
       <div className="absolute right-0 w-8 h-8 lg:w-12 lg:h-12 border-b-2 border-r-2 border-white/30 z-20" style={{ bottom: '5vh' }}></div>
 
-      <div className="relative z-10 flex min-h-screen items-center pt-16 lg:pt-0" style={{ marginTop: '5vh' }}>
-        <div className="container mx-auto px-6 lg:px-16 lg:ml-[10%]">
+      {/* Hero content with Vitruvian backdrop */}
+      <div className="fixed z-20 flex min-h-screen items-center pt-16 lg:pt-0" style={{ marginTop: '5vh', left: '0', top: '0' }}>
+        <div className="container mx-auto px-6 lg:px-16 lg:ml-[10%] text-human-text-light dark:text-human-text-dark w-full">
           <div className="max-w-lg relative">
-            {/* Top decorative line */}
             <div className="flex items-center gap-2 mb-3 opacity-60">
-              <div className="w-8 h-px bg-white"></div>
-              <span className="text-white text-[10px] font-mono tracking-wider">001</span>
-              <div className="flex-1 h-px bg-white"></div>
+              <div className="w-8 h-px bg-human-text-light dark:bg-human-text-dark/70"></div>
+              <span className="text-[10px] font-mono tracking-wider">001</span>
+              <div className="flex-1 h-px bg-human-text-light dark:bg-human-text-dark/70"></div>
             </div>
 
-            {/* Title with dithered accent */}
             <div className="relative">
               <div className="hidden lg:block absolute -left-3 top-0 bottom-0 w-1 dither-pattern opacity-40"></div>
-              <h1 className="text-2xl lg:text-5xl font-bold text-white mb-3 lg:mb-4 leading-tight font-mono tracking-wider" style={{ letterSpacing: '0.1em' }}>
-                SUSTAINABLE
-                <span className="block text-white mt-1 lg:mt-2 opacity-90">
+              <H1 className="mb-3 lg:mb-4 tracking-widest leading-tight">
+                <span className="bg-gradient-to-r from-emerald-300 via-emerald-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]">
+                  SUSTAINABLE
+                </span>
+                <span className="block mt-1 lg:mt-2 bg-gradient-to-r from-cyan-300 via-emerald-400 to-emerald-200 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]">
                   BLOCKCHAIN
                 </span>
-              </h1>
+              </H1>
             </div>
 
-            {/* Decorative dots pattern - desktop only */}
             <div className="hidden lg:flex gap-1 mb-3 opacity-40">
               {Array.from({ length: 40 }).map((_, i) => (
-                <div key={i} className="w-0.5 h-0.5 bg-white rounded-full"></div>
+                <div key={i} className="w-0.5 h-0.5 bg-human-text-light dark:bg-human-text-dark rounded-full"></div>
               ))}
             </div>
 
-            {/* Description with subtle grid pattern */}
             <div className="relative">
-              <p className="text-xs lg:text-base text-gray-300 mb-5 lg:mb-6 leading-relaxed font-mono opacity-80">
+              <Body className="text-xs lg:text-base mb-5 lg:mb-6 leading-relaxed text-human-text-light/90 dark:text-human-text-dark/90">
                 Where environmental impact meets digital transparency — Carbon neutrality through Web3 innovation
-              </p>
+              </Body>
               
-              {/* Technical corner accent - desktop only */}
               <div className="hidden lg:block absolute -right-4 top-1/2 w-3 h-3 border border-white opacity-30" style={{ transform: 'translateY(-50%)' }}>
-                <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-white" style={{ transform: 'translate(-50%, -50%)' }}></div>
+                <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-human-text-light dark:bg-human-text-dark" style={{ transform: 'translate(-50%, -50%)' }}></div>
               </div>
             </div>
 
-            {/* Buttons with technical accents */}
             <div className="flex flex-col lg:flex-row gap-3 lg:gap-4">
               <button 
                 onClick={() => window.location.href = '/canvas'}
-                className="relative px-5 lg:px-6 py-2 lg:py-2.5 bg-transparent text-white font-mono text-xs lg:text-sm border border-white hover:bg-white hover:text-black transition-all duration-200 group"
+                className="relative px-5 lg:px-6 py-2 lg:py-2.5 bg-transparent text-human-text-light dark:text-human-text-dark font-mono text-xs lg:text-sm border border-human-border hover:bg-human-text-light hover:text-black transition-all duration-200 group"
               >
-                <span className="hidden lg:block absolute -top-1 -left-1 w-2 h-2 border-t border-l border-white opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                <span className="hidden lg:block absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-white opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                <span className="hidden lg:block absolute -top-1 -left-1 w-2 h-2 border-t border-l border-human-border opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                <span className="hidden lg:block absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-human-border opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 EXPLORE CANVAS
               </button>
               
               <button 
                 onClick={() => window.location.href = '/pdf-download'}
-                className="relative px-5 lg:px-6 py-2 lg:py-2.5 bg-transparent border border-white text-white font-mono text-xs lg:text-sm hover:bg-white hover:text-black transition-all duration-200" 
+                className="relative px-5 lg:px-6 py-2 lg:py-2.5 bg-transparent border border-human-border text-human-text-light dark:text-human-text-dark font-mono text-xs lg:text-sm hover:bg-human-text-light hover:text-black transition-all duration-200" 
                 style={{ borderWidth: '1px' }}
               >
                 DOWNLOAD PDF
               </button>
             </div>
 
-            {/* Bottom technical notation - desktop only */}
             <div className="hidden lg:flex items-center gap-2 mt-6 opacity-40">
               <span className="text-white text-[9px] font-mono">∞</span>
               <div className="flex-1 h-px bg-white"></div>
@@ -332,37 +668,73 @@ export default function Home() {
       </div>
 
       {/* Bottom Footer */}
-      <div className="absolute left-0 right-0 z-20 border-t border-white/20 bg-black/40 backdrop-blur-sm" style={{ bottom: '5vh' }}>
-        <div className="container mx-auto px-4 lg:px-8 py-2 lg:py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3 lg:gap-6 text-[8px] lg:text-[9px] font-mono text-white/50">
+      <div className="fixed left-0 right-0 bottom-0 z-30 border-t border-human-border/60 dark:border-white/10 bg-white/70 dark:bg-black/40 backdrop-blur-md">
+        <div className="container mx-auto px-4 lg:px-8 py-2 lg:py-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-[9px] lg:text-[10px] font-mono text-human-muted-light dark:text-human-muted-dark">
+          <div className="flex items-center gap-3 lg:gap-6">
             <span className="hidden lg:inline">SYSTEM.ACTIVE</span>
             <span className="lg:hidden">SYS.ACT</span>
-            <div className="hidden lg:flex gap-1">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="w-1 h-3 bg-white/30" style={{ height: `${Math.random() * 12 + 4}px` }}></div>
-              ))}
-            </div>
-            <span>V1.0.0</span>
+          <div className="hidden lg:flex gap-1">
+            {meterBaseHeights.map((base, i) => {
+              const height = base + (meterOffsets[i] || 0);
+              return (
+                <div
+                  key={i}
+                  className="w-1 bg-human-text-light/50 dark:bg-white/30"
+                  style={{ height: `${height}px`, minHeight: `${base - 3}px`, maxHeight: `${base + 3}px`, transition: "height 120ms ease-out" }}
+                ></div>
+              );
+            })}
+          </div>
+            <span>v{APP_VERSION}</span>
           </div>
           
-          <div className="flex items-center gap-2 lg:gap-4 text-[8px] lg:text-[9px] font-mono text-white/50">
+          <div className="flex items-center gap-2 lg:gap-4">
             <span className="hidden lg:inline">◐ RENDERING</span>
             <div className="flex gap-1">
-              <div className="w-1 h-1 bg-white/60 rounded-full animate-pulse"></div>
-              <div className="w-1 h-1 bg-white/40 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-              <div className="w-1 h-1 bg-white/20 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+              <div className="w-1 h-1 bg-human-text-light/70 dark:bg-white/70 rounded-full animate-pulse"></div>
+              <div className="w-1 h-1 bg-human-text-light/50 dark:bg-white/50 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+              <div className="w-1 h-1 bg-human-text-light/30 dark:bg-white/30 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
             </div>
-            <span className="hidden lg:inline">FRAME: ∞</span>
+            <span className="hidden lg:inline">FRAMES: {frameRate}</span>
           </div>
         </div>
       </div>
 
       <style>{`
         .dither-pattern {
-          background-image: 
-            repeating-linear-gradient(0deg, transparent 0px, transparent 1px, white 1px, white 2px),
-            repeating-linear-gradient(90deg, transparent 0px, transparent 1px, white 1px, white 2px);
+          background-image:
+            repeating-linear-gradient(0deg, rgba(255,255,255,0.12) 0px, rgba(255,255,255,0.12) 1px, transparent 1px, transparent 2px),
+            repeating-linear-gradient(90deg, rgba(255,255,255,0.12) 0px, rgba(255,255,255,0.12) 1px, transparent 1px, transparent 2px);
           background-size: 3px 3px;
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        @keyframes orbit-xz {
+          0% { transform: translate(-50%, -50%) translateX(var(--orbit-radius, 200px)); }
+          25% { transform: translate(-50%, -50%) translateX(0px) translateY(0px); }
+          50% { transform: translate(-50%, -50%) translateX(calc(var(--orbit-radius, 200px) * -1)); }
+          75% { transform: translate(-50%, -50%) translateX(0px) translateY(0px); }
+          100% { transform: translate(-50%, -50%) translateX(var(--orbit-radius, 200px)); }
+        }
+
+        @keyframes orbit-yz {
+          0% { transform: translate(-50%, -50%) translateY(var(--orbit-radius, 200px)); }
+          25% { transform: translate(-50%, -50%) translateY(0px) translateX(0px); }
+          50% { transform: translate(-50%, -50%) translateY(calc(var(--orbit-radius, 200px) * -1)); }
+          75% { transform: translate(-50%, -50%) translateY(0px) translateX(0px); }
+          100% { transform: translate(-50%, -50%) translateY(var(--orbit-radius, 200px)); }
+        }
+
+        @keyframes orbit-xy {
+          0% { transform: translate(-50%, -50%) translateX(var(--orbit-radius, 200px)); }
+          25% { transform: translate(-50%, -50%) translateX(0px) translateY(var(--orbit-radius, 200px)); }
+          50% { transform: translate(-50%, -50%) translateX(calc(var(--orbit-radius, 200px) * -1)); }
+          75% { transform: translate(-50%, -50%) translateX(0px) translateY(calc(var(--orbit-radius, 200px) * -1)); }
+          100% { transform: translate(-50%, -50%) translateX(var(--orbit-radius, 200px)); }
         }
       `}</style>
     </main>
