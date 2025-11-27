@@ -8,11 +8,9 @@ import VideoBackground from '../components/ui/video-background';
 import appPkg from '../package.json';
 import { useTheme } from '../theme/ThemeProvider';
 
-
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
-  const useThreeJS = false; // keep Vitruvian CSS as the only active layer
   const { colorScheme, theme } = useTheme();
   const APP_VERSION = appPkg.version || "0.0.0";
   const [frameRate, setFrameRate] = useState(60);
