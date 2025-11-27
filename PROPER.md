@@ -2,8 +2,8 @@
 
 ## 📋 Version History
 
-### 🔧 Version 1.5.5 **[CURRENT]**
-**Date:** 2025-11-26  
+### 🔧 Version 1.5.7 **[CURRENT]**
+**Date:** 2025-11-27  
 **Type:** patch
 
 **Changes:**
@@ -12,7 +12,21 @@
 
 ### 📚 Previous Versions
 
-### 🔧 Version 1.5.4
+### 🔧 Version 1.5.6
+**Date:** 2025-11-26  
+**Type:** patch
+
+**Changes:**
+- Fixed TypeScript error in theme comparison (ColorScheme vs 'system')
+- Resolved handleClick undefined error in VideoBackground component
+- Optimized video/unicorn background sizing to match Vitruvian man proportions
+- Adjusted background positioning and reduced size to 10% of original
+- Maintained perfect circular shape with responsive dimensions
+
+
+---
+
+### 🔧 Version 1.5.5
 **Date:** 2025-11-26  
 **Type:** patch
 
@@ -113,4 +127,4 @@
 
 ---
 
-*Last updated: 11/26/2025*
+*Last updated: 11/27/2025*

@@ -1,22 +1,30 @@
 {
   "name": "human-zero",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251126210345",
+  "build": "20251127203232",
   "changelog": {
     "current": {
-      "version": "1.5.6",
-      "date": "2025-11-26",
+      "version": "1.5.7",
+      "date": "2025-11-27",
       "type": "patch",
       "changes": [
-        "Fixed TypeScript error in theme comparison (ColorScheme vs 'system')",
-        "Resolved handleClick undefined error in VideoBackground component",
-        "Optimized video/unicorn background sizing to match Vitruvian man proportions",
-        "Adjusted background positioning and reduced size to 10% of original",
-        "Maintained perfect circular shape with responsive dimensions"
+        "--commit"
       ]
     },
     "history": [
+      {
+        "version": "1.5.6",
+        "date": "2025-11-26",
+        "type": "patch",
+        "changes": [
+          "Fixed TypeScript error in theme comparison (ColorScheme vs 'system')",
+          "Resolved handleClick undefined error in VideoBackground component",
+          "Optimized video/unicorn background sizing to match Vitruvian man proportions",
+          "Adjusted background positioning and reduced size to 10% of original",
+          "Maintained perfect circular shape with responsive dimensions"
+        ]
+      },
       {
         "version": "1.5.5",
         "date": "2025-11-26",
@@ -107,12 +115,12 @@
   "semver": {
     "major": 1,
     "minor": 5,
-    "patch": 6,
+    "patch": 7,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-11-26T21:03:45.992Z",
+    "lastModified": "2025-11-27T20:32:32.342Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team"

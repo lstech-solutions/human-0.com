@@ -1,6 +1,6 @@
 {
   "name": "human-0-monorepo",
-  "version": "1.5.5",
+  "version": "1.5.7",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -26,6 +26,6 @@
     "turbo": "latest",
     "prettier": "latest"
   },
-  "packageManager": "pnpm@8.0.0",
+  "packageManager": "pnpm@9.15.0",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology"
 }
