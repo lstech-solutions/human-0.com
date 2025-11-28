@@ -9,6 +9,7 @@ class VersionManager {
     this.versionPath = path.join(__dirname, '../version.json');
     this.packagePath = path.join(__dirname, '../package.json');
     this.properPath = path.join(__dirname, '../PROPER.md');
+    this.webVersionPath = path.join(__dirname, '../apps/web/version.json');
     this.versionData = this.loadVersion();
   }
 
@@ -23,6 +24,16 @@ class VersionManager {
 
   saveVersion() {
     fs.writeFileSync(this.versionPath, JSON.stringify(this.versionData, null, 2));
+    this.saveWebVersion();
+  }
+
+  saveWebVersion() {
+    try {
+      fs.writeFileSync(this.webVersionPath, JSON.stringify(this.versionData, null, 2));
+      console.log(`✅ Updated apps/web/version.json to ${this.versionData.version}`);
+    } catch (error) {
+      console.error('Error updating apps/web/version.json:', error.message);
+    }
   }
 
   updatePackageVersion() {
@@ -207,7 +218,7 @@ class VersionManager {
   autoCommit(message) {
     try {
       // Add all package.json files to git
-      execSync('git add version.json package.json apps/*/package.json packages/*/package.json PROPER.md', { stdio: 'inherit' });
+      execSync('git add version.json apps/web/version.json package.json apps/*/package.json packages/*/package.json PROPER.md', { stdio: 'inherit' });
       
       // Commit with version info
       const commitMessage = message || `chore: bump version to ${this.versionData.version}`;
@@ -243,10 +254,12 @@ if (require.main === module) {
   
   switch (command) {
     case 'bump':
-      versionManager.incrementVersion(type, changes);
-      if (args.includes('--commit')) {
-        versionManager.autoCommit();
+      if (!args.includes('--commit')) {
+        console.error('This project requires each version bump to be tagged. Re-run with --commit to auto-create the git tag.');
+        process.exit(1);
       }
+      versionManager.incrementVersion(type, changes.filter(arg => arg !== '--commit'));
+      versionManager.autoCommit();
       break;
       
     case 'current':

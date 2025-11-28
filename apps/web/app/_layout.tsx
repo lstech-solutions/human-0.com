@@ -56,9 +56,10 @@ function NavigationStack() {
     return null;
   }
 
-  const navTheme = colorScheme === "dark" ? DarkTheme : LightTheme;
-  const headerBg = colorScheme === "dark" ? "#050B10" : "#F7F9FC";
-  const headerTint = colorScheme === "dark" ? "#00FF9C" : "#0A1628";
+  // Keep navigation bar consistently dark-themed regardless of app colorScheme
+  const navTheme = DarkTheme;
+  const headerBg = "#050B10";
+  const headerTint = "#00FF9C";
 
   return (
     <NavigationThemeProvider value={navTheme}>
@@ -74,6 +75,7 @@ function NavigationStack() {
               fontWeight: "bold",
             },
             contentStyle: {
+              // Allow screen content to respect app colorScheme
               backgroundColor: colorScheme === "dark" ? "#050B10" : "#FFFFFF",
             },
             headerRight: () => <ThemeSwitcher />,
@@ -117,7 +119,8 @@ function NavigationStack() {
             }}
           />
         </Stack>
-        <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
+        {/* Navigation bar is dark; use light status bar icons for consistency */}
+        <StatusBar style="light" />
       </View>
     </NavigationThemeProvider>
   );

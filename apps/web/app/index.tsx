@@ -8,6 +8,11 @@ import VideoBackground from '../components/ui/video-background';
 import appPkg from '../package.json';
 import { useTheme } from '../theme/ThemeProvider';
 import { MagnetizeButton } from '../components/ui/MagnetizeButton';
+import VersionDrawer from '../components/VersionDrawer';
+
+function randomizeZeroGlyphs(value: string): string {
+  return value.replace(/[01]/g, (digit) => (Math.random() < 0.5 ? digit : 'Ø'));
+}
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -20,6 +25,7 @@ export default function Home() {
   const meterBaseHeights = useMemo(() => [8, 12, 10, 14, 9, 11, 13, 7], []);
   const [meterOffsets, setMeterOffsets] = useState<number[]>(meterBaseHeights.map(() => 0));
   const meterIntervalRef = useRef<number | null>(null);
+  const [isVersionDrawerOpen, setIsVersionDrawerOpen] = useState(false);
 
   // Simulated frame indicator based on pointer/scroll velocity
   useEffect(() => {
@@ -308,7 +314,7 @@ export default function Home() {
       const orbitRadius = baseA;
       const size = isDesktop ? 12 : 8;
       const duration = isDesktop ? '8s' : '6s';
-      const glyph = idx === 0 ? '1' : 'Ø';
+      const glyph = idx === 0 ? '1' : randomizeZeroGlyphs('Ø');
 
       return (
         <div
@@ -443,7 +449,7 @@ export default function Home() {
           <div className="max-w-lg relative">
             <div className="flex items-center gap-2 mb-3 opacity-60">
               <div className="w-8 h-px bg-human-text-light dark:bg-human-text-dark/70"></div>
-              <span className="text-[10px] font-mono tracking-wider">001</span>
+              <span className="text-[10px] font-mono tracking-wider">{randomizeZeroGlyphs('00') + '1'}</span>
               <div className="flex-1 h-px bg-human-text-light dark:bg-human-text-dark/70"></div>
             </div>
 
@@ -504,35 +510,47 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Bottom Footer */}
-      <div className="fixed left-0 right-0 bottom-0 z-30 border-t border-human-border/60 dark:border-white/10 bg-white/70 dark:bg-black/40 backdrop-blur-md">
-        <div className="container mx-auto px-4 lg:px-8 py-2 lg:py-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-[9px] lg:text-[10px] font-mono text-human-muted-light dark:text-human-muted-dark">
+      <VersionDrawer
+        isOpen={isVersionDrawerOpen}
+        appVersion={APP_VERSION}
+        onClose={() => setIsVersionDrawerOpen(false)}
+      />
+
+      {/* Bottom Footer - light in light mode, GitHub-like dark bar in dark mode */}
+      <div className="fixed left-0 right-0 bottom-0 z-30 border-t border-[#d0d7de] bg-white/90 text-[#24292f] dark:border-[#30363d] dark:bg-[#0d1117] dark:text-[#8b949e]">
+        <div className="container mx-auto px-4 lg:px-8 py-2 lg:py-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-[9px] lg:text-[10px] font-mono">
           <div className="flex items-center gap-3 lg:gap-6">
-            <span className="hidden lg:inline">SYSTEM.ACTIVE</span>
-            <span className="lg:hidden">SYS.ACT</span>
+            <span className="hidden lg:inline tracking-[0.18em] uppercase text-[#57606a] dark:text-[#c9d1d9]">SYSTEM.ACTIVE</span>
+            <span className="lg:hidden tracking-[0.18em] uppercase text-[#57606a] dark:text-[#c9d1d9]">SYS.ACT</span>
             <div className="hidden lg:flex gap-1">
               {meterBaseHeights.map((base, i) => {
                 const height = base + (meterOffsets[i] || 0);
                 return (
                   <div
                     key={i}
-                    className="w-1 bg-human-text-light/50 dark:bg-white/30"
+                    className="w-1 bg-[#d0d7de] dark:bg-[#30363d]"
                     style={{ height: `${height}px`, minHeight: `${base - 3}px`, maxHeight: `${base + 3}px`, transition: "height 120ms ease-out" }}
                   ></div>
                 );
               })}
             </div>
-            <span>v{APP_VERSION}</span>
+            <button
+              type="button"
+              onClick={() => setIsVersionDrawerOpen(true)}
+              className="text-purple-600 hover:text-purple-500 dark:text-purple-300 dark:hover:text-purple-200 underline decoration-dotted underline-offset-2 transition-colors"
+            >
+              v{APP_VERSION}
+            </button>
           </div>
 
           <div className="flex items-center gap-2 lg:gap-4">
-            <span className="hidden lg:inline">◐ RENDERING</span>
+            <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e]">◐ RENDERING</span>
             <div className="flex gap-1">
-              <div className="w-1 h-1 bg-human-text-light/70 dark:bg-white/70 rounded-full animate-pulse"></div>
-              <div className="w-1 h-1 bg-human-text-light/50 dark:bg-white/50 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-              <div className="w-1 h-1 bg-human-text-light/30 dark:bg-white/30 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+              <div className="w-1 h-1 bg-[#57606a] dark:bg-[#8b949e] rounded-full animate-pulse"></div>
+              <div className="w-1 h-1 bg-[#8b949e] dark:bg-[#6e7681] rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+              <div className="w-1 h-1 bg-[#d0d7de] dark:bg-[#484f58] rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
             </div>
-            <span className="hidden lg:inline">FRAMES: {frameRate}</span>
+            <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e]">FRAMES: {frameRate}</span>
           </div>
         </div>
       </div>
