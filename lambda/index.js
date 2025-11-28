@@ -106,16 +106,22 @@ const serveLocalApi = async (event, apiPath) => {
     const fs = require('fs');
     const path = require('path');
     
-    // Map API paths to local files
+    // Map API paths to local files (corrected for actual packaged location)
     const apiFileMap = {
-      '/api/human-stats': 'api/human-stats+api.js',
-      '/api/terms': 'api/terms+api.js', 
-      '/api/privacy': 'api/privacy+api.js'
+      '/api/human-stats': 'server/_expo/functions/api/human-stats+api.js',
+      '/api/terms': 'server/_expo/functions/api/terms+api.js', 
+      '/api/privacy': 'server/_expo/functions/api/privacy+api.js'
     };
     
     const filePath = apiFileMap[apiPath];
     if (!filePath) {
       return jsonResponse(event, 404, { error: 'API endpoint not found' });
+    }
+    
+    // Check if file exists
+    if (!fs.existsSync(path.resolve(filePath))) {
+      console.error('API file not found:', path.resolve(filePath));
+      return jsonResponse(event, 500, { error: 'API file not found in deployment' });
     }
     
     // Clear require cache to get fresh module
