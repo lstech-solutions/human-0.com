@@ -2,7 +2,17 @@
 
 ## 📋 Version History
 
-### 🔧 Version 1.5.11 **[CURRENT]**
+### 🔧 Version 1.5.12 **[CURRENT]**
+**Date:** 2025-11-28  
+**Type:** patch
+
+**Changes:**
+- UI: BMC grid layout refinements & PDF button contrast
+
+
+### 📚 Previous Versions
+
+### 🔧 Version 1.5.11
 **Date:** 2025-11-28  
 **Type:** patch
 
@@ -10,7 +20,7 @@
 - UI: Business Model Canvas layout & Manifesto modal tweaks
 
 
-### 📚 Previous Versions
+---
 
 ### 🔧 Version 1.5.10
 **Date:** 2025-11-28  
