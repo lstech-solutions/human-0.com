@@ -1,6 +1,6 @@
 {
   "name": "human0-lambda-handler",
-  "version": "1.7.11",
+  "version": "1.7.12",
   "private": true,
   "type": "commonjs",
   "main": "index.js",

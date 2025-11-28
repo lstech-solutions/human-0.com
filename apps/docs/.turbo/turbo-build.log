@@ -1,22 +1,22 @@
 
-> @human-0/docs@1.7.10 prebuild /home/ed/Documents/LSTS/human-0.com/apps/docs
+> @human-0/docs@1.7.11 prebuild /home/ed/Documents/LSTS/human-0.com/apps/docs
 > cd ../.. && ./scripts/copy-locales.sh
 
 📦 Copying locales from i18n package...
 ✅ Copied locale files:
 total 208
 drwxrwxr-x  2 ed ed  4096 Nov 28 16:57 .
-drwxrwxr-x 11 ed ed  4096 Nov 28 17:53 ..
--rw-rw-r--  1 ed ed 17822 Nov 28 17:53 ar-SA.json
--rw-rw-r--  1 ed ed 18835 Nov 28 17:53 de-DE.json
--rw-rw-r--  1 ed ed 16855 Nov 28 17:53 en.json
--rw-rw-r--  1 ed ed 16992 Nov 28 17:53 es-CO.json
--rw-rw-r--  1 ed ed 17917 Nov 28 17:53 es-ES.json
--rw-rw-r--  1 ed ed 18095 Nov 28 17:53 es.json
--rw-rw-r--  1 ed ed 17918 Nov 28 17:53 es-MX.json
--rw-rw-r--  1 ed ed 17006 Nov 28 17:53 fr-FR.json
--rw-rw-r--  1 ed ed 16880 Nov 28 17:53 pt-BR.json
--rw-rw-r--  1 ed ed 16610 Nov 28 17:53 zh-CN.json
+drwxrwxr-x 12 ed ed  4096 Nov 28 18:07 ..
+-rw-rw-r--  1 ed ed 17822 Nov 28 18:29 ar-SA.json
+-rw-rw-r--  1 ed ed 18835 Nov 28 18:29 de-DE.json
+-rw-rw-r--  1 ed ed 16855 Nov 28 18:29 en.json
+-rw-rw-r--  1 ed ed 16992 Nov 28 18:29 es-CO.json
+-rw-rw-r--  1 ed ed 17917 Nov 28 18:29 es-ES.json
+-rw-rw-r--  1 ed ed 18095 Nov 28 18:29 es.json
+-rw-rw-r--  1 ed ed 17918 Nov 28 18:29 es-MX.json
+-rw-rw-r--  1 ed ed 17006 Nov 28 18:29 fr-FR.json
+-rw-rw-r--  1 ed ed 16880 Nov 28 18:29 pt-BR.json
+-rw-rw-r--  1 ed ed 16610 Nov 28 18:29 zh-CN.json
 🌐 Available locales:
 ar-SA
 de-DE
@@ -30,35 +30,14 @@ pt-BR
 zh-CN
 🎯 Build-time locale copying complete!
 
-> @human-0/docs@1.7.10 build /home/ed/Documents/LSTS/human-0.com/apps/docs
+> @human-0/docs@1.7.11 build /home/ed/Documents/LSTS/human-0.com/apps/docs
 > docusaurus build
 
 [INFO] [en] Creating an optimized production build...
-
-[ERROR] Error: Unable to build website for locale en.
-    at tryToBuildLocale (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0__react-dom@19.1._kklsqttrp4ht6tl3pyn3w2r3sm/node_modules/@docusaurus/core/lib/commands/build/build.js:83:15)
-    at async /home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0__react-dom@19.1._kklsqttrp4ht6tl3pyn3w2r3sm/node_modules/@docusaurus/core/lib/commands/build/build.js:35:9
-    at async mapAsyncSequential (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+utils@3.9.2_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/@docusaurus/utils/lib/jsUtils.js:21:24)
-    at async Command.build (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0__react-dom@19.1._kklsqttrp4ht6tl3pyn3w2r3sm/node_modules/@docusaurus/core/lib/commands/build/build.js:34:5)
-    at async Promise.all (index 0)
-    at async runCLI (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0__react-dom@19.1._kklsqttrp4ht6tl3pyn3w2r3sm/node_modules/@docusaurus/core/lib/commands/cli.js:56:5)
-    at async file:///home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0__react-dom@19.1._kklsqttrp4ht6tl3pyn3w2r3sm/node_modules/@docusaurus/core/bin/docusaurus.mjs:44:3 {
-  [cause]: Error: The path to the sidebar file does not exist at "sidebars.ts".
-  Please set the docs "sidebarPath" field in your config file to:
-  - a sidebars path that exists
-  - false: to disable the sidebar
-  - undefined: for Docusaurus to generate it automatically
-      at getVersionMetadataPaths (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0___htj4fazq6w7vlmxf7qxwneowuq/node_modules/@docusaurus/plugin-content-docs/lib/versions/files.js:145:15)
-      at async createVersionMetadata (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0___htj4fazq6w7vlmxf7qxwneowuq/node_modules/@docusaurus/plugin-content-docs/lib/versions/version.js:112:68)
-      at async Promise.all (index 0)
-      at async Object.pluginContentDocs [as plugin] (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0___htj4fazq6w7vlmxf7qxwneowuq/node_modules/@docusaurus/plugin-content-docs/lib/index.js:51:30)
-      at async initializePlugin (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0__react-dom@19.1._kklsqttrp4ht6tl3pyn3w2r3sm/node_modules/@docusaurus/core/lib/server/plugins/init.js:91:32)
-      at async Promise.all (index 1)
-      at async initPluginsConfigs (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0__react-dom@19.1._kklsqttrp4ht6tl3pyn3w2r3sm/node_modules/@docusaurus/core/lib/server/plugins/init.js:118:22)
-      at async initPlugins (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0__react-dom@19.1._kklsqttrp4ht6tl3pyn3w2r3sm/node_modules/@docusaurus/core/lib/server/plugins/init.js:128:39)
-      at async /home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0__react-dom@19.1._kklsqttrp4ht6tl3pyn3w2r3sm/node_modules/@docusaurus/core/lib/server/plugins/plugins.js:143:36
-      at async loadSite (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0__react-dom@19.1._kklsqttrp4ht6tl3pyn3w2r3sm/node_modules/@docusaurus/core/lib/server/site.js:155:45)
-}
-[INFO] Docusaurus version: 3.9.2
-Node version: v22.18.0
- ELIFECYCLE  Command failed with exit code 1.
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 19.51s
+[webpackbar] ✔ Client: Compiled successfully in 36.32s
+[WARNING] {"moduleIdentifier":"/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/babel-loader@9.2.1_@babel+core@7.28.5_webpack@5.103.0/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[5].use[0]!/home/ed/Documents/LSTS/human-0.com/apps/docs/src/components/Translate/index.tsx","moduleName":"./src/components/Translate/index.tsx","loc":"5:108-118","message":"Critical dependency: the request of a dependency is an expression","compilerPath":"server"}
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.

@@ -125,6 +125,19 @@ const serveLocalApi = async (event, apiPath) => {
     
     if (typeof apiModule.GET === 'function') {
       const response = await apiModule.GET();
+      
+      // Handle Response objects (from compiled Expo API routes)
+      if (response instanceof Response) {
+        const body = await response.text();
+        return {
+          statusCode: response.status,
+          headers: baseHeaders(event, response.headers.get('content-type') || 'application/json; charset=utf-8'),
+          body,
+          isBase64Encoded: false,
+        };
+      }
+      
+      // Handle direct JSON responses
       return {
         statusCode: 200,
         headers: baseHeaders(event, 'application/json; charset=utf-8'),

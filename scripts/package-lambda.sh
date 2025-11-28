@@ -32,6 +32,15 @@ cp "$LAMBDA_DIR/package.json" "$PACKAGE_DIR/"
 echo "→ Copy server build"
 cp -r "$BUILD_DIR" "$PACKAGE_DIR/server"
 
+echo "→ Copy API routes for Lambda proxy"
+mkdir -p "$PACKAGE_DIR/api"
+if [ -d "$BUILD_DIR/_expo/functions/api" ]; then
+  cp -r "$BUILD_DIR/_expo/functions/api" "$PACKAGE_DIR/"
+  echo "✅ API routes copied from _expo/functions/api"
+else
+  echo "⚠️  No API routes found in build output"
+fi
+
 if [ -f "$ROOT_DIR/config/versions.json" ]; then
   echo "→ Copy config/versions.json"
   cp "$ROOT_DIR/config/versions.json" "$PACKAGE_DIR/config/"
