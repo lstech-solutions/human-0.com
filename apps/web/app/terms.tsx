@@ -1,18 +1,41 @@
 import { useTranslation } from '@human-0/i18n';
-import { ScrollView, StyleSheet, View, Text } from 'react-native';
+import { ScrollView, StyleSheet, View, Text, Linking } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useEffect, useState } from 'react';
+import { Platform } from 'react-native';
 
 export default function TermsScreen() {
   const { t } = useTranslation();
   const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentLocale, setCurrentLocale] = useState<string>('en');
+
+  // Auto-detect language on mount
+  useEffect(() => {
+    const detectLanguage = () => {
+      // Try to get stored preference first
+      const stored = localStorage?.getItem('preferred-language');
+      if (stored) return stored;
+      
+      // Auto-detect from browser
+      if (Platform.OS === 'web' && navigator.language) {
+        const browserLang = navigator.language.split('-')[0]; // 'es', 'en', etc.
+        // Only use if we support this language
+        return ['en', 'es'].includes(browserLang) ? browserLang : 'en';
+      }
+      
+      return 'en'; // Default fallback
+    };
+
+    const detectedLocale = detectLanguage();
+    setCurrentLocale(detectedLocale);
+  }, []);
 
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch('/TERMS.md');
+        const res = await fetch(`/api/terms?locale=${currentLocale}`);
         if (!res.ok) throw new Error('Failed to load Terms of Service');
         const text = await res.text();
         setContent(text);
@@ -22,7 +45,44 @@ export default function TermsScreen() {
         setLoading(false);
       }
     })();
-  }, []);
+  }, [currentLocale]);
+
+  // HTML markdown renderer for web mode
+  const renderHTMLMarkdown = (md: string) => {
+    if (Platform.OS === 'web') {
+      // Convert markdown to HTML for web
+      let html = md
+        // Handle headers
+        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+        .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+        .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+        // Handle bold
+        .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+        // Handle italic
+        .replace(/\*(.*?)\*/gim, '<em>$1</em>')
+        .replace(/_(.*?)_/gim, '<em>$1</em>')
+        // Handle links
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: #00FF9C; text-decoration: underline;">$1</a>')
+        // Handle lists
+        .replace(/^- (.*$)/gim, '<li>$1</li>')
+        .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+        // Handle blockquotes
+        .replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>')
+        // Handle horizontal rules
+        .replace(/^---$/gim, '<hr style="border: 1px solid #00FF9C; opacity: 0.3; margin: 16px 0;" />')
+        // Handle line breaks
+        .replace(/\n\n/gim, '</p><p>')
+        .replace(/\n/gim, '<br />');
+      
+      // Wrap in paragraphs
+      html = `<div style="color: #E6ECE8; font-size: 16px; line-height: 24px; max-width: 100%;"><p>${html}</p></div>`;
+      
+      return {
+        __html: html
+      };
+    }
+    return null;
+  };
 
   // Simple markdown-to-text rendering for now.
   // In the future you can swap in a proper markdown renderer.
@@ -76,6 +136,14 @@ export default function TermsScreen() {
     });
   };
 
+  const changeLanguage = (locale: string) => {
+    setCurrentLocale(locale);
+    // Store preference for future visits
+    if (Platform.OS === 'web') {
+      localStorage.setItem('preferred-language', locale);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
@@ -84,6 +152,8 @@ export default function TermsScreen() {
           <Text style={styles.p}>Loading…</Text>
         ) : error ? (
           <Text style={styles.error}>Error: {error}</Text>
+        ) : Platform.OS === 'web' ? (
+          <div dangerouslySetInnerHTML={renderHTMLMarkdown(content) || { __html: '' }} />
         ) : (
           renderMarkdown(content)
         )}
@@ -157,5 +227,41 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#ff6b6b',
     marginBottom: 12,
+  },
+  languageSwitcher: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+    padding: 12,
+    backgroundColor: '#0A1419',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#00FF9C',
+  },
+  languageLabel: {
+    fontSize: 14,
+    color: '#E6ECE8',
+    fontWeight: '600',
+  },
+  languageButtons: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  languageButton: {
+    fontSize: 12,
+    color: '#E6ECE8',
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderRadius: 4,
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: '#E6ECE8',
+  },
+  languageButtonActive: {
+    backgroundColor: '#00FF9C',
+    color: '#050B10',
+    borderColor: '#00FF9C',
+    fontWeight: 'bold',
   },
 });

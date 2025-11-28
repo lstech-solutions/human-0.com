@@ -1,4 +1,4 @@
-name: Deploy Web
+name: Deploy Web & Docs
 
 on:
   push:
@@ -35,12 +35,22 @@ jobs:
         run: pnpm install --no-frozen-lockfile
       - name: Build
         run: |
+          # Build web app (static PWA) and docs (Docusaurus)
           pnpm --filter @human-0/web build:pwa
           pnpm --filter @human-0/docs build
       - name: Copy docs to web dist
         run: |
+          # Place Docusaurus build under /documentation so GitHub Pages serves it at that path
           mkdir -p apps/web/dist/documentation
           cp -r apps/docs/build/* apps/web/dist/documentation/
+          # Copy source markdown files needed by API routes (all languages)
+          mkdir -p apps/web/dist/docs
+          cp apps/docs/privacy.md apps/web/dist/docs/
+          cp apps/docs/terms.md apps/web/dist/docs/
+          # Copy Spanish versions for API routes
+          mkdir -p apps/web/dist/docs/i18n/es
+          cp apps/docs/i18n/es/docusaurus-plugin-content-docs/current/privacy.md apps/web/dist/docs/i18n/es/
+          cp apps/docs/i18n/es/docusaurus-plugin-content-docs/current/terms.md apps/web/dist/docs/i18n/es/
       - name: Copy public files
         run: |
           mkdir -p apps/web/dist/output

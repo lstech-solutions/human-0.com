@@ -127,6 +127,18 @@ function NavigationStack() {
               title: "PDF Downloads",
             }}
           />
+          <Stack.Screen
+            name="documentation/privacy"
+            options={{
+              title: "Privacy Policy",
+            }}
+          />
+          <Stack.Screen
+            name="documentation/terms"
+            options={{
+              title: "Terms of Service",
+            }}
+          />
         </Stack>
         {/* Navigation bar is dark; use light status bar icons for consistency */}
         <StatusBar style="light" />

@@ -686,11 +686,11 @@ export default function Home() {
               v{APP_VERSION}
             </button>
             <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e] mx-1">·</span>
-            <Link href="/privacy" className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] underline decoration-dotted underline-offset-2 transition-colors">
+            <Link href="/documentation/privacy" className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] underline decoration-dotted underline-offset-2 transition-colors">
               Privacy
             </Link>
             <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e] mx-1">·</span>
-            <Link href="/terms" className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] underline decoration-dotted underline-offset-2 transition-colors">
+            <Link href="/documentation/terms" className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] underline decoration-dotted underline-offset-2 transition-colors">
               Terms
             </Link>
             <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e] mx-1">·</span>
