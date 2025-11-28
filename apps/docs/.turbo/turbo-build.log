@@ -2896,4 +2896,1146 @@
 [32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (11%) [90m0/1 entries 1029/1106 dependencies 178/323 modules 142 active[39m 
  [90m...m›[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/EditMetaRow/styles.module.css[39m
 
-[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 997/1061 dependencies 216/317 modules 96 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocCard/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (11%) [90m0/1 entries 1041/1112 dependencies 179/331 modules 145 active[39m 
+ [90m...39m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/AnnouncementBar/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1000/1061 dependencies 220/320 modules 97 active[39m 
+ [90mcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocRoot/Layout/styles.module.css[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (11%) [90m0/1 entries 1058/1133 dependencies 181/334 modules 151 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Footer/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1001/1062 dependencies 221/320 modules 99 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Footer/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1071/1148 dependencies 182/339 modules 153 active[39m 
+ [90m...css-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/AnnouncementBar/Content/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1009/1073 dependencies 222/322 modules 100 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Content/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1071/1149 dependencies 182/339 modules 157 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/TOC/Mobile/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1022/1081 dependencies 224/326 modules 99 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocBreadcrumbs/Items/Home/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1090/1172 dependencies 207/341 modules 134 active[39m 
+ [90m...s[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1042/1101 dependencies 226/329 modules 100 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+plugin-content-blog@3.9.2_@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1_63eubaw4licti6m3gd5bqo4r44/node_modules/@docusaurus/plugin-content-blog/lib/client/contexts.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1114/1194 dependencies 212/349 modules 132 active[39m 
+ [90m...s-loader [34m›[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-common@3.9.2_@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@typ_x5ue5ixq2ikjmu5qavrhtiyl4a/node_modules/@docusaurus/theme-common/lib/hooks/styles.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1042/1101 dependencies 226/329 modules 103 active[39m 
+ [90m../../node_modules/.pnpm/prismjs@1.30.0/node_modules/prismjs/components|sync|/^.\/()$[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1122/1200 dependencies 212/351 modules 138 active[39m 
+ [90m...9m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TagsListByLetter/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1052/1114 dependencies 226/333 modules 107 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/TOC/Desktop/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1122/1200 dependencies 212/351 modules 139 active[39m 
+ [90m...[39m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Layout/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1077/1139 dependencies 229/340 modules 106 active[39m 
+ [90mcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/Content/styles.module.css[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1133/1200 dependencies 219/357 modules 133 active[39m 
+ [90m...m›[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocCardList/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1085/1153 dependencies 233/343 modules 107 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1133/1200 dependencies 219/357 modules 138 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1109/1160 dependencies 237/349 modules 106 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1133/1200 dependencies 219/357 modules 138 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1110/1182 dependencies 239/349 modules 110 active[39m 
+ [90mcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Tag/styles.module.css[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1154/1227 dependencies 219/362 modules 139 active[39m 
+ [90m...[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/Layout/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1110/1182 dependencies 239/349 modules 110 active[39m 
+ [90mcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Tag/styles.module.css[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1154/1227 dependencies 219/362 modules 139 active[39m 
+ [90m...[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/Layout/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1123/1183 dependencies 265/352 modules 84 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocRoot/Layout/Main/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1160/1228 dependencies 219/365 modules 143 active[39m 
+ [90m...der [34m›[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TOC/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1137/1188 dependencies 271/355 modules 81 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/SearchBar.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1185/1252 dependencies 222/375 modules 146 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItem/Content/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1137/1188 dependencies 273/355 modules 82 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/ColorModeToggle/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1213/1273 dependencies 235/379 modules 140 active[39m 
+ [90m...loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/AnnouncementBar/CloseButton/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1145/1203 dependencies 273/357 modules 84 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/Logo/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1224/1294 dependencies 238/382 modules 142 active[39m 
+ [90m...[34m›[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocCard/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1160/1211 dependencies 285/358 modules 73 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/Search/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1224/1294 dependencies 238/382 modules 142 active[39m 
+ [90m...[34m›[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocCard/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1166/1215 dependencies 285/361 modules 74 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Footer/Links/Simple/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1239/1304 dependencies 239/385 modules 144 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/SearchBar.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1166/1215 dependencies 285/361 modules 76 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Footer/Links/MultiColumn/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1249/1309 dependencies 239/389 modules 148 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/MobileSidebar/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1166/1215 dependencies 285/361 modules 76 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Footer/Links/MultiColumn/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1249/1309 dependencies 239/389 modules 150 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/ColorModeToggle/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1183/1234 dependencies 287/367 modules 77 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItem/Content/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1260/1324 dependencies 240/394 modules 150 active[39m 
+ [90m....js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1183/1234 dependencies 287/367 modules 79 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItem/Footer/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1260/1324 dependencies 240/394 modules 152 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/Search/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1202/1267 dependencies 300/370 modules 67 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItem/Footer/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1283/1349 dependencies 243/401 modules 153 active[39m 
+ [90m...s-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocBreadcrumbs/Items/Home/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1213/1268 dependencies 302/373 modules 68 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/BlogSidebar/Mobile/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1283/1352 dependencies 243/401 modules 158 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TagsListInline/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1221/1284 dependencies 306/373 modules 67 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/BlogSidebar/Mobile/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1310/1364 dependencies 244/410 modules 159 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/MDXComponents/Details.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1230/1284 dependencies 308/375 modules 67 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TagsListInline/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1310/1366 dependencies 244/410 modules 166 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TOCCollapsible/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1241/1293 dependencies 311/379 modules 65 active[39m 
+ [90m...s[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1310/1366 dependencies 244/410 modules 166 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TOCCollapsible/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1252/1301 dependencies 313/384 modules 66 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/MDXComponents/Code.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1333/1388 dependencies 248/415 modules 164 active[39m 
+ [90m...[34m›[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocCard/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1264/1315 dependencies 321/386 modules 65 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/MDXComponents/A/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1333/1388 dependencies 248/415 modules 167 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/MDXComponents/Img/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1282/1327 dependencies 324/389 modules 62 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TOCCollapsible/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1349/1404 dependencies 248/424 modules 176 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Edit/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1285/1327 dependencies 324/392 modules 63 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/Types.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1369/1421 dependencies 253/431 modules 173 active[39m 
+ [90m...postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/BlogSidebar/Desktop/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1285/1327 dependencies 324/392 modules 68 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Edit/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1369/1423 dependencies 253/431 modules 178 active[39m 
+ [90m...-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocRoot/Layout/Sidebar/ExpandButton/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1322/1377 dependencies 333/402 modules 67 active[39m 
+ [90m....js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1369/1423 dependencies 253/431 modules 178 active[39m 
+ [90m...-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocRoot/Layout/Sidebar/ExpandButton/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1332/1392 dependencies 334/403 modules 69 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/ColorModeToggle/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1369/1423 dependencies 253/431 modules 178 active[39m 
+ [90m...-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocRoot/Layout/Sidebar/ExpandButton/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1349/1401 dependencies 339/409 modules 65 active[39m 
+ [90mstatic/img/undraw_docusaurus_mountain.svg[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1369/1423 dependencies 253/431 modules 178 active[39m 
+ [90m...-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocRoot/Layout/Sidebar/ExpandButton/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1349/1411 dependencies 339/409 modules 69 active[39m 
+ [90mcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TOCCollapsible/styles.module.css[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1369/1423 dependencies 253/431 modules 178 active[39m 
+ [90m...-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocRoot/Layout/Sidebar/ExpandButton/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1361/1414 dependencies 346/409 modules 63 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Logo/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1404/1450 dependencies 253/444 modules 182 active[39m 
+ [90m...[39m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TOCCollapsible/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1361/1414 dependencies 346/409 modules 63 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Logo/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1407/1471 dependencies 257/445 modules 186 active[39m 
+ [90m...der [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Blog/Components/Author/Socials/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1366/1414 dependencies 348/412 modules 61 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/ColorModeToggle/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1423/1480 dependencies 258/449 modules 191 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/StackOverflow/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1372/1414 dependencies 349/417 modules 64 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Footer/LinkItem/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1423/1480 dependencies 258/449 modules 191 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/StackOverflow/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1380/1444 dependencies 355/421 modules 62 active[39m 
+ [90m...[34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocRoot/Layout/Sidebar/ExpandButton/styles.module.css[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1433/1488 dependencies 262/456 modules 188 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/LinkedIn/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1380/1444 dependencies 355/421 modules 62 active[39m 
+ [90m...[34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocRoot/Layout/Sidebar/ExpandButton/styles.module.css[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1433/1488 dependencies 262/456 modules 192 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/Threads/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1400/1458 dependencies 358/426 modules 64 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/X/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1449/1501 dependencies 264/464 modules 191 active[39m 
+ [90m...[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/Search/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1400/1458 dependencies 358/426 modules 68 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/Default/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1453/1502 dependencies 264/467 modules 195 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/YouTube/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1414/1469 dependencies 363/426 modules 63 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/Bluesky/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1461/1518 dependencies 268/470 modules 200 active[39m 
+ [90m...l-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/MobileSidebar/SecondaryMenu/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1414/1469 dependencies 363/426 modules 63 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/Bluesky/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1487/1530 dependencies 268/475 modules 202 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/ColorModeToggle/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1414/1469 dependencies 363/426 modules 63 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/Bluesky/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (12%) [90m0/1 entries 1488/1541 dependencies 268/476 modules 207 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/BlogSidebar/Content/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1429/1469 dependencies 369/429 modules 58 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/Threads/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1502/1555 dependencies 273/477 modules 203 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1437/1476 dependencies 370/431 modules 59 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/Instagram/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1526/1564 dependencies 278/483 modules 200 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeInline/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1437/1476 dependencies 370/431 modules 61 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/Mastodon/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1526/1564 dependencies 278/483 modules 204 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/Type/Tip.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1445/1479 dependencies 372/436 modules 60 active[39m 
+ [90mcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/ColorModeToggle/styles.module.css[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1573/1618 dependencies 280/495 modules 212 active[39m 
+ [90m...[39m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TOCCollapsible/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1454/1480 dependencies 373/442 modules 63 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Details/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1573/1618 dependencies 280/495 modules 213 active[39m 
+ [90mcss-loader [34m›[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/infima@0.2.0-alpha.45/node_modules/infima/dist/css/default/default.css|0|||}}[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1457/1493 dependencies 373/445 modules 69 active[39m 
+ [90m...l-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/DocsVersionDropdownNavbarItem.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1578/1618 dependencies 285/500 modules 211 active[39m 
+ [90m...ostcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/Threads/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1489/1536 dependencies 376/453 modules 71 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/Type/Info.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1585/1636 dependencies 286/500 modules 214 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebar/Mobile/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1510/1548 dependencies 377/453 modules 76 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebar/Desktop/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1593/1636 dependencies 286/503 modules 215 active[39m 
+ [90m...[34m›[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Details/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1542/1577 dependencies 387/459 modules 72 active[39m 
+ [90m...-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/LocaleDropdownNavbarItem/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1600/1638 dependencies 286/510 modules 218 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/SearchNavbarItem.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1542/1577 dependencies 387/459 modules 72 active[39m 
+ [90m...-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/LocaleDropdownNavbarItem/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1613/1664 dependencies 286/511 modules 224 active[39m 
+ [90m...s-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItem/Header/Title/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1570/1599 dependencies 394/466 modules 67 active[39m 
+ [90m...-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/LocaleDropdownNavbarItem/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1617/1664 dependencies 287/512 modules 224 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/ExternalLink/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1575/1606 dependencies 400/466 modules 66 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/LightMode/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1636/1669 dependencies 288/517 modules 229 active[39m 
+ [90m...js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1582/1606 dependencies 404/471 modules 63 active[39m 
+ [90m...s[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1636/1669 dependencies 288/517 modules 229 active[39m 
+ [90m...js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1584/1608 dependencies 407/471 modules 61 active[39m 
+ [90m...-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/LocaleDropdownNavbarItem/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1649/1686 dependencies 288/519 modules 231 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-common@3.9.2_@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@typ_x5ue5ixq2ikjmu5qavrhtiyl4a/node_modules/@docusaurus/theme-common/lib/components/Details/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1584/1608 dependencies 407/471 modules 64 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/ExternalLink/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1652/1693 dependencies 288/522 modules 232 active[39m 
+ [90m...[39m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Socials/X/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1591/1614 dependencies 416/473 modules 57 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-common@3.9.2_@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@typ_x5ue5ixq2ikjmu5qavrhtiyl4a/node_modules/@docusaurus/theme-common/lib/components/Details/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1660/1693 dependencies 288/525 modules 237 active[39m 
+ [90m...m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/ExternalLink/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1591/1614 dependencies 416/473 modules 57 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-common@3.9.2_@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@typ_x5ue5ixq2ikjmu5qavrhtiyl4a/node_modules/@docusaurus/theme-common/lib/components/Details/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1688/1714 dependencies 292/543 modules 245 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/Layout/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1600/1623 dependencies 418/474 modules 56 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-common@3.9.2_@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@typ_x5ue5ixq2ikjmu5qavrhtiyl4a/node_modules/@docusaurus/theme-common/lib/components/Details/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1697/1727 dependencies 295/543 modules 247 active[39m 
+ [90m... postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-common@3.9.2_@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@typ_x5ue5ixq2ikjmu5qavrhtiyl4a/node_modules/@docusaurus/theme-common/lib/components/Details/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1600/1623 dependencies 418/474 modules 56 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-common@3.9.2_@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@typ_x5ue5ixq2ikjmu5qavrhtiyl4a/node_modules/@docusaurus/theme-common/lib/components/Details/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1713/1730 dependencies 300/547 modules 243 active[39m 
+ [90m... postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-common@3.9.2_@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@typ_x5ue5ixq2ikjmu5qavrhtiyl4a/node_modules/@docusaurus/theme-common/lib/components/Details/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1613/1623 dependencies 424/481 modules 57 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/Icon/Warning.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1713/1730 dependencies 300/547 modules 243 active[39m 
+ [90m... postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-common@3.9.2_@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@typ_x5ue5ixq2ikjmu5qavrhtiyl4a/node_modules/@docusaurus/theme-common/lib/components/Details/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1626/1645 dependencies 431/481 modules 50 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/Layout/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1718/1730 dependencies 300/547 modules 247 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebarItems/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1638/1645 dependencies 431/488 modules 51 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/Icon/Info.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1718/1730 dependencies 300/547 modules 247 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebarItems/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1651/1675 dependencies 433/489 modules 56 active[39m 
+ [90m...loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/DropdownNavbarItem/Mobile/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1734/1748 dependencies 300/548 modules 248 active[39m 
+ [90m...m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Content/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1651/1675 dependencies 433/489 modules 56 active[39m 
+ [90m...loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/DropdownNavbarItem/Mobile/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1738/1751 dependencies 300/552 modules 252 active[39m 
+ [90m... [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebar/Desktop/CollapseButton/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1680/1693 dependencies 452/493 modules 41 active[39m 
+ [90m...oader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/DropdownNavbarItem/Desktop/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1742/1752 dependencies 300/556 modules 256 active[39m 
+ [90m...-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/DefaultNavbarItem/Mobile/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1685/1693 dependencies 453/495 modules 41 active[39m 
+ [90m...-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebar/Desktop/Content/styles.module.css[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1760/1772 dependencies 301/558 modules 257 active[39m 
+ [90m...loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/DefaultNavbarItem/Desktop/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1689/1696 dependencies 457/496 modules 39 active[39m 
+ [90m...oader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/DropdownNavbarItem/Desktop/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1769/1777 dependencies 301/564 modules 260 active[39m 
+ [90m...m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Content/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1689/1696 dependencies 457/496 modules 39 active[39m 
+ [90m...oader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/DropdownNavbarItem/Desktop/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1771/1792 dependencies 301/566 modules 263 active[39m 
+ [90m...m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Admonition/Layout/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1691/1696 dependencies 457/498 modules 40 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Container/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1782/1792 dependencies 301/567 modules 266 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebarItem/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1691/1696 dependencies 457/498 modules 41 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Layout/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1782/1792 dependencies 301/567 modules 266 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebarItem/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1712/1718 dependencies 458/499 modules 41 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Layout/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1790/1797 dependencies 301/570 modules 267 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/NavbarNavLink.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1713/1718 dependencies 475/500 modules 25 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebarItem/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1798/1806 dependencies 309/571 modules 262 active[39m 
+ [90m...34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/NavbarItem/DropdownNavbarItem/Mobile/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1717/1723 dependencies 475/502 modules 27 active[39m 
+ [90mcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Layout/styles.module.css[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1799/1806 dependencies 309/572 modules 263 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Content/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1719/1725 dependencies 478/502 modules 24 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebarItem/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1810/1814 dependencies 309/576 modules 264 active[39m 
+ [90m...9m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Layout/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1729/1733 dependencies 479/505 modules 26 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Title/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1813/1821 dependencies 310/579 modules 269 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebarItem/Link/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1735/1740 dependencies 480/508 modules 26 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebarItem/Category/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1813/1821 dependencies 310/579 modules 269 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebarItem/Link/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1750/1766 dependencies 480/509 modules 29 active[39m 
+ [90mcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/styles.module.css[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1843/1850 dependencies 310/583 modules 273 active[39m 
+ [90m...css-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebarItem/Category/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1766/1770 dependencies 486/512 modules 26 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocSidebarItem/Category/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1845/1851 dependencies 310/585 modules 274 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Line/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1768/1770 dependencies 496/514 modules 17 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+core@3.9.2_@mdx-js+react@3.1.1_@types+react@19.1.17_react@19.1.0__react-dom@19.1._kklsqttrp4ht6tl3pyn3w2r3sm/node_modules/@docusaurus/core/lib/client/exports/BrowserOnly.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1850/1859 dependencies 311/585 modules 274 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Line/index.js[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1768/1770 dependencies 496/514 modules 18 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Line/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1857/1859 dependencies 311/591 modules 275 active[39m 
+ [90m...m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1776/1778 dependencies 497/516 modules 19 active[39m 
+ [90m...js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1872/1880 dependencies 312/593 modules 280 active[39m 
+ [90mcss-loader [34m›[39m[90m postcss-loader [34m›[39m[90m src/pages/index.module.css|0|||}}[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1776/1778 dependencies 497/516 modules 19 active[39m 
+ [90m...js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1872/1880 dependencies 312/593 modules 281 active[39m 
+ [90m...[39m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Line/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1792/1798 dependencies 500/519 modules 19 active[39m 
+ [90m...js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1876/1883 dependencies 314/597 modules 282 active[39m 
+ [90m...[39m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Line/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1792/1798 dependencies 500/519 modules 19 active[39m 
+ [90m...js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1878/1885 dependencies 315/597 modules 282 active[39m 
+ [90m...[39m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Line/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1800/1800 dependencies 503/524 modules 18 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/Button/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1878/1885 dependencies 315/597 modules 282 active[39m 
+ [90m...[39m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Line/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 1807/1809 dependencies 506/524 modules 18 active[39m 
+ [90mbabel-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/Button/index.js[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1885/1885 dependencies 315/603 modules 287 active[39m 
+ [90m...oader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/CopyButton/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m sealing (71%)  
+ [90mdependencies optimization[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1885/1885 dependencies 315/603 modules 287 active[39m 
+ [90m...oader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/CopyButton/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[37m█[39m[37m█[39m[37m█[39m sealing (88%)  
+ [90mruntime requirements[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1885/1894 dependencies 315/603 modules 288 active[39m 
+ [90m...r [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/WordWrapButton/styles.module.css[39m
+
+[33m●[39m [33mServer[39m [33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m[33m█[39m emitting (98%)  
+ [90mafter emit[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1885/1894 dependencies 315/603 modules 288 active[39m 
+ [90m...r [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/WordWrapButton/styles.module.css[39m
+
+[33m✔ Server[39m
+[90m  Compiled successfully in 21.33s[39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1898/1898 dependencies 320/604 modules 284 active[39m 
+ [90mcss-loader [34m›[39m[90m postcss-loader [34m›[39m[90m src/components/HomepageFeatures/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1902/1902 dependencies 324/605 modules 281 active[39m 
+ [90m...[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Layout/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1910/1910 dependencies 328/607 modules 278 active[39m 
+ [90m...[39m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/MDXPage/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (13%) [90m0/1 entries 1930/1930 dependencies 349/612 modules 262 active[39m 
+ [90m...ostcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/SkipToContent/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1942/1942 dependencies 364/615 modules 250 active[39m 
+ [90m... [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-common@3.9.2_@docusaurus+plugin-content-docs@3.9.2_@mdx-js+react@3.1.1_@typ_x5ue5ixq2ikjmu5qavrhtiyl4a/node_modules/@docusaurus/theme-common/lib/components/ThemedComponent/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1958/1958 dependencies 378/619 modules 239 active[39m 
+ [90m...4m›[39m[90m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TOC/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1966/1966 dependencies 387/621 modules 233 active[39m 
+ [90m...stcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Layout/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1973/1973 dependencies 394/622 modules 228 active[39m 
+ [90m...r [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/WordWrapButton/styles.module.css[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 1990/1990 dependencies 414/627 modules 213 active[39m 
+ [90m... postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Footer/Logo/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 2010/2010 dependencies 430/632 modules 201 active[39m 
+ [90m...stcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/TagsListInline/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (14%) [90m0/1 entries 2030/2030 dependencies 444/637 modules 190 active[39m 
+ [90m...ostcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Navbar/Search/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 2044/2048 dependencies 463/640 modules 176 active[39m 
+ [90m...tcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/ColorModeToggle/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 2066/2066 dependencies 488/646 modules 157 active[39m 
+ [90m...9m postcss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/Icon/Edit/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 2074/2074 dependencies 504/648 modules 144 active[39m 
+ [90m...r [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/WordWrapButton/styles.module.css[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (15%) [90m0/1 entries 2097/2097 dependencies 530/653 modules 123 active[39m 
+ [90m...r [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/WordWrapButton/styles.module.css[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (16%) [90m0/1 entries 2121/2121 dependencies 555/659 modules 102 active[39m 
+ [90m...r [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/WordWrapButton/styles.module.css[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (16%) [90m0/1 entries 2138/2138 dependencies 592/664 modules 72 active[39m 
+ [90m...39m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/DocRoot/Layout/Sidebar/ExpandButton/styles.module.css|0[39m
+[90m|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (16%) [90m0/1 entries 2154/2154 dependencies 599/668 modules 66 active[39m 
+ [90m...css-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Layout/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m building (16%) [90m0/1 entries 2174/2174 dependencies 629/673 modules 41 active[39m 
+ [90m...ss-loader [34m›[39m[90m ../../node_modules/.pnpm/@docusaurus+theme-classic@3.9.2_@types+react@19.1.17_react-dom@19.1.0_react@19.1.0__react@19.1.0_typescript@5.6.3/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Buttons/styles.module.css|0|||}}[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m sealing (70%) [90mfinish module graph[39m 
+ [90mInnerGraphPlugin[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m[37m█[39m sealing (78%)  
+ [90mchunk modules optimization[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m[37m█[39m sealing (88%)  
+ [90mruntime requirements[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m sealing (92%) [90masset processing[39m 
+ [90mCssMinimizerPlugin[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[37m█[39m[37m█[39m sealing (92%) [90masset processing[39m 
+ [90mRealContentHashPlugin[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m emitting (98%)  
+ [90mafter emit[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m✔ Client[39m
+[90m  Compiled successfully in 29.53s[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build"[24m[39m.
+[36m[1m[INFO][22m[39m [34m[1m[es][22m[39m Creating an optimized production build...
+
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m cache (99%) [90mshutdown[39m [90mIdleFileCachePlugin[39m
+ [90mresolving[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m cache (99%) [90mshutdown[39m [90mIdleFileCachePlugin[39m
+ [90mmodules[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m cache (99%) [90mshutdown[39m [90mIdleFileCachePlugin[39m
+ [90mserialize pack[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[32m●[39m [32mClient[39m [32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m[32m█[39m cache (99%) [90mshutdown[39m [90mIdleFileCachePlugin[39m
+ [90mstored[39m
+
+[33m✔ Server[39m
+[90m  [39m
+
+[32m[1m[SUCCESS][22m[39m Generated static files in [36m[4m"build/es"[24m[39m.
+[36m[1m[INFO][22m[39m Use [36m`npm run serve`[39m command to test your build locally.

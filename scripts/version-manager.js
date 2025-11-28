@@ -83,6 +83,19 @@ class VersionManager {
         });
       }
       
+      // Update lambda package.json
+      const lambdaPackagePath = path.join(__dirname, '../lambda/package.json');
+      if (fs.existsSync(lambdaPackagePath)) {
+        try {
+          const lambdaPackageData = JSON.parse(fs.readFileSync(lambdaPackagePath, 'utf8'));
+          lambdaPackageData.version = this.versionData.version;
+          fs.writeFileSync(lambdaPackagePath, JSON.stringify(lambdaPackageData, null, 2));
+          console.log(`✅ Updated lambda/package.json to ${this.versionData.version}`);
+        } catch (error) {
+          console.error(`Error updating lambda/package.json:`, error.message);
+        }
+      }
+      
     } catch (error) {
       console.error('Error updating package.json:', error.message);
     }
@@ -217,11 +230,31 @@ class VersionManager {
 
   autoCommit(message) {
     try {
-      // Add all package.json files to git
-      execSync('git add version.json apps/web/version.json package.json apps/*/package.json packages/*/package.json CHANGELOG.md', { stdio: 'inherit' });
+      // Get list of changed files
+      let changedFiles = [];
+      try {
+        const output = execSync('git diff --name-only', { encoding: 'utf8' });
+        changedFiles = output.trim().split('\n').filter(f => f.length > 0);
+      } catch (error) {
+        // No git diff output
+      }
+      
+      // Add all changes to git
+      execSync('git add .', { stdio: 'inherit' });
+      
+      // Generate commit message with file changes
+      let commitMessage = message || `chore: bump version to ${this.versionData.version}`;
+      
+      if (changedFiles.length > 0 && !message) {
+        const fileSummary = changedFiles.map(f => {
+          const parts = f.split('/');
+          return parts[parts.length - 1] || f;
+        }).slice(0, 3).join(', ');
+        const more = changedFiles.length > 3 ? ` +${changedFiles.length - 3} more` : '';
+        commitMessage = `chore: bump version to ${this.versionData.version}\n\nChanges: ${fileSummary}${more}`;
+      }
       
       // Commit with version info
-      const commitMessage = message || `chore: bump version to ${this.versionData.version}`;
       execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });
       
       // Create git tag

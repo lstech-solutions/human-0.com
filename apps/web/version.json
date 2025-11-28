@@ -1,18 +1,26 @@
 {
   "name": "human-zero",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251128165517",
+  "build": "20251128165901",
   "changelog": {
     "current": {
-      "version": "1.7.0",
+      "version": "1.7.1",
       "date": "2025-11-28",
-      "type": "minor",
+      "type": "patch",
       "changes": [
-        "Version 1.7.0 release"
+        "Version 1.7.1 release"
       ]
     },
     "history": [
+      {
+        "version": "1.7.0",
+        "date": "2025-11-28",
+        "type": "minor",
+        "changes": [
+          "Version 1.7.0 release"
+        ]
+      },
       {
         "version": "1.6.19",
         "date": "2025-11-28",
@@ -339,12 +347,12 @@
   "semver": {
     "major": 1,
     "minor": 7,
-    "patch": 0,
+    "patch": 1,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-11-28T16:55:17.835Z",
+    "lastModified": "2025-11-28T16:59:01.856Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team"
