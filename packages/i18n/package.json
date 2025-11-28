@@ -1,16 +1,16 @@
 {
   "name": "@human-0/i18n",
-  "version": "1.6.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "1.6.1",
+  "main": "index.ts",
+  "types": "index.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./index.ts",
+      "default": "./index.ts"
     },
     "./hooks": {
-      "types": "./dist/hooks.d.ts",
-      "default": "./dist/hooks.js"
+      "types": "./hooks.ts",
+      "default": "./hooks.ts"
     }
   },
   "scripts": {
