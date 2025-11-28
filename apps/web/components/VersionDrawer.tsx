@@ -97,6 +97,15 @@ function VersionDrawerInner({ isOpen, appVersion, onClose }: VersionDrawerProps)
                 </p>
               </div>
 
+              <div className="relative my-4">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-white/10"></div>
+                </div>
+                <div className="relative flex justify-center text-xs">
+                  <span className="bg-[#050B10] px-3 text-white/30">················</span>
+                </div>
+              </div>
+
               <div
                 className={
                   "overflow-y-auto transition-all duration-300 border-t border-white/10 pt-2 mt-2 " +
@@ -127,25 +136,27 @@ function VersionDrawerInner({ isOpen, appVersion, onClose }: VersionDrawerProps)
                     "See GitHub release notes for full details.";
 
                   return (
-                    <li key={release.version} className="flex items-center justify-between">
-                      <div>
-                        <a
-                          href={href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-purple-300 hover:text-purple-200 underline decoration-dotted underline-offset-2"
-                          title={`View release v${release.version} on GitHub`}
-                        >
-                          v{release.version}
-                        </a>
-                        <span className="text-white/70 ml-2"> – {description}</span>
-                      </div>
-                      <div className="text-[11px] lg:text-xs text-white/60 font-mono">
-                        {release.timestamp ? 
-                          new Date(release.timestamp).toISOString().replace('T', ' ').substring(0, 16) + ' UTC' :
-                          (release.date ? new Date(release.date).toISOString().replace('T', ' ').substring(0, 16) + ' UTC' : '')
-                        }
-                      </div>
+                    <li key={release.version} className="group">
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="block flex items-center justify-between hover:bg-white/5 rounded px-2 py-1 transition-colors duration-200"
+                        title={`View release v${release.version} on GitHub`}
+                      >
+                        <div>
+                          <span className="text-purple-300 hover:text-purple-200 underline decoration-dotted underline-offset-2 group-hover:text-purple-100 transition-colors duration-200">
+                            v{release.version}
+                          </span>
+                          <span className="text-white/70 ml-2 group-hover:text-white/80 transition-colors duration-200"> – {description}</span>
+                        </div>
+                        <div className="text-[11px] lg:text-xs text-white/60 font-mono group-hover:text-white/70 transition-colors duration-200">
+                          {release.timestamp ? 
+                            new Date(release.timestamp).toISOString().replace('T', ' ').substring(0, 16) + ' UTC' :
+                            (release.date ? new Date(release.date).toISOString().replace('T', ' ').substring(0, 16) + ' UTC' : '')
+                          }
+                        </div>
+                      </a>
                     </li>
                   );
                 })}
