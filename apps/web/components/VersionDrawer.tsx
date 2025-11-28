@@ -3,6 +3,19 @@
 import React from "react";
 import versionData from "../version.json";
 
+interface VersionEntry {
+  version: string;
+  date: string;
+  timestamp?: string;
+  type: string;
+  changes: string[];
+}
+
+interface ChangelogData {
+  current: VersionEntry;
+  history: VersionEntry[];
+}
+
 interface VersionDrawerProps {
   isOpen: boolean;
   appVersion: string;
@@ -15,8 +28,8 @@ function VersionDrawerInner({ isOpen, appVersion, onClose }: VersionDrawerProps)
 
   if (!isOpen) return null;
 
-  const current = versionData.changelog?.current;
-  const history = versionData.changelog?.history ?? [];
+  const current: VersionEntry = versionData.changelog?.current;
+  const history: VersionEntry[] = versionData.changelog?.history ?? [];
 
   const currentSummary = current?.changes?.[0]
     || "This release includes improvements and refinements. See changelog for details.";
@@ -53,6 +66,14 @@ function VersionDrawerInner({ isOpen, appVersion, onClose }: VersionDrawerProps)
               </div>
               <div className="text-sm lg:text-base text-white font-semibold">
                 HUMΛN-Ø v{appVersion}
+              </div>
+            </div>
+            <div className="text-right">
+              <div className="text-[11px] lg:text-xs text-white/60 font-mono">
+                {current?.timestamp ? 
+                  new Date(current.timestamp).toISOString().replace('T', ' ').substring(0, 16) + ' UTC' :
+                  (current?.date ? new Date(current.date).toISOString().replace('T', ' ').substring(0, 16) + ' UTC' : 'Latest')
+                }
               </div>
             </div>
             <button
@@ -100,22 +121,31 @@ function VersionDrawerInner({ isOpen, appVersion, onClose }: VersionDrawerProps)
             <div className="mt-3 flex-1 overflow-y-auto text-[11px] lg:text-xs text-white/70 pr-1">
               <div className="font-semibold text-white/80 mb-2">Release history</div>
               <ul className="space-y-1">
-                {history.map((release: any) => {
+                {history.map((release: VersionEntry) => {
                   const href = `https://github.com/lstech-solutions/human-0.com/releases/tag/v${release.version}`;
                   const description = (release.changes && release.changes[0]) ||
                     "See GitHub release notes for full details.";
 
                   return (
-                    <li key={release.version}>
-                      <a
-                        href={href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-purple-300 hover:text-purple-200 underline decoration-dotted underline-offset-2"
-                      >
-                        v{release.version}
-                      </a>
-                      <span className="text-white/70"> – {description}</span>
+                    <li key={release.version} className="flex items-center justify-between">
+                      <div>
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-purple-300 hover:text-purple-200 underline decoration-dotted underline-offset-2"
+                          title={`View release v${release.version} on GitHub`}
+                        >
+                          v{release.version}
+                        </a>
+                        <span className="text-white/70 ml-2"> – {description}</span>
+                      </div>
+                      <div className="text-[11px] lg:text-xs text-white/60 font-mono">
+                        {release.timestamp ? 
+                          new Date(release.timestamp).toISOString().replace('T', ' ').substring(0, 16) + ' UTC' :
+                          (release.date ? new Date(release.date).toISOString().replace('T', ' ').substring(0, 16) + ' UTC' : '')
+                        }
+                      </div>
                     </li>
                   );
                 })}

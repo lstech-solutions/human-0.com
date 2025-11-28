@@ -208,15 +208,21 @@ class VersionManager {
   updateChangelog(type, changes) {
     const currentChangelog = this.versionData.changelog.current;
     
-    // Move current changelog to history
+    // Move current changelog to history with timestamp if missing
     if (currentChangelog && currentChangelog.changes.length > 0) {
-      this.versionData.changelog.history.unshift(currentChangelog);
+      const historyEntry = { ...currentChangelog };
+      if (!historyEntry.timestamp) {
+        // Add timestamp to legacy entries that don't have it
+        historyEntry.timestamp = new Date().toISOString();
+      }
+      this.versionData.changelog.history.unshift(historyEntry);
     }
     
-    // Create new current changelog
+    // Create new current changelog with full timestamp
     this.versionData.changelog.current = {
       version: this.versionData.version,
-      date: new Date().toISOString().split('T')[0],
+      date: new Date().toISOString().split('T')[0], // Keep date for display
+      timestamp: new Date().toISOString(), // Add full timestamp
       type: type,
       changes: changes.length > 0 ? changes : [`Version ${this.versionData.version} release`]
     };
