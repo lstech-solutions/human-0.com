@@ -1,13 +1,20 @@
 {
   "name": "@human-0/i18n",
-  "version": "1.5.13",
-  "main": "index.ts",
-  "types": "index.ts",
+  "version": "1.5.14",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./index.ts",
-    "./hooks": "./hooks.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./hooks": {
+      "types": "./dist/hooks.d.ts",
+      "default": "./dist/hooks.js"
+    }
   },
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "locize:download": "locize download --project-id $LOCIZE_PROJECT_ID --path ./locales",
     "locize:upload": "locize upload --project-id $LOCIZE_PROJECT_ID --path ./locales"
   },
@@ -23,6 +30,7 @@
   },
   "devDependencies": {
     "typescript": "~5.9.2",
-    "locize-cli": "^10.3.2"
+    "locize-cli": "^10.3.2",
+    "@types/react": "^18.3.0"
   }
 }
