@@ -101,6 +101,45 @@ const proxyToUpstream = async (event) => {
   };
 };
 
+const serveLocalApi = async (event, apiPath) => {
+  try {
+    const fs = require('fs');
+    const path = require('path');
+    
+    // Map API paths to local files
+    const apiFileMap = {
+      '/api/human-stats': 'api/human-stats+api.js',
+      '/api/terms': 'api/terms+api.js', 
+      '/api/privacy': 'api/privacy+api.js'
+    };
+    
+    const filePath = apiFileMap[apiPath];
+    if (!filePath) {
+      return jsonResponse(event, 404, { error: 'API endpoint not found' });
+    }
+    
+    // Clear require cache to get fresh module
+    delete require.cache[require.resolve(path.resolve(filePath))];
+    
+    const apiModule = require(path.resolve(filePath));
+    
+    if (typeof apiModule.GET === 'function') {
+      const response = await apiModule.GET();
+      return {
+        statusCode: 200,
+        headers: baseHeaders(event, 'application/json; charset=utf-8'),
+        body: typeof response === 'string' ? response : JSON.stringify(response),
+        isBase64Encoded: false,
+      };
+    }
+    
+    return jsonResponse(event, 404, { error: 'API method not supported' });
+  } catch (err) {
+    console.error('API serve error:', err);
+    return jsonResponse(event, 500, { error: 'Internal server error' });
+  }
+};
+
 exports.handler = async (event) => {
   const method = (event?.requestContext?.http?.method || event?.httpMethod || 'GET').toUpperCase();
   const rawPath = event?.rawPath || event?.path || '/';
@@ -113,6 +152,11 @@ exports.handler = async (event) => {
   try {
     if ((method === 'GET' || method === 'HEAD') && (path === '/health' || path === '/')) {
       return headify(method, health(event));
+    }
+
+    // Handle API routes locally
+    if (path.startsWith('/api/') && (method === 'GET' || method === 'HEAD')) {
+      return await serveLocalApi(event, path);
     }
 
     return await proxyToUpstream(event);
