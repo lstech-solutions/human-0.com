@@ -1,8 +1,7 @@
 
 
-> @human-0/contracts@1.5.7 build /home/ed/Documents/LSTS/human-0.com/packages/contracts
+> @human-0/contracts@1.5.14 build /home/ed/Documents/LSTS/human-0.com/packages/contracts
 > hardhat compile
 
-[?25l[36m?[39m [1mHelp us improve Hardhat with anonymous crash reports & basic usage data?[22m [2m(Y/n)[22m [2m‣[22m y[4D[2K[1G[32m✔[39m [1mHelp us improve Hardhat with anonymous crash reports & basic usage data?[22m [2m(Y/n)[22m [2m·[22m [32my[39m[4D
-[?25hNothing to compile
+Nothing to compile
 No need to generate any newer typings.

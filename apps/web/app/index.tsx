@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { useTranslation } from '@human-0/i18n';
 import FlickeringGrid from '../components/FlickeringGrid';
 import { H1, Body } from '../components/typography';
 import { ParticleHero } from '../components/ui/animated-hero';
@@ -9,15 +10,54 @@ import appPkg from '../package.json';
 import { useTheme } from '../theme/ThemeProvider';
 import { MagnetizeButton } from '../components/ui/MagnetizeButton';
 import VersionDrawer from '../components/VersionDrawer';
+import { HumanProofStats, type HumanStats } from '../components/HumanProofStats';
 
 function randomizeZeroGlyphs(value: string): string {
   return value.replace(/[01]/g, (digit) => (Math.random() < 0.5 ? digit : 'Ø'));
 }
 
+async function fetchHumanStats(): Promise<HumanStats> {
+  // Fetch verified humans from internal API
+  const verifiedRes = await fetch('/api/human-stats');
+  if (!verifiedRes.ok) {
+    throw new Error('Failed to fetch verified humans');
+  }
+  const verifiedData = await verifiedRes.json();
+
+  const verifiedHumans = typeof verifiedData.verifiedHumans === 'number'
+    ? verifiedData.verifiedHumans
+    : 0;
+
+  const totalHumans = typeof verifiedData.totalHumans === 'number'
+    ? verifiedData.totalHumans
+    : 8_260_837_082;
+
+  return {
+    verifiedHumans,
+    totalHumans,
+    baselinePopulation: typeof verifiedData.baselinePopulation === 'number'
+      ? verifiedData.baselinePopulation
+      : totalHumans,
+    baselineTimestamp: typeof verifiedData.baselineTimestamp === 'string'
+      ? verifiedData.baselineTimestamp
+      : new Date().toISOString(),
+    netChangePerSecond: typeof verifiedData.netChangePerSecond === 'number'
+      ? verifiedData.netChangePerSecond
+      : 2.5,
+    baselineYear: typeof verifiedData.baselineYear === 'number'
+      ? verifiedData.baselineYear
+      : null,
+    sources: Array.isArray(verifiedData.sources)
+      ? verifiedData.sources
+      : [],
+  };
+}
+
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
-  const { colorScheme, theme } = useTheme();
+  const { colorScheme } = useTheme();
+  const { t } = useTranslation();
   const APP_VERSION = appPkg.version || "0.0.0";
   const [frameRate, setFrameRate] = useState(60);
   const lastPointer = useRef<{ x: number; y: number; t: number } | null>(null);
@@ -26,6 +66,7 @@ export default function Home() {
   const [meterOffsets, setMeterOffsets] = useState<number[]>(meterBaseHeights.map(() => 0));
   const meterIntervalRef = useRef<number | null>(null);
   const [isVersionDrawerOpen, setIsVersionDrawerOpen] = useState(false);
+  const isDark = colorScheme === 'dark';
 
   // Simulated frame indicator based on pointer/scroll velocity
   useEffect(() => {
@@ -445,11 +486,11 @@ export default function Home() {
 
       {/* Hero content with Vitruvian backdrop */}
       <div className="fixed z-20 flex min-h-screen items-center pt-16 lg:pt-0" style={{ marginTop: '5vh', left: '0', top: '0' }}>
-        <div className="container mx-auto px-6 lg:px-16 lg:ml-[10%] text-human-text-light dark:text-human-text-dark w-full">
+        <div className="container relative mx-auto px-6 lg:px-16 lg:ml-[10%] text-human-text-light dark:text-human-text-dark w-full">
           <div className="max-w-lg relative">
             <div className="flex items-center gap-2 mb-3 opacity-60">
               <div className="w-8 h-px bg-human-text-light dark:bg-human-text-dark/70"></div>
-              <span className="text-[10px] font-mono tracking-wider">{randomizeZeroGlyphs('00') + '1'}</span>
+              <span className="text-[10px] font-mono tracking-wider">{randomizeZeroGlyphs('00') + '1'} /<span className="text-[10px] font-mono tracking-wider"> ∞</span></span>
               <div className="flex-1 h-px bg-human-text-light dark:bg-human-text-dark/70"></div>
             </div>
 
@@ -457,11 +498,11 @@ export default function Home() {
               <div className="hidden lg:block absolute -left-3 top-0 bottom-0 w-1 dither-pattern opacity-40"></div>
 
               <H1 className="mb-3 lg:mb-4 tracking-widest leading-tight font-digitaldivine">
-                <span className="bg-gradient-to-r from-emerald-300 via-emerald-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]">
-                  PROOF OF
+                <span className={isDark ? "bg-gradient-to-r from-emerald-300 via-emerald-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]" : "bg-gradient-to-r from-emerald-900 via-emerald-600 to-cyan-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]"}>
+                  {t("hero.titleLine1")}
                 </span>
-                <span className="block mt-1 lg:mt-2 bg-gradient-to-r from-cyan-300 via-emerald-400 to-emerald-200 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]">
-                  SUSTAINABLE HUMANITY
+                <span className={isDark ? "block mt-1 lg:mt-2 bg-gradient-to-r from-cyan-300 via-emerald-400 to-emerald-200 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]" : "block mt-1 lg:mt-2 bg-gradient-to-r from-cyan-900 via-emerald-600 to-emerald-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]"}>
+                  {t("hero.titleLine2")}
                 </span>
               </H1>
             </div>
@@ -474,7 +515,7 @@ export default function Home() {
 
             <div className="relative">
               <Body className="text-xs lg:text-base mb-5 lg:mb-6 leading-relaxed text-human-text-light/90 dark:text-human-text-dark/90">
-                Where environmental impact meets digital transparency — Carbon neutrality through Web3 innovation
+                {t("hero.subtitle")}
               </Body>
 
               <div className="hidden lg:block absolute -right-4 top-1/2 w-3 h-3 border border-white opacity-30" style={{ transform: 'translateY(-50%)' }}>
@@ -489,7 +530,7 @@ export default function Home() {
               >
                 <span className="hidden lg:block absolute -top-1 -left-1 w-2 h-2 border-t border-l border-human-border opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 <span className="hidden lg:block absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-human-border opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                <span>EXPLORE CANVAS</span>
+                <span>{t("hero.cta.exploreCanvas")}</span>
               </MagnetizeButton>
 
               <MagnetizeButton
@@ -497,7 +538,7 @@ export default function Home() {
                 className="px-5 lg:px-6 py-2 lg:py-2.5 bg-white/85 dark:bg-transparent border border-human-border/80 dark:border-human-border text-human-text-light dark:text-human-text-dark font-mono text-xs lg:text-sm hover:text-white dark:hover:text-white transition-all duration-200 magnet-btn-gradient"
                 style={{ borderWidth: '1px' }}
               >
-                <span>DOWNLOAD PDF</span>
+                <span>{t("hero.cta.downloadPdf")}</span>
               </MagnetizeButton>
             </div>
 
@@ -507,6 +548,12 @@ export default function Home() {
               <span className="text-white text-[9px] font-mono">WEB3</span>
             </div>
           </div>
+
+          {/* Human-Ø proof stats card below hero (all breakpoints) */}
+          <div className="relative z-30 mt-20 lg:mt-32 px-6 lg:px-16 flex justify-start">
+            <HumanProofStats fetchStats={fetchHumanStats} />
+          </div>
+
         </div>
       </div>
 
@@ -520,8 +567,8 @@ export default function Home() {
       <div className="fixed left-0 right-0 bottom-0 z-30 border-t border-[#d0d7de] bg-white/90 text-[#24292f] dark:border-[#30363d] dark:bg-[#0d1117] dark:text-[#8b949e]">
         <div className="container mx-auto px-4 lg:px-8 py-2 lg:py-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-[9px] lg:text-[10px] font-mono">
           <div className="flex items-center gap-3 lg:gap-6">
-            <span className="hidden lg:inline tracking-[0.18em] uppercase text-[#57606a] dark:text-[#c9d1d9]">SYSTEM.ACTIVE</span>
-            <span className="lg:hidden tracking-[0.18em] uppercase text-[#57606a] dark:text-[#c9d1d9]">SYS.ACT</span>
+            <span className="hidden lg:inline tracking-[0.18em] uppercase text-[#57606a] dark:text-[#c9d1d9]">{t("footer.systemActive")}</span>
+            <span className="lg:hidden tracking-[0.18em] uppercase text-[#57606a] dark:text-[#c9d1d9]">{t("footer.sysAct")}</span>
             <div className="hidden lg:flex gap-1">
               {meterBaseHeights.map((base, i) => {
                 const height = base + (meterOffsets[i] || 0);
@@ -544,13 +591,13 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-2 lg:gap-4">
-            <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e]">◐ RENDERING</span>
+            <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e]">{t("footer.rendering")}</span>
             <div className="flex gap-1">
               <div className="w-1 h-1 bg-[#57606a] dark:bg-[#8b949e] rounded-full animate-pulse"></div>
               <div className="w-1 h-1 bg-[#8b949e] dark:bg-[#6e7681] rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
               <div className="w-1 h-1 bg-[#d0d7de] dark:bg-[#484f58] rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
             </div>
-            <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e]">FRAMES: {frameRate}</span>
+            <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e]">{t("footer.framesLabel", { frameRate })}</span>
           </div>
         </div>
       </div>

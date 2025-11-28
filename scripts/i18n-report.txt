@@ -1,0 +1,64 @@
+Source locale: en.json
+Total keys: 208
+
+=== Locale: ar-SA.json ===
+Total keys: 216
+  ✅ No missing keys compared to en.json
+  ℹ️ Extra keys (8):
+    + plurals.days_few
+    + plurals.days_many
+    + plurals.days_two
+    + plurals.days_zero
+    + plurals.items_few
+    + plurals.items_many
+    + plurals.items_two
+    + plurals.items_zero
+
+
+=== Locale: de-DE.json ===
+Total keys: 208
+  ✅ No missing keys compared to en.json
+  ✅ No extra keys compared to en.json
+
+
+=== Locale: es-CO.json ===
+Total keys: 208
+  ✅ No missing keys compared to en.json
+  ✅ No extra keys compared to en.json
+
+
+=== Locale: es-ES.json ===
+Total keys: 208
+  ✅ No missing keys compared to en.json
+  ✅ No extra keys compared to en.json
+
+
+=== Locale: es-MX.json ===
+Total keys: 208
+  ✅ No missing keys compared to en.json
+  ✅ No extra keys compared to en.json
+
+
+=== Locale: es.json ===
+Total keys: 208
+  ✅ No missing keys compared to en.json
+  ✅ No extra keys compared to en.json
+
+
+=== Locale: fr-FR.json ===
+Total keys: 208
+  ✅ No missing keys compared to en.json
+  ✅ No extra keys compared to en.json
+
+
+=== Locale: pt-BR.json ===
+Total keys: 208
+  ✅ No missing keys compared to en.json
+  ✅ No extra keys compared to en.json
+
+
+=== Locale: zh-CN.json ===
+Total keys: 208
+  ✅ No missing keys compared to en.json
+  ✅ No extra keys compared to en.json
+

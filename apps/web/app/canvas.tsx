@@ -7,63 +7,91 @@ import {
   Dimensions,
   StatusBar,
 } from 'react-native';
-import { ExpandableCanvasSection, SectionModal } from '../components/ExpandableCanvasSection';
+import { ExpandableCanvasSection, SectionModal, CanvasSection } from '../components/ExpandableCanvasSection';
 import ParticleTextLogo from '../components/ParticleTextLogo';
 import PDFExport from '../components/PDFExport';
+import { ManifestoModal, useManifestoModal } from '../components/ManifestoModal';
 import { useRouter } from 'expo-router';
-import { Building2, Activity, Target, Users, Lightbulb, MessageSquare, DollarSign, TrendingUp, Award, ImageIcon, User } from 'lucide-react-native';
+import { Building2, Activity, Target, Users, Lightbulb, MessageSquare, DollarSign, TrendingUp, Award, ImageIcon, User, ArrowLeft } from 'lucide-react-native';
+import { useTheme } from '../theme/ThemeProvider';
+import { useTranslation } from '@human-0/i18n';
 
 const { width, height } = Dimensions.get('window');
 
-interface CanvasSection {
-  id: string;
-  title: string;
-  subtitle: string;
-  content: string[];
-  icon: React.ReactNode;
-  color: string;
-  bgColor: string;
-  borderColor: string;
-  metrics: {
-    kpi: string;
-    growth: string;
-    efficiency: string;
-    target: string;
-  };
-  chartData: {
-    bar: number[];
-    line: number[];
-    pie: Array<{ name: string; value: number; color: string }>;
-    sparklines: {
-      adoption: number[];
-      costs: number[];
-    };
-  };
-}
-
 export default function CanvasScreen() {
   const router = useRouter();
+  const { colorScheme } = useTheme();
+  const { t } = useTranslation();
+  const isDark = colorScheme === 'dark';
+  const containerBgClass = isDark
+    ? 'bg-gradient-to-b from-deep-space to-space-dark'
+    : 'bg-gradient-to-b from-white to-slate-100';
+  const headerTextAccentClass = isDark ? 'text-human-primary' : 'text-emerald-800';
+  const sectionTitleColorClass = isDark ? 'text-human-primary' : 'text-emerald-900';
+  const summaryTitleColorClass = isDark ? 'text-human-primary' : 'text-emerald-800';
   const [selectedSection, setSelectedSection] = useState<CanvasSection | null>(null);
   const [modalVisible, setModalVisible] = useState(false);
+  const { showModal: showManifesto, closeModal: closeManifesto, checked: manifestoChecked } = useManifestoModal();
+
+  // Normalize i18n content for partners section into a proper string[]
+  const rawPartnersContent = t('canvas.sections.partners.content', {
+    returnObjects: true,
+  });
+  const partnersContent: string[] = Array.isArray(rawPartnersContent)
+    ? rawPartnersContent
+    : Object.values(rawPartnersContent as Record<string, string>);
+
+  // Normalize i18n content for activities section into a proper string[]
+  const rawActivitiesContent = t('canvas.sections.activities.content', {
+    returnObjects: true,
+  });
+  const activitiesContent: string[] = Array.isArray(rawActivitiesContent)
+    ? rawActivitiesContent
+    : Object.values(rawActivitiesContent as Record<string, string>);
+
+  // Normalize i18n content for value proposition section into a proper string[]
+  const rawPropositionContent = t('canvas.sections.proposition.content', {
+    returnObjects: true,
+  });
+  const propositionContent: string[] = Array.isArray(rawPropositionContent)
+    ? rawPropositionContent
+    : Object.values(rawPropositionContent as Record<string, string>);
+
+  // Normalize i18n content for customer relationships section into a proper string[]
+  const rawRelationshipsContent = t('canvas.sections.relationships.content', {
+    returnObjects: true,
+  });
+  const relationshipsContent: string[] = Array.isArray(rawRelationshipsContent)
+    ? rawRelationshipsContent
+    : Object.values(rawRelationshipsContent as Record<string, string>);
+
+  // Normalize i18n content for customer segments section into a proper string[]
+  const rawSegmentsContent = t('canvas.sections.segments.content', {
+    returnObjects: true,
+  });
+  const segmentsContent: string[] = Array.isArray(rawSegmentsContent)
+    ? rawSegmentsContent
+    : Object.values(rawSegmentsContent as Record<string, string>);
+
+  // Normalize i18n content for channels section into a proper string[]
+  const rawChannelsContent = t('canvas.sections.channels.content', {
+    returnObjects: true,
+  });
+  const channelsContent: string[] = Array.isArray(rawChannelsContent)
+    ? rawChannelsContent
+    : Object.values(rawChannelsContent as Record<string, string>);
 
   const canvasSections: CanvasSection[] = [
     {
       id: 'partners',
-      title: 'Socios Clave',
-      subtitle: 'Alianzas externas que ayudan a ejecutar las actividades clave',
-      content: [
-        'ONGs Ambientales - Colaboración con 15+ organizaciones líderes en conservación',
-        'Proyectos de Compensación de Carbono - 50+ proyectos verificados por Verra y Gold Standard',
-        'Validadores Blockchain - Auditoría y certificación por 8+ firmas especializadas',
-        'Proveedores de Energía Verde - Contratos con 20+ generadores de energía renovable',
-        'Consultores de Sostenibilidad - Equipo de 30+ expertos en ESG y carbon neutrality',
-        'Organizaciones de Impacto - Partnerships con 25+ ONGs internacionales'
-      ],
+      title: t('canvas.sections.partners.title'),
+      subtitle: t('canvas.sections.partners.subtitle'),
+      content: partnersContent,
       metrics: {
-        kpi: '95% tasa de retención de partners',
-        growth: '+180% crecimiento anual',
-        efficiency: '85% reducción costos operativos',
-        target: '200+ partners para 2025'
+        kpi: t('canvas.sections.partners.metrics.kpi'),
+        growth: t('canvas.sections.partners.metrics.growth'),
+        efficiency: t('canvas.sections.partners.metrics.efficiency'),
+        target: t('canvas.sections.partners.metrics.target'),
       },
       chartData: {
         bar: [65, 72, 68, 80, 85, 92],
@@ -80,27 +108,20 @@ export default function CanvasScreen() {
         }
       },
       icon: <Building2 size={24} color="#00FF9C" />,
-      color: 'text-neon-green',
+      color: sectionTitleColorClass,
       bgColor: 'bg-gradient-to-br from-space-dark to-space-darker',
       borderColor: 'border-neon-green/40'
     },
     {
       id: 'activities',
-      title: 'Actividades Clave',
-      subtitle: 'Las actividades más importantes para ejecutar la propuesta de valor',
-      content: [
-        'Verificación de Impacto - Procesamiento de 1000+ verificaciones mensuales con IA',
-        'Acuñación y Comercio de NFTs - Emisión de 5000+ NFTs de carbono verificados',
-        'Desarrollo de Smart Contracts - 50+ contratos desplegados en Ethereum/Polygon',
-        'Gestión Comunitaria - Moderación de 10000+ miembros en Discord/Telegram',
-        'Gestión de Créditos de Carbono - Administración de 1M+ toneladas CO2e',
-        'Análisis de Datos - Procesamiento de 5TB+ de datos con ML/AI'
-      ],
+      title: t('canvas.sections.activities.title'),
+      subtitle: t('canvas.sections.activities.subtitle'),
+      content: activitiesContent,
       metrics: {
-        kpi: '99.9% uptime del sistema',
-        growth: '+300% procesamiento transacciones',
-        efficiency: '2.3x mejora en velocidad',
-        target: '10M+ transacciones/año'
+        kpi: t('canvas.sections.activities.metrics.kpi'),
+        growth: t('canvas.sections.activities.metrics.growth'),
+        efficiency: t('canvas.sections.activities.metrics.efficiency'),
+        target: t('canvas.sections.activities.metrics.target'),
       },
       chartData: {
         bar: [120, 135, 158, 172, 195, 210],
@@ -117,27 +138,20 @@ export default function CanvasScreen() {
         }
       },
       icon: <Activity size={24} color="#00FF9C" />,
-      color: 'text-neon-green',
+      color: sectionTitleColorClass,
       bgColor: 'bg-gradient-to-br from-space-dark to-space-darker',
       borderColor: 'border-neon-green/40'
     },
     {
       id: 'proposition',
-      title: 'Propuesta de Valor',
-      subtitle: 'Producto o servicio único que crea valor para los clientes',
-      content: [
-        'Seguimiento Transparente de Impacto - Blockchain inmutable con trazabilidad completa',
-        'Créditos de Carbono Basados en Web3 - Tokenización real con estándares UNFCCC',
-        'Sostenibilidad Gamificada - 85% engagement con sistema de niveles y recompensas',
-        'Sistema de Logros NFT - 100+ logros desbloqueables con rareza variable',
-        'Verificación Descentralizada - Consenso distribuido con Proof-of-Stake',
-        'Dashboards en Tiempo Real - Actualización instantánea con WebSockets'
-      ],
+      title: t('canvas.sections.proposition.title'),
+      subtitle: t('canvas.sections.proposition.subtitle'),
+      content: propositionContent,
       metrics: {
-        kpi: '4.8/5 satisfacción usuarios',
-        growth: '+450% adopción mensual',
-        efficiency: '90% reducción fraudes',
-        target: '1M+ usuarios activos'
+        kpi: t('canvas.sections.proposition.metrics.kpi'),
+        growth: t('canvas.sections.proposition.metrics.growth'),
+        efficiency: t('canvas.sections.proposition.metrics.efficiency'),
+        target: t('canvas.sections.proposition.metrics.target'),
       },
       chartData: {
         bar: [88, 92, 95, 98, 102, 108],
@@ -154,27 +168,20 @@ export default function CanvasScreen() {
         }
       },
       icon: <Target size={24} color="#00FF9C" />,
-      color: 'text-neon-green',
+      color: sectionTitleColorClass,
       bgColor: 'bg-gradient-to-br from-space-dark to-space-darker',
       borderColor: 'border-neon-green/40'
     },
     {
       id: 'relationships',
-      title: 'Relaciones con Clientes',
-      subtitle: 'Tipos de relaciones establecidas con los segmentos de clientes',
-      content: [
-        'Construcción Comunitaria - 50+ eventos mensuales con 500+ asistentes',
-        'Dashboard de Análisis de Impacto - Personalización con IA y recomendaciones',
-        'Recomendaciones Personalizadas - 95% precisión con algoritmos ML',
-        'Sistema de Logros - Gamificación con 50+ niveles y badges exclusivos',
-        'Funciones de Compartir Social - 10K+ compartidos diarios en redes',
-        'Soporte 24/7 - <2min tiempo respuesta con chatbots y agentes'
-      ],
+      title: t('canvas.sections.relationships.title'),
+      subtitle: t('canvas.sections.relationships.subtitle'),
+      content: relationshipsContent,
       metrics: {
-        kpi: '92% tasa de retención',
-        growth: '+250% NPS score',
-        efficiency: '80% soporte automatizado',
-        target: '95% satisfacción'
+        kpi: t('canvas.sections.relationships.metrics.kpi'),
+        growth: t('canvas.sections.relationships.metrics.growth'),
+        efficiency: t('canvas.sections.relationships.metrics.efficiency'),
+        target: t('canvas.sections.relationships.metrics.target'),
       },
       chartData: {
         bar: [78, 82, 86, 90, 94, 98],
@@ -191,27 +198,20 @@ export default function CanvasScreen() {
         }
       },
       icon: <Users size={24} color="#00FF9C" />,
-      color: 'text-neon-green',
+      color: sectionTitleColorClass,
       bgColor: 'bg-gradient-to-br from-space-dark to-space-darker',
       borderColor: 'border-neon-green/40'
     },
     {
       id: 'segments',
-      title: 'Segmentos de Clientes',
-      subtitle: 'Diferentes grupos de personas u organizaciones objetivo',
-      content: [
-        'Individuos Eco-conscientes - 45% del mercado con ingresos >$50K anuales',
-        'Equipos de Sostenibilidad Corporativa - 200+ empresas Fortune 500',
-        'Organizaciones Ambientales - 500+ ONGs con presupuesto >$1M',
-        'Entusiastas de Web3 - 100K+ usuarios con wallets activas',
-        'Inversores de Impacto - $50M+ en activos bajo gestión',
-        'Proyectos Educativos - 100+ instituciones K-12 y universidades'
-      ],
+      title: t('canvas.sections.segments.title'),
+      subtitle: t('canvas.sections.segments.subtitle'),
+      content: segmentsContent,
       metrics: {
-        kpi: '35% penetración mercado',
-        growth: '+400% nuevos segmentos',
-        efficiency: '$25 LTV promedio',
-        target: '5M+ usuarios totales'
+        kpi: t('canvas.sections.segments.metrics.kpi'),
+        growth: t('canvas.sections.segments.metrics.growth'),
+        efficiency: t('canvas.sections.segments.metrics.efficiency'),
+        target: t('canvas.sections.segments.metrics.target'),
       },
       chartData: {
         bar: [55, 62, 68, 75, 82, 88],
@@ -228,27 +228,22 @@ export default function CanvasScreen() {
         }
       },
       icon: <Users size={24} color="#00FF9C" />,
-      color: 'text-neon-green',
+      color: sectionTitleColorClass,
       bgColor: 'bg-gradient-to-br from-space-dark to-space-darker',
       borderColor: 'border-neon-green/40'
     },
     {
       id: 'resources',
-      title: 'Recursos Clave',
-      subtitle: 'Principales recursos necesarios para ejecutar las actividades clave',
-      content: [
-        'Infraestructura Blockchain - 15 nodos globales con 99.9% uptime',
-        'Base de Código Smart Contracts - 200K+ líneas con auditorías completas',
-        'Alianzas de Compensación de Carbono - 50+ partners verificados',
-        'Plataforma Comunitaria - 100K+ MAU con engagement del 45%',
-        'Sistemas de Análisis de Datos - Pipeline ML/AI con TensorFlow',
-        'Equipo Técnico Experto - 50+ desarrolladores senior y blockchain engineers'
-      ],
+      title: t('canvas.sections.resources.title'),
+      subtitle: t('canvas.sections.resources.subtitle'),
+      content: t('canvas.sections.resources.content', {
+        returnObjects: true,
+      }) as string[],
       metrics: {
-        kpi: '300% ROI en infraestructura',
-        growth: '+200% capacidad procesamiento',
-        efficiency: '95% utilización recursos',
-        target: '100+ desarrolladores'
+        kpi: t('canvas.sections.resources.metrics.kpi'),
+        growth: t('canvas.sections.resources.metrics.growth'),
+        efficiency: t('canvas.sections.resources.metrics.efficiency'),
+        target: t('canvas.sections.resources.metrics.target'),
       },
       chartData: {
         bar: [92, 98, 105, 112, 118, 125],
@@ -265,27 +260,20 @@ export default function CanvasScreen() {
         }
       },
       icon: <Lightbulb size={24} color="#00FF9C" />,
-      color: 'text-neon-green',
+      color: sectionTitleColorClass,
       bgColor: 'bg-gradient-to-br from-space-dark to-space-darker',
       borderColor: 'border-neon-green/40'
     },
     {
       id: 'channels',
-      title: 'Canales',
-      subtitle: 'Cómo las propuestas de valor llegan a los segmentos de clientes',
-      content: [
-        'App Móvil (iOS/Android) - 150K+ descargas con 4.5★ rating',
-        'Plataforma Web - 300K+ visitantes/mes con 12% conversión',
-        'Campañas en Redes Sociales - 1M+ alcance con 3.2% engagement',
-        'Redes de Partners - 50+ canales activos con comisiones variables',
-        'Eventos Comunitarios - 20+ eventos/mes con 500+ asistentes',
-        'Marketing de Contenidos - 200+ artículos con 50K+ lectores'
-      ],
+      title: t('canvas.sections.channels.title'),
+      subtitle: t('canvas.sections.channels.subtitle'),
+      content: channelsContent,
       metrics: {
-        kpi: '12% tasa conversión',
-        growth: '+350% tráfico orgánico',
-        efficiency: '$2.5 CPA promedio',
-        target: '500K+ usuarios totales'
+        kpi: t('canvas.sections.channels.metrics.kpi'),
+        growth: t('canvas.sections.channels.metrics.growth'),
+        efficiency: t('canvas.sections.channels.metrics.efficiency'),
+        target: t('canvas.sections.channels.metrics.target'),
       },
       chartData: {
         bar: [68, 75, 82, 88, 94, 102],
@@ -302,27 +290,22 @@ export default function CanvasScreen() {
         }
       },
       icon: <MessageSquare size={24} color="#00FF9C" />,
-      color: 'text-neon-green',
+      color: sectionTitleColorClass,
       bgColor: 'bg-gradient-to-br from-space-dark to-space-darker',
       borderColor: 'border-neon-green/40'
     },
     {
       id: 'costs',
-      title: 'Estructura de Costos',
-      subtitle: 'Todos los costos involucrados en operar el modelo de negocio',
-      content: [
-        'Tarifas Gas de Blockchain - 15% del total con optimización Layer 2',
-        'Desarrollo de Plataforma - 25% del total con 50+ desarrolladores',
-        'Marketing y Comunidad - 20% del total con ROI de 3.2x',
-        'Gestión de Partnerships - 10% del total con 50+ alianzas activas',
-        'Cumplimiento y Auditoría - 8% del total con certificaciones ISO',
-        'Infraestructura Técnica - 22% del total con cloud providers'
-      ],
+      title: t('canvas.sections.costs.title'),
+      subtitle: t('canvas.sections.costs.subtitle'),
+      content: t('canvas.sections.costs.content', {
+        returnObjects: true,
+      }) as string[],
       metrics: {
-        kpi: '$2.5M burn rate anual',
-        growth: '+180% optimización costos',
-        efficiency: '30% reducción vs industria',
-        target: '$1.8M burn rate'
+        kpi: t('canvas.sections.costs.metrics.kpi'),
+        growth: t('canvas.sections.costs.metrics.growth'),
+        efficiency: t('canvas.sections.costs.metrics.efficiency'),
+        target: t('canvas.sections.costs.metrics.target'),
       },
       chartData: {
         bar: [45, 42, 38, 35, 32, 28],
@@ -339,27 +322,22 @@ export default function CanvasScreen() {
         }
       },
       icon: <DollarSign size={24} color="#00FF9C" />,
-      color: 'text-neon-green',
+      color: sectionTitleColorClass,
       bgColor: 'bg-gradient-to-br from-space-dark to-space-darker',
       borderColor: 'border-neon-green/40'
     },
     {
       id: 'revenue',
-      title: 'Fuentes de Ingresos',
-      subtitle: 'Fuentes desde las cuales la empresa genera dinero',
-      content: [
-        'Comisiones de Acuñación NFT - 35% de ingresos con 2.5% fee',
-        'Comisiones de Transacciones - 25% de ingresos con 1% fee',
-        'Análisis Premium - 15% de ingresos con $49/mes suscripción',
-        'Partnerships Corporativas - 15% de ingresos con contratos anuales',
-        'Trading de Créditos de Carbono - 5% de ingresos con 0.5% spread',
-        'Suscripciones Pro - 5% de ingresos con $99/mes plan'
-      ],
+      title: t('canvas.sections.revenue.title'),
+      subtitle: t('canvas.sections.revenue.subtitle'),
+      content: t('canvas.sections.revenue.content', {
+        returnObjects: true,
+      }) as string[],
       metrics: {
-        kpi: '$5M+ ARR anual',
-        growth: '+600% crecimiento ingresos',
-        efficiency: '75% margen bruto',
-        target: '$10M+ ARR'
+        kpi: t('canvas.sections.revenue.metrics.kpi'),
+        growth: t('canvas.sections.revenue.metrics.growth'),
+        efficiency: t('canvas.sections.revenue.metrics.efficiency'),
+        target: t('canvas.sections.revenue.metrics.target'),
       },
       chartData: {
         bar: [125, 145, 168, 195, 225, 258],
@@ -376,7 +354,7 @@ export default function CanvasScreen() {
         }
       },
       icon: <DollarSign size={24} color="#00FF9C" />,
-      color: 'text-neon-green',
+      color: sectionTitleColorClass,
       bgColor: 'bg-gradient-to-br from-space-dark to-space-darker',
       borderColor: 'border-neon-green/40'
     }
@@ -393,117 +371,150 @@ export default function CanvasScreen() {
   };
 
   return (
-    <View className="flex-1 bg-gradient-to-b from-deep-space to-space-dark">
-      {/* Navigation Bar */}
-      <View className="flex-row justify-between items-center mt-4 px-6">
-        {/* Left side - Back to Home */}
-        <TouchableOpacity 
-          className="bg-neon-green/20 p-3 rounded-2xl border border-neon-green/50"
-          onPress={() => router.push("/")}
-        >
-          <User size={20} color="#00FF9C" />
-        </TouchableOpacity>
-        
-        {/* Center - Canvas Title */}
-        <Text className="text-neon-green text-lg font-bold">Business Model Canvas</Text>
-        
-        {/* Right side - PDF Download */}
-        <PDFExport position="navigation" />
+    <View className={`flex-1 ${containerBgClass}`}>
+      {/* Static header (non-scrollable) */}
+      <View className="px-4">
+        {/* Navigation Bar */}
+        <View className="flex-row justify-between items-center mt-4 mb-4">
+          {/* Left side - Back to Home (arrow) */}
+          <TouchableOpacity 
+            className="bg-neon-green/20 p-3 rounded-2xl border border-neon-green/50"
+            onPress={() => router.push("/")}
+          >
+            <ArrowLeft size={20} color="#00FF9C" />
+          </TouchableOpacity>
+          
+          {/* Center - Canvas Title */}
+          <Text className={`${headerTextAccentClass} text-lg font-bold`}>
+            {t('canvas.title')}
+          </Text>
+          
+          {/* Right side - PDF Download */}
+          <PDFExport position="navigation" />
+        </View>
       </View>
 
-      {/* Canvas Grid */}
+      {/* Scrollable Business Model Canvas sections (cards only) */}
       <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-4">
-        {/* Top Row */}
-        <View className="flex-row mb-6" style={{ height: 160 }}>
-          <ExpandableCanvasSection
-            section={canvasSections[0]}
-            index={0}
-            onPress={handleSectionPress}
-          />
-          <ExpandableCanvasSection
-            section={canvasSections[1]}
-            index={1}
-            onPress={handleSectionPress}
-          />
-          <ExpandableCanvasSection
-            section={canvasSections[2]}
-            index={2}
-            onPress={handleSectionPress}
-          />
+        {/* Main Canvas Grid: left column spans two rows */}
+        <View className="flex-row mb-6">
+          {/* Left column: Socios Clave spanning two rows */}
+          <View style={{ flex: 1 }}>
+            <ExpandableCanvasSection
+              section={canvasSections[0]}
+              index={0}
+              onPress={handleSectionPress}
+            />
+          </View>
+
+          {/* Center and right columns: two stacked rows */}
+          <View style={{ flex: 4, marginLeft: 8 }}>
+            {/* Top row: Actividades / Propuesta / Relación */}
+            <View className="flex-row mb-4">
+              <View style={{ flex: 1.5 }}>
+                <ExpandableCanvasSection
+                  section={canvasSections[1]}
+                  index={1}
+                  onPress={handleSectionPress}
+                />
+              </View>
+              <View style={{ flex: 1.5 }}>
+                <ExpandableCanvasSection
+                  section={canvasSections[2]}
+                  index={2}
+                  onPress={handleSectionPress}
+                />
+              </View>
+              <View style={{ flex: 1 }}>
+                <ExpandableCanvasSection
+                  section={canvasSections[3]}
+                  index={3}
+                  onPress={handleSectionPress}
+                />
+              </View>
+            </View>
+
+            {/* Middle row: Recursos / Canales / Segmentos */}
+            <View className="flex-row">
+              <View style={{ flex: 1.5 }}>
+                <ExpandableCanvasSection
+                  section={canvasSections[5]}
+                  index={5}
+                  onPress={handleSectionPress}
+                />
+              </View>
+              <View style={{ flex: 1.5 }}>
+                <ExpandableCanvasSection
+                  section={canvasSections[6]}
+                  index={6}
+                  onPress={handleSectionPress}
+                />
+              </View>
+              <View style={{ flex: 1 }}>
+                <ExpandableCanvasSection
+                  section={canvasSections[4]}
+                  index={4}
+                  onPress={handleSectionPress}
+                />
+              </View>
+            </View>
+          </View>
         </View>
 
-        {/* Middle Row */}
-        <View className="flex-row mb-6" style={{ height: 160 }}>
-          <ExpandableCanvasSection
-            section={canvasSections[3]}
-            index={3}
-            onPress={handleSectionPress}
-          />
-          <ExpandableCanvasSection
-            section={canvasSections[4]}
-            index={4}
-            onPress={handleSectionPress}
-          />
-          <ExpandableCanvasSection
-            section={canvasSections[5]}
-            index={5}
-            onPress={handleSectionPress}
-          />
+        {/* Bottom Row: Costos / Ingresos spanning width */}
+        <View className="flex-row mb-6">
+          <View style={{ flex: 1 }}>
+            <ExpandableCanvasSection
+              section={canvasSections[7]}
+              index={7}
+              onPress={handleSectionPress}
+            />
+          </View>
+          <View style={{ flex: 1 }}>
+            <ExpandableCanvasSection
+              section={canvasSections[8]}
+              index={8}
+              onPress={handleSectionPress}
+            />
+          </View>
         </View>
+      </ScrollView>
 
-        {/* Bottom Row */}
-        <View className="flex-row mb-6" style={{ height: 160 }}>
-          <ExpandableCanvasSection
-            section={canvasSections[6]}
-            index={6}
-            onPress={handleSectionPress}
-          />
-          <ExpandableCanvasSection
-            section={canvasSections[7]}
-            index={7}
-            onPress={handleSectionPress}
-          />
-          <ExpandableCanvasSection
-            section={canvasSections[8]}
-            index={8}
-            onPress={handleSectionPress}
-          />
-        </View>
-
-        {/* Summary Card */}
-        <View className="bg-gradient-to-br from-space-dark to-space-darker border-2 border-neon-green/40 rounded-3xl p-4 mb-8">
+      {/* Visión Estratégica Summary Footer (fixed, below scroll) */}
+      <View className="px-4 pb-4">
+        <View className="bg-gradient-to-br from-space-dark to-space-darker border-2 border-neon-green/40 rounded-3xl p-4">
           <View className="flex-row items-center mb-3">
             <View className="bg-neon-green/10 p-2 rounded-2xl border border-neon-green/30">
               <TrendingUp size={24} color="#00FF9C" />
             </View>
-            <Text className="text-neon-green text-lg font-bold ml-3">
-              Visión Estratégica
+            <Text className={`${summaryTitleColorClass} text-lg font-bold ml-3`}>
+              {t('canvas.summary.title')}
             </Text>
           </View>
           <View className="bg-neon-green/10 p-4 rounded-xl border border-neon-green/30 w-full max-w-md">
             <View className="space-y-3">
               <View className="flex-row items-center">
                 <Target size={16} color="#00FF9C" className="mr-3" />
-                <Text className="text-gray-300 text-sm flex-1">
-                  Impacto ambiental medible y verificable
+                <Text className={`${isDark ? 'text-human-primary' : 'text-human-text-light'} text-sm flex-1 font-inter`}>
+                  {t('canvas.summary.items.impact')}
                 </Text>
               </View>
               <View className="flex-row items-center">
                 <TrendingUp size={16} color="#00FF9C" className="mr-3" />
-                <Text className="text-gray-300 text-sm flex-1">
-                  Crecimiento exponencial con Web3
+                <Text className={`${isDark ? 'text-human-primary' : 'text-human-text-light'} text-sm flex-1 font-inter`}>
+                  {t('canvas.summary.items.growth')}
                 </Text>
               </View>
               <View className="flex-row items-center">
                 <Award size={16} color="#00FF9C" className="mr-3" />
-                <Text className="text-gray-300 text-sm flex-1">
-                  Liderazgo en sostenibilidad digital
+                <Text className={`${isDark ? 'text-human-primary' : 'text-human-text-light'} text-sm flex-1 font-inter`}>
+                  {t('canvas.summary.items.leadership')}
                 </Text>
               </View>
             </View>
           </View>
         </View>
-      </ScrollView>
+      </View>
 
       {/* Section Modal */}
       <SectionModal
@@ -511,6 +522,11 @@ export default function CanvasScreen() {
         section={selectedSection}
         onClose={handleCloseModal}
       />
+
+      {/* Manifesto Modal - shows on first load */}
+      {manifestoChecked && showManifesto && (
+        <ManifestoModal onClose={closeManifesto} />
+      )}
     </View>
   );
 }

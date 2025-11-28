@@ -10,8 +10,12 @@ import { useEffect } from "react";
 import { View } from "react-native";
 import "react-native-reanimated";
 import "../global.css";
+
+// Initialize i18n - must be imported before any components that use translations
+import "@human-0/i18n";
 import { ThemeProvider, useTheme } from "../theme/ThemeProvider";
 import { ThemeSwitcher } from "../components/ui/theme-switcher";
+import { LanguageSwitcher } from "../components/ui/LanguageSwitcher";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -78,7 +82,12 @@ function NavigationStack() {
               // Allow screen content to respect app colorScheme
               backgroundColor: colorScheme === "dark" ? "#050B10" : "#FFFFFF",
             },
-            headerRight: () => <ThemeSwitcher />,
+            headerRight: () => (
+              <View className="flex-row items-center gap-2">
+                <LanguageSwitcher />
+                <ThemeSwitcher />
+              </View>
+            ),
           })}
         >
           <Stack.Screen 
