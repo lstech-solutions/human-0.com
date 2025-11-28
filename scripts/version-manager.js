@@ -351,6 +351,15 @@ class VersionManager {
       // Create git tag
       execSync(`git tag v${this.versionData.version}`, { stdio: 'inherit' });
       
+      // Push commit and tag to remote
+      try {
+        execSync('git push --follow-tags', { stdio: 'inherit' });
+        console.log(`✅ Pushed v${this.versionData.version} to remote with tags`);
+      } catch (pushError) {
+        console.warn(`⚠️  Failed to push to remote: ${pushError.message}`);
+        console.log(`   Tag created locally. Push manually with: git push --follow-tags`);
+      }
+      
       console.log(`✅ Auto-committed version ${this.versionData.version}`);
       
     } catch (error) {

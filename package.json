@@ -1,6 +1,6 @@
 {
   "name": "human-0-monorepo",
-  "version": "1.7.15",
+  "version": "1.7.16",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -21,7 +21,7 @@
     "version:major": "node scripts/version-manager.js bump major --commit",
     "version:current": "node scripts/version-manager.js current",
     "version:changelog": "node scripts/version-manager.js changelog",
-    "release": "npm run version:patch && git push --follow-tags",
+    "release": "npm run version:patch",
     "latex:generate": "node scripts/latex-generator.js",
     "latex:compile": "cd latex && pdflatex business-model-canvas.tex"
   },
