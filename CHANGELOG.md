@@ -2,20 +2,46 @@
 
 ## 📋 Version History
 
-### 🔧 Version 1.7.7 **[CURRENT]**
+### 🔧 Version 1.7.10 **[CURRENT]**
 **Date:** 2025-11-28  
 **Type:** patch
 
 **Changes:**
-- Fixed lambda proxy configuration
-- UI component improvements
-- API endpoint updates
-- Version management enhancements
-- Configuration updates
-- Documentation updates
+- Finalized internationalization system with complete locale support
+- Stabilized navbar behavior across page reloads
+- Enhanced translation component with proper TypeScript typing
+- Comprehensive locale coverage for all documentation content
 
 
 ### 📚 Previous Versions
+
+### 🔧 Version 1.7.9
+**Date:** 2025-11-28  
+**Type:** patch
+
+**Changes:**
+- Finalized internationalization system with complete locale support
+- Stabilized navbar behavior across page reloads
+- Enhanced translation component with proper TypeScript typing
+- Comprehensive locale coverage for all documentation content
+
+
+---
+
+### 🔧 Version 1.7.8
+**Date:** 2025-11-28  
+**Type:** patch
+
+**Changes:**
+- Fixed TypeScript 'replace' property error in Translate component
+- Added missing documentation.* translation keys to all locale files
+- Fixed navbar disappearing on reloads by removing unnecessary redirects
+- Enhanced locale detection and translation loading
+- Updated 10 locale files with comprehensive documentation translations
+- Resolved client module initialization conflicts
+
+
+---
 
 ### 🔧 Version 1.7.6
 **Date:** 2025-11-28  

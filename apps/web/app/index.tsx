@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Platform } from 'react-native';
 import { useTranslation } from '@human-0/i18n';
+import { useLanguagePicker } from '@human-0/i18n/hooks';
 import FlickeringGrid from '../components/FlickeringGrid';
 import { H1, Body } from '../components/typography';
 import { ParticleHero } from '../components/ui/animated-hero';
@@ -15,6 +16,7 @@ import { HumanProofStats, type HumanStats } from '../components/HumanProofStats'
 import { apiClient } from '../lib/api-client';
 import { Link } from 'expo-router';
 import { getDocsUrl } from '../lib/docs-url';
+import { Footer } from '../components/ui/Footer';
 
 function randomizeZeroGlyphs(value: string): string {
   return value.replace(/[01]/g, (digit) => (Math.random() < 0.5 ? digit : 'Ø'));
@@ -73,6 +75,7 @@ export default function Home() {
   const [isDesktop, setIsDesktop] = useState(false);
   const { colorScheme } = useTheme();
   const { t } = useTranslation();
+  const { currentLanguage } = useLanguagePicker();
   const APP_VERSION = appPkg.version || "0.0.0";
   const [frameRate, setFrameRate] = useState(60);
   const lastPointer = useRef<{ x: number; y: number; t: number } | null>(null);
@@ -550,7 +553,8 @@ export default function Home() {
       : 'from-white/70 via-white/55 to-white/70';
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-human-bg-light dark:bg-human-bg-dark">
+    <>
+      <main className="relative min-h-screen overflow-hidden bg-human-bg-light dark:bg-human-bg-dark">
       {/* Global background dots */}
       <FlickeringGrid
         className="absolute inset-0 pointer-events-none opacity-25 mix-blend-screen"
@@ -694,7 +698,7 @@ export default function Home() {
               Terms
             </Link>
             <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e] mx-1">·</span>
-            <a href={getDocsUrl('/')} className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] underline decoration-dotted underline-offset-2 transition-colors">
+            <a href={getDocsUrl('/', currentLanguage, isDark)} target="_blank" rel="noopener noreferrer" className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] underline decoration-dotted underline-offset-2 transition-colors">
               Docs
             </a>
           </div>
@@ -757,6 +761,8 @@ export default function Home() {
           100% { transform: translate(-50%, -50%) translateX(var(--orbit-radius, 200px)); }
         }
       `}</style>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

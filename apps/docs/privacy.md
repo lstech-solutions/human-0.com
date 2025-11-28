@@ -1,6 +1,6 @@
 # HUMΛN-Ø Privacy Policy
 
-_[Last updated: 28 November 2025](https://human-0.com/documentation/privacy)_
+_[Last updated: November 28, 2025](https://human-0.com/documentation/privacy?version=1.7.7)_
 
 This Privacy Policy describes how **HUMΛN-Ø** (the "Service") collects, uses, and protects your information.
 

@@ -1,0 +1,335 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "retry": "Reintentar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "done": "Listo",
+    "close": "Cerrar",
+    "search": "Buscar",
+    "settings": "Configuración",
+    "language": "Idioma"
+  },
+  "welcome": {
+    "title": "Bienvenido a HUMΛN-Ø",
+    "subtitle": "Impacto sustentable mediante tecnología Web3",
+    "getStarted": "Comenzar",
+    "learnMore": "Saber Más"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "mission": "Misión",
+    "technology": "Tecnología",
+    "contact": "Contacto"
+  },
+  "mission": {
+    "title": "Nuestra Misión",
+    "description": "Construyendo un futuro sostenible a través de verificación de impacto transparente impulsada por blockchain.",
+    "impact": "Impacto Verificado",
+    "transparency": "Transparencia Total",
+    "community": "Comunidad Global"
+  },
+  "canvas": {
+    "title": "Modelo de Negocio Canvas",
+    "keyPartners": "Socios Clave",
+    "keyActivities": "Actividades Clave",
+    "keyResources": "Recursos Clave",
+    "valueProposition": "Propuesta de Valor",
+    "customerRelationships": "Relaciones con Clientes",
+    "channels": "Canales",
+    "customerSegments": "Segmentos de Clientes",
+    "costStructure": "Estructura de Costos",
+    "revenueStreams": "Fuentes de Ingresos",
+    "sections": {
+      "partners": {
+        "title": "Socios Clave",
+        "subtitle": "Alianzas externas que ayudan a ejecutar las actividades clave",
+        "content": [
+          "ONGs Ambientales - Colaboración con 15+ organizaciones líderes en conservación",
+          "Proyectos de Compensación de Carbono - 50+ proyectos verificados por Verra y Gold Standard",
+          "Validadores Blockchain - Auditoría y certificación por 8+ firmas especializadas",
+          "Proveedores de Energía Verde - Contratos con 20+ generadores de energía renovable",
+          "Consultores de Sostenibilidad - Equipo de 30+ expertos en ESG y carbon neutrality",
+          "Organizaciones de Impacto - Partnerships con 25+ ONGs internacionales"
+        ],
+        "metrics": {
+          "kpi": "95% tasa de retención de partners",
+          "growth": "+180% crecimiento anual",
+          "efficiency": "85% reducción costos operativos",
+          "target": "200+ partners para 2025"
+        }
+      },
+      "activities": {
+        "title": "Actividades Clave",
+        "subtitle": "Las actividades más importantes para ejecutar la propuesta de valor",
+        "content": [
+          "Verificación de Impacto - Procesamiento de 1000+ verificaciones mensuales con IA",
+          "Acuñación y Comercio de NFTs - Emisión de 5000+ NFTs de carbono verificados",
+          "Desarrollo de Smart Contracts - 50+ contratos desplegados en Ethereum/Polygon",
+          "Gestión Comunitaria - Moderación de 10000+ miembros en Discord/Telegram",
+          "Gestión de Créditos de Carbono - Administración de 1M+ toneladas CO2e",
+          "Análisis de Datos - Procesamiento de 5TB+ de datos con ML/AI"
+        ],
+        "metrics": {
+          "kpi": "99.9% uptime del sistema",
+          "growth": "+300% procesamiento transacciones",
+          "efficiency": "2.3x mejora en velocidad",
+          "target": "10M+ transacciones/año"
+        }
+      },
+      "proposition": {
+        "title": "Propuesta de Valor",
+        "subtitle": "Producto o servicio único que crea valor para los clientes",
+        "content": [
+          "Seguimiento Transparente de Impacto - Blockchain inmutable con trazabilidad completa",
+          "Créditos de Carbono Basados en Web3 - Tokenización real con estándares UNFCCC",
+          "Sostenibilidad Gamificada - 85% engagement con sistema de niveles y recompensas",
+          "Sistema de Logros NFT - 100+ logros desbloqueables con rareza variable",
+          "Verificación Descentralizada - Consenso distribuido con Proof-of-Stake",
+          "Dashboards en Tiempo Real - Actualización instantánea con WebSockets"
+        ],
+        "metrics": {
+          "kpi": "4.8/5 satisfacción usuarios",
+          "growth": "+450% adopción mensual",
+          "efficiency": "90% reducción fraudes",
+          "target": "1M+ usuarios activos"
+        }
+      },
+      "relationships": {
+        "title": "Relaciones con Clientes",
+        "subtitle": "Tipos de relaciones establecidas con los segmentos de clientes",
+        "content": [
+          "Construcción Comunitaria - 50+ eventos mensuales con 500+ asistentes",
+          "Dashboard de Análisis de Impacto - Personalización con IA y recomendaciones",
+          "Recomendaciones Personalizadas - 95% precisión con algoritmos ML",
+          "Sistema de Logros - Gamificación con 50+ niveles y badges exclusivos",
+          "Funciones de Compartir Social - 10K+ compartidos diarios en redes",
+          "Soporte 24/7 - <2min tiempo respuesta con chatbots y agentes"
+        ],
+        "metrics": {
+          "kpi": "92% tasa de retención",
+          "growth": "+250% NPS score",
+          "efficiency": "80% soporte automatizado",
+          "target": "95% satisfacción"
+        }
+      },
+      "segments": {
+        "title": "Segmentos de Clientes",
+        "subtitle": "Diferentes grupos de personas u organizaciones objetivo",
+        "content": [
+          "Individuos Eco-conscientes - 45% del mercado con ingresos >$50K anuales",
+          "Equipos de Sostenibilidad Corporativa - 200+ empresas Fortune 500",
+          "Organizaciones Ambientales - 500+ ONGs con presupuesto >$1M",
+          "Entusiastas de Web3 - 100K+ usuarios con wallets activas",
+          "Inversores de Impacto - $50M+ en activos bajo gestión",
+          "Proyectos Educativos - 100+ instituciones K-12 y universidades"
+        ],
+        "metrics": {
+          "kpi": "35% penetración mercado",
+          "growth": "+400% nuevos segmentos",
+          "efficiency": "$25 LTV promedio",
+          "target": "5M+ usuarios totales"
+        }
+      },
+      "resources": {
+        "title": "Recursos Clave",
+        "subtitle": "Principales recursos necesarios para ejecutar las actividades clave",
+        "content": [
+          "Infraestructura Blockchain - 15 nodos globales con 99.9% uptime",
+          "Base de Código Smart Contracts - 200K+ líneas con auditorías completas",
+          "Alianzas de Compensación de Carbono - 50+ partners verificados",
+          "Plataforma Comunitaria - 100K+ MAU con engagement del 45%",
+          "Sistemas de Análisis de Datos - Pipeline ML/AI con TensorFlow",
+          "Equipo Técnico Experto - 50+ desarrolladores senior y blockchain engineers"
+        ],
+        "metrics": {
+          "kpi": "300% ROI en infraestructura",
+          "growth": "+200% capacidad procesamiento",
+          "efficiency": "95% utilización recursos",
+          "target": "100+ desarrolladores"
+        }
+      },
+      "channels": {
+        "title": "Canales",
+        "subtitle": "Cómo las propuestas de valor llegan a los segmentos de clientes",
+        "content": [
+          "App Móvil (iOS/Android) - 150K+ descargas con 4.5★ rating",
+          "Plataforma Web - 300K+ visitantes/mes con 12% conversión",
+          "Campañas en Redes Sociales - 1M+ alcance con 3.2% engagement",
+          "Redes de Partners - 50+ canales activos con comisiones variables",
+          "Eventos Comunitarios - 20+ eventos/mes con 500+ asistentes",
+          "Marketing de Contenidos - 200+ artículos con 50K+ lectores"
+        ],
+        "metrics": {
+          "kpi": "12% tasa conversión",
+          "growth": "+350% tráfico orgánico",
+          "efficiency": "$2.5 CPA promedio",
+          "target": "500K+ usuarios totales"
+        }
+      },
+      "costs": {
+        "title": "Estructura de Costos",
+        "subtitle": "Todos los costos involucrados en operar el modelo de negocio",
+        "content": [
+          "Tarifas de gas de blockchain – 15% de los costos totales con optimización de capa 2",
+          "Desarrollo de plataforma – 25% de los costos totales con 50+ desarrolladores",
+          "Marketing y comunidad – 20% de los costos totales con 3.2x ROI",
+          "Gestión de alianzas – 10% de los costos totales con 50+ alianzas activas",
+          "Cumplimiento y auditoría – 8% de los costos totales con certificaciones ISO",
+          "Infraestructura técnica – 22% de los costos totales con proveedores de nube"
+        ],
+        "metrics": {
+          "kpi": "$2.5M tasa de quema anual",
+          "growth": "+180% optimización de costos",
+          "efficiency": "30% reducción de costos vs benchmark de la industria",
+          "target": "$1.8M tasa de quema"
+        }
+      },
+      "revenue": {
+        "title": "Fuentes de Ingresos",
+        "subtitle": "Fuentes desde las cuales la empresa genera ingresos",
+        "content": [
+          "Tarifas de acuñación de NFT – 35% de los ingresos con una tarifa del 2.5%",
+          "Tarifas de transacción – 25% de los ingresos con una tarifa del 1%",
+          "Análisis premium – 15% de los ingresos con suscripción de $49/mes",
+          "Alianzas corporativas – 15% de los ingresos con contratos anuales",
+          "Comercio de créditos de carbono – 5% de los ingresos con un spread del 0.5%",
+          "Suscripciones pro – 5% de los ingresos con plan de $99/mes"
+        ],
+        "metrics": {
+          "kpi": "$5M+ ARR anual",
+          "growth": "+600% crecimiento de ingresos",
+          "efficiency": "75% margen bruto",
+          "target": "$10M+ ARR"
+        }
+      }
+    },
+    "summary": {
+      "title": "Visión Estratégica",
+      "items": {
+        "impact": "Impacto ambiental medible y verificable",
+        "growth": "Crecimiento exponencial con Web3",
+        "leadership": "Liderazgo en sostenibilidad digital"
+      }
+    },
+    "modal": {
+      "detailedComponents": "Componentes Detallados",
+      "insight": "💡 Insight: Este componente genera el {{percentage}}% del impacto total del área",
+      "metrics": {
+        "title": "Métricas Clave",
+        "kpi": "KPI Principal",
+        "growth": "Crecimiento",
+        "efficiency": "Eficiencia",
+        "target": "Objetivo"
+      }
+    }
+  },
+  "auth": {
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "signOut": "Cerrar Sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "noAccount": "¿No tienes cuenta?",
+    "hasAccount": "¿Ya tienes cuenta?"
+  },
+  "errors": {
+    "network": "Error de red. Por favor verifica tu conexión.",
+    "unauthorized": "No tienes autorización para realizar esta acción.",
+    "notFound": "El recurso solicitado no fue encontrado.",
+    "serverError": "Error del servidor. Por favor intenta más tarde."
+  },
+  "plurals": {
+    "items_one": "{{count}} elemento",
+    "items_other": "{{count}} elementos",
+    "days_one": "{{count}} día",
+    "days_other": "{{count}} días"
+  },
+  "manifesto": {
+    "header": {
+      "title": "🌍 Manifiesto HUMΛN-Ø",
+      "tagline": "PROOF OF SUSTAINABLE HUMANITY",
+      "subtitle": "Donde el impacto ambiental se encuentra con la transparencia digital."
+    },
+    "sections": {
+      "0": {
+        "title": "0. Prefacio — El humano en el bucle",
+        "content": "La humanidad se aproxima a una condición de límite:\nun momento en el que nuestras acciones físicas y nuestra existencia digital deben converger en una única verdad medible.\nYa no estamos separados de los sistemas que creamos.\nEnergía, datos, identidad y responsabilidad están completamente interconectados.\n\nHUMΛN-Ø se construye sobre una sola idea:\ndebe existir una prueba criptográfica de que una persona ha contribuido más al planeta de lo que ha extraído de él.\n\nUn nuevo primitivo.\nUn nuevo derecho digital.\nUna nueva identidad cívica anclada en la sostenibilidad."
+      },
+      "1": {
+        "title": "1. El Principio del Cero",
+        "content": "El número más poderoso es aquel que no pide nada y no se lleva nada.\nCero significa equilibrio — no ausencia.\nCero no es el final; cero es alineación.\nCero es el retorno a la neutralidad, un ciclo cerrado entre lo que usamos y lo que restauramos.\n\nHUMΛN-Ø existe para convertir el Cero Neto de un eslogan corporativo\nen una verdad individual, verificable criptográficamente por cualquiera, en cualquier lugar.\n\nLa prueba de trabajo contamina.\nLa prueba de participación financia.\nLa Prueba de Humanidad Sostenible libera."
+      },
+      "2": {
+        "title": "2. Por qué Web3: porque la confianza no puede centralizarse",
+        "content": "Las afirmaciones climáticas a menudo son:\n• invisibles,\n• imposibles de verificar,\n• contadas dos veces,\n• o controladas por intermediarios.\n\nLa sostenibilidad hoy se apoya en la confianza, pero la confianza sin verificación falla.\n\nWeb3 nos ofrece:\n• Transparencia sin permisos\n• Responsabilidad sin jerarquías\n• Integridad sin guardianes\n• Acceso global sin fronteras\n\nEl movimiento climático merece una infraestructura abierta.\nEl planeta merece una verdad inmutable."
+      },
+      "3": {
+        "title": "3. Acuñar como derecho, no como fuente de ingresos",
+        "content": "En HUMΛN-Ø:\n⭐ Acuñar tu prueba de acción sostenible no es un negocio.\n⭐ Es un derecho.\n⭐ Debe permanecer accesible.\n\nPor lo tanto:\n• Costo de acuñación = solo la comisión de transacción de la cadena\n• HUMΛN-Ø no obtiene beneficio de la acuñación\n• La prueba es tuya, para siempre\n• El registro pertenece al planeta, no a una corporación\n\nSolo cobramos por servicios opcionales, no por el derecho a demostrar tu impacto positivo.\n\nTu prueba.\nTu cadena.\nTu humanidad.\nVerificada."
+      },
+      "4": {
+        "title": "4. Prueba de Humanidad Sostenible (PoSH)",
+        "content": "PoSH es un nuevo primitivo de verificación:\nun certificado criptográfico de que una persona real ha completado una acción ambiental positiva y medible.\n\nEsto no es especulación con créditos de carbono.\nEsto no es compensación corporativa.\nEsto es sostenibilidad a escala humana — verificada en el terreno.\n\nCada prueba es:\n• Acuñada de forma única\n• Respaldada por atributos reales de energía renovable (por ejemplo, I-RECs retirados)\n• Vinculada permanentemente a una identidad humana (anónima o pública)\n• Auditables por cualquiera\n\nNo \"compras\" tu sostenibilidad.\nLa demuestras."
+      },
+      "5": {
+        "title": "5. Tecnología con ética",
+        "content": "HUMΛN-Ø se compromete a:\n✔ Protocolos abiertos sobre sistemas propietarios\n✔ Blockchains públicas sobre bases de datos cerradas\n✔ Sin cargos ocultos\n✔ Sin incentivos especulativos\n✔ Soberanía del usuario sobre la custodia corporativa\n✔ Sostenibilidad por encima de la extracción\n\nCada línea de código debe reflejar:\nresponsabilidad, restauración y cuidado,\ny el rechazo a monetizar lo que debería ser un derecho humano.\n\nEsto no es otra marca de \"tecnología verde\".\nEs Ética Ambiental Digital codificada en la infraestructura."
+      },
+      "6": {
+        "title": "6. El Horizonte Humano",
+        "content": "Creemos en:\nun futuro en el que cada persona tenga una prueba verificable de contribución al planeta.\n\nUn mundo donde:\n• Tu huella energética es transparente\n• Tus acciones positivas son recompensadas\n• Tu identidad digital lleva tu verdad ambiental\n• La humanidad colabora a través de sistemas abiertos\n• La sostenibilidad no es opcional, sino parte de la vida cotidiana\n\nLa blockchain no es el fin.\nEs el sustrato.\nLa humanidad es el protocolo."
+      },
+      "7": {
+        "title": "7. La Responsabilidad del Cero",
+        "content": "Volver a cero no es retroceder;\nes completar.\nUn círculo completo.\nUn ciclo equilibrado.\nUn sistema humano alineado con los sistemas naturales.\n\nAlcanzar el cero es recuperar la agencia.\n\nHUMΛN-Ø es la herramienta.\nTú eres la prueba."
+      }
+    },
+    "conclusion": {
+      "title": "Conclusión — HUMΛN-Ø",
+      "body": "Un mundo donde:\n\n🌱 La sostenibilidad es un hecho criptográfico.\n🔗 La identidad está ligada a la contribución, no al consumo.\n✨ Acuñar es un derecho, no un producto.\n🌍 La humanidad se verifica a sí misma.\n⚡ El cero vuelve a ser el número más poderoso.\n\nHUMΛN-Ø\nPrueba de Humanidad Sostenible"
+    },
+    "footer": {
+      "dontShowAgain": "No volver a mostrar",
+      "enterCanvas": "Entrar al Canvas"
+    }
+  },
+  "hero": {
+    "titleLine1": "PRUEBA DE",
+    "titleLine2": "HUMANIDAD SOSTENIBLE",
+    "subtitle": "Donde el impacto ambiental se encuentra con la transparencia digital — Neutralidad de carbono mediante innovación Web3",
+    "cta": {
+      "exploreCanvas": "EXPLORAR CANVAS",
+      "downloadPdf": "DESCARGAR PDF"
+    }
+  },
+  "footer": {
+    "systemActive": "SYSTEM.ACTIVE",
+    "sysAct": "SYS.ACT",
+    "rendering": "◐ RENDERING",
+    "framesLabel": "FRAMES: {{frameRate}}"
+  },
+  "stats": {
+    "verifiedHumansLabel": "HUMAN-Ø VERIFICADOS",
+    "verifiedRatioLabel": "PROPORCIÓN VERIFICADA",
+    "showDetails": "Mostrar detalles",
+    "hideDetails": "Ocultar detalles",
+    "estimatedGlobalPopulation": "POBLACIÓN GLOBAL ESTIMADA",
+    "estimateDisclaimer": "Estimación, no datos oficiales en tiempo real",
+    "baselineYear": "Año base: {{year}} — actualizado periódicamente con datos abiertos",
+    "liveStatusLabel": "ESTADO EN VIVO",
+    "streamActive": "STREAM.ACTIVE / DATA.SYNC",
+    "awaitingData": "AWAITING.DATA / ...",
+    "feedActive": "FEED HUMAN-Ø PROOF",
+    "feedInitializing": "INICIALIZANDO FEED",
+    "dataSourcesLabel": "Fuentes de datos:"
+  }
+}

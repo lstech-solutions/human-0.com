@@ -28,3 +28,23 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Custom navbar title behavior - redirect to main site with locale and theme */
+.navbar__title,
+.navbar__link--logo {
+  cursor: pointer !important;
+}
+
+.navbar__title:hover,
+.navbar__link--logo:hover {
+  opacity: 0.8;
+}
+
+/* Override default link behavior for navbar title */
+.navbar__brand {
+  cursor: pointer !important;
+}
+
+.navbar__brand:hover {
+  opacity: 0.9;
+}

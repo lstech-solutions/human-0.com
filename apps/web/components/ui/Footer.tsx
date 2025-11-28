@@ -2,31 +2,42 @@ import React from 'react';
 import { View, Text, Pressable, Platform } from 'react-native';
 import { useLanguagePicker } from '@human-0/i18n/hooks';
 import { useTheme } from '../../theme/ThemeProvider';
+import { getDocsUrl } from '../../lib/docs-url';
+import { useRouter } from 'expo-router';
+import { getLegalDocumentUrl, getLegalDocumentHistoryUrl } from '../../lib/version-utils';
 
 export function Footer() {
-  const { currentLanguage } = useLanguagePicker();
+  const { currentLanguage, languages, setLanguage } = useLanguagePicker();
   const { colorScheme } = useTheme();
+  const router = useRouter();
   
   const isDark = colorScheme === 'dark';
   
-  // Build URLs with current locale and dark mode
-  const buildUrl = (path: string) => {
-    const baseUrl = Platform.OS === 'web' 
-      ? (process.env.NODE_ENV === 'development' ? 'http://localhost:3001/documentation' : 'https://human-0.com/documentation')
-      : 'https://human-0.com/documentation';
-    
-    return `${baseUrl}${path}?locale=${currentLanguage}&dark=${isDark}`;
+  // Get current language info
+  const currentLang = languages.find(l => l.code === currentLanguage) || languages[0];
+  
+  // URL building functions
+  const buildDocsUrl = (path: string) => {
+    return getDocsUrl(path, currentLanguage, isDark);
   };
 
-  const buildMainSiteUrl = (path: string = '') => {
-    const baseUrl = Platform.OS === 'web' 
-      ? (process.env.NODE_ENV === 'development' ? 'http://localhost:8081' : 'https://human-0.com')
-      : 'https://human-0.com';
+  // Handle navigation
+  const handleNavigation = (path: string) => {
+    // Build URL with locale and theme params
+    const params = new URLSearchParams();
+    if (currentLanguage && currentLanguage !== 'en') {
+      params.append('locale', currentLanguage);
+    }
+    params.append('dark', isDark.toString());
     
-    return `${baseUrl}${path}?locale=${currentLanguage}&dark=${isDark}`;
+    const paramString = params.toString();
+    const fullPath = paramString ? `${path}?${paramString}` : path;
+    
+    // Use client-side routing for internal pages - cast to any to bypass TypeScript strict typing
+    router.push(fullPath as any);
   };
 
-  const handleLinkPress = (url: string) => {
+  const handleExternalLink = (url: string) => {
     if (Platform.OS === 'web') {
       window.open(url, '_blank');
     } else {
@@ -35,18 +46,36 @@ export function Footer() {
     }
   };
 
+  // Handle legal document links with version awareness
+  const handleLegalLink = (documentType: 'terms' | 'privacy') => {
+    if (Platform.OS === 'web') {
+      // In web, open versioned documentation with language and theme params
+      const docsUrl = getLegalDocumentUrl(documentType, 'docs', undefined, {
+        locale: currentLanguage,
+        isDark: isDark
+      });
+      
+      window.open(docsUrl, '_blank');
+    } else {
+      // For native, navigate to internal page
+      handleNavigation(`/${documentType}`);
+    }
+  };
+
   return (
-    <View className={`w-full py-8 px-4 border-t ${isDark ? 'bg-[#050B10] border-gray-800' : 'bg-white border-gray-200'}`}>
-      <View className="max-w-6xl mx-auto">
-        {/* Main content grid */}
-        <View className="flex flex-col md:flex-row gap-8 mb-8">
+    <View className={`w-full py-4 px-3 border-t ${isDark ? 'bg-[#050B10] border-gray-800' : 'bg-white border-gray-200'}`}>
+      <View className="w-full px-4 sm:px-6 lg:px-8">
+        {/* Main content - HUMΛN-Ø left, legal/resources right in 3x2 grid */}
+        <View className="flex flex-col lg:flex-row gap-4 lg:gap-8 mb-4">
           
-          {/* Company section */}
-          <View className="flex-1">
-            <Text className={`text-lg font-bold mb-4 ${isDark ? 'text-emerald-400' : 'text-[#0A1628]'}`}>
-              HUMΛN-Ø
-            </Text>
-            <Text className={`text-sm mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+          {/* HUMΛN-Ø section - left side */}
+          <View className="lg:w-1/3">
+            <Pressable onPress={() => handleNavigation('/')}>
+              <Text className={`text-base font-bold mb-2 ${isDark ? 'text-emerald-400 hover:text-emerald-300' : 'text-[#0A1628] hover:text-gray-900'}`}>
+                HUMΛN-Ø
+              </Text>
+            </Pressable>
+            <Text className={`text-xs mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
               Sustainable impact through Web3 technology
             </Text>
             <Text className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
@@ -54,77 +83,81 @@ export function Footer() {
             </Text>
           </View>
 
-          {/* Legal section */}
-          <View className="flex-1">
-            <Text className={`text-lg font-bold mb-4 ${isDark ? 'text-emerald-400' : 'text-[#0A1628]'}`}>
-              Legal
-            </Text>
-            <Pressable onPress={() => handleLinkPress(buildUrl('/privacy'))}>
-              <Text className={`text-sm mb-2 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
-                Privacy Policy
+          {/* Legal & Resources sections - right side in same row */}
+          <View className="lg:w-2/3 flex flex-col sm:flex-row gap-4">
+            
+            {/* Legal section */}
+            <View className="flex-1">
+              <Text className={`text-base font-bold mb-2 ${isDark ? 'text-emerald-400' : 'text-[#0A1628]'}`}>
+                Legal
               </Text>
-            </Pressable>
-            <Pressable onPress={() => handleLinkPress(buildUrl('/terms'))}>
-              <Text className={`text-sm mb-2 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
-                Terms of Service
-              </Text>
-            </Pressable>
-          </View>
+              <Pressable onPress={() => handleLegalLink('privacy')}>
+                <Text className={`text-xs mb-1 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
+                  Privacy Policy
+                </Text>
+              </Pressable>
+              <Pressable onPress={() => handleLegalLink('terms')}>
+                <Text className={`text-xs mb-1 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-900 hover:text-[#0A1628]'}`}>
+                  Terms of Service
+                </Text>
+              </Pressable>
+            </View>
 
-          {/* Resources section */}
-          <View className="flex-1">
-            <Text className={`text-lg font-bold mb-4 ${isDark ? 'text-emerald-400' : 'text-[#0A1628]'}`}>
-              Resources
-            </Text>
-            <Pressable onPress={() => handleLinkPress(buildUrl('/docs/intro'))}>
-              <Text className={`text-sm mb-2 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
-                Documentation
+            {/* Resources section */}
+            <View className="flex-1">
+              <Text className={`text-base font-bold mb-2 ${isDark ? 'text-emerald-400' : 'text-[#0A1628]'}`}>
+                Resources
               </Text>
-            </Pressable>
-            <Pressable onPress={() => handleLinkPress(buildUrl('/docs/architecture'))}>
-              <Text className={`text-sm mb-2 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
-                Architecture
-              </Text>
-            </Pressable>
-            <Pressable onPress={() => handleLinkPress('https://github.com/lstech-solutions/human-0.com')}>
-              <Text className={`text-sm mb-2 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
-                GitHub
-              </Text>
-            </Pressable>
-          </View>
+              <Pressable onPress={() => handleExternalLink(buildDocsUrl('/intro'))}>
+                <Text className={`text-xs mb-1 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
+                  Introduction
+                </Text>
+              </Pressable>
+              <Pressable onPress={() => handleExternalLink(buildDocsUrl('/architecture'))}>
+                <Text className={`text-xs mb-1 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
+                  Architecture
+                </Text>
+              </Pressable>
+              <Pressable onPress={() => handleExternalLink('https://github.com/lstech-solutions/human-0.com')}>
+                <Text className={`text-xs mb-1 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
+                  GitHub
+                </Text>
+              </Pressable>
+            </View>
 
-          {/* Connect section */}
-          <View className="flex-1">
-            <Text className={`text-lg font-bold mb-4 ${isDark ? 'text-emerald-400' : 'text-[#0A1628]'}`}>
-              Connect
-            </Text>
-            <Pressable onPress={() => handleLinkPress(buildMainSiteUrl('/impact'))}>
-              <Text className={`text-sm mb-2 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
-                Impact Tracking
+            {/* Connect section */}
+            <View className="flex-1">
+              <Text className={`text-base font-bold mb-2 ${isDark ? 'text-emerald-400' : 'text-[#0A1628]'}`}>
+                Connect
               </Text>
-            </Pressable>
-            <Pressable onPress={() => handleLinkPress(buildMainSiteUrl('/profile'))}>
-              <Text className={`text-sm mb-2 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
-                Profile
-              </Text>
-            </Pressable>
-            <Pressable onPress={() => handleLinkPress(buildMainSiteUrl('/nfts'))}>
-              <Text className={`text-sm mb-2 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
-                NFT Collection
-              </Text>
-            </Pressable>
+              <Pressable onPress={() => handleNavigation('/impact')}>
+                <Text className={`text-xs mb-1 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
+                  Impact Tracking
+                </Text>
+              </Pressable>
+              <Pressable onPress={() => handleNavigation('/profile')}>
+                <Text className={`text-xs mb-1 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
+                  Profile
+                </Text>
+              </Pressable>
+              <Pressable onPress={() => handleNavigation('/nfts')}>
+                <Text className={`text-xs mb-1 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
+                  NFT Collection
+                </Text>
+              </Pressable>
+            </View>
           </View>
         </View>
 
-        {/* Bottom bar */}
-        <View className={`pt-4 border-t ${isDark ? 'border-gray-800' : 'border-gray-200'}`}>
-          <View className="flex flex-col sm:flex-row justify-between items-center">
+        {/* Bottom bar - more compact on mobile */}
+        <View className={`pt-3 border-t ${isDark ? 'border-gray-800' : 'border-gray-200'}`}>
+          <View className="flex flex-col sm:flex-row justify-between items-center gap-2">
             <Text className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
               Built with ❤️ and Web3 technology
             </Text>
-            <View className="flex flex-row items-center gap-4 mt-2 sm:mt-0">
+            <View className="flex flex-row items-center gap-2 sm:gap-4">
               <Text className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
-                Language: {currentLanguage?.toUpperCase()}
+                Language: {currentLang?.nativeName || currentLanguage?.toUpperCase()}
               </Text>
               <Text className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
                 Theme: {isDark ? '🌙 Dark' : '☀️ Light'}

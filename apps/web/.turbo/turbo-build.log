@@ -1,41 +1,38 @@
 
-> @human-0/web@1.7.6 build /home/ed/Documents/LSTS/human-0.com/apps/web
+> @human-0/web@1.7.7 build /home/ed/Documents/LSTS/human-0.com/apps/web
 > expo export -p web
 
 Starting Metro Bundler
 Static rendering is enabled. Learn more: https://docs.expo.dev/router/reference/static-rendering/
 Web node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
 λ node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
-Web node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.3% (586/725)
-λ node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
-Web node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 96.7% (2601/2649)
-λ node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 89.4% (2192/2318)
-Web Bundled 7868ms node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js (2682 modules)
-λ Bundled 8070ms node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/node/render.js (2699 modules)
+Web node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 91.4% (2286/2391)
+λ node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/node/render.js ▓▓▓▓▓░░░░░░░░░░░ 35.1% (276/466)
+Web Bundled 5060ms node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js (2665 modules)
+λ Bundled 5127ms node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/node/render.js (2690 modules)
 λ apps/web/app/api/terms+api.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
-λ Bundled 1908ms apps/web/app/api/terms+api.ts (1 module)
-λ Bundled 1708ms apps/web/app/api/privacy+api.ts (1 module)
-λ apps/web/app/api/human-stats+api.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
-λ Bundled 2437ms apps/web/app/api/human-stats+api.ts (1 module)
+λ Bundled 1203ms apps/web/app/api/terms+api.ts (1 module)
+λ Bundled 1119ms apps/web/app/api/privacy+api.ts (1 module)
+λ Bundled 1182ms apps/web/app/api/human-stats+api.ts (1 module)
 
 › web bundles (2):
-_expo/static/css/web-141508aef0d690eb2e42edaf861a469d.css (38 kB)
-_expo/static/js/web/entry-4673749b9ba9211d6e8f50cf677753e6.js (3.97 MB)
+_expo/static/css/web-f383fb7602a5abbb39c6926c4a80f6a6.css (38.8 kB)
+_expo/static/js/web/entry-55eff308acffcd7606893713684201a3.js (3.98 MB)
 
 › Static routes (13):
-/nfts (30 kB)
-/ (index) (22.7 kB)
-/terms (23.1 kB)
-/canvas (43.4 kB)
-/impact (32 kB)
-/privacy (23.1 kB)
-/profile (32.1 kB)
-/_sitemap (19.2 kB)
-/+not-found (19.2 kB)
-/pdf-download (40.5 kB)
-/documentation (23 kB)
-/documentation/terms (22.7 kB)
-/documentation/privacy (22.7 kB)
+/nfts (29.5 kB)
+/ (index) (22.2 kB)
+/terms (25.7 kB)
+/canvas (42.9 kB)
+/impact (31.6 kB)
+/privacy (25.6 kB)
+/profile (31.7 kB)
+/_sitemap (18.8 kB)
+/+not-found (18.8 kB)
+/pdf-download (40.1 kB)
+/documentation (22.5 kB)
+/documentation/terms (22.2 kB)
+/documentation/privacy (22.2 kB)
 
 › API routes (3):
 /api/terms (5.19 kB) (source map (7.18 kB))

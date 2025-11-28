@@ -1,24 +1,48 @@
 {
   "name": "human-zero",
-  "version": "1.7.7",
+  "version": "1.7.10",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251128184928",
+  "build": "20251128224443",
   "changelog": {
     "current": {
-      "version": "1.7.7",
+      "version": "1.7.10",
       "date": "2025-11-28",
-      "timestamp": "2025-11-28T18:49:28.808Z",
+      "timestamp": "2025-11-28T22:44:43.724Z",
       "type": "patch",
       "changes": [
-        "Fixed lambda proxy configuration",
-        "UI component improvements",
-        "API endpoint updates",
-        "Version management enhancements",
-        "Configuration updates",
-        "Documentation updates"
+        "Finalized internationalization system with complete locale support",
+        "Stabilized navbar behavior across page reloads",
+        "Enhanced translation component with proper TypeScript typing",
+        "Comprehensive locale coverage for all documentation content"
       ]
     },
     "history": [
+      {
+        "version": "1.7.9",
+        "date": "2025-11-28",
+        "timestamp": "2025-11-28T17:44:00.000Z",
+        "type": "patch",
+        "changes": [
+          "Finalized internationalization system with complete locale support",
+          "Stabilized navbar behavior across page reloads",
+          "Enhanced translation component with proper TypeScript typing",
+          "Comprehensive locale coverage for all documentation content"
+        ]
+      },
+      {
+        "version": "1.7.8",
+        "date": "2025-11-28",
+        "timestamp": "2025-11-28T17:42:00.000Z",
+        "type": "patch",
+        "changes": [
+          "Fixed TypeScript 'replace' property error in Translate component",
+          "Added missing documentation.* translation keys to all locale files",
+          "Fixed navbar disappearing on reloads by removing unnecessary redirects",
+          "Enhanced locale detection and translation loading",
+          "Updated 10 locale files with comprehensive documentation translations",
+          "Resolved client module initialization conflicts"
+        ]
+      },
       {
         "version": "1.7.6",
         "date": "2025-11-28",
@@ -430,14 +454,19 @@
   "semver": {
     "major": 1,
     "minor": 7,
-    "patch": 7,
+    "patch": 10,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-11-28T18:49:28.798Z",
+    "lastModified": "2025-11-28T22:44:43.723Z",
     "commitHash": "initial",
     "branch": "main",
-    "author": "HUMΛN-Ø Team"
+    "author": "HUMΛN-Ø Team",
+    "legal": {
+      "lastUpdated": "2025-11-28T20:46:54.747Z",
+      "documentsVersioned": true,
+      "autoUpdateEnabled": true
+    }
   }
 }

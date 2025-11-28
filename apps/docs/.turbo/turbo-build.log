@@ -1,11 +1,43 @@
 
-> @human-0/docs@1.7.6 build /home/ed/Documents/LSTS/human-0.com/apps/docs
+> @human-0/docs@1.7.7 prebuild /home/ed/Documents/LSTS/human-0.com/apps/docs
+> cd ../.. && ./scripts/copy-locales.sh
+
+📦 Copying locales from i18n package...
+✅ Copied locale files:
+total 208
+drwxrwxr-x  2 ed ed  4096 Nov 28 16:57 .
+drwxrwxr-x 11 ed ed  4096 Nov 28 17:42 ..
+-rw-rw-r--  1 ed ed 17822 Nov 28 17:43 ar-SA.json
+-rw-rw-r--  1 ed ed 18835 Nov 28 17:43 de-DE.json
+-rw-rw-r--  1 ed ed 16855 Nov 28 17:43 en.json
+-rw-rw-r--  1 ed ed 16992 Nov 28 17:43 es-CO.json
+-rw-rw-r--  1 ed ed 17917 Nov 28 17:43 es-ES.json
+-rw-rw-r--  1 ed ed 18095 Nov 28 17:43 es.json
+-rw-rw-r--  1 ed ed 17918 Nov 28 17:43 es-MX.json
+-rw-rw-r--  1 ed ed 17006 Nov 28 17:43 fr-FR.json
+-rw-rw-r--  1 ed ed 16880 Nov 28 17:43 pt-BR.json
+-rw-rw-r--  1 ed ed 16610 Nov 28 17:43 zh-CN.json
+🌐 Available locales:
+ar-SA
+de-DE
+en
+es-CO
+es-ES
+es
+es-MX
+fr-FR
+pt-BR
+zh-CN
+🎯 Build-time locale copying complete!
+
+> @human-0/docs@1.7.7 build /home/ed/Documents/LSTS/human-0.com/apps/docs
 > docusaurus build
 
 [INFO] [en] Creating an optimized production build...
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
-[webpackbar] ✔ Server: Compiled successfully in 3.01s
-[webpackbar] ✔ Client: Compiled successfully in 3.50s
+[webpackbar] ✔ Server: Compiled successfully in 10.91s
+[webpackbar] ✔ Client: Compiled successfully in 16.38s
+[WARNING] {"moduleIdentifier":"/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/babel-loader@9.2.1_@babel+core@7.28.5_webpack@5.103.0/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[5].use[0]!/home/ed/Documents/LSTS/human-0.com/apps/docs/src/components/Translate/index.tsx","moduleName":"./src/components/Translate/index.tsx","loc":"5:108-118","message":"Critical dependency: the request of a dependency is an expression","compilerPath":"server"}
 [SUCCESS] Generated static files in "build".
 [INFO] Use `npm run serve` command to test your build locally.

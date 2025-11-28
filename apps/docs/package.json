@@ -1,10 +1,12 @@
 {
   "name": "@human-0/docs",
-  "version": "1.7.7",
+  "version": "1.7.10",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
+    "prestart": "cd ../.. && ./scripts/copy-locales.sh",
     "start": "docusaurus start --port 3001 --host 0.0.0.0",
+    "prebuild": "cd ../.. && ./scripts/copy-locales.sh",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

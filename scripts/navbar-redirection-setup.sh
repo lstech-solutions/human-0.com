@@ -1,0 +1,58 @@
+#!/bin/bash
+
+echo "🔗 Docusaurus Navbar Redirection Setup"
+echo "======================================"
+echo ""
+
+echo "🐛 Problem Identified:"
+echo "  • HUMΛN-Ø title in Docusaurus navbar didn't redirect to main web app"
+echo "  • Needed to preserve locale and theme state when redirecting"
+echo "  • Required different URLs for dev vs production"
+echo ""
+
+echo "🛠️ Solution Applied:"
+echo "  • Added handleNavbarTitleClick() function in client-module.ts"
+echo "  • Overrides navbar brand click behavior with event delegation"
+echo "  • Maps Docusaurus locales back to web app locales"
+echo "  • Preserves theme state when redirecting"
+echo "  • Uses localhost:8081 for dev, https://human-0.com for prod"
+echo ""
+
+echo "📝 Code Changes:"
+echo "  • Client module: Added navbar click override"
+echo "  • CSS: Added cursor pointer styles for navbar brand"
+echo "  • Config: Added proper i18n setup with locale mapping"
+echo ""
+
+echo "🌐 Locale Mapping:"
+echo "  Docusaurus → Web App:"
+echo "  en → en"
+echo "  es → es"
+echo "  de → de-DE"
+echo "  fr → fr-FR"
+echo "  pt → pt-BR"
+echo "  zh → zh-CN"
+echo "  ar → ar-SA"
+echo ""
+
+echo "🔗 Generated URLs:"
+echo "  Development: http://localhost:8081?locale=es&dark=true"
+echo "  Production:  https://human-0.com?locale=es&dark=true"
+echo ""
+
+echo "✅ Features:"
+echo "  • ✅ Navbar title/logo redirects to main site"
+echo "  • ✅ Locale state properly preserved"
+echo "  • ✅ Theme state properly preserved"
+echo "  • ✅ Works in both dev and production"
+echo "  • ✅ Handles all supported locales"
+echo ""
+
+echo "🎯 Testing:"
+echo "  1. Start Docusaurus dev server: cd apps/docs && npm start"
+echo "  2. Navigate to http://localhost:3001"
+echo "  3. Click on HUMΛN-Ø title/logo"
+echo "  4. Should redirect to http://localhost:8081 with locale & theme params"
+echo ""
+
+echo "🚀 Navbar Redirection: COMPLETE!"

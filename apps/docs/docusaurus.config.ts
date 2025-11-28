@@ -28,9 +28,22 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // Internationalization configuration - DISABLED
+  // Using custom URL parameter-based locale detection instead
+  // i18n: {
+  //   defaultLocale: 'en',
+  //   locales: ['en', 'es'],
+  //   localeConfigs: {
+  //     en: {
+  //       label: '🇺🇸 English',
+  //       direction: 'ltr',
+  //     },
+  //     es: {
+  //       label: '🇪🇸 Español',
+  //       direction: 'ltr',
+  //     },
+  //   },
+  // },
 
   presets: [
     [
@@ -60,7 +73,7 @@ const config: Config = {
       title: 'HUMΛN-Ø',
       logo: {
         alt: 'HUMΛN-Ø Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
@@ -70,60 +83,9 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          type: 'dropdown',
+          type: 'html',
           position: 'right',
-          label: '🌐 Language',
-          items: [
-            {
-              label: '🇺🇸 English',
-              to: 'javascript:void(0)',
-              customProps: {
-                onClick: 'handleLanguageChange("en")'
-              }
-            },
-            {
-              label: '🇪🇸 Español',
-              to: 'javascript:void(0)',
-              customProps: {
-                onClick: 'handleLanguageChange("es")'
-              }
-            },
-            {
-              label: '🇩🇪 Deutsch',
-              to: 'javascript:void(0)',
-              customProps: {
-                onClick: 'handleLanguageChange("de")'
-              }
-            },
-            {
-              label: '🇫🇷 Français',
-              to: 'javascript:void(0)',
-              customProps: {
-                onClick: 'handleLanguageChange("fr")'
-              }
-            },
-            {
-              label: '🇵🇹 Português',
-              to: 'javascript:void(0)',
-              customProps: {
-                onClick: 'handleLanguageChange("pt")'
-              }
-            },
-            {
-              label: '🇨🇳 中文',
-              to: 'javascript:void(0)',
-              customProps: {
-                onClick: 'handleLanguageChange("zh")'
-              }
-            },
-            {
-              label: '🇸🇦 العربية',
-              to: 'javascript:void(0)',
-              customProps: {
-                onClick: 'handleLanguageChange("ar")'
-              }
-            },
-          ],
+          value: '<div id="custom-language-switcher"></div>',
         },
         {
           href: 'https://human-0.com',

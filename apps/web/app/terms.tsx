@@ -5,13 +5,18 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useEffect, useState } from 'react';
 import { apiClient } from '../lib/api-client';
 import { Platform } from 'react-native';
+import { Footer } from '../components/ui/Footer';
+import { useTheme } from '../theme/ThemeProvider';
 
 export default function TermsScreen() {
   const { t } = useTranslation();
   const { currentLanguage } = useLanguagePicker();
+  const { colorScheme } = useTheme();
   const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const isDark = colorScheme === 'dark';
 
   useEffect(() => {
     (async () => {
@@ -71,35 +76,35 @@ export default function TermsScreen() {
     return lines.map((line, i) => {
       if (line.startsWith('# ')) {
         return (
-          <Text key={i} style={styles.h1}>
+          <Text key={i} style={[styles.h1, { color: isDark ? '#E6ECE8' : '#0A1628' }]}>
             {line.slice(2).trim()}
           </Text>
         );
       }
       if (line.startsWith('## ')) {
         return (
-          <Text key={i} style={styles.h2}>
+          <Text key={i} style={[styles.h2, { color: isDark ? '#E6ECE8' : '#0A1628' }]}>
             {line.slice(3).trim()}
           </Text>
         );
       }
       if (line.startsWith('### ')) {
         return (
-          <Text key={i} style={styles.h3}>
+          <Text key={i} style={[styles.h3, { color: isDark ? '#E6ECE8' : '#0A1628' }]}>
             {line.slice(4).trim()}
           </Text>
         );
       }
       if (line.startsWith('- ')) {
         return (
-          <Text key={i} style={styles.li}>
+          <Text key={i} style={[styles.li, { color: isDark ? '#E6ECE8' : '#374151' }]}>
             • {line.slice(2).trim()}
           </Text>
         );
       }
       if (line.startsWith('> ')) {
         return (
-          <Text key={i} style={styles.blockquote}>
+          <Text key={i} style={[styles.blockquote, { color: isDark ? '#E6ECE8' : '#374151', borderLeftColor: isDark ? '#00FF9C' : '#059669' }]}>
             {line.slice(2).trim()}
           </Text>
         );
@@ -109,7 +114,7 @@ export default function TermsScreen() {
       }
       // Plain paragraph
       return (
-        <Text key={i} style={styles.p}>
+        <Text key={i} style={[styles.p, { color: isDark ? '#E6ECE8' : '#374151' }]}>
           {line.trim()}
         </Text>
       );
@@ -117,19 +122,22 @@ export default function TermsScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: isDark ? '#050B10' : '#ffffff' }]}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        <Text style={styles.title}>{t('legal.termsTitle', 'Terms of Service')}</Text>
+        <Text style={[styles.title, { color: isDark ? '#E6ECE8' : '#0A1628' }]}>
+          {t('legal.termsTitle', 'Terms of Service')}
+        </Text>
         {loading ? (
-          <Text style={styles.p}>Loading…</Text>
+          <Text style={[styles.p, { color: isDark ? '#E6ECE8' : '#374151' }]}>Loading…</Text>
         ) : error ? (
-          <Text style={styles.error}>Error: {error}</Text>
+          <Text style={[styles.error, { color: '#dc2626' }]}>Error: {error}</Text>
         ) : Platform.OS === 'web' ? (
           <div dangerouslySetInnerHTML={renderHTMLMarkdown(content) || { __html: '' }} />
         ) : (
           renderMarkdown(content)
         )}
       </ScrollView>
+      <Footer />
     </SafeAreaView>
   );
 }
@@ -137,7 +145,7 @@ export default function TermsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#050B10',
+    backgroundColor: '#ffffff',
   },
   scrollContent: {
     padding: 20,
@@ -145,50 +153,50 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#E6ECE8',
+    color: '#0A1628',
     marginBottom: 24,
     textAlign: 'center',
   },
   h1: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#E6ECE8',
+    color: '#0A1628',
     marginTop: 24,
     marginBottom: 12,
   },
   h2: {
     fontSize: 20,
     fontWeight: '600',
-    color: '#E6ECE8',
+    color: '#0A1628',
     marginTop: 20,
     marginBottom: 10,
   },
   h3: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#E6ECE8',
+    color: '#0A1628',
     marginTop: 16,
     marginBottom: 8,
   },
   p: {
     fontSize: 16,
-    color: '#E6ECE8',
+    color: '#374151',
     lineHeight: 24,
     marginBottom: 12,
   },
   li: {
     fontSize: 16,
-    color: '#E6ECE8',
+    color: '#374151',
     marginLeft: 20,
     marginBottom: 6,
     lineHeight: 22,
   },
   blockquote: {
     fontSize: 16,
-    color: '#E6ECE8',
+    color: '#374151',
     fontStyle: 'italic',
     borderLeftWidth: 3,
-    borderLeftColor: '#00FF9C',
+    borderLeftColor: '#059669',
     paddingLeft: 12,
     marginBottom: 12,
   },
@@ -197,43 +205,7 @@ const styles = StyleSheet.create({
   },
   error: {
     fontSize: 16,
-    color: '#ff6b6b',
+    color: '#dc2626',
     marginBottom: 12,
-  },
-  languageSwitcher: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 20,
-    padding: 12,
-    backgroundColor: '#0A1419',
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#00FF9C',
-  },
-  languageLabel: {
-    fontSize: 14,
-    color: '#E6ECE8',
-    fontWeight: '600',
-  },
-  languageButtons: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-  languageButton: {
-    fontSize: 12,
-    color: '#E6ECE8',
-    paddingVertical: 4,
-    paddingHorizontal: 8,
-    borderRadius: 4,
-    backgroundColor: 'transparent',
-    borderWidth: 1,
-    borderColor: '#E6ECE8',
-  },
-  languageButtonActive: {
-    backgroundColor: '#00FF9C',
-    color: '#050B10',
-    borderColor: '#00FF9C',
-    fontWeight: 'bold',
   },
 });

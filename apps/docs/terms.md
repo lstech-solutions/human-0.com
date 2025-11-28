@@ -1,6 +1,6 @@
 # HUMΛN-Ø Terms of Service
 
-_Last updated: 28 November 2025_
+_Last updated: November 28, 2025 ([view history](https://github.com/lstech-solutions/human-0.com/commits/main/apps/docs/terms.md))_
 
 These Terms of Service ("Terms") govern your access to and use of **HUMΛN-Ø** (the "Service"), including any websites, web applications, APIs, or related services.
 

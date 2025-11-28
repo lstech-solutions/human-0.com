@@ -331,5 +331,12 @@
     "feedActive": "HUMAN-Ø PROOF FEED",
     "feedInitializing": "INITIALIZING FEED",
     "dataSourcesLabel": "Data sources:"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: {{date}}"
+  },
+  "legal": {
+    "termsTitle": "Terms of Service"
   }
 }

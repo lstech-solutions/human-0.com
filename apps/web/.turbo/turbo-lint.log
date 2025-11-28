@@ -1,0 +1,4 @@
+
+> @human-0/web@1.7.7 lint /home/ed/Documents/LSTS/human-0.com/apps/web
+> eslint "app/**/*.{js,jsx,ts,tsx}"
+

@@ -9,27 +9,7 @@ type FeatureItem = {
 };
 
 const FeatureList: FeatureItem[] = [
-  {
-    title: 'Web3 Technology',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>Leveraging blockchain and decentralized technologies for sustainable impact.</>
-    ),
-  },
-  {
-    title: 'Sustainable Impact',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>Creating solutions that benefit both people and the planet through innovative technology.</>
-    ),
-  },
-  {
-    title: 'Open Source',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>Building transparent, collaborative solutions that empower communities worldwide.</>
-    ),
-  },
+  // Features removed as requested
 ];
 
 function Feature({title, Svg, description}: FeatureItem) {
@@ -47,15 +27,6 @@ function Feature({title, Svg, description}: FeatureItem) {
 }
 
 export default function HomepageFeatures(): JSX.Element {
-  return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  // Return empty section since all features were removed
+  return null;
 }

@@ -1,17 +1,33 @@
 import { useTranslation } from '@human-0/i18n';
 import { useLanguagePicker } from '@human-0/i18n/hooks';
-import { ScrollView, StyleSheet, View, Text, Linking } from 'react-native';
+import { ScrollView, StyleSheet, View, Text, Linking, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useEffect, useState } from 'react';
 import { apiClient } from '../lib/api-client';
 import { Platform } from 'react-native';
+import { Footer } from '../components/ui/Footer';
+import { useTheme } from '../theme/ThemeProvider';
+import { getMainSiteUrl } from '../lib/docs-url';
 
 export default function PrivacyScreen() {
   const { t } = useTranslation();
   const { currentLanguage } = useLanguagePicker();
+  const { colorScheme } = useTheme();
   const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const isDark = colorScheme === 'dark';
+
+  // Handle opening privacy page in new tab with current locale and theme
+  const handleOpenInNewTab = () => {
+    const privacyUrl = getMainSiteUrl('/privacy', currentLanguage, isDark);
+    if (Platform.OS === 'web') {
+      window.open(privacyUrl, '_blank');
+    } else {
+      Linking.openURL(privacyUrl);
+    }
+  };
 
   useEffect(() => {
     (async () => {
@@ -72,46 +88,6 @@ export default function PrivacyScreen() {
     let inList = false;
     let listIndent = 0;
 
-    const renderInlineFormatting = (text: string) => {
-      const elements: JSX.Element[] = [];
-      let lastIndex = 0;
-      
-      // Handle links [text](url) - create actual clickable links
-      const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-      let match;
-      
-      while ((match = linkRegex.exec(text)) !== null) {
-        // Add text before the link
-        if (match.index > lastIndex) {
-          const beforeText = text.slice(lastIndex, match.index);
-          elements.push(...processTextFormatting(beforeText));
-        }
-        
-        // Add the link
-        const linkText = match[1];
-        const linkUrl = match[2];
-        elements.push(
-          <Text 
-            key={`link-${match.index}`}
-            style={styles.link}
-            onPress={() => Linking.openURL(linkUrl)}
-          >
-            {linkText}
-          </Text>
-        );
-        
-        lastIndex = match.index + match[0].length;
-      }
-      
-      // Add remaining text
-      if (lastIndex < text.length) {
-        const remainingText = text.slice(lastIndex);
-        elements.push(...processTextFormatting(remainingText));
-      }
-      
-      return elements.length > 0 ? elements : processTextFormatting(text);
-    };
-
     const processTextFormatting = (text: string) => {
       // Handle bold text **text** - convert to actual bold styling
       const hasBold = /\*\*(.*?)\*\*/.test(text);
@@ -121,10 +97,58 @@ export default function PrivacyScreen() {
       processedText = processedText.replace(/_([^_]+)_/g, '$1');
       
       if (hasBold) {
-        return [<Text key="text" style={styles.bold}>{processedText}</Text>];
+        return [<Text key="text" style={[styles.bold, { color: isDark ? '#E6ECE8' : '#0A1628' }]}>{processedText}</Text>];
       } else {
-        return [<Text key="text">{processedText}</Text>];
+        return [<Text key="text" style={{ color: isDark ? '#E6ECE8' : '#374151' }}>{processedText}</Text>];
       }
+    };
+
+    const renderInlineFormatting = (text: string) => {
+      const elements: JSX.Element[] = [];
+      let lastIndex = 0;
+      
+      // Handle links [text](url) - create actual clickable links
+      const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+      let match: RegExpExecArray | null;
+      
+      while ((match = linkRegex.exec(text)) !== null) {
+        // Add text before the link
+        if (match.index > lastIndex) {
+          const beforeText = text.slice(lastIndex, match.index);
+          elements.push(
+            <Text key={`text-${lastIndex}`} style={{ color: isDark ? '#E6ECE8' : '#374151' }}>
+              {text.slice(lastIndex, match.index)}
+            </Text>
+          );
+        }
+        
+        // Add the clickable link
+        elements.push(
+          <Text 
+            key={`link-${lastIndex}`} 
+            style={{ color: isDark ? '#00FF9C' : '#059669', textDecorationLine: 'underline' }}
+            onPress={() => match && Linking.openURL(match[2])}
+          >
+            {match ? match[1] : ''}
+          </Text>
+        );
+        
+        lastIndex = match ? match.index + match[0].length : lastIndex;
+      }
+      
+      // Add remaining text
+      if (lastIndex < text.length) {
+        const remainingText = text.slice(lastIndex);
+        if (remainingText.trim()) {
+          elements.push(
+            <Text key={`text-${lastIndex}`} style={{ color: isDark ? '#E6ECE8' : '#374151' }}>
+              {remainingText}
+            </Text>
+          );
+        }
+      }
+      
+      return elements.length > 0 ? elements : processTextFormatting(text);
     };
 
     const flushList = () => {
@@ -145,7 +169,12 @@ export default function PrivacyScreen() {
       // Handle horizontal rules
       if (trimmedLine === '---') {
         flushList();
-        elements.push(<View key={i} style={styles.hr} />);
+        elements.push(
+          <View 
+            key={i} 
+            style={[styles.hr, { backgroundColor: isDark ? '#00FF9C' : '#059669' }]} 
+          />
+        );
         return;
       }
 
@@ -162,8 +191,8 @@ export default function PrivacyScreen() {
         
         currentList.push(
           <View key={i} style={[styles.li, indent > listIndent && styles.liNested]}>
-            <Text>• </Text>
-            {content}
+            <Text style={{ color: isDark ? '#E6ECE8' : '#374151' }}>• </Text>
+            {renderInlineFormatting(line.replace(/^(\s*)- /, '').trim())}
           </View>
         );
         return;
@@ -178,75 +207,94 @@ export default function PrivacyScreen() {
       if (line.startsWith('# ')) {
         flushList();
         elements.push(
-          <Text key={i} style={styles.h1}>
+          <Text key={i} style={[styles.h1, { color: isDark ? '#E6ECE8' : '#0A1628' }]}>
             {renderInlineFormatting(line.slice(2).trim())}
           </Text>
         );
       } else if (line.startsWith('## ')) {
         flushList();
         elements.push(
-          <Text key={i} style={styles.h2}>
+          <Text key={i} style={[styles.h2, { color: isDark ? '#E6ECE8' : '#0A1628' }]}>
             {renderInlineFormatting(line.slice(3).trim())}
           </Text>
         );
       } else if (line.startsWith('### ')) {
         flushList();
         elements.push(
-          <Text key={i} style={styles.h3}>
+          <Text key={i} style={[styles.h3, { color: isDark ? '#E6ECE8' : '#0A1628' }]}>
             {renderInlineFormatting(line.slice(4).trim())}
           </Text>
         );
       } else if (line.startsWith('> ')) {
         flushList();
         elements.push(
-          <Text key={i} style={styles.blockquote}>
+          <Text key={i} style={[styles.blockquote, { color: isDark ? '#E6ECE8' : '#374151', borderLeftColor: isDark ? '#00FF9C' : '#059669' }]}>
             {renderInlineFormatting(line.slice(2).trim())}
           </Text>
         );
-      } else if (trimmedLine === '') {
+      } else if (trimmedLine !== '') {
         flushList();
-        elements.push(<View key={i} style={styles.spacer} />);
-      } else {
-        // Plain paragraph with inline formatting
-        flushList();
-        
-        // Special handling for "Last updated" line
-        if (trimmedLine.includes('Last updated:')) {
+        if (line.includes('Last updated:')) {
           elements.push(
-            <Text key={i} style={styles.lastUpdated}>
+            <Text key={i} style={[styles.lastUpdated, { color: isDark ? '#00FF9C' : '#059669' }]}>
               {renderInlineFormatting(line.trim())}
             </Text>
           );
         } else {
           elements.push(
-            <Text key={i} style={styles.p}>
+            <Text key={i} style={[styles.p, { color: isDark ? '#E6ECE8' : '#374151' }]}>
               {renderInlineFormatting(line.trim())}
             </Text>
           );
         }
+      } else {
+        flushList();
+        elements.push(<View key={i} style={styles.spacer} />);
       }
     });
 
     // Flush any remaining list
     flushList();
-    
+
     return elements;
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: isDark ? '#050B10' : '#ffffff' }]}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        <Text style={styles.title}>{t('legal.privacyTitle', 'Privacy Policy')}</Text>
         {loading ? (
-          <Text style={styles.p}>Loading…</Text>
+          <Text style={[styles.title, { color: isDark ? '#E6ECE8' : '#0A1628' }]}>
+            Loading...
+          </Text>
         ) : error ? (
-          <Text style={styles.error}>Error: {error}</Text>
-        ) : Platform.OS === 'web' ? (
-          <div dangerouslySetInnerHTML={renderHTMLMarkdown(content) || { __html: '' }} />
+          <View>
+            <Text style={[styles.title, { color: isDark ? '#E6ECE8' : '#0A1628' }]}>
+              Error
+            </Text>
+            <Text style={[styles.error, { color: '#dc2626' }]}>
+              {error}
+            </Text>
+          </View>
         ) : (
-          renderMarkdown(content)
+          <View>
+            <Text style={[styles.title, { color: isDark ? '#E6ECE8' : '#0A1628' }]}>
+              {t('privacy.title')}
+            </Text>
+            <View style={styles.lastUpdatedContainer}>
+              <Text style={[styles.lastUpdated, { color: isDark ? '#00FF9C' : '#059669' }]}>
+                {t('privacy.lastUpdated')}
+              </Text>
+              <Pressable onPress={handleOpenInNewTab} style={styles.openNewTabButton}>
+                <Text style={[styles.openNewTabIcon, { color: isDark ? '#00FF9C' : '#059669' }]}>
+                  ⬈
+                </Text>
+              </Pressable>
+            </View>
+            {renderMarkdown(content)}
+          </View>
         )}
       </ScrollView>
+      <Footer />
     </SafeAreaView>
   );
 }
@@ -254,7 +302,7 @@ export default function PrivacyScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#050B10',
+    backgroundColor: '#ffffff',
   },
   scrollContent: {
     padding: 20,
@@ -262,91 +310,71 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#E6ECE8',
+    color: '#0A1628',
     marginBottom: 24,
     textAlign: 'center',
   },
   h1: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#E6ECE8',
+    color: '#0A1628',
     marginTop: 24,
     marginBottom: 12,
   },
   h2: {
     fontSize: 20,
     fontWeight: '600',
-    color: '#E6ECE8',
+    color: '#0A1628',
     marginTop: 20,
     marginBottom: 10,
   },
   h3: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#E6ECE8',
+    color: '#0A1628',
     marginTop: 16,
     marginBottom: 8,
   },
   p: {
     fontSize: 16,
-    color: '#E6ECE8',
+    color: '#374151',
     lineHeight: 24,
     marginBottom: 12,
   },
   lastUpdated: {
     fontSize: 14,
-    color: '#00FF9C',
+    color: '#059669',
     fontStyle: 'italic',
     textAlign: 'center',
     marginBottom: 16,
   },
+  lastUpdatedContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 16,
+  },
+  openNewTabButton: {
+    marginLeft: 8,
+    padding: 4,
+    borderRadius: 4,
+    backgroundColor: 'transparent',
+  },
+  openNewTabIcon: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
   link: {
-    color: '#00FF9C',
+    color: '#059669',
     textDecorationLine: 'underline',
   },
   bold: {
     fontWeight: 'bold',
-    color: '#E6ECE8',
-  },
-  languageSwitcher: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 20,
-    padding: 12,
-    backgroundColor: '#0A1419',
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#00FF9C',
-  },
-  languageLabel: {
-    fontSize: 14,
-    color: '#E6ECE8',
-    fontWeight: '600',
-  },
-  languageButtons: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-  languageButton: {
-    fontSize: 12,
-    color: '#E6ECE8',
-    paddingVertical: 4,
-    paddingHorizontal: 8,
-    borderRadius: 4,
-    backgroundColor: 'transparent',
-    borderWidth: 1,
-    borderColor: '#E6ECE8',
-  },
-  languageButtonActive: {
-    backgroundColor: '#00FF9C',
-    color: '#050B10',
-    borderColor: '#00FF9C',
-    fontWeight: 'bold',
+    color: '#0A1628',
   },
   li: {
     fontSize: 16,
-    color: '#E6ECE8',
+    color: '#374151',
     marginLeft: 20,
     marginBottom: 6,
     lineHeight: 22,
@@ -360,16 +388,16 @@ const styles = StyleSheet.create({
   },
   hr: {
     height: 1,
-    backgroundColor: '#00FF9C',
+    backgroundColor: '#059669',
     marginVertical: 16,
     opacity: 0.3,
   },
   blockquote: {
     fontSize: 16,
-    color: '#E6ECE8',
+    color: '#374151',
     fontStyle: 'italic',
     borderLeftWidth: 3,
-    borderLeftColor: '#00FF9C',
+    borderLeftColor: '#059669',
     paddingLeft: 12,
     marginBottom: 12,
   },
@@ -378,7 +406,7 @@ const styles = StyleSheet.create({
   },
   error: {
     fontSize: 16,
-    color: '#ff6b6b',
+    color: '#dc2626',
     marginBottom: 12,
   },
 });
