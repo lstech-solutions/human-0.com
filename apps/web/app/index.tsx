@@ -13,6 +13,8 @@ import { MagnetizeButton } from '../components/ui/MagnetizeButton';
 import VersionDrawer from '../components/VersionDrawer';
 import { HumanProofStats, type HumanStats } from '../components/HumanProofStats';
 import { apiClient } from '../lib/api-client';
+import { Link } from 'expo-router';
+import { getDocsUrl } from '../lib/docs-url';
 
 function randomizeZeroGlyphs(value: string): string {
   return value.replace(/[01]/g, (digit) => (Math.random() < 0.5 ? digit : 'Ø'));
@@ -55,7 +57,13 @@ async function fetchHumanStats(): Promise<HumanStats> {
       ? verifiedData.baselineYear
       : null,
     sources: Array.isArray(verifiedData.sources)
-      ? verifiedData.sources
+      ? verifiedData.sources.filter(
+          (src): src is { name: string; url: string; indicator?: string } =>
+            typeof src === 'object' &&
+            src !== null &&
+            typeof src.name === 'string' &&
+            typeof src.url === 'string'
+        )
       : [],
   };
 }
@@ -677,6 +685,18 @@ export default function Home() {
             >
               v{APP_VERSION}
             </button>
+            <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e] mx-1">·</span>
+            <Link href="/privacy" className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] underline decoration-dotted underline-offset-2 transition-colors">
+              Privacy
+            </Link>
+            <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e] mx-1">·</span>
+            <Link href="/terms" className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] underline decoration-dotted underline-offset-2 transition-colors">
+              Terms
+            </Link>
+            <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e] mx-1">·</span>
+            <a href={getDocsUrl('/')} className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] underline decoration-dotted underline-offset-2 transition-colors">
+              Docs
+            </a>
           </div>
 
           <div className="flex items-center gap-2 lg:gap-4">
