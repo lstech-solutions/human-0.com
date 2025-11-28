@@ -1,6 +1,6 @@
 {
   "name": "@human-0/ui",
-  "version": "1.6.19",
+  "version": "1.7.0",
   "private": true,
   "main": "index.tsx",
   "dependencies": {
