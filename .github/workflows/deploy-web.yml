@@ -47,6 +47,10 @@ jobs:
           mkdir -p apps/web/dist/docs
           cp apps/docs/privacy.md apps/web/dist/docs/
           cp apps/docs/terms.md apps/web/dist/docs/
+          # Copy Spanish i18n markdown files for API routes
+          mkdir -p apps/web/dist/docs/i18n/es/docusaurus-plugin-content-docs/current
+          cp apps/docs/i18n/es/docusaurus-plugin-content-docs/current/privacy.md apps/web/dist/docs/i18n/es/docusaurus-plugin-content-docs/current/
+          cp apps/docs/i18n/es/docusaurus-plugin-content-docs/current/terms.md apps/web/dist/docs/i18n/es/docusaurus-plugin-content-docs/current/
       - name: Copy public files
         run: |
           mkdir -p apps/web/dist/output

@@ -1,16 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 
-// Map of supported locales to their directory names
-const localeMap: Record<string, string> = {
-  'en': 'en',
-  'es': 'es',
-  'de': 'de', 
-  'fr': 'fr',
-  'pt': 'pt',
-  'zh': 'zh',
-  'ar': 'ar'
-};
+// Helper function to get English fallback content
+function getEnglishFallback(type: 'privacy' | 'terms'): string {
+  const fallbackPath = fs.existsSync(path.resolve(process.cwd(), `docs/${type}.md`))
+    ? path.resolve(process.cwd(), `docs/${type}.md`)
+    : path.resolve(process.cwd(), `../docs/${type}.md`);
+    
+  return fs.readFileSync(fallbackPath, 'utf-8');
+}
 
 export async function GET(request: Request) {
   try {
@@ -19,21 +17,21 @@ export async function GET(request: Request) {
     const locale = searchParams.get('locale') || 'en';
     
     // Normalize locale (handle variants like es-CO, es-ES, etc.)
-    const normalizedLocale = localeMap[locale.split('-')[0]] || localeMap[locale] || 'en';
+    const normalizedLocale = locale.split('-')[0]; // Get base locale (es from es-CO)
     
     // Determine file path based on locale
     let docsPath: string;
     
     if (normalizedLocale === 'en') {
-      // English - check deployed location first, fallback to development
+      // English - use markdown files
       if (fs.existsSync(path.resolve(process.cwd(), 'docs/terms.md'))) {
         docsPath = path.resolve(process.cwd(), 'docs/terms.md');
       } else {
         docsPath = path.resolve(process.cwd(), '../docs/terms.md');
       }
     } else {
-      // Other languages - check deployed location first, fallback to development
-      const localizedPath = path.resolve(process.cwd(), `docs/i18n/${normalizedLocale}/terms.md`);
+      // Other languages - use proper Docusaurus i18n structure
+      const localizedPath = path.resolve(process.cwd(), `docs/i18n/${normalizedLocale}/docusaurus-plugin-content-docs/current/terms.md`);
       const devLocalizedPath = path.resolve(process.cwd(), `../docs/i18n/${normalizedLocale}/docusaurus-plugin-content-docs/current/terms.md`);
       
       if (fs.existsSync(localizedPath)) {
