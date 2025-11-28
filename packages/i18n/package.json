@@ -1,6 +1,6 @@
 {
   "name": "@human-0/i18n",
-  "version": "1.5.14",
+  "version": "1.6.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
