@@ -28,7 +28,6 @@ const formatNumber = (value: number) => {
   }).format(value);
 };
 
-// Compact formatter for the grid text (e.g. 8.26B) so it fits nicely
 const formatCompact = (value: number) => {
   if (value >= 1_000_000_000) {
     return `${(value / 1_000_000_000).toFixed(2)}B`;
@@ -41,6 +40,8 @@ const formatCompact = (value: number) => {
   }
   return `${Math.floor(value)}`;
 };
+
+const HUMAN_STATS_POS_STORAGE_KEY = "humanProofStatsPos:v1";
 
 export function HumanProofStats({ fetchStats, refreshMs = 30000, className }: HumanProofStatsProps) {
   const { t } = useTranslation();
@@ -55,11 +56,40 @@ export function HumanProofStats({ fetchStats, refreshMs = 30000, className }: Hu
   const cardRef = useRef<HTMLDivElement | null>(null);
   const detailsRef = useRef<HTMLDivElement | null>(null);
 
-  // Randomize initial card position within a safe band below the hero title
   useEffect(() => {
-    const randomX = (Math.random() - 0.5) * 160; // small left/right variation
-    const randomY = 40 + Math.random() * 120; // only move downward from base
-    setDragPos({ x: randomX, y: randomY });
+    if (typeof window === "undefined") return;
+
+    try {
+      const stored = window.localStorage.getItem(HUMAN_STATS_POS_STORAGE_KEY);
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (parsed && typeof parsed.x === "number" && typeof parsed.y === "number") {
+          setDragPos({ x: parsed.x, y: parsed.y });
+          return;
+        }
+      }
+    } catch {
+      // ignore storage errors and fall back to fresh random position
+    }
+
+    const vw = typeof window !== "undefined" ? window.innerWidth || 0 : 0;
+    const vh = typeof window !== "undefined" ? window.innerHeight || 0 : 0;
+
+    const maxOffsetX = Math.min(160, Math.max(80, vw * 0.12));
+    const randomX = (Math.random() - 0.5) * maxOffsetX;
+
+    const minY = 40;
+    const maxY = vh ? Math.min(vh * 0.3, 220) : 160;
+    const randomY = minY + Math.random() * Math.max(0, maxY - minY);
+
+    const initial = { x: randomX, y: randomY };
+    setDragPos(initial);
+
+    try {
+      window.localStorage.setItem(HUMAN_STATS_POS_STORAGE_KEY, JSON.stringify(initial));
+    } catch {
+      // ignore storage errors
+    }
   }, []);
 
   useEffect(() => {
@@ -145,6 +175,14 @@ export function HumanProofStats({ fetchStats, refreshMs = 30000, className }: Hu
   const handlePointerUp = () => {
     setIsDragging(false);
     setDragStart(null);
+
+    if (typeof window !== "undefined") {
+      try {
+        window.localStorage.setItem(HUMAN_STATS_POS_STORAGE_KEY, JSON.stringify(dragPos));
+      } catch {
+        // ignore storage errors
+      }
+    }
   };
 
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {

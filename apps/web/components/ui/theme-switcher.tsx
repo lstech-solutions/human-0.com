@@ -41,9 +41,9 @@ export function ThemeSwitcher() {
         borderColor: border,
         backgroundColor: bg,
         borderWidth: 1,
-        borderRadius: 10,
-        paddingHorizontal: 10,
-        paddingVertical: 8,
+        borderRadius: 9999,
+        paddingHorizontal: 12,
+        paddingVertical: 6,
       }}
     >
       <View style={{ alignItems: "center", justifyContent: "center" }}>

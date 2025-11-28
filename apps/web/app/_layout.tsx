@@ -83,7 +83,7 @@ function NavigationStack() {
               backgroundColor: colorScheme === "dark" ? "#050B10" : "#FFFFFF",
             },
             headerRight: () => (
-              <View className="flex-row items-center gap-2">
+              <View className="flex-row items-center gap-2 mr-2">
                 <LanguageSwitcher />
                 <ThemeSwitcher />
               </View>

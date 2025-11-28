@@ -15,12 +15,12 @@ export function LanguageSwitcher() {
     <View>
       <Pressable
         onPress={() => setModalVisible(true)}
-        className="flex-row items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800"
+        className="flex-row items-center gap-2 px-3 py-1.5 rounded-full border border-gray-300 bg-white/90 dark:border-[#00FF9C33] dark:bg-[#0A1628]"
       >
-        <Text className="text-sm font-medium text-gray-700 dark:text-gray-200">
+        <Text className="text-xs font-mono tracking-wide text-gray-800 dark:text-emerald-200">
           {currentLang?.nativeName || "English"}
         </Text>
-        <Text className="text-xs text-gray-500">▼</Text>
+        <Text className="text-[10px] text-gray-500 dark:text-emerald-300">▼</Text>
       </Pressable>
 
       <Modal
@@ -33,9 +33,9 @@ export function LanguageSwitcher() {
           className="flex-1 bg-black/50 justify-center items-center"
           onPress={() => setModalVisible(false)}
         >
-          <View className="bg-white dark:bg-gray-900 rounded-xl w-72 max-h-96 overflow-hidden shadow-xl">
-            <View className="p-4 border-b border-gray-200 dark:border-gray-700">
-              <Text className="text-lg font-semibold text-gray-900 dark:text-white">
+          <View className="bg-white dark:bg-[#050B10] rounded-xl w-72 max-h-96 overflow-hidden shadow-xl border border-gray-200/80 dark:border-[#00FF9C33]">
+            <View className="p-4 border-b border-gray-200 dark:border-gray-800">
+              <Text className="text-lg font-semibold text-gray-900 dark:text-emerald-200">
                 Select Language
               </Text>
             </View>
