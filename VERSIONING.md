@@ -7,7 +7,7 @@ This project implements a comprehensive semantic versioning system with automati
 ## 🎯 Features
 
 - **Semantic Versioning**: Follows semver.org standards (major.minor.patch)
-- **Auto Changelog**: Automatically tracks and formats changes in PROPER.md
+- **Auto Changelog**: Automatically tracks and formats changes in CHANGELOG.md
 - **Git Integration**: Auto-commits version changes and creates git tags
 - **CI/CD Integration**: GitHub Actions for automated versioning
 - **CLI Tools**: Command-line interface for version management
@@ -58,9 +58,10 @@ node scripts/version-manager.js commit "Custom commit message"
 
 ```
 human-0/
-├── version.json              # Version data and changelog
+├── version.json              # Version data and changelog source
 ├── package.json              # Project version and scripts
-├── PROPER.md                 # Documentation and changelog
+├── CHANGELOG.md              # Generated version history
+├── PROPER.md                 # Legacy project documentation (no longer used for versioning)
 ├── scripts/
 │   └── version-manager.js    # Version management CLI
 ├── .github/workflows/
@@ -124,14 +125,14 @@ When using version commands with `--commit`:
 
 1. Updates `version.json` with new version
 2. Updates `package.json` version field
-3. Updates `PROPER.md` changelog
+3. Updates `CHANGELOG.md` with the latest changelog section
 4. Creates git commit with version info
 5. Creates git tag (v1.0.0)
 6. Pushes changes to repository
 
 ## 📝 Changelog Format
 
-The changelog follows this format in PROPER.md:
+The changelog follows this format in CHANGELOG.md:
 
 ```markdown
 ## 📋 Version History
@@ -208,7 +209,7 @@ DEBUG=1 node scripts/version-manager.js current
 
 For issues or questions:
 1. Check this documentation
-2. Review `PROPER.md` for project-specific information
+2. Review `CHANGELOG.md` for release history
 3. Check GitHub Issues for known problems
 
 ## 🔄 Migration
@@ -217,7 +218,7 @@ To migrate from another versioning system:
 
 1. Set initial version in `version.json`
 2. Update `package.json` version
-3. Import existing changelog to `PROPER.md`
+3. Import existing changelog to `CHANGELOG.md`
 4. Test version commands
 5. Commit initial version
 

@@ -3,8 +3,11 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import type { CSSProperties } from "react";
+import { useTheme } from "../theme/ThemeProvider";
 
 export const CommitsGrid = ({ text }: { text: string }) => {
+  const { colorScheme } = useTheme();
+  const isDark = colorScheme === "dark";
   const cleanString = (str: string): string => {
     const upperStr = str.toUpperCase();
 
@@ -56,7 +59,9 @@ export const CommitsGrid = ({ text }: { text: string }) => {
   } = generateHighlightedCells(text);
 
   const getRandomColor = () => {
-    const commitColors = ["#48d55d", "#016d32", "#0d4429"];
+    const commitColors = isDark
+      ? ["#22c55e", "#16a34a", "#15803d"] // rich greens in dark mode
+      : ["#22c55e", "#4ade80", "#bbf7d0"]; // brighter primary greens in light mode
     const randomIndex = Math.floor(Math.random() * commitColors.length);
     return commitColors[randomIndex];
   };

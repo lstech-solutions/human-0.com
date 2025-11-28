@@ -1,6 +1,6 @@
 
 
-> @human-0/contracts@1.6.7 build /home/ed/Documents/LSTS/human-0.com/packages/contracts
+> @human-0/contracts@1.6.8 build /home/ed/Documents/LSTS/human-0.com/packages/contracts
 > hardhat compile
 
 Nothing to compile

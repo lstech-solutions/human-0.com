@@ -67,6 +67,8 @@ export default function Home() {
   const [meterOffsets, setMeterOffsets] = useState<number[]>(meterBaseHeights.map(() => 0));
   const meterIntervalRef = useRef<number | null>(null);
   const [isVersionDrawerOpen, setIsVersionDrawerOpen] = useState(false);
+  const [installPromptEvent, setInstallPromptEvent] = useState<any | null>(null);
+  const [canInstallPwa, setCanInstallPwa] = useState(false);
   const isDark = colorScheme === 'dark';
 
   // Simulated frame indicator based on pointer/scroll velocity
@@ -334,7 +336,8 @@ export default function Home() {
       const e = event as any;
       if (!e || typeof e.prompt !== 'function') return;
       e.preventDefault();
-      e.prompt();
+      setInstallPromptEvent(e);
+      setCanInstallPwa(true);
     };
 
     window.addEventListener('beforeinstallprompt', handler as any);
@@ -343,6 +346,33 @@ export default function Home() {
       window.removeEventListener('beforeinstallprompt', handler as any);
     };
   }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (Platform.OS !== 'web') return;
+
+    const isStandalone =
+      (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) ||
+      // iOS Safari
+      (window.navigator as any).standalone;
+
+    if (isStandalone) {
+      setCanInstallPwa(false);
+      setInstallPromptEvent(null);
+    }
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (!installPromptEvent) return;
+    try {
+      await installPromptEvent.prompt();
+    } catch {
+      // ignore
+    } finally {
+      setCanInstallPwa(false);
+      setInstallPromptEvent(null);
+    }
+  };
 
   const orbitPalette = colorScheme === 'dark'
     ? { primary: '#22c55e', secondary: '#16a34a', electron: '#22c55e', shadow: '0 0 12px rgba(34, 197, 94, 0.75)' }
@@ -651,6 +681,15 @@ export default function Home() {
               <div className="w-1 h-1 bg-[#d0d7de] dark:bg-[#484f58] rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
             </div>
             <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e]">{t("footer.framesLabel", { frameRate })}</span>
+            {Platform.OS === 'web' && canInstallPwa && (
+              <button
+                type="button"
+                onClick={handleInstallClick}
+                className="ml-2 px-3 py-1 rounded-full border border-emerald-400 text-[9px] lg:text-[10px] text-emerald-700 bg-emerald-50 hover:bg-emerald-100 dark:border-emerald-300 dark:text-emerald-200 dark:bg-transparent dark:hover:bg-emerald-900/30 transition-colors"
+              >
+                INSTALL APP
+              </button>
+            )}
           </div>
         </div>
       </div>

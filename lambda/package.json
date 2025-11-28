@@ -1,0 +1,9 @@
+{
+  "name": "human0-lambda-handler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "dependencies": {}
+}

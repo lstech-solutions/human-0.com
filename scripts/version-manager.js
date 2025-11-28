@@ -8,7 +8,7 @@ class VersionManager {
   constructor() {
     this.versionPath = path.join(__dirname, '../version.json');
     this.packagePath = path.join(__dirname, '../package.json');
-    this.properPath = path.join(__dirname, '../PROPER.md');
+    this.changelogPath = path.join(__dirname, '../CHANGELOG.md');
     this.webVersionPath = path.join(__dirname, '../apps/web/version.json');
     this.versionData = this.loadVersion();
   }
@@ -124,7 +124,7 @@ class VersionManager {
     // Save files
     this.saveVersion();
     this.updatePackageVersion();
-    this.updateProperChangelog();
+    this.updateChangelogFile();
     
     console.log(`✅ Version updated to ${this.versionData.version}`);
   }
@@ -146,16 +146,16 @@ class VersionManager {
     };
   }
 
-  updateProperChangelog() {
+  updateChangelogFile() {
     const changelogContent = this.generateChangelogMarkdown();
     
     try {
       let properContent = '';
       try {
-        properContent = fs.readFileSync(this.properPath, 'utf8');
+        properContent = fs.readFileSync(this.changelogPath, 'utf8');
       } catch (error) {
         // File doesn't exist, create new one
-        properContent = '# HUMΛN-Ø Project Documentation\n\n';
+        properContent = '# HUMΛN-Ø Changelog\n\n';
       }
     
       // Remove existing changelog section if it exists
@@ -164,10 +164,10 @@ class VersionManager {
       
       // Write updated content
       const newContent = beforeChangelog + changelogContent;
-      fs.writeFileSync(this.properPath, newContent);
+      fs.writeFileSync(this.changelogPath, newContent);
       
     } catch (error) {
-      console.error('Error updating PROPER.md:', error.message);
+      console.error('Error updating CHANGELOG.md:', error.message);
     }
   }
 
@@ -218,7 +218,7 @@ class VersionManager {
   autoCommit(message) {
     try {
       // Add all package.json files to git
-      execSync('git add version.json apps/web/version.json package.json apps/*/package.json packages/*/package.json PROPER.md', { stdio: 'inherit' });
+      execSync('git add version.json apps/web/version.json package.json apps/*/package.json packages/*/package.json CHANGELOG.md', { stdio: 'inherit' });
       
       // Commit with version info
       const commitMessage = message || `chore: bump version to ${this.versionData.version}`;
