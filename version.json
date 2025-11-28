@@ -1,22 +1,32 @@
 {
   "name": "human-zero",
-  "version": "1.7.10",
+  "version": "1.7.11",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251128224443",
+  "build": "20251128232845",
   "changelog": {
     "current": {
-      "version": "1.7.10",
+      "version": "1.7.11",
       "date": "2025-11-28",
-      "timestamp": "2025-11-28T22:44:43.724Z",
+      "timestamp": "2025-11-28T23:28:45.496Z",
       "type": "patch",
       "changes": [
-        "Finalized internationalization system with complete locale support",
-        "Stabilized navbar behavior across page reloads",
-        "Enhanced translation component with proper TypeScript typing",
-        "Comprehensive locale coverage for all documentation content"
+        "Fixed lambda proxy configuration",
+        "UI component improvements"
       ]
     },
     "history": [
+      {
+        "version": "1.7.10",
+        "date": "2025-11-28",
+        "timestamp": "2025-11-28T22:44:43.724Z",
+        "type": "patch",
+        "changes": [
+          "Finalized internationalization system with complete locale support",
+          "Stabilized navbar behavior across page reloads",
+          "Enhanced translation component with proper TypeScript typing",
+          "Comprehensive locale coverage for all documentation content"
+        ]
+      },
       {
         "version": "1.7.9",
         "date": "2025-11-28",
@@ -454,12 +464,12 @@
   "semver": {
     "major": 1,
     "minor": 7,
-    "patch": 10,
+    "patch": 11,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-11-28T22:44:43.723Z",
+    "lastModified": "2025-11-28T23:28:45.489Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team",

@@ -1,6 +1,5 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { User, Wallet, Settings, Download, LogOut, Shield } from "lucide-react-native";
-import GlowButton from "@/components/GlowButton";
 
 export default function ProfileScreen() {
   return (
