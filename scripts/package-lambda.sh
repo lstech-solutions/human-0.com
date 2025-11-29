@@ -32,6 +32,24 @@ cp "$LAMBDA_DIR/package.json" "$PACKAGE_DIR/"
 echo "→ Copy server build"
 cp -r "$BUILD_DIR" "$PACKAGE_DIR/server"
 
+echo "→ Copy API markdown files"
+if [ -d "$ROOT_DIR/apps/docs" ]; then
+  mkdir -p "$PACKAGE_DIR/docs"
+  # Only copy the files actually needed by APIs
+  cp "$ROOT_DIR/apps/docs/privacy.md" "$PACKAGE_DIR/docs/" 2>/dev/null || echo "⚠️  privacy.md not found"
+  cp "$ROOT_DIR/apps/docs/terms.md" "$PACKAGE_DIR/docs/" 2>/dev/null || echo "⚠️  terms.md not found"
+  
+  # Copy i18n folders if they exist (for localized content)
+  if [ -d "$ROOT_DIR/apps/docs/i18n" ]; then
+    cp -r "$ROOT_DIR/apps/docs/i18n" "$PACKAGE_DIR/docs/"
+    echo "✅ API docs and i18n copied"
+  else
+    echo "✅ API docs copied (no i18n)"
+  fi
+else
+  echo "⚠️  No docs folder found"
+fi
+
 echo "→ Verify API routes in server build"
 if [ -d "$BUILD_DIR/_expo/functions/api" ]; then
   echo "✅ API routes found in server/_expo/functions/api"

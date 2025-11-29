@@ -1,6 +1,6 @@
 {
   "name": "@human-0/contracts",
-  "version": "1.7.19",
+  "version": "1.7.20",
   "private": true,
   "scripts": {
     "build": "hardhat compile",
