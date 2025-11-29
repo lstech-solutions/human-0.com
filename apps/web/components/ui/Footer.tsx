@@ -157,6 +157,9 @@ export function Footer() {
             </Text>
             <View className="flex flex-row items-center gap-2 sm:gap-4">
               <Text className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
+                v1.7.23
+              </Text>
+              <Text className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
                 Language: {currentLang?.nativeName || currentLanguage?.toUpperCase()}
               </Text>
               <Text className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>

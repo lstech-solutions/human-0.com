@@ -19,6 +19,13 @@ export async function GET(request: Request) {
     // Normalize locale (handle variants like es-CO, es-ES, etc.)
     const normalizedLocale = locale.split('-')[0]; // Get base locale (es from es-CO)
     
+    // DEBUG: Log environment info
+    console.log('=== PRIVACY API DEBUG ===');
+    console.log('Locale:', locale, '→ Normalized:', normalizedLocale);
+    console.log('Current working directory:', process.cwd());
+    console.log('__dirname:', __dirname);
+    console.log('Files in current dir:', fs.readdirSync('.').slice(0, 10));
+    
     // Determine file path based on locale
     let docsPath: string;
     
@@ -31,6 +38,9 @@ export async function GET(request: Request) {
         path.resolve(__dirname, '../../../../docs/privacy.md')
       ];
       
+      console.log('English paths to check:');
+      possiblePaths.forEach((p, i) => console.log(`  ${i+1}. ${p} → ${fs.existsSync(p) ? 'EXISTS' : 'NOT FOUND'}`));
+      
       docsPath = possiblePaths.find(p => fs.existsSync(p)) || possiblePaths[0];
     } else {
       // Other languages - use proper Docusaurus i18n structure
@@ -39,6 +49,9 @@ export async function GET(request: Request) {
         path.resolve(process.cwd(), `../docs/i18n/${normalizedLocale}/docusaurus-plugin-content-docs/current/privacy.md`),
         path.resolve(__dirname, `../../../docs/i18n/${normalizedLocale}/docusaurus-plugin-content-docs/current/privacy.md`)
       ];
+      
+      console.log('Localized paths to check:');
+      localizedPaths.forEach((p, i) => console.log(`  ${i+1}. ${p} → ${fs.existsSync(p) ? 'EXISTS' : 'NOT FOUND'}`));
       
       docsPath = localizedPaths.find(p => fs.existsSync(p));
       
@@ -49,6 +62,8 @@ export async function GET(request: Request) {
           path.resolve(process.cwd(), '../docs/privacy.md'),
           path.resolve(__dirname, '../../../docs/privacy.md')
         ];
+        console.log('Fallback paths to check:');
+        fallbackPaths.forEach((p, i) => console.log(`  ${i+1}. ${p} → ${fs.existsSync(p) ? 'EXISTS' : 'NOT FOUND'}`));
         docsPath = fallbackPaths.find(p => fs.existsSync(p)) || fallbackPaths[0];
       }
     }
@@ -57,6 +72,10 @@ export async function GET(request: Request) {
     if (!docsPath) {
       docsPath = path.resolve(process.cwd(), 'docs/privacy.md');
     }
+    
+    console.log('Final docsPath:', docsPath);
+    console.log('Final docsPath exists:', fs.existsSync(docsPath));
+    console.log('=== END DEBUG ===');
     
     const content = fs.readFileSync(docsPath, 'utf-8');
     
