@@ -120,6 +120,18 @@ const serveLocalApi = async (event, apiPath) => {
     
     // Check if file exists
     const fullPath = path.join(__dirname, filePath);
+    console.log('Looking for API file at:', fullPath);
+    console.log('__dirname:', __dirname);
+    console.log('filePath:', filePath);
+    
+    // List directory contents for debugging
+    try {
+      const apiDir = path.join(__dirname, 'server/_expo/functions/api');
+      console.log('API directory contents:', fs.readdirSync(apiDir));
+    } catch (err) {
+      console.log('Cannot list API directory:', err.message);
+    }
+    
     if (!fs.existsSync(fullPath)) {
       console.error('API file not found:', fullPath);
       return jsonResponse(event, 500, { error: 'API file not found in deployment' });
