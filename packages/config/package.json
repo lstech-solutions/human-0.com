@@ -1,6 +1,6 @@
 {
   "name": "@human-0/config",
-  "version": "1.7.34",
+  "version": "1.7.35",
   "private": true,
   "main": "index.js",
   "dependencies": {

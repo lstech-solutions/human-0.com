@@ -1,15 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 
-// Helper function to get English fallback content
-function getEnglishFallback(type: 'privacy' | 'terms'): string {
-  const fallbackPath = fs.existsSync(path.resolve(process.cwd(), `${type}.md`))
-    ? path.resolve(process.cwd(), `${type}.md`)  // Production: files copied to root
-    : path.resolve(process.cwd(), `docs/${type}.md`);  // Development
-    
-  return fs.readFileSync(fallbackPath, 'utf-8');
-}
-
 export async function GET(request: Request) {
   try {
     // Get locale from query params, default to 'en'
@@ -40,8 +31,8 @@ export async function GET(request: Request) {
       const possiblePaths = [
         path.resolve(process.cwd(), 'docs/terms.md'),  // Production: docs next to server
         path.resolve(process.cwd(), 'terms.md'),  // Production: files copied to root
-        path.resolve(process.cwd(), '../docs/terms.md'),  // Development
-        path.resolve(__dirname, '../../../docs/terms.md'),  // Alternative
+        path.resolve(process.cwd(), '../../apps/docs/docs/terms.md'),  // Development
+        path.resolve(__dirname, '../../apps/docs/docs/terms.md'),  // Alternative
         path.resolve(__dirname, '../docs/terms.md'),  // Lambda: docs next to server
       ];
       
@@ -50,8 +41,8 @@ export async function GET(request: Request) {
       // Other languages - use Docusaurus i18n structure
       const localizedPaths = [
         path.resolve(process.cwd(), `docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/terms.md`),  // Production
-        path.resolve(process.cwd(), `../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/terms.md`),  // Dev
-        path.resolve(__dirname, `../../../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/terms.md`),  // Alternative
+        path.resolve(process.cwd(), `../../apps/docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/terms.md`),  // Dev
+        path.resolve(__dirname, `../../apps/docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/terms.md`),  // Alternative
         path.resolve(__dirname, `../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/terms.md`),  // Lambda
       ];
       
@@ -62,8 +53,8 @@ export async function GET(request: Request) {
         const fallbackPaths = [
           path.resolve(process.cwd(), 'docs/terms.md'),  // Production: docs next to server
           path.resolve(process.cwd(), 'terms.md'),  // Production: files copied to root
-          path.resolve(process.cwd(), '../docs/terms.md'),  // Development
-          path.resolve(__dirname, '../../../docs/terms.md'),  // Alternative
+          path.resolve(process.cwd(), '../../apps/docs/docs/terms.md'),  // Development
+          path.resolve(__dirname, '../../apps/docs/docs/terms.md'),  // Alternative
           path.resolve(__dirname, '../docs/terms.md'),  // Lambda: docs next to server
         ];
         docsPath = fallbackPaths.find(p => fs.existsSync(p)) || fallbackPaths[0];

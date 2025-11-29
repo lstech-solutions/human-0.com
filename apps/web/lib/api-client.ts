@@ -2,7 +2,7 @@ const absoluteUrlPattern = /^https?:\/\//i;
 
 const defaultBase =
   process.env.EXPO_PUBLIC_API_BASE_URL ||
-  (process.env.NODE_ENV === 'production' ? 'https://api.human0.me' : '');
+  (process.env.NODE_ENV === 'production' ? 'https://api.human0.me' : 'http://localhost:8081');
 
 const buildUrl = (path: string) => {
   if (absoluteUrlPattern.test(path)) return path;

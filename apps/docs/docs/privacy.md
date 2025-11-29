@@ -58,3 +58,6 @@ For privacy-related inquiries, please contact us through our official channels o
 ---
 
 This Privacy Policy is governed by the laws of the jurisdiction where our services are accessed, without regard to conflict of law principles.
+
+---
+

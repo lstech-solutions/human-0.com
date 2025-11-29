@@ -49,10 +49,41 @@ export function MarkdownDocumentView({
   useEffect(() => {
     (async () => {
       try {
+        // Try API call first (works in both dev and production with server output)
         const res = await apiClient.request(`/api/${endpoint}?locale=${currentLanguage}`);
         const text = await res.text();
         setContent(text);
       } catch (err) {
+        // If API fails, try to read local file as fallback
+        if (process.env.NODE_ENV === 'development' && Platform.OS === 'web') {
+          try {
+            const fs = await import('fs');
+            const path = await import('path');
+            
+            // Try to find the markdown file locally (relative to project root)
+            const possiblePaths = [
+              path.resolve(process.cwd(), `apps/docs/docs/${endpoint}.md`),
+              path.resolve(process.cwd(), `../apps/docs/docs/${endpoint}.md`),
+              path.resolve(process.cwd(), `docs/docs/${endpoint}.md`),
+            ];
+            
+            for (const filePath of possiblePaths) {
+              try {
+                if (fs.existsSync(filePath)) {
+                  const content = fs.readFileSync(filePath, 'utf8');
+                  setContent(content);
+                  setLoading(false);
+                  return;
+                }
+              } catch (e) {
+                // Continue to next path
+              }
+            }
+          } catch (fileErr) {
+            // File system access failed, fall through to error
+          }
+        }
+        
         setError(err instanceof Error ? err.message : 'Unknown error');
       } finally {
         setLoading(false);

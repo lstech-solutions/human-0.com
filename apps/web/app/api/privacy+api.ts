@@ -31,8 +31,8 @@ export async function GET(request: Request) {
       const possiblePaths = [
         path.resolve(process.cwd(), 'docs/privacy.md'),  // Production: docs next to server
         path.resolve(process.cwd(), 'privacy.md'),  // Production: files copied to root
-        path.resolve(process.cwd(), '../docs/privacy.md'),  // Development
-        path.resolve(__dirname, '../../../docs/privacy.md'),  // Alternative
+        path.resolve(process.cwd(), '../../apps/docs/docs/privacy.md'),  // Development
+        path.resolve(__dirname, '../../apps/docs/docs/privacy.md'),  // Alternative
         path.resolve(__dirname, '../docs/privacy.md'),  // Lambda: docs next to server
       ];
       
@@ -41,8 +41,8 @@ export async function GET(request: Request) {
       // Other languages - use Docusaurus i18n structure
       const localizedPaths = [
         path.resolve(process.cwd(), `docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Production
-        path.resolve(process.cwd(), `../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Dev
-        path.resolve(__dirname, `../../../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Alternative
+        path.resolve(process.cwd(), `../../apps/docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Dev
+        path.resolve(__dirname, `../../apps/docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Alternative
         path.resolve(__dirname, `../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Lambda
       ];
       
@@ -53,8 +53,8 @@ export async function GET(request: Request) {
         const fallbackPaths = [
           path.resolve(process.cwd(), 'docs/privacy.md'),  // Production: docs next to server
           path.resolve(process.cwd(), 'privacy.md'),  // Production: files copied to root
-          path.resolve(process.cwd(), '../docs/privacy.md'),  // Development
-          path.resolve(__dirname, '../../../docs/privacy.md'),  // Alternative
+          path.resolve(process.cwd(), '../../apps/docs/docs/privacy.md'),  // Development
+          path.resolve(__dirname, '../../apps/docs/docs/privacy.md'),  // Alternative
           path.resolve(__dirname, '../docs/privacy.md'),  // Lambda: docs next to server
         ];
         docsPath = fallbackPaths.find(p => fs.existsSync(p)) || fallbackPaths[0];

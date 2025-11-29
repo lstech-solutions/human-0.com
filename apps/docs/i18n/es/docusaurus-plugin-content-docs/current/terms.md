@@ -1,7 +1,3 @@
----
-title: Términos de Servicio
----
-
 # Términos de Servicio
 
 Última actualización: 28 de noviembre de 2025

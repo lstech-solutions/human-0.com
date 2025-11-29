@@ -1,7 +1,3 @@
----
-title: Política de Privacidad
----
-
 # Política de Privacidad
 
 Última actualización: 28 de noviembre de 2025
