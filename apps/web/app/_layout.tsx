@@ -60,10 +60,10 @@ function NavigationStack() {
     return null;
   }
 
-  // Keep navigation bar consistently dark-themed regardless of app colorScheme
-  const navTheme = DarkTheme;
-  const headerBg = "#050B10";
-  const headerTint = "#00FF9C";
+  // Use theme-aware navigation bar colors
+  const navTheme = colorScheme === "dark" ? DarkTheme : LightTheme;
+  const headerBg = colorScheme === "dark" ? "#050B10" : "#FFFFFF";
+  const headerTint = colorScheme === "dark" ? "#00FF9C" : "#0A1628";
 
   return (
     <NavigationThemeProvider value={navTheme}>
@@ -140,8 +140,8 @@ function NavigationStack() {
             }}
           />
         </Stack>
-        {/* Navigation bar is dark; use light status bar icons for consistency */}
-        <StatusBar style="light" />
+        {/* Theme-aware status bar */}
+        <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
       </View>
     </NavigationThemeProvider>
   );

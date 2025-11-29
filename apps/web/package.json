@@ -1,7 +1,7 @@
 {
   "name": "@human-0/web",
   "main": "expo-router/entry",
-  "version": "1.7.35",
+  "version": "1.7.36",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
