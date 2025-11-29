@@ -46,7 +46,7 @@ export function getMainSiteBaseUrl(): string {
   if (process.env.NODE_ENV === 'development') {
     return 'http://localhost:3001/documentation';
   }
-  return 'https://human-0.com';
+  return '/documentation';
 }
 
 /**

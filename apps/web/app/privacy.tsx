@@ -5,10 +5,13 @@ import { Platform } from 'react-native';
 import { Linking } from 'react-native';
 import { getMainSiteUrl } from '../lib/docs-url';
 import { Text, Pressable } from 'react-native';
+import { useLastUpdatedDate } from '../hooks/useLastUpdatedDate';
+import { DOCUMENT_PATHS } from '../lib/github-utils';
 
 export default function PrivacyScreen() {
   const { currentLanguage } = useLanguagePicker();
   const { colorScheme } = useTheme();
+  const { lastUpdatedString } = useLastUpdatedDate(DOCUMENT_PATHS.PRIVACY);
   
   const isDark = colorScheme === 'dark';
 
@@ -49,7 +52,7 @@ export default function PrivacyScreen() {
             textDecorationLine: 'underline',
             textDecorationColor: isDark ? '#00FF9C' : '#059669',
           }}>
-            Last updated: November 28, 2025
+            {lastUpdatedString}
           </Text>
         </Pressable>
       }

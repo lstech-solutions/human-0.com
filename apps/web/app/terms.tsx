@@ -1,12 +1,59 @@
 import { MarkdownDocumentView } from '../components/ui/MarkdownDocumentView';
+import { useLanguagePicker } from '@human-0/i18n/hooks';
+import { useTheme } from '../theme/ThemeProvider';
+import { Platform } from 'react-native';
+import { Linking } from 'react-native';
+import { getMainSiteUrl } from '../lib/docs-url';
+import { Text, Pressable } from 'react-native';
+import { useLastUpdatedDate } from '../hooks/useLastUpdatedDate';
+import { DOCUMENT_PATHS } from '../lib/github-utils';
 
 export default function TermsScreen() {
+  const { currentLanguage } = useLanguagePicker();
+  const { colorScheme } = useTheme();
+  const { lastUpdatedString } = useLastUpdatedDate(DOCUMENT_PATHS.TERMS);
+  
+  const isDark = colorScheme === 'dark';
+
+  // Handle opening terms page in new tab with current locale and theme
+  const handleOpenInNewTab = () => {
+    const termsUrl = getMainSiteUrl('/documentation/docs/terms', currentLanguage, isDark);
+    if (Platform.OS === 'web') {
+      window.open(termsUrl, '_blank');
+    } else {
+      Linking.openURL(termsUrl);
+    }
+  };
+
   return (
     <MarkdownDocumentView
       endpoint="terms"
       titleKey="legal.termsTitle"
       defaultTitle="Terms of Service"
       showOpenInNewTab={false}
+      headerContent={
+        <Pressable 
+          onPress={handleOpenInNewTab}
+          style={({ pressed }) => ({
+            opacity: pressed ? 0.7 : 1,
+            borderBottomWidth: 1,
+            borderBottomColor: isDark ? '#00FF9C' : '#059669',
+            paddingBottom: 2,
+            alignSelf: 'center',
+            marginTop: 8,
+          })}
+        >
+          <Text style={{ 
+            fontSize: 14, 
+            fontStyle: 'italic', 
+            color: isDark ? '#00FF9C' : '#059669',
+            textDecorationLine: 'underline',
+            textDecorationColor: isDark ? '#00FF9C' : '#059669',
+          }}>
+            {lastUpdatedString}
+          </Text>
+        </Pressable>
+      }
     />
   );
 }
