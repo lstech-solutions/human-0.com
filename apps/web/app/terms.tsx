@@ -17,7 +17,7 @@ export default function TermsScreen() {
 
   // Handle opening terms page in new tab with current locale and theme
   const handleOpenInNewTab = () => {
-    const termsUrl = getMainSiteUrl('/documentation/docs/terms', currentLanguage, isDark);
+    const termsUrl = getMainSiteUrl('/docs/terms', currentLanguage, isDark);
     if (Platform.OS === 'web') {
       window.open(termsUrl, '_blank');
     } else {
