@@ -12,8 +12,8 @@
     <a href="https://github.com/lstech-solutions/human-0.com/actions/workflows/deploy-web.yml">
       <img alt="Web Deploy" src="https://github.com/lstech-solutions/human-0.com/actions/workflows/deploy-web.yml/badge.svg" />
     </a>
-    <a href="https://github.com/lstech-solutions/human-0.com/actions/workflows/deploy-docs.yml">
-      <img alt="Docs Deploy" src="https://github.com/lstech-solutions/human-0.com/actions/workflows/deploy-docs.yml/badge.svg" />
+    <a href="https://human-0.com/docs/intro">
+      <img alt="Docs" src="https://github.com/lstech-solutions/human-0.com/actions/workflows/deploy-docs.yml/badge.svg" />
     </a>
     <a href="https://github.com/lstech-solutions/human-0.com/actions/workflows/deploy-lambda.yml">
       <img alt="Lambda Deploy" src="https://github.com/lstech-solutions/human-0.com/actions/workflows/deploy-lambda.yml/badge.svg" />
