@@ -120,18 +120,6 @@ const serveLocalApi = async (event, apiPath) => {
     
     // Check if file exists
     const fullPath = path.join(__dirname, filePath);
-    console.log('Looking for API file at:', fullPath);
-    console.log('__dirname:', __dirname);
-    console.log('filePath:', filePath);
-    
-    // List directory contents for debugging
-    try {
-      const apiDir = path.join(__dirname, 'server/server/_expo/functions/api');
-      console.log('API directory contents:', fs.readdirSync(apiDir));
-    } catch (err) {
-      console.log('Cannot list API directory:', err.message);
-    }
-    
     if (!fs.existsSync(fullPath)) {
       console.error('API file not found:', fullPath);
       return jsonResponse(event, 500, { error: 'API file not found in deployment' });
@@ -142,8 +130,14 @@ const serveLocalApi = async (event, apiPath) => {
     
     const apiModule = require(fullPath);
     
+    console.log('API module loaded for path:', apiPath);
+    console.log('Available exports:', Object.keys(apiModule));
+    
     if (typeof apiModule.GET === 'function') {
+      console.log('Calling GET function...');
       const response = await apiModule.GET();
+      console.log('GET response type:', typeof response);
+      console.log('GET response status:', response?.status);
       
       // Handle Response objects (from compiled Expo API routes)
       if (response instanceof Response) {
@@ -165,6 +159,7 @@ const serveLocalApi = async (event, apiPath) => {
       };
     }
     
+    console.log('GET function not found in API module');
     return jsonResponse(event, 404, { error: 'API method not supported' });
   } catch (err) {
     console.error('API serve error:', err);
