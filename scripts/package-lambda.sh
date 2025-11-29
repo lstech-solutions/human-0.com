@@ -35,9 +35,9 @@ cp -r "$BUILD_DIR" "$PACKAGE_DIR/server"
 echo "→ Copy API markdown files"
 if [ -d "$ROOT_DIR/apps/docs" ]; then
   mkdir -p "$PACKAGE_DIR/docs"
-  # Only copy the files actually needed by APIs
-  cp "$ROOT_DIR/apps/docs/privacy.md" "$PACKAGE_DIR/docs/" 2>/dev/null || echo "⚠️  privacy.md not found"
-  cp "$ROOT_DIR/apps/docs/terms.md" "$PACKAGE_DIR/docs/" 2>/dev/null || echo "⚠️  terms.md not found"
+  # Only copy the files actually needed by APIs (updated paths)
+  cp "$ROOT_DIR/apps/docs/docs/privacy.md" "$PACKAGE_DIR/docs/" 2>/dev/null || echo "⚠️  privacy.md not found"
+  cp "$ROOT_DIR/apps/docs/docs/terms.md" "$PACKAGE_DIR/docs/" 2>/dev/null || echo "⚠️  terms.md not found"
   
   # Copy i18n folders if they exist (for localized content)
   if [ -d "$ROOT_DIR/apps/docs/i18n" ]; then
