@@ -1,4 +1,4 @@
 
-> @human-0/i18n@1.7.11 build /home/ed/Documents/LSTS/human-0.com/packages/i18n
+> @human-0/i18n@1.7.20 build /home/ed/Documents/LSTS/human-0.com/packages/i18n
 > tsc -p tsconfig.json
 

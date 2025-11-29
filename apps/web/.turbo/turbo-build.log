@@ -1,24 +1,23 @@
 
-> @human-0/web@1.7.11 build /home/ed/Documents/LSTS/human-0.com/apps/web
+> @human-0/web@1.7.20 build /home/ed/Documents/LSTS/human-0.com/apps/web
 > expo export -p web
 
 Starting Metro Bundler
 Static rendering is enabled. Learn more: https://docs.expo.dev/router/reference/static-rendering/
 Web node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
 λ node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
-Web node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  4.0% (2/2)
-λ node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 61.2% (1602/2318)
-λ Bundled 5936ms node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/node/render.js (2701 modules)
-Web Bundled 6994ms node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js (2684 modules)
-Web node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.9% (2684/2684)
-λ Bundled 1378ms apps/web/app/api/terms+api.ts (1 module)
-λ Bundled 1457ms apps/web/app/api/privacy+api.ts (1 module)
-λ apps/web/app/api/human-stats+api.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
-λ Bundled 1372ms apps/web/app/api/human-stats+api.ts (1 module)
+Web node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 95.2% (2474/2535)
+λ node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.8% (408/546)
+Web Bundled 4667ms node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/entry.js (2573 modules)
+λ Bundled 4749ms node_modules/.pnpm/expo-router@6.0.15_5s3jiviqx34lsqiymzqxnr2tua/node_modules/expo-router/node/render.js (2701 modules)
+λ Bundled 1175ms apps/web/app/api/terms+api.ts (1 module)
+λ apps/web/app/api/privacy+api.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 1252ms apps/web/app/api/privacy+api.ts (1 module)
+λ Bundled 1184ms apps/web/app/api/human-stats+api.ts (1 module)
 
 › web bundles (2):
 _expo/static/css/web-f383fb7602a5abbb39c6926c4a80f6a6.css (38.8 kB)
-_expo/static/js/web/entry-997b33319652509f7b8de0ce899fd128.js (3.98 MB)
+_expo/static/js/web/entry-33077bd8dfa219b42558b6f32fe31ccd.js (3.98 MB)
 
 › Static routes (13):
 /nfts (29.5 kB)
@@ -37,7 +36,7 @@ _expo/static/js/web/entry-997b33319652509f7b8de0ce899fd128.js (3.98 MB)
 
 › API routes (3):
 /api/terms (5.15 kB) (source map (6.99 kB))
-/api/privacy (5.16 kB) (source map (6.99 kB))
+/api/privacy (5.7 kB) (source map (7.54 kB))
 /api/human-stats (5.32 kB) (source map (7.27 kB))
 
 Exported: dist
