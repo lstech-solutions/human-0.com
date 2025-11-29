@@ -1,6 +1,6 @@
 {
   "name": "@human-0/docs",
-  "version": "1.7.43",
+  "version": "1.7.44",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

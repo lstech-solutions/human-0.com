@@ -323,7 +323,7 @@ class VersionManager {
     return content;
   }
 
-  autoCommit(message) {
+  autoCommit(detectedChanges = null) {
     try {
       // Get list of changed files
       let changedFiles = [];
@@ -334,8 +334,8 @@ class VersionManager {
         // No git diff output
       }
       
-      // Detect changes for commit message
-      const detectedChanges = this.detectChanges();
+      // Use provided changes or detect them if not provided
+      const changes = detectedChanges || this.detectChanges();
       
       // Add all changes to git
       execSync('git add .', { stdio: 'inherit' });
@@ -343,26 +343,24 @@ class VersionManager {
       // Generate conventional commit message
       let commitMessage;
       
-      if (message) {
-        commitMessage = message;
-      } else {
-        // Use conventional commit format
-        const versionType = this.versionData.changelog.current?.type || 'patch';
-        let scope = 'release';
-        
-        // Determine scope based on changes
-        if (detectedChanges.some(c => c.includes('lambda'))) scope = 'lambda';
-        else if (detectedChanges.some(c => c.includes('UI'))) scope = 'ui';
-        else if (detectedChanges.some(c => c.includes('API'))) scope = 'api';
-        else if (detectedChanges.some(c => c.includes('Version'))) scope = 'build';
-        
-        const type = versionType === 'major' ? 'feat!' : versionType === 'minor' ? 'feat' : 'fix';
-        commitMessage = `${type}(${scope}): release v${this.versionData.version}`;
-      }
+      // Use conventional commit format
+      const versionType = this.versionData.changelog.current?.type || 'patch';
+      let scope = 'release';
+      
+      // Determine scope based on changes
+      if (changes.some(c => c.includes('lambda'))) scope = 'lambda';
+      else if (changes.some(c => c.includes('UI'))) scope = 'ui';
+      else if (changes.some(c => c.includes('API'))) scope = 'api';
+      else if (changes.some(c => c.includes('Version'))) scope = 'build';
+      else if (changes.some(c => c.includes('Documentation'))) scope = 'docs';
+      else if (changes.some(c => c.includes('Configuration'))) scope = 'config';
+      
+      const type = versionType === 'major' ? 'feat!' : versionType === 'minor' ? 'feat' : 'fix';
+      commitMessage = `${type}(${scope}): release v${this.versionData.version}`;
       
       // Append detected changes for better tracking
-      if (detectedChanges.length > 0) {
-        const changesList = detectedChanges.map(change => `- ${change}`).join('\n');
+      if (changes.length > 0) {
+        const changesList = changes.map(change => `- ${change}`).join('\n');
         commitMessage += `\n\n${changesList}`;
       }
       
@@ -416,7 +414,7 @@ if (require.main === module) {
       // Detect changes BEFORE modifying files
       const detectedChanges = versionManager.detectChanges();
       versionManager.incrementVersion(type, detectedChanges);
-      versionManager.autoCommit();
+      versionManager.autoCommit(detectedChanges);
       break;
       
     case 'current':
