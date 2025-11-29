@@ -101,12 +101,12 @@ export function Footer() {
               <Text className={`text-base font-bold mb-2 ${isDark ? 'text-emerald-400' : 'text-[#0A1628]'}`}>
                 Legal
               </Text>
-              <Pressable onPress={() => handleLegalLink('privacy')}>
+              <Pressable onPress={() => handleNavigation('privacy')}>
                 <Text className={`text-xs mb-1 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-700 hover:text-[#0A1628]'}`}>
                   Privacy Policy
                 </Text>
               </Pressable>
-              <Pressable onPress={() => handleLegalLink('terms')}>
+              <Pressable onPress={() => handleNavigation('terms')}>
                 <Text className={`text-xs mb-1 ${isDark ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-900 hover:text-[#0A1628]'}`}>
                   Terms of Service
                 </Text>

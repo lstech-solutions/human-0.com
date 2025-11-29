@@ -108,9 +108,9 @@ const serveLocalApi = async (event, apiPath) => {
     
     // Map API paths to local files (corrected for actual packaged location)
     const apiFileMap = {
-      '/api/human-stats': 'server/server/_expo/functions/api/human-stats+api.js',
-      '/api/terms': 'server/server/_expo/functions/api/terms+api.js', 
-      '/api/privacy': 'server/server/_expo/functions/api/privacy+api.js'
+      '/api/human-stats': 'apps/web/app/api/human-stats+api.ts',
+      '/api/terms': 'apps/web/app/api/terms+api.ts', 
+      '/api/privacy': 'apps/web/app/api/privacy+api.ts'
     };
     
     const filePath = apiFileMap[apiPath];
