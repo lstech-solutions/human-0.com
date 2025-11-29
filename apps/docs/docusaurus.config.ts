@@ -28,22 +28,41 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
-  // Internationalization configuration - DISABLED
-  // Using custom URL parameter-based locale detection instead
-  // i18n: {
-  //   defaultLocale: 'en',
-  //   locales: ['en', 'es'],
-  //   localeConfigs: {
-  //     en: {
-  //       label: '🇺🇸 English',
-  //       direction: 'ltr',
-  //     },
-  //     es: {
-  //       label: '🇪🇸 Español',
-  //       direction: 'ltr',
-  //     },
-  //   },
-  // },
+  // Internationalization configuration - ENABLED for proper language switching
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'de', 'es', 'pt', 'fr', 'ar', 'zh'],
+    localeConfigs: {
+      en: {
+        label: '🇺🇸 English',
+        direction: 'ltr',
+      },
+      de: {
+        label: '🇩🇪 Deutsch',
+        direction: 'ltr',
+      },
+      es: {
+        label: '🇪🇸 Español',
+        direction: 'ltr',
+      },
+      pt: {
+        label: '🇧🇷 Português',
+        direction: 'ltr',
+      },
+      fr: {
+        label: '🇫🇷 Français',
+        direction: 'ltr',
+      },
+      ar: {
+        label: '🇸🇦 العربية',
+        direction: 'rtl',
+      },
+      zh: {
+        label: '🇨🇳 中文',
+        direction: 'ltr',
+      },
+    },
+  },
 
   presets: [
     [
@@ -63,6 +82,7 @@ const config: Config = {
     ],
   ],
 
+  // Configure locale persistence and navigation
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -81,11 +101,6 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Docs',
-        },
-        {
-          type: 'html',
-          position: 'right',
-          value: '<div id="custom-language-switcher"></div>',
         },
         {
           href: 'https://human-0.com',
@@ -120,11 +135,11 @@ const config: Config = {
           items: [
             {
               label: 'Privacy Policy',
-              to: '/privacy',
+              to: '/docs/privacy',
             },
             {
               label: 'Terms of Service',
-              to: '/terms',
+              to: '/docs/terms',
             },
           ],
         },

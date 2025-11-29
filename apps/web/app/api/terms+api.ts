@@ -16,40 +16,63 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const locale = searchParams.get('locale') || 'en';
     
-    // Normalize locale (handle variants like es-CO, es-ES, etc.)
-    const normalizedLocale = locale.split('-')[0]; // Get base locale (es from es-CO)
+    // Normalize locale - handle all supported variants
+    let normalizedLocale = locale.split('-')[0]; // Get base locale (es from es-CO)
     
-    // Determine file path based on locale
-    let docsPath: string;
+    // Map of supported locales to Docusaurus i18n directories
+    const localeMapping: Record<string, string> = {
+      'en': 'en',
+      'de': 'de',           // German
+      'es': 'es',           // Spanish (generic)
+      'pt': 'pt',           // Portuguese (Brazil)
+      'fr': 'fr',           // French
+      'ar': 'ar',           // Arabic
+      'zh': 'zh',           // Chinese (Simplified)
+    };
     
-    if (normalizedLocale === 'en') {
-      // English - files are copied to root in production, check multiple possible locations
-      if (fs.existsSync(path.resolve(process.cwd(), 'terms.md'))) {
-        docsPath = path.resolve(process.cwd(), 'terms.md');  // Production: files copied to root
-      } else if (fs.existsSync(path.resolve(process.cwd(), 'docs/terms.md'))) {
-        docsPath = path.resolve(process.cwd(), 'docs/terms.md');  // Development
-      } else {
-        docsPath = path.resolve(process.cwd(), '../docs/terms.md');  // Alternative dev
-      }
-    } else {
-      // Other languages - use proper Docusaurus i18n structure
-      const localizedPath = path.resolve(process.cwd(), `docs/i18n/${normalizedLocale}/docusaurus-plugin-content-docs/current/terms.md`);  // Production
-      const devLocalizedPath = path.resolve(process.cwd(), `../docs/i18n/${normalizedLocale}/docusaurus-plugin-content-docs/current/terms.md`);  // Dev
+    const docusaurusLocale = localeMapping[normalizedLocale] || 'en';
+    
+    // Determine file path based on locale - use Docusaurus i18n structure
+    let docsPath: string | undefined;
+    
+    if (docusaurusLocale === 'en') {
+      // English - use main docs directory (updated path)
+      const possiblePaths = [
+        path.resolve(process.cwd(), 'docs/docs/terms.md'),  // Production: docs/docs next to server
+        path.resolve(process.cwd(), 'docs/terms.md'),  // Production: fallback
+        path.resolve(process.cwd(), '../docs/docs/terms.md'),  // Development
+        path.resolve(__dirname, '../../../docs/docs/terms.md'),  // Alternative
+        path.resolve(__dirname, '../docs/docs/terms.md'),  // Lambda: docs/docs next to server
+      ];
       
-      if (fs.existsSync(localizedPath)) {
-        docsPath = localizedPath;
-      } else if (fs.existsSync(devLocalizedPath)) {
-        docsPath = devLocalizedPath;
-      } else {
-        // Fallback to English if localized version doesn't exist
-        if (fs.existsSync(path.resolve(process.cwd(), 'terms.md'))) {
-          docsPath = path.resolve(process.cwd(), 'terms.md');  // Production: files copied to root
-        } else if (fs.existsSync(path.resolve(process.cwd(), 'docs/terms.md'))) {
-          docsPath = path.resolve(process.cwd(), 'docs/terms.md');  // Development
-        } else {
-          docsPath = path.resolve(process.cwd(), '../docs/terms.md');  // Alternative dev
-        }
+      docsPath = possiblePaths.find(p => fs.existsSync(p)) || possiblePaths[0];
+    } else {
+      // Other languages - use Docusaurus i18n structure
+      const localizedPaths = [
+        path.resolve(process.cwd(), `docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/terms.md`),  // Production
+        path.resolve(process.cwd(), `../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/terms.md`),  // Dev
+        path.resolve(__dirname, `../../../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/terms.md`),  // Alternative
+        path.resolve(__dirname, `../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/terms.md`),  // Lambda
+      ];
+      
+      docsPath = localizedPaths.find(p => fs.existsSync(p));
+      
+      // Fallback to English if localized version doesn't exist
+      if (!docsPath) {
+        const fallbackPaths = [
+          path.resolve(process.cwd(), 'docs/docs/terms.md'),  // Production: docs/docs next to server
+          path.resolve(process.cwd(), 'docs/terms.md'),  // Production: fallback
+          path.resolve(process.cwd(), '../docs/docs/terms.md'),  // Development
+          path.resolve(__dirname, '../../../docs/docs/terms.md'),  // Alternative
+          path.resolve(__dirname, '../docs/docs/terms.md'),  // Lambda: docs/docs next to server
+        ];
+        docsPath = fallbackPaths.find(p => fs.existsSync(p)) || fallbackPaths[0];
       }
+    }
+    
+    // Ensure docsPath is defined (fallback to first option if somehow still undefined)
+    if (!docsPath) {
+      docsPath = path.resolve(process.cwd(), 'docs/docs/terms.md');  // Production: docs/docs next to server
     }
     
     const content = fs.readFileSync(docsPath, 'utf-8');
@@ -59,7 +82,7 @@ export async function GET(request: Request) {
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
         'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
-        'Content-Language': normalizedLocale,
+        'Content-Language': docusaurusLocale,
       },
     });
   } catch (error) {

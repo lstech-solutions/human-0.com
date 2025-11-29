@@ -1,87 +1,70 @@
 import fs from 'fs';
 import path from 'path';
 
-// Helper function to get English fallback content
-function getEnglishFallback(type: 'privacy' | 'terms'): string {
-  const fallbackPath = fs.existsSync(path.resolve(process.cwd(), `${type}.md`))
-    ? path.resolve(process.cwd(), `${type}.md`)  // Production: files copied to root
-    : path.resolve(process.cwd(), `docs/${type}.md`);  // Development
-    
-  return fs.readFileSync(fallbackPath, 'utf-8');
-}
-
 export async function GET(request: Request) {
   try {
     // Get locale from query params, default to 'en'
     const { searchParams } = new URL(request.url);
     const locale = searchParams.get('locale') || 'en';
     
-    // Normalize locale (handle variants like es-CO, es-ES, etc.)
-    const normalizedLocale = locale.split('-')[0]; // Get base locale (es from es-CO)
+    // Normalize locale - handle all supported variants
+    let normalizedLocale = locale.split('-')[0]; // Get base locale (es from es-CO)
     
-    // DEBUG: Log environment info
-    console.log('=== PRIVACY API DEBUG ===');
-    console.log('Locale:', locale, '→ Normalized:', normalizedLocale);
-    console.log('Current working directory:', process.cwd());
-    console.log('__dirname:', __dirname);
-    console.log('Files in current dir:', fs.readdirSync('.').slice(0, 10));
+    // Map of supported locales to Docusaurus i18n directories
+    const localeMapping: Record<string, string> = {
+      'en': 'en',
+      'de': 'de',           // German
+      'es': 'es',           // Spanish (generic)
+      'pt': 'pt',           // Portuguese (Brazil)
+      'fr': 'fr',           // French
+      'ar': 'ar',           // Arabic
+      'zh': 'zh',           // Chinese (Simplified)
+    };
     
-    // Determine file path based on locale
+    const docusaurusLocale = localeMapping[normalizedLocale] || 'en';
+    
+    // Determine file path based on locale - use Docusaurus i18n structure
     let docsPath: string | undefined;
     
-    if (normalizedLocale === 'en') {
-      // English - check multiple possible locations for different environments
+    if (docusaurusLocale === 'en') {
+      // English - use main docs directory (updated path)
       const possiblePaths = [
-        path.resolve(process.cwd(), 'privacy.md'),  // Production: files copied to root
-        path.resolve(process.cwd(), 'docs/privacy.md'),  // Development
-        path.resolve(process.cwd(), '../docs/privacy.md'),  // Alternative dev
-        path.resolve(__dirname, '../../../privacy.md'),  // Production relative
-        path.resolve(__dirname, '../../../docs/privacy.md'),  // Dev relative
-        path.resolve(__dirname, '../docs/privacy.md'),  // Lambda: docs next to server
+        path.resolve(process.cwd(), 'docs/docs/privacy.md'),  // Production: docs/docs next to server
+        path.resolve(process.cwd(), 'docs/privacy.md'),  // Production: fallback
+        path.resolve(process.cwd(), '../docs/docs/privacy.md'),  // Development
+        path.resolve(__dirname, '../../../docs/docs/privacy.md'),  // Alternative
+        path.resolve(__dirname, '../docs/docs/privacy.md'),  // Lambda: docs/docs next to server
       ];
-      
-      console.log('English paths to check:');
-      possiblePaths.forEach((p, i) => console.log(`  ${i+1}. ${p} → ${fs.existsSync(p) ? 'EXISTS' : 'NOT FOUND'}`));
       
       docsPath = possiblePaths.find(p => fs.existsSync(p)) || possiblePaths[0];
     } else {
-      // Other languages - use proper Docusaurus i18n structure
+      // Other languages - use Docusaurus i18n structure
       const localizedPaths = [
-        path.resolve(process.cwd(), `docs/i18n/${normalizedLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Production
-        path.resolve(process.cwd(), `../docs/i18n/${normalizedLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Dev
-        path.resolve(__dirname, `../../../docs/i18n/${normalizedLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Alternative
-        path.resolve(__dirname, `../docs/i18n/${normalizedLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Lambda
+        path.resolve(process.cwd(), `docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Production
+        path.resolve(process.cwd(), `../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Dev
+        path.resolve(__dirname, `../../../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Alternative
+        path.resolve(__dirname, `../docs/i18n/${docusaurusLocale}/docusaurus-plugin-content-docs/current/privacy.md`),  // Lambda
       ];
-      
-      console.log('Localized paths to check:');
-      localizedPaths.forEach((p, i) => console.log(`  ${i+1}. ${p} → ${fs.existsSync(p) ? 'EXISTS' : 'NOT FOUND'}`));
       
       docsPath = localizedPaths.find(p => fs.existsSync(p));
       
       // Fallback to English if localized version doesn't exist
       if (!docsPath) {
         const fallbackPaths = [
-          path.resolve(process.cwd(), 'privacy.md'),  // Production: files copied to root
-          path.resolve(process.cwd(), 'docs/privacy.md'),  // Development
-          path.resolve(process.cwd(), '../docs/privacy.md'),  // Alternative dev
-          path.resolve(__dirname, '../../../privacy.md'),  // Production relative
-          path.resolve(__dirname, '../../../docs/privacy.md'),  // Dev relative
-          path.resolve(__dirname, '../docs/privacy.md'),  // Lambda: docs next to server
+          path.resolve(process.cwd(), 'docs/docs/privacy.md'),  // Production: docs/docs next to server
+          path.resolve(process.cwd(), 'docs/privacy.md'),  // Production: fallback
+          path.resolve(process.cwd(), '../docs/docs/privacy.md'),  // Development
+          path.resolve(__dirname, '../../../docs/docs/privacy.md'),  // Alternative
+          path.resolve(__dirname, '../docs/docs/privacy.md'),  // Lambda: docs/docs next to server
         ];
-        console.log('Fallback paths to check:');
-        fallbackPaths.forEach((p, i) => console.log(`  ${i+1}. ${p} → ${fs.existsSync(p) ? 'EXISTS' : 'NOT FOUND'}`));
         docsPath = fallbackPaths.find(p => fs.existsSync(p)) || fallbackPaths[0];
       }
     }
     
     // Ensure docsPath is defined (fallback to first option if somehow still undefined)
     if (!docsPath) {
-      docsPath = path.resolve(process.cwd(), 'privacy.md');  // Production: files copied to root
+      docsPath = path.resolve(process.cwd(), 'docs/docs/privacy.md');  // Production: docs/docs next to server
     }
-    
-    console.log('Final docsPath:', docsPath);
-    console.log('Final docsPath exists:', fs.existsSync(docsPath));
-    console.log('=== END DEBUG ===');
     
     const content = fs.readFileSync(docsPath, 'utf-8');
     
@@ -90,7 +73,7 @@ export async function GET(request: Request) {
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
         'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
-        'Content-Language': normalizedLocale,
+        'Content-Language': docusaurusLocale,
       },
     });
   } catch (error) {

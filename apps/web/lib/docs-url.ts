@@ -5,9 +5,9 @@
  */
 export function getDocsBaseUrl(): string {
   if (process.env.NODE_ENV === 'development') {
-    return 'http://localhost:3001/documentation';
+    return 'http://localhost:3001/documentation/docs/intro';
   }
-  return '/documentation';
+  return '/documentation/docs/intro';
 }
 
 /**
@@ -44,7 +44,7 @@ export function getDocsUrl(path: string, locale?: string, isDark?: boolean): str
  */
 export function getMainSiteBaseUrl(): string {
   if (process.env.NODE_ENV === 'development') {
-    return 'http://localhost:8081';
+    return 'http://localhost:3001/documentation';
   }
   return 'https://human-0.com';
 }

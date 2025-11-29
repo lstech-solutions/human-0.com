@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## What is HUMΛN-Ø?
 
-HUMΛN-Ø is a revolutionary platform that combines human potential with blockchain technology to create real, measurable impact in the world. Think of it as a bridge between your everyday actions and global positive change.
+HUMΛN-Ø is a platform that combines human potential with blockchain technology to create real, measurable impact in the world. Think of it as a bridge between your everyday actions and global positive change.
 
 ## Our Vision: Impact You Can See
 

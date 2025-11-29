@@ -2,7 +2,7 @@
 
 ## 📋 Version History
 
-### 🔧 Version 1.7.28 **[CURRENT]**
+### 🔧 Version 1.7.30 **[CURRENT]**
 **Date:** 2025-11-29  
 **Type:** patch
 
@@ -17,7 +17,23 @@
 
 ### 📚 Previous Versions
 
-### 🔧 Version 1.7.27
+### 🔧 Version 1.7.29
+**Date:** 2025-11-29  
+**Type:** patch
+
+**Changes:**
+- Completed internationalization of intro.md documentation for all supported languages
+- Removed 'revolutionary' terminology from all language versions
+- Enhanced Docusaurus language switcher persistence across navigation
+- Added comprehensive translations for German, Spanish, Portuguese, French, Chinese, and Arabic
+- Improved locale detection and URL structure for multilingual support
+- Updated client module for better language preference storage
+- Fixed language switcher visibility and functionality
+
+
+---
+
+### 🔧 Version 1.7.28
 **Date:** 2025-11-29  
 **Type:** patch
 
@@ -774,4 +790,4 @@
 
 ---
 
-*Last updated: 11/28/2025*
+*Last updated: 11/29/2025*

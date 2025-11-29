@@ -1,13 +1,13 @@
 {
   "name": "human-zero",
-  "version": "1.7.28",
+  "version": "1.7.30",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251129041436",
+  "build": "20251129063742",
   "changelog": {
     "current": {
-      "version": "1.7.28",
+      "version": "1.7.30",
       "date": "2025-11-29",
-      "timestamp": "2025-11-29T04:14:36.405Z",
+      "timestamp": "2025-11-29T06:37:42.885Z",
       "type": "patch",
       "changes": [
         "Fixed lambda proxy configuration",
@@ -20,9 +20,24 @@
     },
     "history": [
       {
-        "version": "1.7.27",
+        "version": "1.7.29",
         "date": "2025-11-29",
-        "timestamp": "2025-11-29T03:53:29.572Z",
+        "timestamp": "2025-11-29T01:36:00.000Z",
+        "type": "patch",
+        "changes": [
+          "Completed internationalization of intro.md documentation for all supported languages",
+          "Removed 'revolutionary' terminology from all language versions",
+          "Enhanced Docusaurus language switcher persistence across navigation",
+          "Added comprehensive translations for German, Spanish, Portuguese, French, Chinese, and Arabic",
+          "Improved locale detection and URL structure for multilingual support",
+          "Updated client module for better language preference storage",
+          "Fixed language switcher visibility and functionality"
+        ]
+      },
+      {
+        "version": "1.7.28",
+        "date": "2025-11-29",
+        "timestamp": "2025-11-29T04:14:36.405Z",
         "type": "patch",
         "changes": [
           "Fixed lambda proxy configuration",
@@ -677,12 +692,12 @@
   "semver": {
     "major": 1,
     "minor": 7,
-    "patch": 28,
+    "patch": 30,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-11-29T04:14:36.395Z",
+    "lastModified": "2025-11-29T06:37:42.866Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team",
