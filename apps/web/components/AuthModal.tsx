@@ -9,6 +9,7 @@ import {
   Platform,
 } from 'react-native';
 import { X, Wallet, Mail, Key, Chrome } from 'lucide-react-native';
+import { useConnect, useAccount, useDisconnect } from 'wagmi';
 
 type AuthMethod = 'wallet' | 'email' | 'otp' | 'social';
 
@@ -28,33 +29,17 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
   const [isMounted, setIsMounted] = useState(false);
   const [hasBrowserWallet, setHasBrowserWallet] = useState(false);
 
-  // Safe wagmi imports
-  const [wagmiHooks, setWagmiHooks] = useState<any>({
-    connect: null,
-    connectors: [],
-    isPending: false,
-    address: null,
-    isConnected: false,
-    disconnect: null,
-  });
+  const { connect, connectors, isPending } = useConnect();
+  const { address, isConnected } = useAccount();
+  const { disconnect } = useDisconnect();
 
   useEffect(() => {
     setIsMounted(true);
     if (Platform.OS === 'web' && typeof window !== 'undefined') {
       // Check for browser wallet (MetaMask, Coinbase, etc.)
       setHasBrowserWallet(!!(window as any).ethereum);
-
-      import('wagmi').then((wagmi) => {
-        const { useConnect, useAccount, useDisconnect } = wagmi;
-        // Note: Can't use hooks here, need to restructure
-        setWagmiHooks({ useConnect, useAccount, useDisconnect });
-      });
     }
   }, []);
-
-  const { connect, connectors = [], isPending = false } = wagmiHooks.useConnect?.() || {};
-  const { address, isConnected } = wagmiHooks.useAccount?.() || {};
-  const { disconnect } = wagmiHooks.useDisconnect?.() || {};
 
   if (!isMounted) {
     return null;
@@ -227,27 +212,27 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
 
   const renderMethodSelection = () => (
     <View className="space-y-4">
-      <Text className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-2">
+      <Text className="text-2xl font-bold text-center text-human-text-light dark:text-human-text-dark mb-2">
         Connect Your Account
       </Text>
-      <Text className="text-sm text-center text-gray-600 dark:text-gray-400 mb-6">
+      <Text className="text-sm text-center text-human-muted-light dark:text-human-muted-dark mb-6">
         Choose your preferred authentication method
       </Text>
 
       {/* Wallet Connection */}
       <TouchableOpacity
         onPress={() => setSelectedMethod('wallet')}
-        className="bg-gradient-to-r from-neon-green/10 to-neon-green/5 border-2 border-neon-green/30 rounded-2xl p-4 flex-row items-center"
+        className="bg-human-surface-light dark:bg-human-bg-dark border-2 border-gray-200 dark:border-human-primary/30 rounded-2xl p-4 flex-row items-center"
         activeOpacity={0.7}
       >
-        <View className="bg-neon-green/20 p-3 rounded-xl">
+        <View className="bg-human-primary/20 p-3 rounded-xl">
           <Text className="text-2xl">🦊</Text>
         </View>
         <View className="flex-1 ml-4">
-          <Text className="text-lg font-semibold text-gray-900 dark:text-white">
+          <Text className="text-lg font-semibold text-human-text-light dark:text-human-text-dark">
             Web3 Wallet
           </Text>
-          <Text className="text-sm text-gray-600 dark:text-gray-400">
+          <Text className="text-sm text-human-muted-light dark:text-human-muted-dark">
             MetaMask, Coinbase Wallet, WalletConnect
           </Text>
         </View>
@@ -256,17 +241,17 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
       {/* Email Magic Link */}
       <TouchableOpacity
         onPress={() => setSelectedMethod('email')}
-        className="bg-gradient-to-r from-blue-500/10 to-blue-500/5 border-2 border-blue-500/30 rounded-2xl p-4 flex-row items-center"
+        className="bg-human-surface-light dark:bg-human-bg-dark border-2 border-gray-200 dark:border-blue-500/30 rounded-2xl p-4 flex-row items-center"
         activeOpacity={0.7}
       >
         <View className="bg-blue-500/20 p-3 rounded-xl">
           <Mail size={24} color="#3B82F6" />
         </View>
         <View className="flex-1 ml-4">
-          <Text className="text-lg font-semibold text-gray-900 dark:text-white">
+          <Text className="text-lg font-semibold text-human-text-light dark:text-human-text-dark">
             Email Magic Link
           </Text>
-          <Text className="text-sm text-gray-600 dark:text-gray-400">
+          <Text className="text-sm text-human-muted-light dark:text-human-muted-dark">
             Passwordless login via email
           </Text>
         </View>
@@ -276,25 +261,25 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
       <TouchableOpacity
         onPress={handleGoogleLogin}
         disabled={isLoading}
-        className="bg-gradient-to-r from-red-500/10 to-red-500/5 border-2 border-red-500/30 rounded-2xl p-4 flex-row items-center"
+        className="bg-human-surface-light dark:bg-human-bg-dark border-2 border-gray-200 dark:border-red-500/30 rounded-2xl p-4 flex-row items-center"
         activeOpacity={0.7}
       >
         <View className="bg-red-500/20 p-3 rounded-xl">
           <Chrome size={24} color="#EF4444" />
         </View>
         <View className="flex-1 ml-4">
-          <Text className="text-lg font-semibold text-gray-900 dark:text-white">
+          <Text className="text-lg font-semibold text-human-text-light dark:text-human-text-dark">
             Google Account
           </Text>
-          <Text className="text-sm text-gray-600 dark:text-gray-400">
+          <Text className="text-sm text-human-muted-light dark:text-human-muted-dark">
             Sign in with Google
           </Text>
         </View>
       </TouchableOpacity>
 
       {error && (
-        <View className="bg-red-500/10 border border-red-500/30 rounded-xl p-3">
-          <Text className="text-red-500 text-sm text-center">{error}</Text>
+        <View className="bg-red-50 dark:bg-red-500/10 border border-red-300 dark:border-red-500/30 rounded-xl p-3">
+          <Text className="text-red-600 dark:text-red-400 text-sm text-center">{error}</Text>
         </View>
       )}
     </View>
@@ -327,13 +312,13 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
           onPress={() => setSelectedMethod(null)}
           className="flex-row items-center mb-4"
         >
-          <Text className="text-gray-600 dark:text-gray-400">← Back</Text>
+          <Text className="text-human-muted-light dark:text-human-muted-dark">← Back</Text>
         </TouchableOpacity>
 
-        <Text className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-2">
+        <Text className="text-2xl font-bold text-center text-human-text-light dark:text-human-text-dark mb-2">
           Connect Wallet
         </Text>
-        <Text className="text-sm text-center text-gray-600 dark:text-gray-400 mb-6">
+        <Text className="text-sm text-center text-human-muted-light dark:text-human-muted-dark mb-6">
           Choose your preferred wallet
         </Text>
 
@@ -343,17 +328,17 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
               key={connector.id}
               onPress={() => handleWalletConnect(connector.id)}
               disabled={isLoading || isPending}
-              className="bg-gray-50 dark:bg-space-dark border-2 border-gray-200 dark:border-neon-green/30 rounded-2xl p-4 flex-row items-center"
+              className="bg-human-surface-light dark:bg-human-bg-dark border-2 border-gray-200 dark:border-human-primary/30 rounded-2xl p-4 flex-row items-center"
               activeOpacity={0.7}
             >
-              <View className="bg-neon-green/20 p-3 rounded-xl">
+              <View className="bg-human-primary/20 p-3 rounded-xl">
                 <Text className="text-2xl">{getConnectorIcon(connector.name)}</Text>
               </View>
               <View className="flex-1 ml-4">
-                <Text className="text-lg font-semibold text-gray-900 dark:text-white">
+                <Text className="text-lg font-semibold text-human-text-light dark:text-human-text-dark">
                   {connector.name}
                 </Text>
-                <Text className="text-sm text-gray-600 dark:text-gray-300">
+                <Text className="text-sm text-human-muted-light dark:text-human-muted-dark">
                   {getConnectorDescription(connector.name)}
                 </Text>
               </View>
@@ -366,21 +351,21 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
             <TouchableOpacity
               onPress={() => handleWalletConnect('injected')}
               disabled={isLoading || isPending}
-              className="bg-gray-50 dark:bg-space-dark border-2 border-gray-200 dark:border-neon-green/30 rounded-2xl p-4 flex-row items-center"
+              className="bg-human-surface-light dark:bg-human-bg-dark border-2 border-gray-200 dark:border-human-primary/30 rounded-2xl p-4 flex-row items-center"
               activeOpacity={0.7}
             >
-              <View className="bg-neon-green/20 p-3 rounded-xl">
+              <View className="bg-human-primary/20 p-3 rounded-xl">
                 <Text className="text-2xl">
                   {(window as any).ethereum?.isMetaMask ? '🦊' :
                     (window as any).ethereum?.isCoinbaseWallet ? '🔵' : '🔐'}
                 </Text>
               </View>
               <View className="flex-1 ml-4">
-                <Text className="text-lg font-semibold text-gray-900 dark:text-white">
+                <Text className="text-lg font-semibold text-human-text-light dark:text-human-text-dark">
                   {(window as any).ethereum?.isMetaMask ? 'MetaMask' :
                     (window as any).ethereum?.isCoinbaseWallet ? 'Coinbase Wallet' : 'Browser Wallet'}
                 </Text>
-                <Text className="text-sm text-gray-600 dark:text-gray-300">
+                <Text className="text-sm text-human-muted-light dark:text-human-muted-dark">
                   Browser extension wallet
                 </Text>
               </View>
@@ -391,17 +376,17 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
             <TouchableOpacity
               onPress={() => handleWalletConnect('walletConnect')}
               disabled={isLoading || isPending}
-              className="bg-gray-50 dark:bg-space-dark border-2 border-gray-200 dark:border-blue-500/30 rounded-2xl p-4 flex-row items-center"
+              className="bg-human-surface-light dark:bg-human-bg-dark border-2 border-gray-200 dark:border-blue-500/30 rounded-2xl p-4 flex-row items-center"
               activeOpacity={0.7}
             >
               <View className="bg-blue-500/20 p-3 rounded-xl">
                 <Text className="text-2xl">🔗</Text>
               </View>
               <View className="flex-1 ml-4">
-                <Text className="text-lg font-semibold text-gray-900 dark:text-white">
+                <Text className="text-lg font-semibold text-human-text-light dark:text-human-text-dark">
                   WalletConnect
                 </Text>
-                <Text className="text-sm text-gray-600 dark:text-gray-300">
+                <Text className="text-sm text-human-muted-light dark:text-human-muted-dark">
                   Scan QR code with your mobile wallet
                 </Text>
               </View>
@@ -423,17 +408,17 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
             <TouchableOpacity
               onPress={() => handleWalletConnect('walletConnect')}
               disabled={isLoading || isPending}
-              className="bg-gray-50 dark:bg-space-dark border-2 border-gray-200 dark:border-blue-500/30 rounded-2xl p-4 flex-row items-center"
+              className="bg-human-surface-light dark:bg-human-bg-dark border-2 border-gray-200 dark:border-blue-500/30 rounded-2xl p-4 flex-row items-center"
               activeOpacity={0.7}
             >
               <View className="bg-blue-500/20 p-3 rounded-xl">
                 <Text className="text-2xl">🔗</Text>
               </View>
               <View className="flex-1 ml-4">
-                <Text className="text-lg font-semibold text-gray-900 dark:text-white">
+                <Text className="text-lg font-semibold text-human-text-light dark:text-human-text-dark">
                   WalletConnect
                 </Text>
-                <Text className="text-sm text-gray-600 dark:text-gray-300">
+                <Text className="text-sm text-human-muted-light dark:text-human-muted-dark">
                   Scan QR code with your mobile wallet
                 </Text>
               </View>
@@ -449,7 +434,7 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
             )}
 
             <View className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-              <Text className="text-gray-600 dark:text-gray-400 text-xs text-center mb-2">
+              <Text className="text-human-muted-light dark:text-human-muted-dark text-xs text-center mb-2">
                 Don't have a wallet?
               </Text>
               <View className="flex-row justify-center" style={{ gap: 8 }}>
@@ -490,7 +475,7 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
 
         {error && (
           <View className="bg-red-50 dark:bg-red-500/10 border border-red-300 dark:border-red-500/30 rounded-xl p-3 mt-4">
-            <Text className="text-red-600 dark:text-red-500 text-sm text-center">{error}</Text>
+            <Text className="text-red-600 dark:text-red-400 text-sm text-center">{error}</Text>
           </View>
         )}
       </View>
@@ -507,38 +492,38 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
         }}
         className="flex-row items-center mb-4"
       >
-        <Text className="text-gray-600 dark:text-gray-400">← Back</Text>
+        <Text className="text-human-muted-light dark:text-human-muted-dark">← Back</Text>
       </TouchableOpacity>
 
-      <Text className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-2">
+      <Text className="text-2xl font-bold text-center text-human-text-light dark:text-human-text-dark mb-2">
         {magicLinkSent ? 'Check Your Email' : 'Email Magic Link'}
       </Text>
 
       {magicLinkSent ? (
         <View className="space-y-4">
-          <View className="bg-neon-green/10 border border-neon-green/30 rounded-xl p-4">
-            <Text className="text-center text-gray-900 dark:text-white mb-2">
+          <View className="bg-human-primary/10 border border-human-primary/30 rounded-xl p-4">
+            <Text className="text-center text-human-text-light dark:text-human-text-dark mb-2">
               We've sent a magic link to:
             </Text>
-            <Text className="text-center text-neon-green font-semibold">
+            <Text className="text-center text-human-primary font-semibold">
               {email}
             </Text>
           </View>
-          <Text className="text-sm text-center text-gray-600 dark:text-gray-400">
+          <Text className="text-sm text-center text-human-muted-light dark:text-human-muted-dark">
             Click the link in your email to complete sign in. The link will expire in 15 minutes.
           </Text>
           <TouchableOpacity
             onPress={() => setSelectedMethod('otp')}
             className="mt-4"
           >
-            <Text className="text-center text-neon-green">
+            <Text className="text-center text-human-primary">
               Enter verification code instead
             </Text>
           </TouchableOpacity>
         </View>
       ) : (
         <View className="space-y-4">
-          <Text className="text-sm text-center text-gray-600 dark:text-gray-400 mb-4">
+          <Text className="text-sm text-center text-human-muted-light dark:text-human-muted-dark mb-4">
             Enter your email to receive a secure login link
           </Text>
 
@@ -549,20 +534,20 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
             keyboardType="email-address"
             autoCapitalize="none"
             autoComplete="email"
-            className="bg-gray-100 dark:bg-space-dark border-2 border-gray-300 dark:border-neon-green/30 rounded-xl px-4 py-3 text-gray-900 dark:text-white"
+            className="bg-gray-100 dark:bg-human-bg-dark border-2 border-gray-200 dark:border-human-primary/30 rounded-xl px-4 py-3 text-human-text-light dark:text-human-text-dark"
             placeholderTextColor="#9CA3AF"
           />
 
           <TouchableOpacity
             onPress={handleEmailMagicLink}
             disabled={isLoading}
-            className="bg-neon-green rounded-xl py-4 flex-row items-center justify-center"
+            className="bg-human-primary rounded-xl py-4 flex-row items-center justify-center"
             activeOpacity={0.8}
           >
             {isLoading ? (
               <ActivityIndicator color="#050B10" />
             ) : (
-              <Text className="text-space-dark font-semibold text-lg">
+              <Text className="text-human-bg-dark font-semibold text-lg">
                 Send Magic Link
               </Text>
             )}
@@ -584,13 +569,13 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
         onPress={() => setSelectedMethod('email')}
         className="flex-row items-center mb-4"
       >
-        <Text className="text-gray-600 dark:text-gray-400">← Back</Text>
+        <Text className="text-human-muted-light dark:text-human-muted-dark">← Back</Text>
       </TouchableOpacity>
 
-      <Text className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-2">
+      <Text className="text-2xl font-bold text-center text-human-text-light dark:text-human-text-dark mb-2">
         Enter Verification Code
       </Text>
-      <Text className="text-sm text-center text-gray-600 dark:text-gray-400 mb-4">
+      <Text className="text-sm text-center text-human-muted-light dark:text-human-muted-dark mb-4">
         Enter the 6-digit code sent to {email}
       </Text>
 
@@ -600,21 +585,21 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
         placeholder="000000"
         keyboardType="number-pad"
         maxLength={6}
-        className="bg-gray-100 dark:bg-space-dark border-2 border-gray-300 dark:border-neon-green/30 rounded-xl px-4 py-3 text-gray-900 dark:text-white text-center text-2xl tracking-widest"
+        className="bg-gray-100 dark:bg-human-bg-dark border-2 border-gray-200 dark:border-human-primary/30 rounded-xl px-4 py-3 text-human-text-light dark:text-human-text-dark text-center text-2xl tracking-widest"
         placeholderTextColor="#9CA3AF"
       />
 
       <TouchableOpacity
         onPress={handleOTPVerify}
         disabled={isLoading || otp.length !== 6}
-        className={`rounded-xl py-4 flex-row items-center justify-center ${otp.length === 6 ? 'bg-neon-green' : 'bg-gray-400'
+        className={`rounded-xl py-4 flex-row items-center justify-center ${otp.length === 6 ? 'bg-human-primary' : 'bg-gray-400'
           }`}
         activeOpacity={0.8}
       >
         {isLoading ? (
           <ActivityIndicator color="#050B10" />
         ) : (
-          <Text className="text-space-dark font-semibold text-lg">
+          <Text className="text-human-bg-dark font-semibold text-lg">
             Verify Code
           </Text>
         )}
@@ -636,10 +621,10 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
       onRequestClose={onClose}
     >
       <View className="flex-1 bg-black/50 justify-center items-center p-4">
-        <View className="bg-white dark:bg-space-darker rounded-3xl p-6 w-full max-w-md relative">
+        <View className="bg-human-surface-light dark:bg-human-surface-dark rounded-3xl p-6 w-full max-w-md relative">
           <TouchableOpacity
             onPress={onClose}
-            className="absolute top-4 right-4 z-10 bg-gray-200 dark:bg-space-dark rounded-full p-2"
+            className="absolute top-4 right-4 z-10 bg-gray-200 dark:bg-human-bg-dark rounded-full p-2"
             activeOpacity={0.7}
           >
             <X size={20} color="#6B7280" />

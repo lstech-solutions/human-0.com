@@ -117,211 +117,211 @@ export default function IdentityScreen() {
   const renderContent = () => (
     <>
       {/* Header */}
-          <View className="mb-8">
-            <Text className="text-[#0A1628] dark:text-[#00FF9C] text-4xl font-bold mb-2">
-              Your Identity
-            </Text>
-            <Text className="text-gray-600 dark:text-gray-400 text-base">
-              Create your unique human identity and start building your Proof of Sustainable Humanity.
-            </Text>
-          </View>
+      <View className="mb-8">
+        <Text className="text-[#0A1628] dark:text-[#00FF9C] text-4xl font-bold mb-2">
+          Your Identity
+        </Text>
+        <Text className="text-gray-600 dark:text-gray-400 text-base">
+          Create your unique human identity and start building your Proof of Sustainable Humanity.
+        </Text>
+      </View>
 
-          {/* Authentication Card */}
-          <View className="mb-8 bg-white dark:bg-[#0A1628] border-2 border-gray-300 dark:border-[#00FF9C]/20 rounded-3xl p-6">
-            {Platform.OS === "web" ? (
-              <>
-                {isLoading ? (
-                  <View className="items-center py-8">
-                    <ActivityIndicator size="large" color={isDark ? "#00FF9C" : "#0A1628"} />
-                    <Text className="text-gray-600 dark:text-gray-400 mt-4">Loading...</Text>
-                  </View>
-                ) : !account ? (
-                  <View className="items-center">
-                    <Fingerprint size={48} color={isDark ? "#00FF9C" : "#0A1628"} />
-                    <Text className="text-[#0A1628] dark:text-white text-xl font-bold mt-4 text-center">
-                      Connect Your Account
-                    </Text>
-                    <Text className="text-gray-600 dark:text-gray-400 text-center mt-2 mb-6">
-                      Choose your preferred authentication method to create your PoSH identity
-                    </Text>
+      {/* Authentication Card */}
+      <View className="mb-8 bg-white dark:bg-[#0A1628] border-2 border-gray-300 dark:border-[#00FF9C]/20 rounded-3xl p-6">
+        {Platform.OS === "web" ? (
+          <>
+            {isLoading ? (
+              <View className="items-center py-8">
+                <ActivityIndicator size="large" color={isDark ? "#00FF9C" : "#0A1628"} />
+                <Text className="text-gray-600 dark:text-gray-400 mt-4">Loading...</Text>
+              </View>
+            ) : !account ? (
+              <View className="items-center">
+                <Fingerprint size={48} color={isDark ? "#00FF9C" : "#0A1628"} />
+                <Text className="text-[#0A1628] dark:text-white text-xl font-bold mt-4 text-center">
+                  Connect Your Account
+                </Text>
+                <Text className="text-gray-600 dark:text-gray-400 text-center mt-2 mb-6">
+                  Choose your preferred authentication method to create your PoSH identity
+                </Text>
 
-                    <View className="w-full max-w-sm">
-                      <button
-                        onClick={() => setShowAuthModal(true)}
-                        className="w-full px-6 py-3 bg-[#00FF9C] hover:bg-[#00FF9C]/90 text-[#0A1628] font-mono text-sm rounded-lg transition-all flex items-center justify-center"
-                      >
-                        <span className="mr-2">🔐</span>
-                        GET STARTED
-                      </button>
+                <View className="w-full max-w-sm">
+                  <button
+                    onClick={() => setShowAuthModal(true)}
+                    className="w-full px-6 py-3 bg-[#00FF9C] hover:bg-[#00FF9C]/90 text-[#0A1628] font-mono text-sm rounded-lg transition-all flex items-center justify-center"
+                  >
+                    <span className="mr-2">🔐</span>
+                    GET STARTED
+                  </button>
+                </View>
+
+                <View className="mt-6 pt-6 border-t border-gray-200 dark:border-[#00FF9C]/10 w-full">
+                  <Text className="text-gray-500 dark:text-gray-400 text-xs text-center mb-3">
+                    Multiple authentication options:
+                  </Text>
+                  <View className="flex-row flex-wrap justify-center gap-2">
+                    <View className="bg-gray-100 dark:bg-[#050B10] px-3 py-1 rounded-full">
+                      <Text className="text-gray-700 dark:text-gray-400 text-xs">🔐 Wallet</Text>
                     </View>
-
-                    <View className="mt-6 pt-6 border-t border-gray-200 dark:border-[#00FF9C]/10 w-full">
-                      <Text className="text-gray-500 dark:text-gray-400 text-xs text-center mb-3">
-                        Multiple authentication options:
-                      </Text>
-                      <View className="flex-row flex-wrap justify-center gap-2">
-                        <View className="bg-gray-100 dark:bg-[#050B10] px-3 py-1 rounded-full">
-                          <Text className="text-gray-700 dark:text-gray-400 text-xs">🔐 Wallet</Text>
-                        </View>
-                        <View className="bg-gray-100 dark:bg-[#050B10] px-3 py-1 rounded-full">
-                          <Text className="text-gray-700 dark:text-gray-400 text-xs">📧 Email</Text>
-                        </View>
-                        <View className="bg-gray-100 dark:bg-[#050B10] px-3 py-1 rounded-full">
-                          <Text className="text-gray-700 dark:text-gray-400 text-xs">🌐 Google</Text>
-                        </View>
-                      </View>
+                    <View className="bg-gray-100 dark:bg-[#050B10] px-3 py-1 rounded-full">
+                      <Text className="text-gray-700 dark:text-gray-400 text-xs">📧 Email</Text>
+                    </View>
+                    <View className="bg-gray-100 dark:bg-[#050B10] px-3 py-1 rounded-full">
+                      <Text className="text-gray-700 dark:text-gray-400 text-xs">🌐 Google</Text>
                     </View>
                   </View>
-                ) : (
-                  <View className="items-center">
-                    <Shield size={48} color="#00FF9C" />
-                    <Text className="text-[#0A1628] dark:text-white text-xl font-bold mt-4 text-center">
-                      Account Connected
-                    </Text>
-                    <View className="bg-gray-100 dark:bg-[#050B10] px-3 py-1 rounded-full mt-2 mb-2">
-                      <Text className="text-gray-700 dark:text-gray-400 text-xs capitalize">
-                        via {authMethod || 'unknown'}
-                      </Text>
-                    </View>
-                    <Text className="text-gray-600 dark:text-gray-400 text-center mt-2 font-mono text-sm">
-                      {formatAddress(account)}
-                    </Text>
-                    <View className="mt-6 w-full space-y-3 max-w-sm">
-                      <button
-                        className="w-full px-6 py-3 bg-[#00FF9C] hover:bg-[#00FF9C]/90 text-[#0A1628] font-mono text-sm rounded-lg transition-all"
-                      >
-                        CREATE IDENTITY
-                      </button>
-                      <button
-                        onClick={handleDisconnect}
-                        className="w-full px-6 py-3 bg-transparent border border-gray-300 dark:border-[#00FF9C]/30 text-[#0A1628] dark:text-white font-mono text-sm rounded-lg hover:border-[#00FF9C] transition-all"
-                      >
-                        DISCONNECT
-                      </button>
-                    </View>
-                  </View>
-                )}
-              </>
+                </View>
+              </View>
             ) : (
               <View className="items-center">
-                <Fingerprint size={48} color="#00FF9C" />
-                <Text className="text-white text-xl font-bold mt-4 text-center">
-                  Identity Available on Web
+                <Shield size={48} color="#00FF9C" />
+                <Text className="text-[#0A1628] dark:text-white text-xl font-bold mt-4 text-center">
+                  Account Connected
                 </Text>
-                <Text className="text-gray-400 text-center mt-2">
-                  Please use the web version to create your identity.
+                <View className="bg-gray-100 dark:bg-[#050B10] px-3 py-1 rounded-full mt-2 mb-2">
+                  <Text className="text-gray-700 dark:text-gray-400 text-xs capitalize">
+                    via {authMethod || 'unknown'}
+                  </Text>
+                </View>
+                <Text className="text-gray-600 dark:text-gray-400 text-center mt-2 font-mono text-sm">
+                  {formatAddress(account)}
                 </Text>
+                <View className="mt-6 w-full space-y-3 max-w-sm">
+                  <button
+                    className="w-full px-6 py-3 bg-[#00FF9C] hover:bg-[#00FF9C]/90 text-[#0A1628] font-mono text-sm rounded-lg transition-all"
+                  >
+                    CREATE IDENTITY
+                  </button>
+                  <button
+                    onClick={handleDisconnect}
+                    className="w-full px-6 py-3 bg-transparent border border-gray-300 dark:border-[#00FF9C]/30 text-[#0A1628] dark:text-white font-mono text-sm rounded-lg hover:border-[#00FF9C] transition-all"
+                  >
+                    DISCONNECT
+                  </button>
+                </View>
               </View>
             )}
-          </View>
-
-          {/* Auth Modal */}
-          {AuthModal && (
-            <AuthModal
-              visible={showAuthModal}
-              onClose={() => setShowAuthModal(false)}
-              onSuccess={handleAuthSuccess}
-            />
-          )}
-
-          {/* What is PoSH Section */}
-          <View className="mb-8">
-            <Text className="text-[#0A1628] dark:text-white text-xl font-bold mb-4">
-              What is Proof of Sustainable Humanity?
+          </>
+        ) : (
+          <View className="items-center">
+            <Fingerprint size={48} color="#00FF9C" />
+            <Text className="text-white text-xl font-bold mt-4 text-center">
+              Identity Available on Web
             </Text>
+            <Text className="text-gray-400 text-center mt-2">
+              Please use the web version to create your identity.
+            </Text>
+          </View>
+        )}
+      </View>
 
-            <View className="bg-white dark:bg-[#0A1628] border border-gray-300 dark:border-[#00FF9C]/20 rounded-2xl p-5 mb-4">
-              <View className="mb-4">
-                <View className="flex-row items-start">
-                  <View className="bg-[#00FF9C]/20 rounded-full p-2 mr-3">
-                    <Zap size={20} color="#00FF9C" />
-                  </View>
-                  <View className="flex-1">
-                    <Text className="text-[#0A1628] dark:text-white font-semibold mb-1">
-                      Action-Based Proof
-                    </Text>
-                    <Text className="text-gray-600 dark:text-gray-400 text-sm">
-                      Unlike PoW or PoS, PoSH is based on your real-world sustainable actions.
-                    </Text>
-                  </View>
-                </View>
+      {/* Auth Modal */}
+      {AuthModal && (
+        <AuthModal
+          visible={showAuthModal}
+          onClose={() => setShowAuthModal(false)}
+          onSuccess={handleAuthSuccess}
+        />
+      )}
+
+      {/* What is PoSH Section */}
+      <View className="mb-8">
+        <Text className="text-[#0A1628] dark:text-white text-xl font-bold mb-4">
+          What is Proof of Sustainable Humanity?
+        </Text>
+
+        <View className="bg-white dark:bg-[#0A1628] border border-gray-300 dark:border-[#00FF9C]/20 rounded-2xl p-5 mb-4">
+          <View className="mb-4">
+            <View className="flex-row items-start">
+              <View className="bg-[#00FF9C]/20 rounded-full p-2 mr-3">
+                <Zap size={20} color="#00FF9C" />
               </View>
-
-              <View className="mb-4">
-                <View className="flex-row items-start">
-                  <View className="bg-[#00FF9C]/20 rounded-full p-2 mr-3">
-                    <Lock size={20} color="#00FF9C" />
-                  </View>
-                  <View className="flex-1">
-                    <Text className="text-[#0A1628] dark:text-white font-semibold mb-1">
-                      Privacy-Preserving
-                    </Text>
-                    <Text className="text-gray-600 dark:text-gray-400 text-sm">
-                      Prove your impact without exposing personal data.
-                    </Text>
-                  </View>
-                </View>
-              </View>
-
-              <View className="mb-4">
-                <View className="flex-row items-start">
-                  <View className="bg-[#00FF9C]/20 rounded-full p-2 mr-3">
-                    <Shield size={20} color="#00FF9C" />
-                  </View>
-                  <View className="flex-1">
-                    <Text className="text-[#0A1628] dark:text-white font-semibold mb-1">
-                      Sybil Resistant
-                    </Text>
-                    <Text className="text-gray-600 dark:text-gray-400 text-sm">
-                      One wallet = one identity. Verified through MRV sources.
-                    </Text>
-                  </View>
-                </View>
-              </View>
-
-              <View>
-                <View className="flex-row items-start">
-                  <View className="bg-[#00FF9C]/20 rounded-full p-2 mr-3">
-                    <Globe size={20} color="#00FF9C" />
-                  </View>
-                  <View className="flex-1">
-                    <Text className="text-[#0A1628] dark:text-white font-semibold mb-1">
-                      Globally Accessible
-                    </Text>
-                    <Text className="text-gray-600 dark:text-gray-400 text-sm">
-                      Works on any device, low bandwidth, no heavy KYC.
-                    </Text>
-                  </View>
-                </View>
+              <View className="flex-1">
+                <Text className="text-[#0A1628] dark:text-white font-semibold mb-1">
+                  Action-Based Proof
+                </Text>
+                <Text className="text-gray-600 dark:text-gray-400 text-sm">
+                  Unlike PoW or PoS, PoSH is based on your real-world sustainable actions.
+                </Text>
               </View>
             </View>
           </View>
 
-          {/* How It Works */}
-          <View className="mb-8">
-            <Text className="text-[#0A1628] dark:text-white text-xl font-bold mb-4">
-              How It Works
-            </Text>
-
-            <View className="space-y-4">
-              {[
-                { step: "1", title: "Connect Wallet", desc: "Use MetaMask, Coinbase Wallet, or any Web3 wallet" },
-                { step: "2", title: "Create Identity", desc: "Register your unique humanId on-chain (only gas fees)" },
-                { step: "3", title: "Link MRV Sources", desc: "Connect your smart meter, EV, or renewable energy provider" },
-                { step: "4", title: "Build Your Score", desc: "Earn PoSH proofs and mint Soulbound NFTs" },
-              ].map((item) => (
-                <View key={item.step} className="flex-row items-center mb-3">
-                  <View className="bg-[#00FF9C] w-8 h-8 rounded-full items-center justify-center mr-4">
-                    <Text className="text-[#0A1628] font-bold">{item.step}</Text>
-                  </View>
-                  <View className="flex-1">
-                    <Text className="text-[#0A1628] dark:text-white font-semibold">{item.title}</Text>
-                    <Text className="text-gray-600 dark:text-gray-400 text-sm">{item.desc}</Text>
-                  </View>
-                </View>
-              ))}
+          <View className="mb-4">
+            <View className="flex-row items-start">
+              <View className="bg-[#00FF9C]/20 rounded-full p-2 mr-3">
+                <Lock size={20} color="#00FF9C" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-[#0A1628] dark:text-white font-semibold mb-1">
+                  Privacy-Preserving
+                </Text>
+                <Text className="text-gray-600 dark:text-gray-400 text-sm">
+                  Prove your impact without exposing personal data.
+                </Text>
+              </View>
             </View>
           </View>
+
+          <View className="mb-4">
+            <View className="flex-row items-start">
+              <View className="bg-[#00FF9C]/20 rounded-full p-2 mr-3">
+                <Shield size={20} color="#00FF9C" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-[#0A1628] dark:text-white font-semibold mb-1">
+                  Sybil Resistant
+                </Text>
+                <Text className="text-gray-600 dark:text-gray-400 text-sm">
+                  One wallet = one identity. Verified through MRV sources.
+                </Text>
+              </View>
+            </View>
+          </View>
+
+          <View>
+            <View className="flex-row items-start">
+              <View className="bg-[#00FF9C]/20 rounded-full p-2 mr-3">
+                <Globe size={20} color="#00FF9C" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-[#0A1628] dark:text-white font-semibold mb-1">
+                  Globally Accessible
+                </Text>
+                <Text className="text-gray-600 dark:text-gray-400 text-sm">
+                  Works on any device, low bandwidth, no heavy KYC.
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+
+      {/* How It Works */}
+      <View className="mb-8">
+        <Text className="text-[#0A1628] dark:text-white text-xl font-bold mb-4">
+          How It Works
+        </Text>
+
+        <View className="space-y-4">
+          {[
+            { step: "1", title: "Connect Wallet", desc: "Use MetaMask, Coinbase Wallet, or any Web3 wallet" },
+            { step: "2", title: "Create Identity", desc: "Register your unique humanId on-chain (only gas fees)" },
+            { step: "3", title: "Link MRV Sources", desc: "Connect your smart meter, EV, or renewable energy provider" },
+            { step: "4", title: "Build Your Score", desc: "Earn PoSH proofs and mint Soulbound NFTs" },
+          ].map((item) => (
+            <View key={item.step} className="flex-row items-center mb-3">
+              <View className="bg-[#00FF9C] w-8 h-8 rounded-full items-center justify-center mr-4">
+                <Text className="text-[#0A1628] font-bold">{item.step}</Text>
+              </View>
+              <View className="flex-1">
+                <Text className="text-[#0A1628] dark:text-white font-semibold">{item.title}</Text>
+                <Text className="text-gray-600 dark:text-gray-400 text-sm">{item.desc}</Text>
+              </View>
+            </View>
+          ))}
+        </View>
+      </View>
 
       {/* Info Footer */}
       <View className="items-center pt-4 pb-20 border-t border-gray-200 dark:border-[#00FF9C]/10">
@@ -339,9 +339,7 @@ export default function IdentityScreen() {
           {renderContent()}
         </View>
       </ScrollView>
-      <View className="absolute left-0 right-0 bottom-0">
-        <AppFooter />
-      </View>
+      <AppFooter />
     </AnimatedBackground>
   );
 }

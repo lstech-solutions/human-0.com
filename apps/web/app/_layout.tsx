@@ -47,7 +47,7 @@ const LightTheme = {
 
 function ClickableTitle({ color, isHome }: { color: string; isHome?: boolean }) {
   const router = useRouter();
-  
+
   const handleClick = () => {
     if (isHome) {
       // On home page, scroll to top
@@ -59,7 +59,7 @@ function ClickableTitle({ color, isHome }: { color: string; isHome?: boolean }) 
       router.push('/');
     }
   };
-  
+
   return (
     <button
       onClick={handleClick}
@@ -120,13 +120,13 @@ function NavigationStack() {
             ),
           })}
         >
-          <Stack.Screen 
-            name="index" 
-            options={{ 
+          <Stack.Screen
+            name="index"
+            options={{
               headerShown: true,
               headerTitle: () => <ClickableTitle color={headerTint} isHome />,
               headerLeft: () => null,
-            }} 
+            }}
           />
           <Stack.Screen
             name="impact"
@@ -186,10 +186,14 @@ function NavigationStack() {
   );
 }
 
+import Web3Provider from '../providers/Web3Provider';
+
 export default function RootLayout() {
   return (
-    <ThemeProvider>
-      <NavigationStack />
-    </ThemeProvider>
+    <Web3Provider>
+      <ThemeProvider>
+        <NavigationStack />
+      </ThemeProvider>
+    </Web3Provider>
   );
 }
