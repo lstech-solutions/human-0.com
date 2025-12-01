@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity, ActivityIndicator, Platform } from "react-native";
 import { 
   User, 
   Shield, 
@@ -10,10 +10,6 @@ import {
   Sparkles,
   ArrowRight
 } from "lucide-react-native";
-// import { useHumanIdentity } from "../hooks/useHumanIdentity"; // Temporarily disabled
-// import { formatHumanId } from "../stores/identityStore"; // Temporarily disabled
-// import { ConnectWalletButton } from "../../wallet/components/ConnectWalletButton"; // Temporarily disabled
-import { ConnectButton } from "../../../components/ConnectButton";
 
 interface IdentityCardProps {
   onCreateIdentity?: () => void;
@@ -23,16 +19,70 @@ interface IdentityCardProps {
  * IdentityCard - Displays human identity status and PoSH score
  * 
  * States:
- * - Disconnected: Shows connect wallet prompt
+ * - Disconnected: Shows connect account prompt
  * - Connected (no identity): Shows create identity prompt
  * - Registered: Shows identity details and score
  */
 export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
-  // Temporarily disabled Web3 functionality - using placeholder data
+  const [AuthModal, setAuthModal] = useState<any>(null);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [account, setAccount] = useState<string | null>(null);
+  const [authMethod, setAuthMethod] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   const formatHumanId = (id: string) => `${id.slice(0, 6)}...${id.slice(-4)}`;
+
+  useEffect(() => {
+    if (Platform.OS === "web" && typeof window !== "undefined") {
+      // Load AuthModal dynamically
+      import("../../../components/AuthModal").then(m => {
+        setAuthModal(() => m.AuthModal);
+      });
+
+      // Check for existing auth
+      const email = localStorage.getItem('auth_email');
+      const method = localStorage.getItem('auth_method');
+      const walletName = localStorage.getItem('wallet_name');
+      
+      if (email) {
+        setAccount(email);
+        // Show wallet name if available, otherwise show method
+        setAuthMethod(method === 'wallet' && walletName ? walletName : method);
+      }
+      
+      setIsLoading(false);
+    } else {
+      setIsLoading(false);
+    }
+  }, []);
+
+  const handleAuthSuccess = (acc: string, method: string) => {
+    setAccount(acc);
+    setAuthMethod(method);
+    setShowAuthModal(false);
+    
+    // Store wallet name if it's a wallet connection
+    if (Platform.OS === "web" && typeof window !== "undefined") {
+      if (acc.startsWith('0x')) {
+        // Detect which wallet is connected
+        if ((window as any).ethereum?.isMetaMask) {
+          localStorage.setItem('wallet_name', 'MetaMask');
+          setAuthMethod('MetaMask');
+        } else if ((window as any).ethereum?.isCoinbaseWallet) {
+          localStorage.setItem('wallet_name', 'Coinbase Wallet');
+          setAuthMethod('Coinbase Wallet');
+        } else {
+          localStorage.setItem('wallet_name', 'Web3 Wallet');
+          setAuthMethod('Web3 Wallet');
+        }
+      }
+    }
+    
+    onCreateIdentity?.();
+  };
   
   const placeholderData = {
-    status: 'disconnected' as const,
+    status: account ? 'connected' : 'disconnected' as const,
     identity: {
       humanId: '0x1234567890abcdef' as `0x${string}`,
       registrationTime: Date.now() / 1000,
@@ -43,14 +93,26 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
       totalScore: 0,
       proofCount: 0,
     } as any,
-    isConnected: false,
+    isConnected: !!account,
     isRegistered: false,
     isRegistering: false,
     hasContracts: false,
     expectedHumanId: '0x1234567890abcdef' as `0x${string}`,
     register: () => {},
-    address: null,
+    address: account,
   };
+
+  // Loading state
+  if (isLoading) {
+    return (
+      <View className="bg-space-dark border-2 border-neon-green/20 rounded-3xl p-6">
+        <View className="items-center py-8">
+          <ActivityIndicator size="large" color="#00FF9C" />
+          <Text className="text-gray-400 mt-4">Loading...</Text>
+        </View>
+      </View>
+    );
+  }
 
   // Disconnected state
   if (!placeholderData.isConnected) {
@@ -63,12 +125,36 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
           <Text className="text-white text-2xl font-bold mb-2 text-center">
             Create Your Identity
           </Text>
-          <Text className="text-gray-400 text-center text-sm">
-            Connect your wallet to create your unique human identity and start building your Proof of Sustainable Humanity.
+          <Text className="text-gray-400 text-center text-sm mb-4">
+            Connect your account to create your unique human identity and start building your Proof of Sustainable Humanity.
           </Text>
+
+          <Text className="text-gray-500 text-xs text-center mb-4">
+            Choose your preferred authentication method:
+          </Text>
+          <View className="flex-row flex-wrap justify-center gap-2 mb-6">
+            <View className="bg-deep-space px-3 py-1 rounded-full">
+              <Text className="text-gray-400 text-xs">🔐 Wallet</Text>
+            </View>
+            <View className="bg-deep-space px-3 py-1 rounded-full">
+              <Text className="text-gray-400 text-xs">📧 Email</Text>
+            </View>
+            <View className="bg-deep-space px-3 py-1 rounded-full">
+              <Text className="text-gray-400 text-xs">🌐 Google</Text>
+            </View>
+          </View>
         </View>
         
-        <SimpleConnectButton variant="hero" onPress={onCreateIdentity} />
+        <TouchableOpacity
+          onPress={() => setShowAuthModal(true)}
+          className="bg-neon-green rounded-2xl px-6 py-4 flex-row items-center justify-center"
+          activeOpacity={0.8}
+        >
+          <Fingerprint size={24} color="#050B10" />
+          <Text className="text-space-dark font-semibold text-lg ml-2">
+            Get Started
+          </Text>
+        </TouchableOpacity>
         
         <View className="mt-6 pt-6 border-t border-neon-green/10">
           <View className="flex-row items-center mb-3">
@@ -80,10 +166,19 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
           <View className="flex-row items-center">
             <Sparkles size={16} color="#00FF9C" />
             <Text className="text-gray-400 text-xs ml-2">
-              One wallet = One unique human identity
+              One account = One unique human identity
             </Text>
           </View>
         </View>
+
+        {/* Auth Modal */}
+        {AuthModal && (
+          <AuthModal
+            visible={showAuthModal}
+            onClose={() => setShowAuthModal(false)}
+            onSuccess={handleAuthSuccess}
+          />
+        )}
       </View>
     );
   }
@@ -99,9 +194,18 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
           <Text className="text-white text-2xl font-bold mb-2 text-center">
             Welcome, Human
           </Text>
-          <Text className="text-gray-400 text-center text-sm mb-4">
-            Your wallet is connected. Create your identity to start tracking your sustainable impact.
+          <Text className="text-gray-400 text-center text-sm mb-2">
+            Your account is connected. Create your identity to start tracking your sustainable impact.
           </Text>
+          
+          {/* Show auth method */}
+          {authMethod && (
+            <View className="bg-deep-space px-3 py-1 rounded-full mb-4">
+              <Text className="text-gray-400 text-xs capitalize">
+                Connected via {authMethod}
+              </Text>
+            </View>
+          )}
           
           {/* Preview of expected humanId */}
           {placeholderData.expectedHumanId && (

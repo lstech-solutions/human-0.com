@@ -1,13 +1,13 @@
 {
   "name": "@human-0/web",
   "main": "expo-router/entry",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --port 8082",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
+    "web": "expo start --web --port 8082",
     "build": "expo export -p web",
     "build:pwa": "WEB_OUTPUT=static expo export -p web && npx @serwist/cli inject-manifest",
     "test": "jest --watchAll",

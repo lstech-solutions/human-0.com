@@ -1,6 +1,6 @@
 
 
-> @human-0/web@1.8.0 build /home/ed/Documents/LSTS/human-0.com/apps/web
+> @human-0/web@1.8.2 build /home/ed/Documents/LSTS/human-0.com/apps/web
 > expo export -p web
 
 [90menv: load .env[39m
@@ -10,171 +10,156 @@ Static rendering is enabled. [2mLearn more: [4mhttps://docs.expo.dev/router/re
 [1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
 [1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
 [253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  5.2% [22m[2m(10/44)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  3.8% [22m[2m( 8/41)[22m
 [253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  5.7% [22m[2m( 39/163)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  4.6% [22m[2m( 37/173)[22m
 [253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓[49m[39m[47m[37m░░░░░░░░░░░░░░░[39m[49m[1m 10.9% [22m[2m( 82/248)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓[49m[39m[47m[37m░░░░░░░░░░░░░░░[39m[49m[1m 10.3% [22m[2m( 73/227)[22m
 [253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 15.0% [22m[2m(111/287)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 15.9% [22m[2m(102/256)[22m
 [253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 15.8% [22m[2m(128/322)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 17.8% [22m[2m(140/332)[22m
 [253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░░[39m[49m[1m 26.7% [22m[2m(199/385)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░[39m[49m[1m 32.6% [22m[2m(242/424)[22m
 [253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░░[39m[49m[1m 30.7% [22m[2m(232/419)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░[39m[49m[1m 38.7% [22m[2m(306/492)[22m
 [253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░[39m[49m[1m 36.4% [22m[2m(263/436)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 56.2% [22m[2m(422/563)[22m
 [253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░[39m[49m[1m 38.6% [22m[2m(292/470)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 56.2% [22m[2m(458/618)[22m
 [253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░[39m[49m[1m 43.6% [22m[2m(329/498)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░[39m[49m[1m 61.9% [22m[2m(506/643)[22m
 [253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░[39m[49m[1m 58.2% [22m[2m(405/531)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 67.0% [22m[2m(474/579)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.1% [22m[2m(481/583)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.1% [22m[2m( 482/2142)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.1% [22m[2m( 483/2143)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.1% [22m[2m( 526/2171)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.1% [22m[2m( 549/2189)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.1% [22m[2m( 578/2205)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.1% [22m[2m(1031/2208)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░[39m[49m[1m 74.3% [22m[2m(1903/2208)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 93.8% [22m[2m(2141/2211)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 13.8% [22m[2m(16/43)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 93.8% [22m[2m(2141/2211)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 13.8% [22m[2m(16/43)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2232/2293)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 13.8% [22m[2m( 33/162)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2232/2293)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 13.8% [22m[2m( 73/226)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2232/2293)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 13.8% [22m[2m( 87/253)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2232/2293)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 13.8% [22m[2m( 87/253)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2264/2335)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 13.8% [22m[2m( 87/253)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2274/2356)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 13.8% [22m[2m( 87/253)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2303/2415)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 18.4% [22m[2m(120/280)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2303/2415)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓[49m[39m[47m[37m░░░░░░░░░░░░░[39m[49m[1m 19.6% [22m[2m(143/323)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2303/2415)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░[39m[49m[1m 35.9% [22m[2m(233/389)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2303/2415)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░[39m[49m[1m 35.9% [22m[2m(233/389)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2348/2456)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░[39m[49m[1m 35.9% [22m[2m(233/389)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2395/2497)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░[39m[49m[1m 37.8% [22m[2m(260/423)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2395/2497)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░[39m[49m[1m 41.3% [22m[2m(313/487)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2395/2497)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░[39m[49m[1m 49.1% [22m[2m(374/534)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2395/2497)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 50.7% [22m[2m(416/584)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2395/2497)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 50.7% [22m[2m(416/584)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2451/2544)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 51.5% [22m[2m(420/585)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2451/2544)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 51.5% [22m[2m(421/592)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2451/2544)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 51.5% [22m[2m(425/595)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2451/2544)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░[39m[49m[1m 59.6% [22m[2m(477/618)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2451/2544)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 63.3% [22m[2m(503/632)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.8% [22m[2m(2451/2544)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 63.3% [22m[2m(503/632)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 96.6% [22m[2m(2525/2569)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.2% [22m[2m(549/665)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 96.6% [22m[2m(2525/2569)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.2% [22m[2m( 550/2225)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 96.6% [22m[2m(2525/2569)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.2% [22m[2m( 550/2225)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2543/2578)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.2% [22m[2m( 585/2290)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2543/2578)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.2% [22m[2m( 585/2290)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2558/2602)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.2% [22m[2m( 650/2323)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2558/2602)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░[39m[49m[1m 68.2% [22m[2m(1354/2328)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2558/2602)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░[39m[49m[1m 85.0% [22m[2m(2146/2328)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2558/2602)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 91.2% [22m[2m(2288/2396)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2558/2602)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 91.5% [22m[2m(2294/2398)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2558/2602)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 91.6% [22m[2m(2295/2398)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2558/2602)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 95.5% [22m[2m(2398/2454)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2558/2602)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 95.5% [22m[2m(2441/2505)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2558/2602)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 95.5% [22m[2m(2464/2552)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.3% [22m[2m(2558/2602)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 95.5% [22m[2m(2464/2552)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.0% [22m[2m(2687/2700)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 95.5% [22m[2m(2464/2552)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.5% [22m[2m(2700/2707)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.0% [22m[2m(2666/2680)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.5% [22m[2m(2700/2707)[22m
-[253D[2A[0J[32m[1mλ[22m Bundled [39m[2m10880ms[22m[0m[2m node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js (2707 modules)[22m[0m
-[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.0% [22m[2m(2666/2680)[22m
-[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.5% [22m[2m(2700/2707)[22m
-[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.3% [22m[2m(2680/2690)[22m
-[253D[1A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.3% [22m[2m(2681/2690)[22m
-[253D[1A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.9% [22m[2m(2690/2691)[22m
-[253D[1A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.9% [22m[2m(2691/2691)[22m
-[253D[1A[0J[32m[1mWeb[22m Bundled [39m[2m12156ms[22m[0m[2m node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js (2691 modules)[22m[0m
-[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.9% [22m[2m(2691/2691)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░[39m[49m[1m 61.9% [22m[2m( 506/2202)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  4.0% [22m[2m(2/2)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░[39m[49m[1m 61.9% [22m[2m( 506/2202)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  4.0% [22m[2m(2/2)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░[39m[49m[1m 61.9% [22m[2m( 572/2235)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  4.0% [22m[2m(2/2)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░[39m[49m[1m 61.9% [22m[2m( 637/2322)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  4.0% [22m[2m(2/2)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░[39m[49m[1m 61.9% [22m[2m(1375/2327)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  4.0% [22m[2m(2/2)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 89.3% [22m[2m(2201/2329)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  4.0% [22m[2m(2/2)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 89.4% [22m[2m(2202/2329)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  4.0% [22m[2m(2/2)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 91.5% [22m[2m(2317/2422)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  4.0% [22m[2m(2/2)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.7% [22m[2m(2402/2468)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓[49m[39m[47m[37m░░░░░░░░░░░░░░░[39m[49m[1m  6.3% [22m[2m( 54/216)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.7% [22m[2m(2402/2468)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 13.4% [22m[2m( 96/262)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.7% [22m[2m(2402/2468)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓[49m[39m[47m[37m░░░░░░░░░░░░░░[39m[49m[1m 15.4% [22m[2m(109/278)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.7% [22m[2m(2402/2468)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░░[39m[49m[1m 28.4% [22m[2m(205/385)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.7% [22m[2m(2402/2468)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░░[39m[49m[1m 28.4% [22m[2m(205/385)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.2% [22m[2m(2543/2579)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░[39m[49m[1m 34.4% [22m[2m(291/496)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.2% [22m[2m(2543/2579)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░[39m[49m[1m 47.3% [22m[2m(410/596)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.2% [22m[2m(2543/2579)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 52.0% [22m[2m(435/603)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.2% [22m[2m(2543/2579)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 52.0% [22m[2m(518/755)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.2% [22m[2m(2543/2579)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 56.2% [22m[2m(602/803)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.2% [22m[2m(2543/2579)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 56.2% [22m[2m(602/804)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.2% [22m[2m(2608/2653)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 56.2% [22m[2m( 603/2363)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.2% [22m[2m(2608/2653)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 56.2% [22m[2m( 661/2409)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.2% [22m[2m(2608/2653)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 56.2% [22m[2m( 763/2528)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.2% [22m[2m(2608/2653)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 56.2% [22m[2m(1231/2555)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.2% [22m[2m(2608/2653)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 56.2% [22m[2m(1231/2555)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 98.7% [22m[2m(2674/2692)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░[39m[49m[1m 85.4% [22m[2m(2363/2557)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 98.7% [22m[2m(2674/2692)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░[39m[49m[1m 85.4% [22m[2m(2363/2557)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.0% [22m[2m(2686/2699)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 88.7% [22m[2m(2513/2669)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.0% [22m[2m(2686/2699)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 88.7% [22m[2m(2664/2990)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.0% [22m[2m(2686/2699)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 88.7% [22m[2m(2860/3097)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.0% [22m[2m(2686/2699)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 88.7% [22m[2m(2860/3097)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.9% [22m[2m(2710/2710)[22m
+[253D[2A[0J[33m[7m[1m WARN [22m[27m[39m Attempted to import the module "/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@noble+hashes@1.4.0/node_modules/@noble/hashes/crypto.js" which is not listed in the "exports" of "/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@noble+hashes@1.4.0/node_modules/@noble/hashes" under the requested subpath "./crypto.js". Falling back to file-based resolution. Consider updating the call site or asking the package maintainer(s) to expose this API.
+[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 88.7% [22m[2m(2860/3097)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.9% [22m[2m(2710/2710)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 96.9% [22m[2m(3176/3227)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.9% [22m[2m(2710/2710)[22m
+[253D[2A[0J[32m[1mλ[22m Bundled [39m[2m7177ms[22m[0m[2m node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js (2710 modules)[22m[0m
+[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 96.9% [22m[2m(3176/3227)[22m
+[1mλ[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/[22m[0m[1mrender.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.9% [22m[2m(2710/2710)[22m
+[253D[2A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 96.9% [22m[2m(3181/3236)[22m
+[253D[1A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 96.9% [22m[2m(3182/3236)[22m
+[253D[1A[0J[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.9% [22m[2m(3296/3296)[22m
+[253D[1A[0J[32m[1mWeb[22m Bundled [39m[2m8332ms[22m[0m[2m node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js (3296 modules)[22m[0m
+[1mWeb[22m [0m[2mnode_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 99.9% [22m[2m(3296/3296)[22m
 [253D[1A[0J[1mλ[22m [0m[2mapps/web/app/api/[22m[0m[1mterms+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[253D[1A[0J[32m[1mλ[22m Bundled [39m[2m1845ms[22m[0m[2m apps/web/app/api/terms+api.ts (1 module)[22m[0m
+[253D[1A[0J[32m[1mλ[22m Bundled [39m[2m1748ms[22m[0m[2m apps/web/app/api/terms+api.ts (1 module)[22m[0m
 [1mλ[22m [0m[2mapps/web/app/api/[22m[0m[1mterms+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
 [253D[1A[0J[1mλ[22m [0m[2mapps/web/app/api/[22m[0m[1mprivacy+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[253D[1A[0J[32m[1mλ[22m Bundled [39m[2m2040ms[22m[0m[2m apps/web/app/api/privacy+api.ts (1 module)[22m[0m
+[253D[1A[0J[32m[1mλ[22m Bundled [39m[2m1695ms[22m[0m[2m apps/web/app/api/privacy+api.ts (1 module)[22m[0m
 [1mλ[22m [0m[2mapps/web/app/api/[22m[0m[1mprivacy+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[253D[1A[0J[1mλ[22m [0m[2mapps/web/app/api/auth/[22m[0m[1mgoogle+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[253D[1A[0J[32m[1mλ[22m Bundled [39m[2m1566ms[22m[0m[2m apps/web/app/api/auth/google+api.ts (1 module)[22m[0m
+[1mλ[22m [0m[2mapps/web/app/api/auth/[22m[0m[1mgoogle+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
 [253D[1A[0J[1mλ[22m [0m[2mapps/web/app/api/[22m[0m[1mhuman-stats+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
-[253D[1A[0J[32m[1mλ[22m Bundled [39m[2m1947ms[22m[0m[2m apps/web/app/api/human-stats+api.ts (1 module)[22m[0m
+[253D[1A[0J[32m[1mλ[22m Bundled [39m[2m1552ms[22m[0m[2m apps/web/app/api/human-stats+api.ts (1 module)[22m[0m
 [1mλ[22m [0m[2mapps/web/app/api/[22m[0m[1mhuman-stats+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[253D[1A[0J[1mλ[22m [0m[2mapps/web/app/api/auth/[22m[0m[1mmagic-link+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[253D[1A[0J[32m[1mλ[22m Bundled [39m[2m1485ms[22m[0m[2m apps/web/app/api/auth/magic-link+api.ts (1 module)[22m[0m
+[1mλ[22m [0m[2mapps/web/app/api/auth/[22m[0m[1mmagic-link+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[253D[1A[0J[1mλ[22m [0m[2mapps/web/app/api/auth/[22m[0m[1mverify-otp+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[253D[1A[0J[32m[1mλ[22m Bundled [39m[2m1680ms[22m[0m[2m apps/web/app/api/auth/verify-otp+api.ts (1 module)[22m[0m
+[1mλ[22m [0m[2mapps/web/app/api/auth/[22m[0m[1mverify-otp+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[253D[1A[0J[1mλ[22m [0m[2mapps/web/app/api/auth/google/[22m[0m[1mcallback+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[253D[1A[0J[32m[1mλ[22m Bundled [39m[2m1643ms[22m[0m[2m apps/web/app/api/auth/google/callback+api.ts (1 module)[22m[0m
+[1mλ[22m [0m[2mapps/web/app/api/auth/google/[22m[0m[1mcallback+api.ts[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
 [253D[1A[0J
-[1m› web bundles (2):[22m
-_expo/static/css/web-28a4efc94ae083092d0012c6a2b3eb92.css [90m(42.2 kB)[39m
-_expo/static/js/web/entry-f115abf3821beac2e7fd51d7c2a1c945.js [90m(4 MB)[39m
+[1m› web bundles (7):[22m
+_expo/static/css/web-f41fc36da54ab69c8f9b911fa7c3aa5a.css [90m(45.5 kB)[39m
+_expo/static/js/web/__common-bc455839ba8d15fb086a485ff7481b8f.js [90m(664 kB)[39m
+_expo/static/js/web/__expo-metro-runtime-46ac14f77b8d07852b02d57eb3e5b645.js [90m(3.8 kB)[39m
+_expo/static/js/web/AuthModal-e1340facd40b0ea492ac53f9d9b23943.js [90m(15.9 kB)[39m
+_expo/static/js/web/entry-ddd7808185491dad6c1fd68a32272def.js [90m(4.02 MB)[39m
+_expo/static/js/web/native-0c4fd973a8843951412938f70853002d.js [90m(620 B)[39m
+_expo/static/js/web/useAuth-7f127fd9dbc696df5b49f7d8d44b1746.js [90m(1.8 kB)[39m
 
-[1m› Static routes (14):[22m
-/nfts [90m(29.9 kB)[39m
-/[90m (index)[39m [90m(22.4 kB)[39m
-/terms [90m(27.7 kB)[39m
-/canvas [90m(43.3 kB)[39m
-/impact [90m(32 kB)[39m
-/privacy [90m(27.7 kB)[39m
-/profile [90m(32.1 kB)[39m
-/identity [90m(34.1 kB)[39m
-/_sitemap [90m(19.2 kB)[39m
-/+not-found [90m(19.2 kB)[39m
-/pdf-download [90m(40.5 kB)[39m
-/documentation [90m(22.9 kB)[39m
-/documentation/terms [90m(22.6 kB)[39m
-/documentation/privacy [90m(22.6 kB)[39m
+[1m› Static routes (16):[22m
+/nfts [90m(30.1 kB)[39m
+/[90m (index)[39m [90m(22.6 kB)[39m
+/terms [90m(27.9 kB)[39m
+/canvas [90m(56.7 kB)[39m
+/impact [90m(32.2 kB)[39m
+/privacy [90m(27.9 kB)[39m
+/profile [90m(32.3 kB)[39m
+/identity [90m(33 kB)[39m
+/_sitemap [90m(19.4 kB)[39m
+/+not-found [90m(19.4 kB)[39m
+/pdf-download [90m(40.7 kB)[39m
+/documentation [90m(23.1 kB)[39m
+/dashboard [90m(23.4 kB)[39m
+/dashboard/identity [90m(23.4 kB)[39m
+/documentation/terms [90m(22.8 kB)[39m
+/documentation/privacy [90m(22.8 kB)[39m
 
-[1m› API routes (3):[22m
+[1m› API routes (7):[22m
 /api/terms [90m(5.77 kB)[39m [90m(source map [90m(7.55 kB)[39m[90m)[39m
 /api/privacy [90m(5.8 kB)[39m [90m(source map [90m(7.55 kB)[39m[90m)[39m
+/api/auth/google [90m(4.65 kB)[39m [90m(source map [90m(6.7 kB)[39m[90m)[39m
 /api/human-stats [90m(5.32 kB)[39m [90m(source map [90m(7.27 kB)[39m[90m)[39m
+/api/auth/magic-link [90m(4.82 kB)[39m [90m(source map [90m(7.05 kB)[39m[90m)[39m
+/api/auth/verify-otp [90m(4.93 kB)[39m [90m(source map [90m(7.12 kB)[39m[90m)[39m
+/api/auth/google/callback [90m(5.27 kB)[39m [90m(source map [90m(7.51 kB)[39m[90m)[39m
 
 [92mExported: dist[39m
