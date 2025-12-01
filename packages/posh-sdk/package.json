@@ -1,6 +1,6 @@
 {
   "name": "@human-0/posh-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "TypeScript SDK for Proof of Sustainable Humanity (PoSH) identity management",
   "private": false,
   "keywords": [
