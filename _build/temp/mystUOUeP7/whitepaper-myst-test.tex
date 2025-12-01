@@ -1,0 +1,242 @@
+% Created with jtex v.1.0.20
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{datetime}
+\usepackage{graphicx}
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  imports  %%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{url}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% colors for hyperlinks
+\hypersetup{colorlinks=true, allcolors=blue}
+
+\newcommand{\logo}{
+  \href{https://curvenote.com}{\includegraphics[width=2cm]{curvenote.png}}
+}
+
+\title{HUMAN-ZERO Protocol Whitepaper: Proof of Sustainable Humanity (PoSH)}
+
+\author{Edward Calderón et al.}
+
+\newdate{articleDate}{30}{11}{2025}
+\date{\displaydate{articleDate}}
+
+\begin{document}
+\maketitle
+\begin{abstract}The HUMAN-ZERO protocol introduces Proof of Sustainable Humanity (PoSH), a novel cryptographic primitive that enables verifiable, privacy-preserving representation of human-scale environmental actions. PoSH combines decentralized identity, MRV (Measurement, Reporting, Verification) systems, and zero-knowledge proofs to create a sustainability ledger keyed by unique human beings rather than accounts or corporations.\end{abstract}\begin{center}\logo\end{center}
+
+
+\section{HUMAN-ZERO Protocol Whitepaper}
+
+\textbf{Proof of Sustainable Humanity (PoSH)}
+
+\textbf{Author:} Edward Calderón et al.\newline
+\textbf{Contact:} \href{mailto:contact@human0.me}{contact@human0.me}\newline
+\textbf{Version:} 1.0.0\newline
+\textbf{Date:} November 30, 2025
+
+
+\bigskip
+\centerline{\rule{13cm}{0.4pt}}
+\bigskip
+
+\subsection{Manifesto}
+
+Humanity is simultaneously running two non-linear processes: an accelerating planetary crisis and an expanding digital infrastructure largely indifferent to physical limits. The systems that secure our digital assets today---hashpower, stake, and centralized identity---do not secure our future on this planet.
+
+HUMAN-ZERO begins from a simple assertion: sustainability must become a \textbf{first-class cryptographic primitive}. Our digital identities should not only prove ownership or solvency, but also attest to our contribution to planetary stability. We call this primitive \textbf{Proof of Sustainable Humanity (PoSH)}.
+
+\subsubsection{Traditional Consensus}
+
+\begin{itemize}
+\item \textbf{Proof of Work} consumes energy as a Sybil-resistance mechanism; its security budget is paid in thermodynamic cost.
+\item \textbf{Proof of Stake} concentrates control in capital and remains structurally agnostic to real-world emissions or ecological impact.
+\end{itemize}
+
+Neither model encodes a notion of \textit{human-scale, positive environmental action}. They secure ledgers; they do not secure the biosphere.
+
+\subsubsection{The PoSH Approach}
+
+HUMAN-ZERO proposes a complementary axis of trust: a ledger in which each entry corresponds to a verifiable sustainability event attributed to a unique human. Measurement, reporting, and verification (MRV) pipelines generate signed records of renewable energy use, low-carbon mobility, or regenerative actions.
+
+At the core of PoSH is a simple mapping:
+
+\begin{equation}
+\text{Human} \rightarrow \mathsf{humanId} \rightarrow \{\text{impact commitments on-chain}\}
+\end{equation}
+
+Each commitment is an immutable binding between a pseudonymous human identifier and an attested sustainability event.
+
+\subsection{Proof of Sustainable Humanity (PoSH)}
+
+\subsubsection{Introduction}
+
+The accelerating climate crisis reveals a structural gap in how digital systems recognize, value, and verify human contributions to environmental sustainability. Existing blockchain consensus mechanisms---such as Proof of Work (PoW) and Proof of Stake (PoS)---are fundamentally unsuitable for representing or incentivizing human-scale sustainable action.
+
+\textbf{Proof of Sustainable Humanity (PoSH)} is introduced as a new primitive: a cryptographically verifiable, privacy-preserving mechanism that represents the positive, measurable environmental actions performed by unique human individuals.
+
+\subsubsection{Design Principles}
+
+PoSH is built upon the following principles:
+
+\begin{enumerate}
+\item \textbf{Human-centeredness:} The unit of verification is a unique human, not a machine or a capital pool.
+\item \textbf{Environmental positivity:} Each proof must correspond to a measurable positive environmental action.
+\item \textbf{Non-extractiveness:} Minting a PoSH proof must require no protocol-level fee beyond blockchain gas costs.
+\item \textbf{Privacy preservation:} Raw sustainability event data remains off-chain and may be wrapped in zero-knowledge proofs.
+\item \textbf{Transparency and verifiability:} All claims must be backed by auditable, cryptographically signed MRV records.
+\item \textbf{Global accessibility:} The protocol must be usable regardless of geographical location, financial resources, or device constraints.
+\end{enumerate}
+
+\subsubsection{System Architecture}
+
+The PoSH system is composed of three primary layers:
+
+\begin{enumerate}
+\item \textbf{Identity Layer} - Modular, provider-agnostic identity architecture
+\item \textbf{Impact Verification Layer} - MRV adapters and oracle networks
+\item \textbf{On-chain Proof Registration} - Immutable proof registry and soulbound tokens
+\end{enumerate}
+
+\paragraph{Identity Layer}
+
+Let $\textsf{IdP}$ denote any identity provider---such as Humanity Protocol, World ID, Sismo, BrightID, Proof of Humanity, or any W3C-compatible verifiable credential system. Each provider outputs a proof of uniqueness.
+
+PoSH abstracts these systems under a unified commitment:
+
+\begin{equation}
+\mathsf{humanId} = H(\textsf{IdP.output} \parallel \textsf{salt})
+\end{equation}
+
+This ensures unlinkability across platforms while permitting the user to switch identity providers without invalidating past PoSH proofs.
+
+\paragraph{Impact Verification Layer}
+
+Each sustainability action is captured by MRV adapters connected to real-world data sources:
+
+\begin{itemize}
+\item Smart meters and renewable energy certificates (I-RECs)
+\item Electric vehicle (EV) charging systems
+\item Solar generation and community microgrids
+\item Low-carbon mobility data
+\item Recycling and waste management systems
+\end{itemize}
+
+The MRV process produces a digitally signed report containing:
+
+\begin{itemize}
+\item \textbf{Action type} (e.g., renewable energy generation)
+\item \textbf{Impact value} (e.g., 100 kWh)
+\item \textbf{Carbon equivalent} ($\text{CO}_2\text{e}$)
+\item \textbf{Timestamp} and \textbf{location} (optional, privacy-preserving)
+\item \textbf{Methodology reference} (e.g., I-REC standard)
+\end{itemize}
+
+\paragraph{Oracle Verification}
+
+Oracle nodes perform four checks:
+
+\begin{enumerate}
+\item \textbf{Data authenticity} - Verify digital signatures
+\item \textbf{No double counting} - Check for duplicate submissions
+\item \textbf{External validation} - Cross-reference with trusted data sources
+\item \textbf{Plausibility} - Assess logical consistency of reported values
+\end{enumerate}
+
+Once validated, the oracle generates a signed claim:
+
+\begin{equation}
+\mathsf{claim} = H(\mathsf{humanId} \parallel \mathsf{mrvHash} \parallel \mathsf{impactValue} \parallel \mathsf{timestamp})
+\end{equation}
+
+\subsubsection{On-Chain Proof Registration}
+
+The \textbf{PoSH Proof Registry} contract stores canonical, deduplicated proof records. Each record contains:
+
+\begin{itemize}
+\item $\mathsf{humanId}$ - Pseudonymous human identifier
+\item $\mathsf{RWAP}$ - Real-World Action Proof commitment
+\item $\mathsf{impactValue}$ - Quantified environmental impact
+\item $\mathsf{timestamp}$ - When the action occurred
+\item $\mathsf{oracleSignature}$ - Cryptographic attestation
+\end{itemize}
+
+\subsubsection{Zero-Knowledge Privacy}
+
+PoSH supports optional zero-knowledge proofs (ZKPs) to ensure privacy while maintaining verifiability. A user can prove:
+
+\begin{equation}
+\text{"I am a unique human with } \geq X \text{ carbon-equivalent impact"}
+\end{equation}
+
+without revealing meter IDs, timestamps, or location.
+
+\subsubsection{Security Properties}
+
+We outline the core security properties:
+
+\textbf{Completeness:} If MRV data is correct and oracle signatures are valid, then a valid PoSH proof is always accepted.
+
+\textbf{Soundness:} No adversary can forge a PoSH proof without valid MRV and oracle signatures.
+
+\textbf{Privacy:} Zero-knowledge proofs ensure verifiers learn only exposed aggregates, not raw MRV data.
+
+\textbf{Non-transferability:} PoSH proofs are soulbound; they cannot be transferred between identities.
+
+\textbf{Sybil resistance:} Mitigated via unique human proofs, rate limiting, and oracle multisignature requirements.
+
+\subsection{Comparison with Traditional Consensus}
+
+\bigskip\noindent
+\begin{tabular}{p{\dimexpr 0.250\linewidth-2\tabcolsep}p{\dimexpr 0.250\linewidth-2\tabcolsep}p{\dimexpr 0.250\linewidth-2\tabcolsep}p{\dimexpr 0.250\linewidth-2\tabcolsep}}
+\toprule
+Primitive & Security Basis & Externality & Real-world Link \\
+\hline
+PoW & Computational hardness & High energy cost & None \\
+PoS & Capital commitment & Low direct cost & None \\
+PoA & Trusted identities & Moderate & Indirect \\
+\textbf{PoSH} & \textbf{RWAP commitments} & \textbf{Positive externality} & \textbf{Direct sustainability} \\
+\bottomrule
+\end{tabular}
+
+\bigskipPoSH is the first primitive where the ``security budget'' is grounded in positive real-world externalities rather than energy burn or capital lock-up.
+
+\subsection{Conclusion}
+
+PoSH is proposed as a foundational cryptographic primitive for representing human-scale sustainability contributions. By integrating MRV, decentralized oracles, privacy-preserving cryptography, and transparent on-chain registries, PoSH enables a future where positive environmental actions can be verified, recognized, and composed into digital identity systems without compromising individual privacy or equity.
+
+Zero is not an absence; it is a boundary condition. Net zero is not a slogan, but a statement that can---and must---be proven. HUMAN-ZERO is an invitation to treat that proof as a public good.
+
+
+\bigskip
+\centerline{\rule{13cm}{0.4pt}}
+\bigskip
+
+\subsection{References}
+
+\begin{enumerate}
+\item Goodell, G. (2020). ``Green Blockchain: Towards a Sustainable Distributed Ledger Technology''
+\item Saleh, F. (2021). ``Blockchain without Waste: Proof-of-Stake''
+\item Ohlhaver, P. et al. (2025). ``Compressed Proof of Personhood''
+\item Khurana, S. et al. (2023). ``Blockchain-based Renewable Energy Certificate Trading''
+\item Fu, Y. et al. (2023). ``Community Energy Markets with Blockchain''
+\end{enumerate}
+
+
+\bigskip
+\centerline{\rule{13cm}{0.4pt}}
+\bigskip
+
+\textbf{License:} CC-BY-4.0\newline
+\textbf{Contact:} \href{mailto:contact@human0.me}{contact@human0.me}\newline
+\textbf{GitHub:} \href{https://github.com/human-zero/human-zero}{https://github.com/human-zero/human-zero}
+
+
+\end{document}

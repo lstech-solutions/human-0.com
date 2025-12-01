@@ -1,24 +1,35 @@
 {
   "name": "human-zero",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251130093328",
+  "build": "20251201043455",
   "changelog": {
     "current": {
-      "version": "1.8.0",
-      "date": "2025-11-30",
-      "timestamp": "2025-11-30T09:33:28.504Z",
-      "type": "minor",
+      "version": "1.8.1",
+      "date": "2025-12-01",
+      "timestamp": "2025-12-01T04:34:55.773Z",
+      "type": "patch",
       "changes": [
-        "Fixed lambda proxy configuration",
         "UI component improvements",
-        "API endpoint updates",
-        "Version management enhancements",
         "Configuration updates",
         "Documentation updates"
       ]
     },
     "history": [
+      {
+        "version": "1.8.0",
+        "date": "2025-11-30",
+        "timestamp": "2025-11-30T09:33:28.504Z",
+        "type": "minor",
+        "changes": [
+          "Fixed lambda proxy configuration",
+          "UI component improvements",
+          "API endpoint updates",
+          "Version management enhancements",
+          "Configuration updates",
+          "Documentation updates"
+        ]
+      },
       {
         "version": "1.7.44",
         "date": "2025-11-29",
@@ -888,12 +899,12 @@
   "semver": {
     "major": 1,
     "minor": 8,
-    "patch": 0,
+    "patch": 1,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-11-30T09:33:28.504Z",
+    "lastModified": "2025-12-01T04:34:55.773Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team",

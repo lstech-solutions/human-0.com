@@ -1,0 +1,756 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Universal Composability Specification of PoSH &#8212; HUM∧N-Ø Protocol Whitepaper</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'posh';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Related Work" href="related_work.html" />
+    <link rel="prev" title="Manifesto" href="manifesto.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">HUM∧N-Ø Protocol Whitepaper</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    HUM{Λ}N-Ø Protocol Whitepaper [4pt]  Proof of Sustainable Humanity (PoSH)
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="manifesto.html">Manifesto</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Universal Composability Specification of PoSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="related_work.html">Related Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="threat_model.html">Threat Model and Adversaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="end_of_appendix_a.html">End of Appendix A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="end_of_appendix_b.html">End of Appendix B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/posh.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Universal Composability Specification of PoSH</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-universal-composability-framework">The Universal Composability Framework</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-functionality">Ideal Functionality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-model">Computation Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication-model">Communication Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-authenticated-channel">Ideal Authenticated Channel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-secure-channel">Ideal Secure Channel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-anonymous-and-pseudonymous-channels">Ideal Anonymous and Pseudonymous Channels</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impossibility-results-and-setup-assumptions">Impossibility Results and Setup Assumptions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-functionality-texorpdfstring-mathcal-f">Ideal Functionality \texorpdfstring{$\mathcal{F</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-protocol-texorpdfstring-pi-textsf-posh">Real-World Protocol \texorpdfstring{$\Pi_{\textsf{PoSH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulator-texorpdfstring-mathcal-s">Simulator \texorpdfstring{$\mathcal{S</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-theorem">Security Theorem</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="universal-composability-specification-of-posh">
+<h1>Universal Composability Specification of PoSH<a class="headerlink" href="#universal-composability-specification-of-posh" title="Permalink to this heading">#</a></h1>
+<p>This appendix provides a formal definition of the PoSH protocol in the Universal
+Composability (UC) framework. We specify the ideal functionality
+<span class="math notranslate nohighlight">\(\mathcal{F}_{\textsf{PoSH}}\)</span>, the real-world protocol <span class="math notranslate nohighlight">\(\Pi_{\textsf{PoSH}}\)</span>,
+the simulator <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, and the environment <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span> that interacts
+with the system.</p>
+<p>Our goal is to show that the real-world execution of PoSH securely emulates the
+ideal functionality in the UC sense.</p>
+<section id="the-universal-composability-framework">
+<h2>The Universal Composability Framework<a class="headerlink" href="#the-universal-composability-framework" title="Permalink to this heading">#</a></h2>
+<p>The framework of Universal Composability (UC) [Canetti01] is a general-purpose model for the
+analysis of cryptographic protocols. It guarantees very strong security
+properties. Protocols remain secure even if arbitrarily composed with other
+instances of the same or other protocols. Security is defined in the sense of
+protocol emulation. Intuitively, a protocol is said to emulate another one if no
+environment (observer) can distinguish the executions. Literally, the protocol
+may simulate the other protocol (without having access to the code). The notion
+of security is derived by implication. Assume a protocol <span class="math notranslate nohighlight">\(P_1\)</span> is secure per
+definition. If another protocol <span class="math notranslate nohighlight">\(P_2\)</span> emulates protocol <span class="math notranslate nohighlight">\(P_1\)</span> such that no
+environment tells apart the emulation from the execution of the protocol, then
+the emulated protocol <span class="math notranslate nohighlight">\(P_2\)</span> is as secure as protocol <span class="math notranslate nohighlight">\(P_1\)</span>.</p>
+<section id="ideal-functionality">
+<h3>Ideal Functionality<a class="headerlink" href="#ideal-functionality" title="Permalink to this heading">#</a></h3>
+<p>An ideal functionality is a protocol in which a trusted party that can
+communicate over perfectly secure channels with all protocol participants
+computes the desired protocol outcome. We say that a cryptographic protocol that
+cannot make use of such a trusted party fulfills an ideal functionality if the
+protocol can emulate the behavior of the trusted party for honest users, and if
+the view that an adversary learns by attacking the protocol is indistinguishable
+from what can be computed by a simulator that only interacts with the ideal
+functionality.</p>
+</section>
+<section id="computation-model">
+<h3>Computation Model<a class="headerlink" href="#computation-model" title="Permalink to this heading">#</a></h3>
+<p>The computation model of universal composability is that of interactive Turing
+machines that can activate each other by writing on each other’s communication
+tapes. An interactive Turing machine is a form of multi-tape Turing machine and
+is commonly used for modelling the computational aspects of communication
+networks in cryptography.</p>
+</section>
+<section id="communication-model">
+<h3>Communication Model<a class="headerlink" href="#communication-model" title="Permalink to this heading">#</a></h3>
+<p>The communication model in the bare UC framework is very basic. The messages of
+a sending party are handed to the adversary who can replace these messages with
+messages of his own choice that are delivered to the receiving party. This is
+also the Dolev–Yao threat model (based on the computational model all parties
+are modeled as interactive Turing machines).</p>
+<p>All communication models that add additional properties such as confidentiality,
+authenticity, synchronization, or anonymity are modeled using their own ideal
+functionality. An ideal communication functionality takes a message as input and
+produces a message as output. The (more limited) powers for the adversary
+<span class="math notranslate nohighlight">\(\mathcal{A}\)</span> are modeled through the (limited) capacity of the adversary to
+interact with this ideal functionality.</p>
+<section id="ideal-authenticated-channel">
+<h4>Ideal Authenticated Channel<a class="headerlink" href="#ideal-authenticated-channel" title="Permalink to this heading">#</a></h4>
+<p>For an optimal ideal authenticated channel, the ideal functionality
+<span class="math notranslate nohighlight">\(\mathcal{F}_{\mathsf{Auth}}\)</span> takes a message <span class="math notranslate nohighlight">\(m\)</span> from a party with identity <span class="math notranslate nohighlight">\(P\)</span>
+as input, and outputs the same message together with the identity <span class="math notranslate nohighlight">\(P\)</span> to the
+recipient and the adversary. To model the power of the adversary to delay
+asynchronous communication the functionality <span class="math notranslate nohighlight">\(\mathcal{F}_{\mathsf{Auth}}\)</span> may
+first send a message to the adversary <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> and would only deliver the
+message <span class="math notranslate nohighlight">\(m,P\)</span> once it receives the command to do so as a reply.</p>
+</section>
+<section id="ideal-secure-channel">
+<h4>Ideal Secure Channel<a class="headerlink" href="#ideal-secure-channel" title="Permalink to this heading">#</a></h4>
+<p>In an ideal secure channel, the ideal functionality <span class="math notranslate nohighlight">\(\mathcal{F}_{\mathsf{Sec}}\)</span>
+only outputs the identity of the sender to both the recipient and the adversary,
+while the message is only revealed to the recipient. This models the requirement
+that a secure channel is both authenticated and private. To model some leakage
+about the information that is being transferred, <span class="math notranslate nohighlight">\(\mathcal{F}_{\mathsf{Sec}}\)</span>
+may reveal information about the message to the adversary, e.g. the length of
+the message. Asynchronous communication is modeled through the same delay
+mechanism as for <span class="math notranslate nohighlight">\(\mathcal{F}_{\mathsf{Auth}}\)</span>.</p>
+</section>
+<section id="ideal-anonymous-and-pseudonymous-channels">
+<h4>Ideal Anonymous and Pseudonymous Channels<a class="headerlink" href="#ideal-anonymous-and-pseudonymous-channels" title="Permalink to this heading">#</a></h4>
+<p>While the technical means, and the physical assumptions behind anonymous and
+pseudonymous communication are very different, the modeling of such channels
+using ideal functionalities is analogous.</p>
+<p>In an ideal anonymous channel, the ideal functionality <span class="math notranslate nohighlight">\(\mathcal{F}_{\mathsf{Anon}}\)</span>
+takes a message <span class="math notranslate nohighlight">\(m\)</span> from a party with identity <span class="math notranslate nohighlight">\(P\)</span> as input, and outputs the
+same message but without disclosing the identity <span class="math notranslate nohighlight">\(P\)</span> to the recipient and the
+adversary.</p>
+<p>In an ideal pseudonymous channel, the participating parties first register
+unique pseudonyms with the ideal functionality <span class="math notranslate nohighlight">\(\mathcal{F}_{\mathsf{Pseu}}\)</span>. To
+do a transfer <span class="math notranslate nohighlight">\(\mathcal{F}_{\mathsf{Pseu}}\)</span> takes a message <span class="math notranslate nohighlight">\(m\)</span> and the
+pseudonym <span class="math notranslate nohighlight">\(nym\)</span> of the recipient as input. The ideal functionality looks up the
+owner of the pseudonym and transfers the message <span class="math notranslate nohighlight">\(m,nym\)</span> without revealing the
+identity of the sender.</p>
+</section>
+</section>
+<section id="impossibility-results-and-setup-assumptions">
+<h3>Impossibility Results and Setup Assumptions<a class="headerlink" href="#impossibility-results-and-setup-assumptions" title="Permalink to this heading">#</a></h3>
+<p>There exists no bit commitment protocol that is universally composable in the
+standard model of cryptography. The intuition is that in the ideal model, the
+simulator has to extract the value to commit to from the input of the
+environment. This would allow the receiver in the real protocol to extract the
+committed value and break the security of the protocol. This impossibility
+result can be applied to other functionalities.</p>
+<p>To circumvent the above impossibility result, additional assumptions are
+required. Additional setup and trust assumptions, such as the common reference
+string model and the assumption of a trusted certification authority are also
+modeled using ideal functionalities in UC.</p>
+</section>
+</section>
+<section id="ideal-functionality-texorpdfstring-mathcal-f">
+<h2>Ideal Functionality \texorpdfstring{$\mathcal{F<a class="headerlink" href="#ideal-functionality-texorpdfstring-mathcal-f" title="Permalink to this heading">#</a></h2>
+<p>_{\textsf{PoSH}}$}{F-PoSH}}</p>
+<p>The ideal functionality maintains a registry of valid sustainability proofs and
+enforces uniqueness, soundness, and privacy guarantees.</p>
+<p>*{State Variables}</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{F}_{\textsf{PoSH}}\)</span> maintains:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathsf{Users}\)</span>: a map of human identifiers to public keys,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathsf{MRV}\)</span>: a list of submitted MRV commitments,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathsf{Claims}\)</span>: a list of oracle-verified claims,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathsf{Registry}\)</span>: the set of valid PoSH commitments,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathsf{Revoked}\)</span>: a set of invalidated, fraudulent, or outdated proofs.</p></li>
+</ul>
+<p>*{Initialization}</p>
+<p>On initialization, <span class="math notranslate nohighlight">\(\mathcal{F}_{\textsf{PoSH}}\)</span> sets all sets/maps to empty
+and notifies the adversary <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>.</p>
+<p>*{Interfaces}</p>
+<p><strong>Register User.</strong></p>
+<p>Upon receiving <span class="math notranslate nohighlight">\((\textsf{register}, pk, \mathsf{uniqueProof})\)</span> from a party <span class="math notranslate nohighlight">\(U\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Verify the uniqueness proof.</p></li>
+<li><p>If valid, compute <span class="math notranslate nohighlight">\(\mathsf{humanId} = H(pk \parallel \mathsf{uniqueProof})\)</span>.</p></li>
+<li><p>Store <span class="math notranslate nohighlight">\((\mathsf{humanId}, pk)\)</span> in <span class="math notranslate nohighlight">\(\mathsf{Users}\)</span>.</p></li>
+<li><p>Return <span class="math notranslate nohighlight">\((\textsf{registered}, \mathsf{humanId})\)</span> to <span class="math notranslate nohighlight">\(U\)</span>.</p></li>
+</ol>
+<p><strong>Submit MRV Event.</strong></p>
+<p>Upon receiving <span class="math notranslate nohighlight">\((\textsf{mrv_submit}, \mathsf{humanId}, E)\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Compute <span class="math notranslate nohighlight">\(\mathsf{mrvHash} = H(E)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\mathsf{mrvHash}\)</span> already exists, reject.</p></li>
+<li><p>Store <span class="math notranslate nohighlight">\((\mathsf{humanId}, \mathsf{mrvHash}, E)\)</span> in <span class="math notranslate nohighlight">\(\mathsf{MRV}\)</span>.</p></li>
+<li><p>Notify oracles in the ideal world.</p></li>
+</ol>
+<p><strong>Oracle Claim.</strong></p>
+<p>Given a valid MRV event, an ideal oracle sends:</p>
+<p><span class="math notranslate nohighlight">\((\textsf{oracle_claim}, \mathsf{humanId}, \mathsf{mrvHash}, \mathsf{methodology}, \mathsf{score})\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{F}_{\textsf{PoSH}}\)</span> checks:</p>
+<ol class="arabic simple">
+<li><p>The MRV event exists.</p></li>
+<li><p>The methodology and score are well-formed.</p></li>
+</ol>
+<p>Then it stores the claim.</p>
+<p><strong>Finalize PoSH Proof.</strong></p>
+<p>Upon receiving <span class="math notranslate nohighlight">\((\textsf{prove_posh}, \mathsf{humanId}, \mathsf{mrvHash})\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Check the claim exists in <span class="math notranslate nohighlight">\(\mathsf{Claims}\)</span>.</p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\(\mathsf{RWAP} = H(\mathsf{humanId}, \mathsf{mrvHash}, \mathsf{methodology})\)</span>.</p></li>
+<li><p>Store in <span class="math notranslate nohighlight">\(\mathsf{Registry}\)</span>.</p></li>
+<li><p>Return <span class="math notranslate nohighlight">\((\textsf{posh_proof}, \mathsf{RWAP})\)</span> to <span class="math notranslate nohighlight">\(U\)</span>.</p></li>
+</ol>
+<p><strong>Verify Proof.</strong></p>
+<p>On query <span class="math notranslate nohighlight">\((\textsf{verify}, \mathsf{RWAP})\)</span>:</p>
+<p>[
+\textsf{Return }
+\begin{cases}
+\textsf{valid}, &amp; \mathsf{RWAP} \in \mathsf{Registry} \land \mathsf{RWAP} \notin \mathsf{Revoked}</p>
+<p>\textsf{invalid}, &amp; \text{otherwise.}
+\end{cases}
+]</p>
+</section>
+<section id="real-world-protocol-texorpdfstring-pi-textsf-posh">
+<h2>Real-World Protocol \texorpdfstring{$\Pi_{\textsf{PoSH<a class="headerlink" href="#real-world-protocol-texorpdfstring-pi-textsf-posh" title="Permalink to this heading">#</a></h2>
+<p>}$}{Pi-PoSH}}</p>
+<p>The real-world protocol consists of several interacting components:</p>
+<ul class="simple">
+<li><p>Users generating MRV evidence and running ZK circuits,</p></li>
+<li><p>MRV devices producing signed raw evidence,</p></li>
+<li><p>Oracle networks verifying MRV correctness and emitting signatures,</p></li>
+<li><p>Smart contracts maintaining the on-chain PoSH registry.</p></li>
+</ul>
+<p>*{Protocol Steps}</p>
+<p><strong>1. Identity Generation.</strong></p>
+<p>User generates <span class="math notranslate nohighlight">\((pk, sk)\)</span> and produces a ZK-unique proof:</p>
+<p>[
+\Pi_{\textsf{unique}}(pk) \rightarrow \mathsf{uniqueProof}
+]</p>
+<p>Then calls the smart contract to register.</p>
+<p><strong>2. MRV Submission.</strong></p>
+<p>User collects MRV evidence from real-world devices and submits:</p>
+<p>[
+\mathsf{mrvHash} = H(E)
+]</p>
+<p>to the oracle network.</p>
+<p><strong>3. Oracle Attestation.</strong></p>
+<p>Oracles validate <span class="math notranslate nohighlight">\(E\)</span>, produce a signed claim:</p>
+<p>[
+\sigma = \mathsf{Sign}_{sk_o}(\mathsf{claim})
+]</p>
+<p>and write to the chain.</p>
+<p><strong>4. ZK Impact Proof.</strong></p>
+<p>User produces:</p>
+<p>[
+\Pi_{\textsf{impact}}(E)
+]</p>
+<p>and requests registry entry.</p>
+<p><strong>5. Registry Entry.</strong></p>
+<p>Smart contract computes:</p>
+<p>[
+\mathsf{RWAP} = H(\mathsf{humanId}, \mathsf{mrvHash}, \mathsf{methodology}, \sigma)
+]</p>
+<p>and stores it.</p>
+</section>
+<section id="simulator-texorpdfstring-mathcal-s">
+<h2>Simulator \texorpdfstring{$\mathcal{S<a class="headerlink" href="#simulator-texorpdfstring-mathcal-s" title="Permalink to this heading">#</a></h2>
+<p>$}{S}}</p>
+<p>To prove UC security, we construct a simulator <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> that interacts with
+the ideal functionality and the environment such that the environment cannot
+distinguish between ideal and real executions.</p>
+<p>*{Capabilities of the Simulator}</p>
+<p>The simulator:</p>
+<ul class="simple">
+<li><p>intercepts oracle messages,</p></li>
+<li><p>emulates smart contract events,</p></li>
+<li><p>simulates MRV and ZK proofs,</p></li>
+<li><p>ensures no adversary learns private data,</p></li>
+<li><p>extracts adversarial MRV commitments to detect forgeries.</p></li>
+</ul>
+<p>*{Simulation Strategy}</p>
+<ol class="arabic simple">
+<li><p><strong>User Registration:</strong><br />
+<span class="math notranslate nohighlight">\(\mathcal{S}\)</span> forwards <span class="math notranslate nohighlight">\((pk, \mathsf{uniqueProof})\)</span> to <span class="math notranslate nohighlight">\(\mathcal{F}_{\textsf{PoSH}}\)</span>.</p></li>
+<li><p><strong>MRV Submission:</strong><br />
+<span class="math notranslate nohighlight">\(\mathcal{S}\)</span> receives adversarial <span class="math notranslate nohighlight">\(E\)</span> and extracts <span class="math notranslate nohighlight">\(\mathsf{mrvHash}\)</span>.</p></li>
+<li><p><strong>Oracle Claims:</strong><br />
+<span class="math notranslate nohighlight">\(\mathcal{S}\)</span> fabricates signatures consistent with ideal claims.</p></li>
+<li><p><strong>RWAP Creation:</strong><br />
+Whenever the adversary attempts to create <span class="math notranslate nohighlight">\(\mathsf{RWAP}\)</span>,<br />
+<span class="math notranslate nohighlight">\(\mathcal{S}\)</span> queries <span class="math notranslate nohighlight">\(\mathcal{F}_{\textsf{PoSH}}\)</span> to validate.</p></li>
+<li><p><strong>Verification Queries:</strong><br />
+<span class="math notranslate nohighlight">\(\mathcal{S}\)</span> relays all <span class="math notranslate nohighlight">\(\textsf{verify}\)</span> queries to <span class="math notranslate nohighlight">\(\mathcal{F}_{\textsf{PoSH}}\)</span>.</p></li>
+</ol>
+<p>Thus, the simulator can replicate all adversarial views without access
+to private MRV data or ZK inputs.</p>
+</section>
+<section id="security-theorem">
+<h2>Security Theorem<a class="headerlink" href="#security-theorem" title="Permalink to this heading">#</a></h2>
+<p>\begin{theorem}
+Under the assumed hardness of <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>, security of the digital signature
+scheme <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, and zero-knowledge and soundness of the ZK systems
+<span class="math notranslate nohighlight">\(\Pi_{\textsf{unique}}\)</span> and <span class="math notranslate nohighlight">\(\Pi_{\textsf{impact}}\)</span>, the PoSH protocol
+<span class="math notranslate nohighlight">\(\Pi_{\textsf{PoSH}}\)</span> UC-emulates the ideal functionality
+<span class="math notranslate nohighlight">\(\mathcal{F}_{\textsf{PoSH}}\)</span>.
+\end{theorem}</p>
+<p>\begin{proof}[Proof Sketch.]
+For any real-world adversary <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> interacting with
+<span class="math notranslate nohighlight">\(\Pi_{\textsf{PoSH}}\)</span>, we construct a simulator <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> such that no
+environment <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span> can distinguish between the real execution and the
+ideal execution.</p>
+<p>Key points:</p>
+<ul class="simple">
+<li><p>ZK proofs hide MRV event details, so <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> can simulate them.</p></li>
+<li><p>Oracle signatures are simulated by <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> using ideal claims.</p></li>
+<li><p>The ideal registry ensures soundness; real and ideal behaviors agree.</p></li>
+<li><p>Unique human proofs prevent identity-based adversarial deviations.</p></li>
+</ul>
+<p>Thus, <span class="math notranslate nohighlight">\(\Pi_{\textsf{PoSH}}\)</span> UC-emulates <span class="math notranslate nohighlight">\(\mathcal{F}_{\textsf{PoSH}}\)</span>.
+\end{proof}</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="manifesto.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Manifesto</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="related_work.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Related Work</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-universal-composability-framework">The Universal Composability Framework</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-functionality">Ideal Functionality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-model">Computation Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication-model">Communication Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-authenticated-channel">Ideal Authenticated Channel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-secure-channel">Ideal Secure Channel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-anonymous-and-pseudonymous-channels">Ideal Anonymous and Pseudonymous Channels</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impossibility-results-and-setup-assumptions">Impossibility Results and Setup Assumptions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-functionality-texorpdfstring-mathcal-f">Ideal Functionality \texorpdfstring{$\mathcal{F</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-protocol-texorpdfstring-pi-textsf-posh">Real-World Protocol \texorpdfstring{$\Pi_{\textsf{PoSH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulator-texorpdfstring-mathcal-s">Simulator \texorpdfstring{$\mathcal{S</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-theorem">Security Theorem</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Edward Calderón et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

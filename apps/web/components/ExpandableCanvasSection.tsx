@@ -60,11 +60,11 @@ const ExpandableCanvasSection: React.FC<ExpandableCanvasSectionProps> = ({
   const isDark = colorScheme === 'dark';
 
   const cardBaseClass = isDark
-    ? `bg-gradient-to-br from-space-dark to-space-darker border-2 ${section.borderColor}`
+    ? `bg-[#0A1628] border-2 ${section.borderColor}`
     : 'bg-human-surface-light border border-human-border';
 
   const cardHoverClass = isDark
-    ? 'hover:border-human-primary hover:bg-human-surface-dark hover:-translate-y-0.5 hover:shadow-human-soft'
+    ? 'hover:border-human-primary hover:bg-[#0d1b2e] hover:-translate-y-0.5 hover:shadow-human-soft'
     : 'hover:border-human-primary hover:bg-white hover:-translate-y-0.5 hover:shadow-human-soft';
 
   const previewTextColorClass = isDark ? 'text-gray-300' : 'text-human-text-light';
@@ -86,31 +86,36 @@ const ExpandableCanvasSection: React.FC<ExpandableCanvasSectionProps> = ({
         className={`flex-1 rounded-2xl p-4 justify-between transition-all duration-200 ease-out ${cardBaseClass} ${cardHoverClass}`}
       >
         <View className="flex-1">
-          <View className="flex-row items-start mb-2">
-
-            <View className="flex-1">
+          <View className="flex-row items-start justify-between mb-2">
+            <View className="flex-row items-center flex-1">
+              <View className="mr-2 opacity-70">
+                {React.cloneElement(section.icon, { size: 16, color: '#00FF9C' })}
+              </View>
               <Text
-                className={`${section.color} font-bold text-sm mb-1`}
+                className={`${section.color} font-bold text-sm flex-1`}
                 numberOfLines={2}
                 ellipsizeMode="tail"
               >
                 {section.title}
               </Text>
             </View>
-            <ChevronRight size={16} color="#00FF9C" className="opacity-60" />
+            <ChevronRight size={16} color="#00FF9C" className="opacity-60 ml-2" />
           </View>
           
-          <ScrollView nestedScrollEnabled={true} showsVerticalScrollIndicator={false} className="flex-1">
-            <View className="flex-row items-start">
-              <View className="w-2 h-2 bg-neon-green rounded-full mt-1 mr-2 flex-shrink-0" />
-              <Text
-                className={`${previewTextColorClass} text-xs leading-tight flex-1 font-inter`}
-                numberOfLines={3}
-                ellipsizeMode="tail"
-              >
-                {previewContent.slice(0, 2).join(', ')}
-                {previewContent.length > 2 && '...'}
-              </Text>
+          <ScrollView nestedScrollEnabled={true} showsVerticalScrollIndicator={false} className="flex-1 mt-2">
+            <View style={{ gap: section.id === 'partners' ? 6 : 8 }}>
+              {previewContent.slice(0, section.id === 'partners' ? 6 : 3).map((item, idx) => (
+                <View key={idx} className="flex-row items-start">
+                  <Text className="text-[#00FF9C] text-base mr-2 flex-shrink-0 font-bold leading-tight">•</Text>
+                  <Text
+                    className={`${previewTextColorClass} text-xs leading-snug flex-1 font-inter`}
+                    numberOfLines={2}
+                    ellipsizeMode="tail"
+                  >
+                    {item}
+                  </Text>
+                </View>
+              ))}
             </View>
           </ScrollView>
         </View>

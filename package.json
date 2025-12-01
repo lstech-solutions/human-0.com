@@ -1,6 +1,6 @@
 {
   "name": "human-0-monorepo",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -23,7 +23,21 @@
     "version:changelog": "node scripts/version-manager.js changelog",
     "release": "npm run version:patch",
     "latex:generate": "node scripts/latex-generator.js",
-    "latex:compile": "cd latex && pdflatex business-model-canvas.tex"
+    "latex:compile": "cd latex && pdflatex business-model-canvas.tex",
+    "whitepaper:build": "python3 scripts/whitepaper/build_whitepaper.py",
+    "whitepaper:pdf": "python3 scripts/whitepaper/build_whitepaper.py --pdf-only",
+    "whitepaper:markdown": "python3 scripts/whitepaper/build_whitepaper.py --markdown-only",
+    "whitepaper:jupyter": "python3 scripts/whitepaper/build_whitepaper.py --jupyter-only",
+    "whitepaper:check": "python3 scripts/whitepaper/build_whitepaper.py --check-deps",
+    "build:pdf:myst": "python3 scripts/myst/build_pdf.py",
+    "compare:pdfs": "python3 scripts/myst/compare_pdfs.py",
+    "validate:docusaurus": "python3 scripts/myst/validate_docusaurus.py",
+    "pdf:latex": "cd apps/docs/docs && pdflatex whitepaper.tex && bibtex whitepaper && pdflatex whitepaper.tex && pdflatex whitepaper.tex && cp whitepaper.pdf ../../../public/",
+    "pdf:myst": "python3 scripts/myst/build_pdf.py --source whitepaper.md",
+    "pdf:myst:docusaurus": "python3 scripts/myst/build_pdf.py --source apps/docs/docs/posh/whitepaper.md",
+    "pdf:compare": "python3 scripts/myst/compare_pdfs.py --latex public/whitepaper.pdf --myst public/whitepaper-myst.pdf",
+    "pdf:compare:report": "python3 scripts/myst/compare_pdfs.py --latex public/whitepaper.pdf --myst public/whitepaper-myst.pdf --output scripts/myst/comparison_report_$(date +%Y%m%d).txt",
+    "convert:latex-to-md": "python3 scripts/myst/convert_latex_to_myst.py --input apps/docs/docs/whitepaper.tex --output whitepaper-converted.md"
   },
   "devDependencies": {
     "turbo": "latest",

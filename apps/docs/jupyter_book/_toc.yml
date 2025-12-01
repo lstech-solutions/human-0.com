@@ -1,0 +1,10 @@
+format: jb-book
+root: intro
+chapters:
+- file: manifesto
+- file: posh
+- file: related_work
+- file: threat_model
+- file: end_of_appendix_a
+- file: end_of_appendix_b
+- file: references

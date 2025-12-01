@@ -1,0 +1,43 @@
+{
+  "input": {
+    "files": [
+      "whitepaper.md"
+    ],
+    "opts": {
+      "execute": false,
+      "pdf": true,
+      "tex": false,
+      "typst": false,
+      "docx": false,
+      "md": false,
+      "xml": false,
+      "meca": false,
+      "cff": false,
+      "site": false,
+      "html": false,
+      "all": false,
+      "doiBib": false,
+      "watch": false,
+      "force": false,
+      "checkLinks": false,
+      "strict": false,
+      "ci": false,
+      "maxSizeWebp": 1572864,
+      "keepHost": false
+    }
+  },
+  "exports": [
+    {
+      "format": "pdf",
+      "output": "/home/ed/Documents/LSTS/human-0.com/_build/exports/whitepaper.pdf",
+      "articles": [
+        {
+          "file": "/home/ed/Documents/LSTS/human-0.com/whitepaper.md",
+          "level": 0
+        }
+      ],
+      "$file": "/home/ed/Documents/LSTS/human-0.com/whitepaper.md",
+      "$project": "/home/ed/Documents/LSTS/human-0.com"
+    }
+  ]
+}

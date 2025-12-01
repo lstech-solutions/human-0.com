@@ -1,0 +1,50 @@
+version: 1
+project:
+  title: 'HUMAN-ZERO Protocol Whitepaper: Proof of Sustainable Humanity (PoSH)'
+  subtitle: A Cryptographic Primitive for Sustainability Verification
+  authors:
+  - name: "Edward Calder\xF3n et al."
+  keywords:
+  - sustainability
+  - blockchain
+  - proof-of-personhood
+  - zero-knowledge
+  - climate
+  - web3
+  github: https://github.com/human-zero/human-zero
+  date: '2025-11-30'
+  license: CC-BY-4.0
+  version: 1.0.0
+site:
+  template: book-theme
+  options:
+    logo: null
+    favicon: null
+exports:
+- format: pdf
+  template: arxiv_two_column
+  output: public/whitepaper-myst.pdf
+  options:
+    margin:
+      top: 1in
+      bottom: 1in
+      left: 1in
+      right: 1in
+    toc: true
+    numbered: true
+math:
+  macros: null
+bibliography:
+- apps/docs/docs/refs.bib
+parse:
+  myst_enable_extensions:
+  - amsmath
+  - colon_fence
+  - deflist
+  - dollarmath
+  - html_image
+  - linkify
+  - replacements
+  - smartquotes
+  - substitution
+  - tasklist

@@ -1,0 +1,12 @@
+# Fdb version 4
+["xdvipdfmx"] 0 "whitepaper-myst-test.xdv" "whitepaper-myst-test.pdf" "whitepaper-myst-test" 1764523025.75692 -1
+  "whitepaper-myst-test.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "whitepaper-myst-test.pdf"
+  (rewritten before read)
+["xelatex"] 1764523025.75099 "whitepaper-myst-test.tex" "whitepaper-myst-test.xdv" "whitepaper-myst-test" 1764523025.75683 2
+  (generated)
+  "whitepaper-myst-test.aux"
+  "whitepaper-myst-test.log"
+  "whitepaper-myst-test.xdv"
+  (rewritten before read)

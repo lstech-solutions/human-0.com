@@ -309,6 +309,7 @@
     "cta": {
       "exploreCanvas": "EXPLORE CANVAS",
       "downloadPdf": "DOWNLOAD PDF",
+      "proveIdentity": "PROVE IDENTITY",
       "connectWallet": "CONNECT WALLET"
     }
   },

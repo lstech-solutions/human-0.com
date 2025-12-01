@@ -155,7 +155,7 @@ function NavigationStack() {
           <Stack.Screen
             name="canvas"
             options={{
-              title: "Business Model",
+              headerTitle: () => <ClickableTitle color={headerTint} />,
             }}
           />
           <Stack.Screen

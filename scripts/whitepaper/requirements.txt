@@ -1,0 +1,13 @@
+# Python dependencies for whitepaper build system
+# Python >= 3.8 required
+
+# Core dependencies
+pyyaml>=6.0
+pylatexenc>=2.10
+
+# Jupyter Book (pin to 0.x for compatibility with design)
+jupyter-book>=0.15.0,<1.0.0
+
+# Testing (optional)
+pytest>=7.0
+hypothesis>=6.0

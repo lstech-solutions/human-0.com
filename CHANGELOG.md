@@ -2,7 +2,19 @@
 
 ## 📋 Version History
 
-### ✨ Version 1.8.0 **[CURRENT]**
+### 🔧 Version 1.8.1 **[CURRENT]**
+**Date:** 2025-12-01  
+**Type:** patch
+
+**Changes:**
+- UI component improvements
+- Configuration updates
+- Documentation updates
+
+
+### 📚 Previous Versions
+
+### ✨ Version 1.8.0
 **Date:** 2025-11-30  
 **Type:** minor
 
@@ -15,7 +27,7 @@
 - Documentation updates
 
 
-### 📚 Previous Versions
+---
 
 ### 🔧 Version 1.7.44
 **Date:** 2025-11-29  
