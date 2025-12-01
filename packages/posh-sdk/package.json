@@ -1,6 +1,6 @@
 {
   "name": "@human-0/posh-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TypeScript SDK for Proof of Sustainable Humanity (PoSH) identity management",
   "private": false,
   "keywords": [
@@ -70,8 +70,8 @@
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
-    "viem": "^2.0.0",
-    "wagmi": "^2.0.0"
+    "viem": "^2.40.3",
+    "wagmi": "^2.0.0 || ^3.0.0"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -99,8 +99,8 @@
     "react": "^18.0.0",
     "tsup": "^8.0.0",
     "typescript": "^5.3.0",
-    "viem": "^2.0.0",
+    "viem": "^2.40.3",
     "vitest": "^1.0.0",
-    "wagmi": "^2.0.0"
+    "wagmi": "^3.0.0"
   }
 }
