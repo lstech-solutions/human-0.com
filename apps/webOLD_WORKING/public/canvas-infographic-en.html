@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUMΛN-Ø Canvas Infographic</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0.2in;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #FFFFFF;
+            color: #1A1A1A;
+            margin: 0;
+            padding: 10px;
+            font-size: 10px;
+            line-height: 1.4;
+            width: 210mm;
+            height: 297mm;
+        }
+        
+        .infographic-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .header-section {
+            text-align: center;
+            padding: 15px 0 10px 0;
+            background: linear-gradient(135deg, #00FF9C10, #00FF9C05);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #00FF9C;
+        }
+        
+        .main-title {
+            color: #00FF9C;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .subtitle {
+            color: #666666;
+            font-size: 10px;
+            margin: 3px 0;
+            font-weight: 500;
+        }
+        
+        .canvas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, auto);
+            gap: 8px;
+            flex: 1;
+            margin-bottom: 10px;
+        }
+        
+        .canvas-block {
+            border: 2px solid #00FF9C;
+            border-radius: 12px;
+            padding: 12px;
+            background: linear-gradient(145deg, #FAFAFA, #F5F5F5);
+            position: relative;
+            overflow: hidden;
+            min-height: 65px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 3px 10px rgba(0, 255, 156, 0.1);
+        }
+        
+        .canvas-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #00FF9C;
+        }
+        
+        .block-title {
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: #00FF9C;
+            padding: 4px 8px;
+            margin: -12px -12px 8px -12px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+        
+        .block-content {
+            flex: 1;
+            font-size: 9px;
+            color: #333333;
+        }
+        
+        .block-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .block-content li {
+            margin-bottom: 3px;
+            position: relative;
+            padding-left: 12px;
+            line-height: 1.3;
+        }
+        
+        .block-content li::before {
+            content: "▸";
+            color: #00FF9C;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .problem { 
+            grid-column: 1 / 2; 
+            grid-row: 1 / 2;
+            background: linear-gradient(145deg, #FF6B6B15, #FF6B6B05);
+            border-color: #FF6B6B;
+        }
+        
+        .problem::before { background: #FF6B6B; }
+        .problem .block-title { background: #FF6B6B; }
+        .problem .block-content li::before { color: #FF6B6B; }
+        
+        .solution { 
+            grid-column: 2 / 3; 
+            grid-row: 1 / 2;
+            background: linear-gradient(145deg, #4ECDC415, #4ECDC405);
+            border-color: #4ECDC4;
+        }
+        
+        .solution::before { background: #4ECDC4; }
+        .solution .block-title { background: #4ECDC4; }
+        .solution .block-content li::before { color: #4ECDC4; }
+        
+        .metrics { 
+            grid-column: 1 / 2; 
+            grid-row: 2 / 3;
+            background: linear-gradient(145deg, #FFD93D15, #FFD93D05);
+            border-color: #FFD93D;
+        }
+        
+        .metrics::before { background: #FFD93D; }
+        .metrics .block-title { background: #FFD93D; }
+        .metrics .block-content li::before { color: #FFD93D; }
+        
+        .value-prop { 
+            grid-column: 2 / 3; 
+            grid-row: 2 / 3;
+            background: linear-gradient(145deg, #6C63FF15, #6C63FF05);
+            border-color: #6C63FF;
+        }
+        
+        .value-prop::before { background: #6C63FF; }
+        .value-prop .block-title { background: #6C63FF; }
+        .value-prop .block-content li::before { color: #6C63FF; }
+        
+        .advantage { 
+            grid-column: 1 / 2; 
+            grid-row: 3 / 4;
+            background: linear-gradient(145deg, #A8E6CF15, #A8E6CF05);
+            border-color: #A8E6CF;
+        }
+        
+        .advantage::before { background: #A8E6CF; }
+        .advantage .block-title { background: #A8E6CF; }
+        .advantage .block-content li::before { color: #A8E6CF; }
+        
+        .channels { 
+            grid-column: 2 / 3; 
+            grid-row: 3 / 4;
+            background: linear-gradient(145deg, #FFB6C115, #FFB6C105);
+            border-color: #FFB6C1;
+        }
+        
+        .channels::before { background: #FFB6C1; }
+        .channels .block-title { background: #FFB6C1; }
+        .channels .block-content li::before { color: #FFB6C1; }
+        
+        .segments { 
+            grid-column: 1 / 2; 
+            grid-row: 4 / 5;
+            background: linear-gradient(145deg, #DDA0DD15, #DDA0DD05);
+            border-color: #DDA0DD;
+        }
+        
+        .segments::before { background: #DDA0DD; }
+        .segments .block-title { background: #DDA0DD; }
+        .segments .block-content li::before { color: #DDA0DD; }
+        
+        .costs { 
+            grid-column: 2 / 3; 
+            grid-row: 4 / 5;
+            background: linear-gradient(145deg, #FFA07A15, #FFA07A05);
+            border-color: #FFA07A;
+        }
+        
+        .costs::before { background: #FFA07A; }
+        .costs .block-title { background: #FFA07A; }
+        .costs .block-content li::before { color: #FFA07A; }
+        
+        .revenue {
+            grid-column: 1 / 3;
+            grid-row: 5 / 6;
+            background: linear-gradient(145deg, #98FB9815, #98FB9805);
+            border-color: #98FB98;
+        }
+        
+        .revenue::before { background: #98FB98; }
+        .revenue .block-title { background: #98FB98; }
+        .revenue .block-content li::before { color: #98FB98; }
+        
+        .revenue .block-content {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 5px;
+            text-align: center;
+        }
+        
+        .revenue-item {
+            background: rgba(152, 251, 152, 0.1);
+            border: 1px solid #98FB98;
+            border-radius: 6px;
+            padding: 4px 2px;
+        }
+        
+        .revenue-percent {
+            font-weight: 700;
+            font-size: 11px;
+            color: #98FB98;
+            display: block;
+        }
+        
+        .revenue-label {
+            font-size: 7px;
+            color: #666;
+            margin-top: 2px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 8px;
+            background: linear-gradient(135deg, #00FF9C10, #00FF9C05);
+            border: 1px solid #00FF9C;
+            border-radius: 10px;
+            font-size: 8px;
+            color: #666666;
+            margin-top: auto;
+        }
+        
+        @media print {
+            body { margin: 0; padding: 5px; }
+            .canvas-block { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic-container">
+        <div class="header-section">
+            <h1 class="main-title">
+                <a href="/" style="color: #00FF9C; text-decoration: none;">
+                    HUMΛN-Ø
+                </a>
+            </h1>
+            <p class="subtitle">LEAN CANVAS • SUSTAINABLE IMPACT THROUGH WEB3 TECHNOLOGY</p>
+            <p class="subtitle">VERSION 1.2.0 • NOVEMBER 25, 2025</p>
+        </div>
+        
+        <div class="canvas-grid">
+            <div class="canvas-block problem">
+                <div class="block-title">PROBLEM</div>
+                <div class="block-content">
+                    <ul>
+                        <li>Lack of transparency in carbon verification</li>
+                        <li>Complex sustainability tracking systems</li>
+                        <li>Limited environmental engagement</li>
+                        <li>Fragmented carbon credit marketplace</li>
+                        <li>High barriers to climate action</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-block solution">
+                <div class="block-title">SOLUTION</div>
+                <div class="block-content">
+                    <ul>
+                        <li>Blockchain impact tracking</li>
+                        <li>Tokenized carbon credits with NFTs</li>
+                        <li>Gamified sustainability platform</li>
+                        <li>Real-time verification dashboard</li>
+                        <li>Decentralized governance</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-block metrics">
+                <div class="block-title">KEY METRICS</div>
+                <div class="block-content">
+                    <ul>
+                        <li>1M+ Active Users</li>
+                        <li>85% Engagement Rate</li>
+                        <li>99.9% System Uptime</li>
+                        <li>4.8/5 User Satisfaction</li>
+                        <li>$5M+ Annual Revenue</li>
+                        <li>2.5x Return on Investment</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-block value-prop">
+                <div class="block-title">VALUE PROPOSITION</div>
+                <div class="block-content">
+                    <ul>
+                        <li>Transparent blockchain verification</li>
+                        <li>Gamified sustainability rewards</li>
+                        <li>Web3-native impact platform</li>
+                        <li>Instant certification system</li>
+                        <li>Community-driven climate action</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-block advantage">
+                <div class="block-title">UNFAIR ADVANTAGE</div>
+                <div class="block-content">
+                    <ul>
+                        <li>First-mover in Web3 sustainability</li>
+                        <li>Proprietary verification algorithms</li>
+                        <li>Exclusive NGO partnerships</li>
+                        <li>Patented gamification mechanics</li>
+                        <li>Regulatory compliance framework</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-block channels">
+                <div class="block-title">CHANNELS</div>
+                <div class="block-content">
+                    <ul>
+                        <li>Mobile App Stores (iOS/Android)</li>
+                        <li>Web platform & dashboard</li>
+                        <li>Social media campaigns</li>
+                        <li>Partner networks</li>
+                        <li>Community events & workshops</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-block segments">
+                <div class="block-title">CUSTOMER SEGMENTS</div>
+                <div class="block-content">
+                    <ul>
+                        <li>Eco-conscious individuals</li>
+                        <li>Corporate sustainability teams</li>
+                        <li>Environmental organizations</li>
+                        <li>Web3 enthusiasts & investors</li>
+                        <li>Educational institutions</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-block costs">
+                <div class="block-title">COST STRUCTURE</div>
+                <div class="block-content">
+                    <ul>
+                        <li>Platform development (25%)</li>
+                        <li>Blockchain infrastructure (22%)</li>
+                        <li>Marketing & community (20%)</li>
+                        <li>Gas fees & operations (15%)</li>
+                        <li>Partnership management (10%)</li>
+                        <li>Compliance & auditing (8%)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-block revenue">
+                <div class="block-title">REVENUE STREAMS</div>
+                <div class="block-content">
+                    <div class="revenue-item">
+                        <span class="revenue-percent">35%</span>
+                        <span class="revenue-label">NFT Minting</span>
+                    </div>
+                    <div class="revenue-item">
+                        <span class="revenue-percent">25%</span>
+                        <span class="revenue-label">Transaction Fees</span>
+                    </div>
+                    <div class="revenue-item">
+                        <span class="revenue-percent">15%</span>
+                        <span class="revenue-label">Premium Analytics</span>
+                    </div>
+                    <div class="revenue-item">
+                        <span class="revenue-percent">15%</span>
+                        <span class="revenue-label">Corporate Partnerships</span>
+                    </div>
+                    <div class="revenue-item">
+                        <span class="revenue-percent">5%</span>
+                        <span class="revenue-label">Carbon Trading</span>
+                    </div>
+                    <div class="revenue-item">
+                        <span class="revenue-percent">5%</span>
+                        <span class="revenue-label">Pro Subscriptions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <strong>HUMΛN-Ø</strong> • SUSTAINABLE IMPACT THROUGH WEB3 TECHNOLOGY • WWW.HUMAN-ZERO.IO • KPIs: 95% RETENTION • 300% GROWTH • 75% MARGIN
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUMΛN-Ø Lean Canvas</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0.3in;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #FFFFFF;
+            color: #1A1A1A;
+            margin: 0;
+            padding: 15px;
+            font-size: 9px;
+            line-height: 1.3;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #00FF9C;
+            padding-bottom: 8px;
+        }
+        
+        .title {
+            color: #00FF9C;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            color: #666666;
+            font-size: 10px;
+            margin: 3px 0;
+            font-weight: 500;
+        }
+        
+        .lean-canvas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto;
+            gap: 8px;
+            width: 100%;
+            height: 650px;
+        }
+        
+        .problem-box {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        
+        .solution-box {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+        
+        .key-metrics-box {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+        
+        .value-proposition-box {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+        
+        .unfair-advantage-box {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+        }
+        
+        .channels-box {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+        }
+        
+        .customer-segments-box {
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+        }
+        
+        .cost-structure-box {
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;
+        }
+        
+        .revenue-streams-box {
+            grid-column: 1 / 3;
+            grid-row: 5 / 6;
+        }
+        
+        .canvas-card {
+            border: 2px solid #00FF9C;
+            border-radius: 10px;
+            padding: 10px;
+            background: #FAFAFA;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 4px rgba(0, 255, 156, 0.1);
+        }
+        
+        .card-header {
+            background: #00FF9C;
+            color: #FFFFFF;
+            padding: 6px 10px;
+            margin: -10px -10px 8px -10px;
+            border-radius: 8px 8px 0 0;
+            font-weight: 700;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .card-content {
+            flex: 1;
+            font-size: 8px;
+            color: #333333;
+            overflow: hidden;
+        }
+        
+        .card-content ul {
+            margin: 0;
+            padding-left: 12px;
+            list-style-type: none;
+        }
+        
+        .card-content li {
+            margin-bottom: 3px;
+            position: relative;
+            padding-left: 8px;
+        }
+        
+        .card-content li:before {
+            content: "•";
+            color: #00FF9C;
+            position: absolute;
+            left: -2px;
+            font-weight: bold;
+        }
+        
+        .revenue-streams-box .card-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+        }
+        
+        .revenue-item {
+            background: #F0FFF4;
+            border: 1px solid #00FF9C50;
+            border-radius: 6px;
+            padding: 6px;
+            text-align: center;
+        }
+        
+        .revenue-percentage {
+            font-size: 12px;
+            font-weight: 700;
+            color: #00FF9C;
+            display: block;
+        }
+        
+        .revenue-label {
+            font-size: 7px;
+            color: #666666;
+            margin-top: 2px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+        
+        .metric-item {
+            background: #F0FFF4;
+            border: 1px solid #00FF9C50;
+            border-radius: 6px;
+            padding: 6px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 10px;
+            font-weight: 700;
+            color: #00FF9C;
+            display: block;
+        }
+        
+        .metric-label {
+            font-size: 6px;
+            color: #666666;
+            margin-top: 1px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 8px;
+            color: #888888;
+            border-top: 1px solid #00FF9C33;
+            padding-top: 6px;
+        }
+        
+        @media print {
+            body { margin: 0; padding: 10px; }
+            .lean-canvas { height: 680px; }
+            .canvas-card { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">
+            <a href="/" style="color: #00FF9C; text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                HUMΛN-Ø LEAN CANVAS
+            </a>
+        </h1>
+        <p class="subtitle">Sustainable Impact Through Web3 Technology | Version 1.1.0</p>
+        <p class="subtitle">Generated: November 25, 2025</p>
+    </div>
+    
+    <div class="lean-canvas">
+        <div class="canvas-card problem-box">
+            <div class="card-header">PROBLEM</div>
+            <div class="card-content">
+                <ul>
+                    <li>Lack of transparency in carbon offset verification</li>
+                    <li>Complex and inaccessible sustainability tracking</li>
+                    <li>Limited engagement in environmental initiatives</li>
+                    <li>Fragmented carbon credit marketplace</li>
+                    <li>Difficulty verifying real environmental impact</li>
+                    <li>High barriers to entry for climate action</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="canvas-card solution-box">
+            <div class="card-header">SOLUTION</div>
+            <div class="card-content">
+                <ul>
+                    <li>Blockchain-based impact tracking system</li>
+                    <li>Tokenized carbon credits with NFT rewards</li>
+                    <li>Gamified sustainability platform</li>
+                    <li>Real-time verification dashboard</li>
+                    <li>Decentralized governance mechanism</li>
+                    <li>Mobile-first user experience</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="canvas-card key-metrics-box">
+            <div class="card-header">KEY METRICS</div>
+            <div class="card-content">
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <span class="metric-value">1M+</span>
+                        <span class="metric-label">Active Users</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">85%</span>
+                        <span class="metric-label">Engagement Rate</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">99.9%</span>
+                        <span class="metric-label">Uptime</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">4.8/5</span>
+                        <span class="metric-label">User Satisfaction</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">$5M+</span>
+                        <span class="metric-label">ARR</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">2.5x</span>
+                        <span class="metric-label">ROI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="canvas-card value-proposition-box">
+            <div class="card-header">UNIQUE VALUE PROPOSITION</div>
+            <div class="card-content">
+                <ul>
+                    <li>Transparent blockchain-verified carbon tracking</li>
+                    <li>Gamified sustainability with real rewards</li>
+                    <li>Web3-native environmental impact platform</li>
+                    <li>Instant verification and certification</li>
+                    <li>Community-driven climate action</li>
+                    <li>Accessible carbon offset marketplace</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="canvas-card unfair-advantage-box">
+            <div class="card-header">UNFAIR ADVANTAGE</div>
+            <div class="card-content">
+                <ul>
+                    <li>First-mover in Web3 sustainability space</li>
+                    <li>Proprietary verification algorithms</li>
+                    <li>Exclusive partnerships with major NGOs</li>
+                    <li>Patented gamification mechanics</li>
+                    <li>Established network effects</li>
+                    <li>Regulatory compliance framework</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="canvas-card channels-box">
+            <div class="card-header">CHANNELS</div>
+            <div class="card-content">
+                <ul>
+                    <li>Mobile App Store (iOS/Android)</li>
+                    <li>Web platform and dashboard</li>
+                    <li>Social media campaigns</li>
+                    <li>Partner networks</li>
+                    <li>Community events and workshops</li>
+                    <li>Content marketing and SEO</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="canvas-card customer-segments-box">
+            <div class="card-header">CUSTOMER SEGMENTS</div>
+            <div class="card-content">
+                <ul>
+                    <li>Eco-conscious individuals</li>
+                    <li>Corporate sustainability teams</li>
+                    <li>Environmental organizations</li>
+                    <li>Web3 enthusiasts and investors</li>
+                    <li>Educational institutions</li>
+                    <li>Climate-focused startups</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="canvas-card cost-structure-box">
+            <div class="card-header">COST STRUCTURE</div>
+            <div class="card-content">
+                <ul>
+                    <li>Platform development (25%)</li>
+                    <li>Blockchain infrastructure (22%)</li>
+                    <li>Marketing & community (20%)</li>
+                    <li>Gas fees & operations (15%)</li>
+                    <li>Partnership management (10%)</li>
+                    <li>Compliance & auditing (8%)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="canvas-card revenue-streams-box">
+            <div class="card-header">REVENUE STREAMS</div>
+            <div class="card-content">
+                <div class="revenue-item">
+                    <span class="revenue-percentage">35%</span>
+                    <span class="revenue-label">NFT Minting</span>
+                </div>
+                <div class="revenue-item">
+                    <span class="revenue-percentage">25%</span>
+                    <span class="revenue-label">Transaction Fees</span>
+                </div>
+                <div class="revenue-item">
+                    <span class="revenue-percentage">15%</span>
+                    <span class="revenue-label">Premium Analytics</span>
+                </div>
+                <div class="revenue-item">
+                    <span class="revenue-percentage">15%</span>
+                    <span class="revenue-label">Corporate Partnerships</span>
+                </div>
+                <div class="revenue-item">
+                    <span class="revenue-percentage">5%</span>
+                    <span class="revenue-label">Carbon Trading</span>
+                </div>
+                <div class="revenue-item">
+                    <span class="revenue-percentage">5%</span>
+                    <span class="revenue-label">Pro Subscriptions</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p><strong>HUMΛN-Ø</strong> | Sustainable Impact Through Web3 Technology | www.human-zero.io</p>
+        <p>Key Performance Indicators: 95% Partner Retention • 300% User Growth • 75% Gross Margin • $2.5M Burn Rate</p>
+    </div>
+</body>
+</html>

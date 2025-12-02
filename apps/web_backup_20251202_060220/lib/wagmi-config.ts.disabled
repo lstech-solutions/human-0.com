@@ -1,0 +1,77 @@
+import { createConfig, http } from "wagmi";
+import { base, baseSepolia, mainnet, sepolia } from "wagmi/chains";
+import { injected, walletConnect, coinbaseWallet } from "wagmi/connectors";
+
+// WalletConnect Project ID - Get yours at https://cloud.walletconnect.com
+const WALLETCONNECT_PROJECT_ID = process.env.EXPO_PUBLIC_WALLETCONNECT_PROJECT_ID || "demo";
+
+/**
+ * Wagmi configuration for HUMΛN-Ø PoSH
+ * 
+ * Supported Networks:
+ * - Base Sepolia (testnet) - Primary for Phase 0
+ * - Base (mainnet) - For production
+ * - Ethereum Sepolia/Mainnet - For compatibility
+ */
+export const wagmiConfig = createConfig({
+  chains: [baseSepolia, base, sepolia, mainnet],
+  connectors: [
+    injected({
+      shimDisconnect: true,
+    }),
+    walletConnect({
+      projectId: WALLETCONNECT_PROJECT_ID,
+      metadata: {
+        name: "HUMΛN-Ø",
+        description: "Proof of Sustainable Humanity",
+        url: "https://human-0.com",
+        icons: ["https://human-0.com/icon.png"],
+      },
+      showQrModal: true,
+    }),
+    coinbaseWallet({
+      appName: "HUMΛN-Ø",
+      appLogoUrl: "https://human-0.com/icon.png",
+    }),
+  ],
+  transports: {
+    [baseSepolia.id]: http("https://sepolia.base.org"),
+    [base.id]: http("https://mainnet.base.org"),
+    [sepolia.id]: http("https://rpc.sepolia.org"),
+    [mainnet.id]: http("https://eth.llamarpc.com"),
+  },
+});
+
+// Contract addresses by chain ID
+export const CONTRACT_ADDRESSES: Record<number, {
+  HumanIdentity: `0x${string}` | null;
+  ProofRegistry: `0x${string}` | null;
+  PoSHNFT: `0x${string}` | null;
+  HumanScore: `0x${string}` | null;
+}> = {
+  // Base Sepolia (testnet) - Phase 0
+  [baseSepolia.id]: {
+    HumanIdentity: null, // Will be set after deployment
+    ProofRegistry: null,
+    PoSHNFT: null,
+    HumanScore: null,
+  },
+  // Base Mainnet - Future
+  [base.id]: {
+    HumanIdentity: null,
+    ProofRegistry: null,
+    PoSHNFT: null,
+    HumanScore: null,
+  },
+};
+
+// Default chain for the app
+export const DEFAULT_CHAIN = baseSepolia;
+
+// Helper to get contract address for current chain
+export function getContractAddress(
+  chainId: number,
+  contract: keyof typeof CONTRACT_ADDRESSES[number]
+): `0x${string}` | null {
+  return CONTRACT_ADDRESSES[chainId]?.[contract] ?? null;
+}

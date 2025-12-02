@@ -1,0 +1,327 @@
+import { useCallback, useEffect, useState } from "react";
+import { Platform } from "react-native";
+import { useIdentityStore, getLevelName, type HumanIdentity, type PoSHScore } from "../stores/identityStore";
+import { getContractAddress, DEFAULT_CHAIN } from "../../../lib/wagmi-config";
+
+// Dynamic imports for Web3 modules to avoid import.meta errors
+let wagmi: any = null;
+let viem: any = null;
+
+// Only load Web3 modules on web platform
+if (Platform.OS === 'web' && typeof window !== 'undefined') {
+  // These will be loaded dynamically when needed
+  Promise.all([
+    import('wagmi').catch(() => null),
+    import('viem').catch(() => null)
+  ]).then(([w, v]) => {
+    wagmi = w;
+    viem = v;
+  }).catch(err => {
+    console.warn('Failed to load Web3 modules:', err);
+  });
+}
+
+// ABI for HumanIdentity contract (minimal for reads/writes we need)
+const HUMAN_IDENTITY_ABI = [
+  {
+    name: "registerHuman",
+    type: "function",
+    stateMutability: "nonpayable",
+    inputs: [],
+    outputs: [{ name: "humanId", type: "bytes32" }],
+  },
+  {
+    name: "getHumanId",
+    type: "function",
+    stateMutability: "view",
+    inputs: [{ name: "wallet", type: "address" }],
+    outputs: [{ name: "", type: "bytes32" }],
+  },
+  {
+    name: "isRegistered",
+    type: "function",
+    stateMutability: "view",
+    inputs: [{ name: "wallet", type: "address" }],
+    outputs: [{ name: "", type: "bool" }],
+  },
+  {
+    name: "getRegistrationTime",
+    type: "function",
+    stateMutability: "view",
+    inputs: [{ name: "humanId", type: "bytes32" }],
+    outputs: [{ name: "", type: "uint256" }],
+  },
+  {
+    name: "getExternalProofs",
+    type: "function",
+    stateMutability: "view",
+    inputs: [{ name: "humanId", type: "bytes32" }],
+    outputs: [{ name: "", type: "bytes32[]" }],
+  },
+] as const;
+
+// ABI for HumanScore contract
+const HUMAN_SCORE_ABI = [
+  {
+    name: "getHumanScore",
+    type: "function",
+    stateMutability: "view",
+    inputs: [{ name: "humanId", type: "bytes32" }],
+    outputs: [{ name: "score", type: "uint256" }],
+  },
+  {
+    name: "getHumanLevel",
+    type: "function",
+    stateMutability: "view",
+    inputs: [{ name: "humanId", type: "bytes32" }],
+    outputs: [{ name: "level", type: "uint8" }],
+  },
+  {
+    name: "getProofCountByTier",
+    type: "function",
+    stateMutability: "view",
+    inputs: [{ name: "humanId", type: "bytes32" }],
+    outputs: [
+      { name: "tierA", type: "uint256" },
+      { name: "tierB", type: "uint256" },
+      { name: "tierC", type: "uint256" },
+    ],
+  },
+] as const;
+
+/**
+ * Hook for managing human identity in the PoSH system
+ * 
+ * Provides:
+ * - Identity registration
+ * - Identity lookup
+ * - Score fetching
+ * - Status management
+ */
+export function useHumanIdentity() {
+  const [isWeb3Loaded, setIsWeb3Loaded] = useState(false);
+  const [web3Error, setWeb3Error] = useState<string | null>(null);
+  const { 
+    status, 
+    error, 
+    identity, 
+    score,
+    setStatus, 
+    setError, 
+    setIdentity, 
+    setScore,
+    reset 
+  } = useIdentityStore();
+
+  const currentChainId = DEFAULT_CHAIN.id;
+  const identityAddress = getContractAddress(currentChainId, "HumanIdentity");
+  const scoreAddress = getContractAddress(currentChainId, "HumanScore");
+
+  // Load Web3 modules dynamically
+  useEffect(() => {
+    if (Platform.OS === 'web' && typeof window !== 'undefined' && !isWeb3Loaded) {
+      Promise.all([
+        import('wagmi'),
+        import('viem')
+      ]).then(([w, v]) => {
+        wagmi = w;
+        viem = v;
+        setIsWeb3Loaded(true);
+      }).catch(err => {
+        console.warn('Failed to load Web3 modules:', err);
+        setWeb3Error(err.message);
+        setIsWeb3Loaded(true); // Still mark as loaded to prevent retry
+      });
+    } else {
+      setIsWeb3Loaded(true);
+    }
+  }, [isWeb3Loaded]);
+
+  // Get wagmi hooks if Web3 is loaded
+  const useAccount = wagmi?.useAccount || (() => ({ address: null, isConnected: false }));
+  const useReadContract = wagmi?.useReadContract || (() => ({ data: null, isLoading: false, error: null }));
+  const useWriteContract = wagmi?.useWriteContract || (() => ({ writeContract: null, isPending: false, error: null }));
+  const useWaitForTransactionReceipt = wagmi?.useWaitForTransactionReceipt || (() => ({ data: null, isLoading: false, error: null }));
+  
+  const { address, isConnected } = useAccount();
+
+  // Check if wallet is registered
+  const { data: isRegistered, refetch: refetchRegistration } = useReadContract({
+    address: identityAddress ?? undefined,
+    abi: HUMAN_IDENTITY_ABI,
+    functionName: "isRegistered",
+    args: address ? [address] : undefined,
+    query: {
+      enabled: !!address && !!identityAddress,
+    },
+  });
+
+  // Get humanId for wallet
+  const { data: humanId, refetch: refetchHumanId } = useReadContract({
+    address: identityAddress ?? undefined,
+    abi: HUMAN_IDENTITY_ABI,
+    functionName: "getHumanId",
+    args: address ? [address] : undefined,
+    query: {
+      enabled: !!address && !!identityAddress && isRegistered === true,
+    },
+  });
+
+  // Get registration time
+  const { data: registrationTime } = useReadContract({
+    address: identityAddress ?? undefined,
+    abi: HUMAN_IDENTITY_ABI,
+    functionName: "getRegistrationTime",
+    args: humanId ? [humanId] : undefined,
+    query: {
+      enabled: !!humanId && !!identityAddress,
+    },
+  });
+
+  // Get score
+  const { data: scoreData } = useReadContract({
+    address: scoreAddress ?? undefined,
+    abi: HUMAN_SCORE_ABI,
+    functionName: "getHumanScore",
+    args: humanId ? [humanId] : undefined,
+    query: {
+      enabled: !!humanId && !!scoreAddress,
+    },
+  });
+
+  // Get level
+  const { data: levelData } = useReadContract({
+    address: scoreAddress ?? undefined,
+    abi: HUMAN_SCORE_ABI,
+    functionName: "getHumanLevel",
+    args: humanId ? [humanId] : undefined,
+    query: {
+      enabled: !!humanId && !!scoreAddress,
+    },
+  });
+
+  // Registration transaction
+  const { 
+    writeContract: writeRegister, 
+    data: registerTxHash,
+    isPending: isRegistering,
+    error: registerError,
+  } = useWriteContract();
+
+  // Wait for registration confirmation
+  const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({
+    hash: registerTxHash,
+  });
+
+  // Update status based on connection state
+  useEffect(() => {
+    if (!isConnected) {
+      reset();
+      return;
+    }
+
+    if (isRegistered === true && humanId && address) {
+      setIdentity({
+        humanId: humanId as `0x${string}`,
+        wallet: address,
+        registrationTime: registrationTime ? Number(registrationTime) : 0,
+        externalProofs: [],
+      });
+    } else if (isRegistered === false) {
+      setStatus("connected");
+      setIdentity(null);
+    }
+  }, [isConnected, isRegistered, humanId, address, registrationTime, setIdentity, setStatus, reset]);
+
+  // Update score when data changes
+  useEffect(() => {
+    if (scoreData !== undefined && levelData !== undefined) {
+      const level = Number(levelData);
+      setScore({
+        totalScore: Number(scoreData),
+        level,
+        levelName: getLevelName(level),
+        proofCount: 0, // TODO: fetch from ProofRegistry
+        tierBreakdown: { tierA: 0, tierB: 0, tierC: 0 },
+      });
+    }
+  }, [scoreData, levelData, setScore]);
+
+  // Handle registration status
+  useEffect(() => {
+    if (isRegistering || isConfirming) {
+      setStatus("registering");
+    }
+    if (isConfirmed) {
+      refetchRegistration();
+      refetchHumanId();
+    }
+    if (registerError) {
+      setError(registerError.message);
+    }
+  }, [isRegistering, isConfirming, isConfirmed, registerError, setStatus, setError, refetchRegistration, refetchHumanId]);
+
+  /**
+   * Register a new human identity
+   */
+  const register = useCallback(async () => {
+    if (!identityAddress) {
+      setError("Contracts not deployed on this network");
+      return;
+    }
+
+    try {
+      setStatus("registering");
+      writeRegister({
+        address: identityAddress,
+        abi: HUMAN_IDENTITY_ABI,
+        functionName: "registerHuman",
+      });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Registration failed");
+    }
+  }, [identityAddress, writeRegister, setStatus, setError]);
+
+  /**
+   * Compute expected humanId for a wallet (for preview)
+   */
+  const computeExpectedHumanId = useCallback((wallet: `0x${string}`) => {
+    // Use viem functions if available, otherwise return placeholder
+    if (viem && viem.keccak256 && viem.encodePacked) {
+      return viem.keccak256(
+        viem.encodePacked(
+          ["address", "uint256", "string"],
+          [wallet, BigInt(currentChainId), "HUMAN0_POSH_V1"]
+        )
+      );
+    }
+    // Fallback placeholder
+    return "0x1234567890abcdef1234567890abcdef12345678" as `0x${string}`;
+  }, [currentChainId]);
+
+  return {
+    // State
+    status,
+    error,
+    identity,
+    score,
+    isConnected,
+    address,
+    chainId: currentChainId,
+    
+    // Computed
+    isRegistered: isRegistered === true,
+    isRegistering: isRegistering || isConfirming,
+    hasContracts: !!identityAddress,
+    expectedHumanId: address ? computeExpectedHumanId(address) : null,
+    
+    // Actions
+    register,
+    refetch: () => {
+      refetchRegistration();
+      refetchHumanId();
+    },
+  };
+}
+
+export default useHumanIdentity;
