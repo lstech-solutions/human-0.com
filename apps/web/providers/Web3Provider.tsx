@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Platform } from "react-native";
+import { useRouter, usePathname } from "expo-router";
 
 export default function Web3Provider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
   const [Web3Components, setWeb3Components] = useState<any>(null);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Routes that don't need Web3 and shouldn't show loading state
+  const nonWeb3Routes = ['/canvas', '/pdf-download', '/privacy', '/terms'];
+  const isNonWeb3Route = nonWeb3Routes.includes(pathname);
 
   useEffect(() => {
     setMounted(true);
     
-    // Only load web3 libraries on web platform
-    if (Platform.OS === 'web' && typeof window !== 'undefined') {
+    // Only load web3 libraries on web platform and for non-excluded routes
+    if (Platform.OS === 'web' && typeof window !== 'undefined' && !isNonWeb3Route) {
       Promise.all([
         import('wagmi').catch(() => null),
         import('@tanstack/react-query').catch(() => null),
@@ -67,14 +74,34 @@ export default function Web3Provider({ children }: { children: React.ReactNode }
           AuthModal: null,
         });
       });
+    } else if (isNonWeb3Route) {
+      // For non-Web3 routes, set up minimal providers immediately
+      setWeb3Components({
+        WagmiProvider: ({ children }: any) => children,
+        QueryClientProvider: ({ children }: any) => children,
+        queryClient: { queryCache: { clear: () => {} } },
+        wagmiConfig: null,
+        AuthModal: null,
+      });
     }
 
     return () => setMounted(false);
-  }, []);
+  }, [isNonWeb3Route]);
 
   // If not mounted or not on web, just render children
   if (!mounted || Platform.OS !== 'web') {
     return <>{children}</>;
+  }
+
+  // For non-Web3 routes, render children immediately without loading state
+  if (isNonWeb3Route) {
+    return (
+      <Web3Components.WagmiProvider config={null}>
+        <Web3Components.QueryClientProvider client={Web3Components.queryClient}>
+          {children}
+        </Web3Components.QueryClientProvider>
+      </Web3Components.WagmiProvider>
+    );
   }
 
   // Always wait for Web3Components to be set on web to prevent context errors
