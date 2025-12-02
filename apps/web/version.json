@@ -1,21 +1,20 @@
 {
   "name": "human-zero",
-  "version": "1.9.8",
+  "version": "1.9.12",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
   "build": "20251202064144",
   "changelog": {
     "current": {
-      "version": "1.9.8",
+      "version": "1.9.12",
       "date": "2025-12-02",
       "timestamp": "2025-12-02T06:41:44.171Z",
       "type": "patch",
       "changes": [
-        "Fixed lambda proxy configuration",
-        "UI component improvements",
-        "API endpoint updates",
-        "Version management enhancements",
-        "Configuration updates",
-        "Documentation updates"
+        "Emergency rollback with stable Metro configuration",
+        "Fixed ESM module resolution issues",
+        "Added @types/minimatch for TypeScript compatibility",
+        "Integrated fixes from v1.9.9-v1.9.12",
+        "Production stability improvements"
       ]
     },
     "history": [
