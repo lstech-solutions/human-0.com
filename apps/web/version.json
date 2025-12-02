@@ -1,19 +1,38 @@
 {
   "name": "human-zero",
-  "version": "1.9.11",
+  "version": "1.9.12",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251202083243",
+  "build": "20251202085602",
   "changelog": {
     "current": {
-      "version": "1.9.11",
+      "version": "1.9.12",
       "date": "2025-12-02",
-      "timestamp": "2025-12-02T08:32:43.445Z",
+      "timestamp": "2025-12-02T08:56:02.083Z",
       "type": "patch",
       "changes": [
-        "API endpoint updates"
+        "Fixed lambda proxy configuration",
+        "UI component improvements",
+        "API endpoint updates",
+        "Version management enhancements",
+        "Configuration updates",
+        "Documentation updates"
       ]
     },
     "history": [
+      {
+        "version": "1.9.12",
+        "date": "2025-12-02",
+        "timestamp": "2025-12-02T03:55:00.000Z",
+        "type": "patch",
+        "changes": [
+          "Optimized RetroGrid animation with requestAnimationFrame throttling and performance improvements",
+          "Added theme-aware background gradients that adapt to light/dark mode automatically",
+          "Fixed canvas layout structure with proper scrolling and sticky footer positioning",
+          "Enhanced grid animation speed adjustment based on theme (slower in light mode)",
+          "Resolved React hook call order violations in animation components",
+          "Improved scanline and vignette effects for both light and dark themes"
+        ]
+      },
       {
         "version": "1.9.10",
         "date": "2025-12-02",
@@ -1062,12 +1081,12 @@
   "semver": {
     "major": 1,
     "minor": 9,
-    "patch": 11,
+    "patch": 12,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-12-02T08:32:43.444Z",
+    "lastModified": "2025-12-02T08:56:02.083Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team",

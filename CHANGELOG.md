@@ -2,15 +2,35 @@
 
 ## 📋 Version History
 
-### 🔧 Version 1.9.11 **[CURRENT]**
+### 🔧 Version 1.9.12 **[CURRENT]**
 **Date:** 2025-12-02  
 **Type:** patch
 
 **Changes:**
+- Fixed lambda proxy configuration
+- UI component improvements
 - API endpoint updates
+- Version management enhancements
+- Configuration updates
+- Documentation updates
 
 
 ### 📚 Previous Versions
+
+### 🔧 Version 1.9.12
+**Date:** 2025-12-02  
+**Type:** patch
+
+**Changes:**
+- Optimized RetroGrid animation with requestAnimationFrame throttling and performance improvements
+- Added theme-aware background gradients that adapt to light/dark mode automatically
+- Fixed canvas layout structure with proper scrolling and sticky footer positioning
+- Enhanced grid animation speed adjustment based on theme (slower in light mode)
+- Resolved React hook call order violations in animation components
+- Improved scanline and vignette effects for both light and dark themes
+
+
+---
 
 ### 🔧 Version 1.9.10
 **Date:** 2025-12-02  

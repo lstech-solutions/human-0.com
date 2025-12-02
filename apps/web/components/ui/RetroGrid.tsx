@@ -1,10 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
 interface RetroGridProps {
   gridColor?: string;
   showScanlines?: boolean;
   glowEffect?: boolean;
   className?: string;
+  style?: React.CSSProperties;
+  isDark?: boolean;
 }
 
 function RetroGrid({
@@ -12,6 +14,8 @@ function RetroGrid({
   showScanlines = true,
   glowEffect = true,
   className = "",
+  style = {},
+  isDark = true,
 }: RetroGridProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -51,7 +55,11 @@ function RetroGrid({
     const focalLength = 500;
 
     let offset = 0;
-    const speed = 1.5;
+    const speed = isDark ? 1.5 : 1.0;
+    let animationId: number;
+    let lastTime = 0;
+    const targetFPS = 60;
+    const frameInterval = 1000 / targetFPS;
 
     const project3DTo2D = (x: number, y: number, z: number) => {
       const relX = x - cameraX;
@@ -107,43 +115,71 @@ function RetroGrid({
     const drawScanlines = () => {
       if (!showScanlines) return;
 
-      ctx.globalAlpha = 0.1;
-      ctx.fillStyle = "#000000";
+      ctx.globalAlpha = isDark ? 0.1 : 0.05;
+      ctx.fillStyle = isDark ? "#000000" : "#ffffff";
       for (let y = 0; y < canvas.height; y += 4) {
         ctx.fillRect(0, y, canvas.width, 2);
       }
       ctx.globalAlpha = 1;
     };
 
-    const animate = () => {
+    const animate = (currentTime: number) => {
+      if (currentTime - lastTime < frameInterval) {
+        animationId = requestAnimationFrame(animate);
+        return;
+      }
+      lastTime = currentTime;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const rgb = hexToRgb(gridColor);
 
-      const skyGradient = ctx.createLinearGradient(0, 0, 0, canvas.height * 0.55);
-      skyGradient.addColorStop(0, `rgba(${rgb.r * 0.05}, ${rgb.g * 0.05}, ${rgb.b * 0.15}, 1)`);
-      skyGradient.addColorStop(0.3, `rgba(${rgb.r * 0.1}, ${rgb.g * 0.08}, ${rgb.b * 0.2}, 1)`);
-      skyGradient.addColorStop(0.5, `rgba(${rgb.r * 0.2}, ${rgb.g * 0.15}, ${rgb.b * 0.3}, 1)`);
-      skyGradient.addColorStop(0.7, `rgba(${rgb.r * 0.35}, ${rgb.g * 0.25}, ${rgb.b * 0.4}, 1)`);
-      skyGradient.addColorStop(0.85, `rgba(${rgb.r * 0.55}, ${rgb.g * 0.4}, ${rgb.b * 0.6}, 1)`);
-      skyGradient.addColorStop(1, `rgba(${rgb.r * 0.7}, ${rgb.g * 0.5}, ${rgb.b * 0.75}, 1)`);
-      ctx.fillStyle = skyGradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height * 0.55);
+      // Theme-aware background gradients
+      if (isDark) {
+        const skyGradient = ctx.createLinearGradient(0, 0, 0, canvas.height * 0.55);
+        skyGradient.addColorStop(0, `rgba(${rgb.r * 0.05}, ${rgb.g * 0.05}, ${rgb.b * 0.15}, 1)`);
+        skyGradient.addColorStop(0.3, `rgba(${rgb.r * 0.1}, ${rgb.g * 0.08}, ${rgb.b * 0.2}, 1)`);
+        skyGradient.addColorStop(0.5, `rgba(${rgb.r * 0.2}, ${rgb.g * 0.15}, ${rgb.b * 0.3}, 1)`);
+        skyGradient.addColorStop(0.7, `rgba(${rgb.r * 0.35}, ${rgb.g * 0.25}, ${rgb.b * 0.4}, 1)`);
+        skyGradient.addColorStop(0.85, `rgba(${rgb.r * 0.55}, ${rgb.g * 0.4}, ${rgb.b * 0.6}, 1)`);
+        skyGradient.addColorStop(1, `rgba(${rgb.r * 0.7}, ${rgb.g * 0.5}, ${rgb.b * 0.75}, 1)`);
+        ctx.fillStyle = skyGradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height * 0.55);
 
-      const groundGradient = ctx.createLinearGradient(0, canvas.height * 0.55, 0, canvas.height);
-      groundGradient.addColorStop(0, `rgba(${rgb.r * 0.1}, ${rgb.g * 0.08}, ${rgb.b * 0.15}, 1)`);
-      groundGradient.addColorStop(0.3, `rgba(${rgb.r * 0.05}, ${rgb.g * 0.03}, ${rgb.b * 0.08}, 1)`);
-      groundGradient.addColorStop(1, "#000000");
-      ctx.fillStyle = groundGradient;
-      ctx.fillRect(0, canvas.height * 0.55, canvas.width, canvas.height * 0.45);
+        const groundGradient = ctx.createLinearGradient(0, canvas.height * 0.55, 0, canvas.height);
+        groundGradient.addColorStop(0, `rgba(${rgb.r * 0.1}, ${rgb.g * 0.08}, ${rgb.b * 0.15}, 1)`);
+        groundGradient.addColorStop(0.3, `rgba(${rgb.r * 0.05}, ${rgb.g * 0.03}, ${rgb.b * 0.08}, 1)`);
+        groundGradient.addColorStop(1, "#000000");
+        ctx.fillStyle = groundGradient;
+        ctx.fillRect(0, canvas.height * 0.55, canvas.width, canvas.height * 0.45);
+      } else {
+        // Light mode background - subtle gradients
+        const skyGradient = ctx.createLinearGradient(0, 0, 0, canvas.height * 0.55);
+        skyGradient.addColorStop(0, `rgba(248, 250, 252, 0.95)`);
+        skyGradient.addColorStop(0.5, `rgba(241, 245, 249, 0.9)`);
+        skyGradient.addColorStop(1, `rgba(226, 232, 240, 0.85)`);
+        ctx.fillStyle = skyGradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height * 0.55);
+
+        const groundGradient = ctx.createLinearGradient(0, canvas.height * 0.55, 0, canvas.height);
+        groundGradient.addColorStop(0, `rgba(203, 213, 225, 0.3)`);
+        groundGradient.addColorStop(0.5, `rgba(148, 163, 184, 0.2)`);
+        groundGradient.addColorStop(1, `rgba(100, 116, 139, 0.1)`);
+        ctx.fillStyle = groundGradient;
+        ctx.fillRect(0, canvas.height * 0.55, canvas.width, canvas.height * 0.45);
+      }
 
       offset += speed;
       if (offset >= cellDepth) offset = 0;
 
-      for (let row = -5; row < numCellsDeep + 5; row++) {
+      // Optimized grid rendering with reduced cell count for performance
+      const optimizedCellsWide = Math.min(numCellsWide, Math.ceil(canvas.width / cellWidth) + 2);
+      const optimizedCellsDeep = Math.min(numCellsDeep, Math.ceil(canvas.height / cellDepth) + 2);
+
+      for (let row = -5; row < optimizedCellsDeep + 5; row++) {
         const z = row * cellDepth;
 
-        for (let col = -Math.floor(numCellsWide / 2); col <= Math.floor(numCellsWide / 2); col++) {
+        for (let col = -Math.floor(optimizedCellsWide / 2); col <= Math.floor(optimizedCellsWide / 2); col++) {
           const x = col * cellWidth;
           drawCell(x, z, offset);
         }
@@ -151,6 +187,7 @@ function RetroGrid({
 
       drawScanlines();
 
+      // Theme-aware vignette
       const vignette = ctx.createRadialGradient(
         canvas.width / 2,
         canvas.height / 2,
@@ -159,26 +196,40 @@ function RetroGrid({
         canvas.height / 2,
         canvas.height * 0.8
       );
-      vignette.addColorStop(0, "rgba(0,0,0,0)");
-      vignette.addColorStop(1, "rgba(0,0,0,0.5)");
+      vignette.addColorStop(0, isDark ? "rgba(0,0,0,0)" : "rgba(255,255,255,0)");
+      vignette.addColorStop(1, isDark ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.15)");
       ctx.fillStyle = vignette;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     };
 
-    animate();
+    // Start animation
+    animationId = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
     };
-  }, [gridColor, showScanlines, glowEffect]);
+  }, [gridColor, showScanlines, glowEffect, isDark]);
 
   return (
     <canvas
       ref={canvasRef}
       className={className}
-      style={{ background: "#000000", width: "100%", height: "100%" }}
+      style={{ 
+        background: isDark ? "#000000" : "#f8fafc", 
+        width: "100%", 
+        height: "100%",
+        zIndex: 0,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        pointerEvents: 'none',
+        ...style
+      }}
     />
   );
 }

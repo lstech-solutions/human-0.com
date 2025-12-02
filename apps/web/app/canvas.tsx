@@ -11,6 +11,7 @@ import { ExpandableCanvasSection, SectionModal, CanvasSection } from '../compone
 import { ManifestoModal, useManifestoModal } from '../components/ManifestoModal';
 import { CanvaModal } from '../components/CanvaModal';
 import AnimatedSummaryRow, { SummaryAction } from '../components/AnimatedSummaryRow';
+import MultiSummarySection, { SummaryItem } from '../components/MultiSummarySection';
 import { useRouter } from 'expo-router';
 import { Building2, Activity, Target, Users, Lightbulb, MessageSquare, DollarSign, TrendingUp, Award, ImageIcon, User, ChevronLeft, ChevronRight, FileText, Download, Eye } from 'lucide-react-native';
 import { useTheme } from '../theme/ThemeProvider';
@@ -129,15 +130,15 @@ export default function CanvasScreen() {
       ],
     },
   ];
-  
+
   const activitiesScrollRef = useRef<ScrollView>(null);
   const resourcesScrollRef = useRef<ScrollView>(null);
-  
+
   const [activitiesCanScrollLeft, setActivitiesCanScrollLeft] = useState(false);
   const [activitiesCanScrollRight, setActivitiesCanScrollRight] = useState(true);
   const [resourcesCanScrollLeft, setResourcesCanScrollLeft] = useState(false);
   const [resourcesCanScrollRight, setResourcesCanScrollRight] = useState(true);
-  
+
   const isLargeScreen = width >= 1024;
 
   const scrollToDirection = (scrollRef: React.RefObject<ScrollView | null>, direction: 'left' | 'right') => {
@@ -145,10 +146,10 @@ export default function CanvasScreen() {
     const scrollAmount = 240; // Scroll by one card width + margin
     // @ts-ignore - web specific
     const currentScroll = (scrollRef.current as any).scrollLeft || 0;
-    const newScroll = direction === 'right' 
-      ? currentScroll + scrollAmount 
+    const newScroll = direction === 'right'
+      ? currentScroll + scrollAmount
       : Math.max(0, currentScroll - scrollAmount);
-    
+
     // @ts-ignore - web specific
     (scrollRef.current as any).scrollTo({
       x: newScroll,
@@ -164,7 +165,7 @@ export default function CanvasScreen() {
     const scrollLeft = event.nativeEvent.contentOffset.x;
     const scrollWidth = event.nativeEvent.contentSize.width;
     const layoutWidth = event.nativeEvent.layoutMeasurement.width;
-    
+
     setCanScrollLeft(scrollLeft > 10);
     setCanScrollRight(scrollLeft < scrollWidth - layoutWidth - 10);
   };
@@ -546,300 +547,314 @@ export default function CanvasScreen() {
   };
 
   const handleSummaryAction = (action: any) => {
-  if (!action) return;
-  
-  switch (action.type) {
-    case 'navigate':
-      if (action.target?.startsWith('http')) {
-        // External URL - open in browser
-        window.open(action.target, '_blank');
-      } else {
-        // Internal navigation
-        router.push(action.target || '/');
-      }
-      break;
-    case 'download':
-      if (action.target?.endsWith('.pdf')) {
-        // Create download link for PDF
-        const link = document.createElement('a');
-        link.href = action.target;
-        link.download = action.target.split('/').pop() || 'document.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      } else {
-        // Handle other downloads
-        console.log('Download:', action.target);
-      }
-      break;
-    case 'view':
-      // Handle view action
-      console.log('View:', action.target);
-      break;
-    case 'manifesto':
-      // Open manifesto modal
-      showManifesto();
-      break;
-    case 'canvas':
-      // Open canvas modal
-      setCanvasModalVisible(true);
-      break;
-  }
-};
+    if (!action) return;
+
+    switch (action.type) {
+      case 'navigate':
+        if (action.target?.startsWith('http')) {
+          // External URL - open in browser
+          window.open(action.target, '_blank');
+        } else {
+          // Internal navigation
+          router.push(action.target || '/');
+        }
+        break;
+      case 'download':
+        if (action.target?.endsWith('.pdf')) {
+          // Create download link for PDF
+          const link = document.createElement('a');
+          link.href = action.target;
+          link.download = action.target.split('/').pop() || 'document.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else {
+          // Handle other downloads
+          console.log('Download:', action.target);
+        }
+        break;
+      case 'view':
+        // Handle view action
+        console.log('View:', action.target);
+        break;
+      case 'manifesto':
+        // Open manifesto modal
+        showManifesto();
+        break;
+      case 'canvas':
+        // Open canvas modal
+        setCanvasModalVisible(true);
+        break;
+    }
+  };
 
   return (
-    <AnimatedBackground 
-      isDark={isDark} 
-      type="retro-grid"
-      gridColor={isDark ? "#00FF9C" : "#059669"}
-      showScanlines={true}
-      glowEffect={true}
-    >
-      <View className={`flex-1 ${containerBgClass}`}>
-        {/* Scrollable Business Model Canvas sections (cards only) */}
-        <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-4">
-        {/* Header */}
-        <View className="mb-8 mt-12">
-          <Text className={`text-4xl font-bold mb-2 tracking-widest leading-tight font-digitaldivine ${isDark ? "text-human-primary" : "text-[#0A1628]"}`}>
-            <Text className={`${isDark ? "bg-gradient-to-r from-emerald-300 via-emerald-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]" : "bg-gradient-to-r from-emerald-900 via-emerald-600 to-cyan-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]"}`}>
-              {t('hero.titleLine1')}
-            </Text>
-            <Text className={`block mt-1 lg:mt-2 ${isDark ? "bg-gradient-to-r from-cyan-300 via-emerald-400 to-emerald-200 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]" : "bg-gradient-to-r from-cyan-900 via-emerald-600 to-emerald-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]"}`}>
-              {t('hero.titleLine2')}
-            </Text>
-          </Text>
-          <Text className="text-gray-600 dark:text-gray-400 text-base">
-            {t('canvas.subtitle')}
-          </Text>
-        </View>
-        {/* Main Canvas Grid: Standard Business Model Canvas Layout */}
-        <View className="flex-row mb-4">
-          {/* Left column: Key Partners spanning two rows */}
-          <View style={{ width: isLargeScreen ? 220 : 140, marginRight: 16 }}>
-            <View style={{ minHeight: isLargeScreen ? 500 : 420 }}>
-              <ExpandableCanvasSection
-                section={canvasSections[0]}
-                index={0}
-                onPress={handleSectionPress}
-              />
-            </View>
-          </View>
+    <View className={`flex-1 ${containerBgClass}`}>
+      {/* Full-screen background */}
+      <AnimatedBackground
+          isDark={isDark}
+          type="retro-grid"
+          gridColor={isDark ? "#00FF9C" : "#059669"}
+          showScanlines={true}
+          glowEffect={true}
+        >
+        {/* Background content - empty for full coverage */}
+      </AnimatedBackground>
 
-          {/* Right side: Two rows */}
-          <View style={{ flex: 1 }}>
-            {/* Key Activities Row */}
-            {isLargeScreen ? (
-              // Large screen: Flex layout without scroll
-              <View className="flex-row" style={{ minHeight: 240, marginBottom: 20 }}>
-                <View style={{ flex: 1.5, marginRight: 8 }}>
-                  <ExpandableCanvasSection
-                    section={canvasSections[1]}
-                    index={1}
-                    onPress={handleSectionPress}
-                  />
-                </View>
-                <View style={{ flex: 1.5, marginHorizontal: 8 }}>
-                  <ExpandableCanvasSection
-                    section={canvasSections[2]}
-                    index={2}
-                    onPress={handleSectionPress}
-                  />
-                </View>
-                <View style={{ flex: 1, marginLeft: 8 }}>
-                  <ExpandableCanvasSection
-                    section={canvasSections[3]}
-                    index={3}
-                    onPress={handleSectionPress}
-                  />
-                </View>
+      {/* Main content overlay */}
+      <View className="absolute inset-0 flex-1">
+        {/* Scrollable Business Model Canvas sections */}
+        <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-4 pb-32">
+          
+            {/* Header */}
+            <View className="mb-8 mt-12">
+              <Text className={`text-4xl font-bold mb-2 tracking-widest leading-tight font-digitaldivine ${isDark ? "text-human-primary" : "text-[#0A1628]"}`}>
+                <Text className={`${isDark ? "bg-gradient-to-r from-emerald-300 via-emerald-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]" : "bg-gradient-to-r from-emerald-900 via-emerald-600 to-cyan-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]"}`}>
+                  {t('hero.titleLine1')}
+                </Text>
+                <Text className={`block mt-1 lg:mt-2 ${isDark ? "bg-gradient-to-r from-cyan-300 via-emerald-400 to-emerald-200 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]" : "bg-gradient-to-r from-cyan-900 via-emerald-600 to-emerald-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]"}`}>
+                  {t('hero.titleLine2')}
+                </Text>
+              </Text>
+              <Text className="text-gray-600 dark:text-gray-400 text-base">
+                {t('canvas.subtitle')}
+              </Text>
+            </View>
+          {/* Main Canvas Grid: Standard Business Model Canvas Layout */}
+          <View className="flex-row mb-4">
+            {/* Left column: Key Partners spanning two rows */}
+            <View style={{ width: isLargeScreen ? 220 : 140, marginRight: 16 }}>
+              <View style={{ minHeight: isLargeScreen ? 500 : 420 }}>
+                <ExpandableCanvasSection
+                  section={canvasSections[0]}
+                  index={0}
+                  onPress={handleSectionPress}
+                />
               </View>
-            ) : (
-              // Small screen: Horizontal scroll
-              <View className="relative" data-scroll="activities" style={{ height: 200, marginBottom: 20 }}>
-                <ScrollView 
-                  ref={activitiesScrollRef}
-                  horizontal 
-                  showsHorizontalScrollIndicator={false}
-                  decelerationRate="fast"
-                  contentContainerStyle={{ paddingRight: 16 }}
-                  onScroll={(e) => handleScroll(e, setActivitiesCanScrollLeft, setActivitiesCanScrollRight)}
-                  scrollEventThrottle={16}
-                >
-                  <View style={{ width: 220, marginRight: 4 }}>
+            </View>
+
+            {/* Right side: Two rows */}
+            <View style={{ flex: 1 }}>
+              {/* Key Activities Row */}
+              {isLargeScreen ? (
+                // Large screen: Flex layout without scroll
+                <View className="flex-row" style={{ minHeight: 240, marginBottom: 20 }}>
+                  <View style={{ flex: 1.5, marginRight: 8 }}>
                     <ExpandableCanvasSection
                       section={canvasSections[1]}
                       index={1}
                       onPress={handleSectionPress}
                     />
                   </View>
-                  <View style={{ width: 220, marginRight: 4 }}>
+                  <View style={{ flex: 1.5, marginHorizontal: 8 }}>
                     <ExpandableCanvasSection
                       section={canvasSections[2]}
                       index={2}
                       onPress={handleSectionPress}
                     />
                   </View>
-                  <View style={{ width: 180 }}>
+                  <View style={{ flex: 1, marginLeft: 8 }}>
                     <ExpandableCanvasSection
                       section={canvasSections[3]}
                       index={3}
                       onPress={handleSectionPress}
                     />
                   </View>
-                </ScrollView>
-                
-                {/* Scroll Buttons */}
-                {activitiesCanScrollLeft && (
-                  <TouchableOpacity
-                    onPress={() => scrollToDirection(activitiesScrollRef, 'left')}
-                    className="absolute left-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
-                    style={{ transform: [{ translateY: -16 }] }}
+                </View>
+              ) : (
+                // Small screen: Horizontal scroll
+                <View className="relative" data-scroll="activities" style={{ height: 200, marginBottom: 20 }}>
+                  <ScrollView
+                    ref={activitiesScrollRef}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    decelerationRate="fast"
+                    contentContainerStyle={{ paddingRight: 16 }}
+                    onScroll={(e) => handleScroll(e, setActivitiesCanScrollLeft, setActivitiesCanScrollRight)}
+                    scrollEventThrottle={16}
                   >
-                    <ChevronLeft size={20} color="#00FF9C" />
-                  </TouchableOpacity>
-                )}
-                
-                {activitiesCanScrollRight && (
-                  <TouchableOpacity
-                    onPress={() => scrollToDirection(activitiesScrollRef, 'right')}
-                    className="absolute right-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
-                    style={{ transform: [{ translateY: -16 }] }}
-                  >
-                    <ChevronRight size={20} color="#00FF9C" />
-                  </TouchableOpacity>
-                )}
-              </View>
-            )}
+                    <View style={{ width: 220, marginRight: 4 }}>
+                      <ExpandableCanvasSection
+                        section={canvasSections[1]}
+                        index={1}
+                        onPress={handleSectionPress}
+                      />
+                    </View>
+                    <View style={{ width: 220, marginRight: 4 }}>
+                      <ExpandableCanvasSection
+                        section={canvasSections[2]}
+                        index={2}
+                        onPress={handleSectionPress}
+                      />
+                    </View>
+                    <View style={{ width: 180 }}>
+                      <ExpandableCanvasSection
+                        section={canvasSections[3]}
+                        index={3}
+                        onPress={handleSectionPress}
+                      />
+                    </View>
+                  </ScrollView>
 
-            {/* Key Resources Row */}
-            {isLargeScreen ? (
-              // Large screen: Flex layout without scroll
-              <View className="flex-row" style={{ minHeight: 240 }}>
-                <View style={{ flex: 1.5, marginRight: 8 }}>
-                  <ExpandableCanvasSection
-                    section={canvasSections[5]}
-                    index={5}
-                    onPress={handleSectionPress}
-                  />
+                  {/* Scroll Buttons */}
+                  {activitiesCanScrollLeft && (
+                    <TouchableOpacity
+                      onPress={() => scrollToDirection(activitiesScrollRef, 'left')}
+                      className="absolute left-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
+                      style={{ transform: [{ translateY: -16 }] }}
+                    >
+                      <ChevronLeft size={20} color="#00FF9C" />
+                    </TouchableOpacity>
+                  )}
+
+                  {activitiesCanScrollRight && (
+                    <TouchableOpacity
+                      onPress={() => scrollToDirection(activitiesScrollRef, 'right')}
+                      className="absolute right-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
+                      style={{ transform: [{ translateY: -16 }] }}
+                    >
+                      <ChevronRight size={20} color="#00FF9C" />
+                    </TouchableOpacity>
+                  )}
                 </View>
-                <View style={{ flex: 1.5, marginHorizontal: 8 }}>
-                  <ExpandableCanvasSection
-                    section={canvasSections[6]}
-                    index={6}
-                    onPress={handleSectionPress}
-                  />
-                </View>
-                <View style={{ flex: 1, marginLeft: 8 }}>
-                  <ExpandableCanvasSection
-                    section={canvasSections[4]}
-                    index={4}
-                    onPress={handleSectionPress}
-                  />
-                </View>
-              </View>
-            ) : (
-              // Small screen: Horizontal scroll
-              <View className="relative" data-scroll="resources" style={{ height: 200 }}>
-                <ScrollView 
-                  ref={resourcesScrollRef}
-                  horizontal 
-                  showsHorizontalScrollIndicator={false}
-                  decelerationRate="fast"
-                  contentContainerStyle={{ paddingRight: 16 }}
-                  onScroll={(e) => handleScroll(e, setResourcesCanScrollLeft, setResourcesCanScrollRight)}
-                  scrollEventThrottle={16}
-                >
-                  <View style={{ width: 220, marginRight: 4 }}>
+              )}
+
+              {/* Key Resources Row */}
+              {isLargeScreen ? (
+                // Large screen: Flex layout without scroll
+                <View className="flex-row" style={{ minHeight: 240 }}>
+                  <View style={{ flex: 1.5, marginRight: 8 }}>
                     <ExpandableCanvasSection
                       section={canvasSections[5]}
                       index={5}
                       onPress={handleSectionPress}
                     />
                   </View>
-                  <View style={{ width: 220, marginRight: 4 }}>
+                  <View style={{ flex: 1.5, marginHorizontal: 8 }}>
                     <ExpandableCanvasSection
                       section={canvasSections[6]}
                       index={6}
                       onPress={handleSectionPress}
                     />
                   </View>
-                  <View style={{ width: 180 }}>
+                  <View style={{ flex: 1, marginLeft: 8 }}>
                     <ExpandableCanvasSection
                       section={canvasSections[4]}
                       index={4}
                       onPress={handleSectionPress}
                     />
                   </View>
-                </ScrollView>
-                
-                {/* Scroll Buttons */}
-                {resourcesCanScrollLeft && (
-                  <TouchableOpacity
-                    onPress={() => scrollToDirection(resourcesScrollRef, 'left')}
-                    className="absolute left-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
-                    style={{ transform: [{ translateY: -16 }] }}
+                </View>
+              ) : (
+                // Small screen: Horizontal scroll
+                <View className="relative" data-scroll="resources" style={{ height: 200 }}>
+                  <ScrollView
+                    ref={resourcesScrollRef}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    decelerationRate="fast"
+                    contentContainerStyle={{ paddingRight: 16 }}
+                    onScroll={(e) => handleScroll(e, setResourcesCanScrollLeft, setResourcesCanScrollRight)}
+                    scrollEventThrottle={16}
                   >
-                    <ChevronLeft size={20} color="#00FF9C" />
-                  </TouchableOpacity>
-                )}
-                
-                {resourcesCanScrollRight && (
-                  <TouchableOpacity
-                    onPress={() => scrollToDirection(resourcesScrollRef, 'right')}
-                    className="absolute right-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
-                    style={{ transform: [{ translateY: -16 }] }}
-                  >
-                    <ChevronRight size={20} color="#00FF9C" />
-                  </TouchableOpacity>
-                )}
-              </View>
-            )}
+                    <View style={{ width: 220, marginRight: 4 }}>
+                      <ExpandableCanvasSection
+                        section={canvasSections[5]}
+                        index={5}
+                        onPress={handleSectionPress}
+                      />
+                    </View>
+                    <View style={{ width: 220, marginRight: 4 }}>
+                      <ExpandableCanvasSection
+                        section={canvasSections[6]}
+                        index={6}
+                        onPress={handleSectionPress}
+                      />
+                    </View>
+                    <View style={{ width: 180 }}>
+                      <ExpandableCanvasSection
+                        section={canvasSections[4]}
+                        index={4}
+                        onPress={handleSectionPress}
+                      />
+                    </View>
+                  </ScrollView>
+
+                  {/* Scroll Buttons */}
+                  {resourcesCanScrollLeft && (
+                    <TouchableOpacity
+                      onPress={() => scrollToDirection(resourcesScrollRef, 'left')}
+                      className="absolute left-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
+                      style={{ transform: [{ translateY: -16 }] }}
+                    >
+                      <ChevronLeft size={20} color="#00FF9C" />
+                    </TouchableOpacity>
+                  )}
+
+                  {resourcesCanScrollRight && (
+                    <TouchableOpacity
+                      onPress={() => scrollToDirection(resourcesScrollRef, 'right')}
+                      className="absolute right-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
+                      style={{ transform: [{ translateY: -16 }] }}
+                    >
+                      <ChevronRight size={20} color="#00FF9C" />
+                    </TouchableOpacity>
+                  )}
+                </View>
+              )}
+            </View>
           </View>
+
+          {/* Cost Structure & Revenue Streams - Full Width Side by Side */}
+          <View className="flex-row mb-6 mt-6" style={{ minHeight: isLargeScreen ? 280 : 220 }}>
+            <View style={{ flex: 1, marginRight: 8 }}>
+              <ExpandableCanvasSection
+                section={canvasSections[7]}
+                index={7}
+                onPress={handleSectionPress}
+              />
+            </View>
+            <View style={{ flex: 1, marginLeft: 8 }}>
+              <ExpandableCanvasSection
+                section={canvasSections[8]}
+                index={8}
+                onPress={handleSectionPress}
+              />
+            </View>
+          </View>
+      
+        </ScrollView>
+
+        {/* Fixed bottom overlay */}
+        <View className="absolute bottom-0 left-0 right-0">
+          {/* Animated Summary Row */}
+          <View className="px-4 pb-2">
+            <AnimatedSummaryRow actions={animatedActions} onAction={handleSummaryAction} />
+          </View>
+          
+          {/* App Footer */}
+          <AppFooter />
         </View>
+      </View>
 
-        {/* Cost Structure & Revenue Streams - Full Width Side by Side */}
-        <View className="flex-row mb-6 mt-6" style={{ minHeight: isLargeScreen ? 280 : 220 }}>
-          <View style={{ flex: 1, marginRight: 8 }}>
-            <ExpandableCanvasSection
-              section={canvasSections[7]}
-              index={7}
-              onPress={handleSectionPress}
-            />
-          </View>
-          <View style={{ flex: 1, marginLeft: 8 }}>
-            <ExpandableCanvasSection
-              section={canvasSections[8]}
-              index={8}
-              onPress={handleSectionPress}
-            />
-          </View>
-        </View>
-      </ScrollView>
+    {/* Section Modal */}
+    <SectionModal
+      visible={modalVisible}
+      section={selectedSection}
+      onClose={handleCloseModal}
+    />
 
-      {/* Animated Summary Row - Single row with expanding buttons */}
-      <AnimatedSummaryRow actions={animatedActions} onAction={handleSummaryAction} />
+    {/* Manifesto Modal - shows on first load */}
+    {manifestoChecked && showModal && (
+      <ManifestoModal onClose={closeManifesto} />
+    )}
 
-      {/* Section Modal */}
-      <SectionModal
-        visible={modalVisible}
-        section={selectedSection}
-        onClose={handleCloseModal}
-      />
-
-      {/* Manifesto Modal - shows on first load */}
-      {manifestoChecked && showModal && (
-        <ManifestoModal onClose={closeManifesto} />
-      )}
-
-      {/* Canva Modal */}
-      <CanvaModal
-        visible={canvasModalVisible}
-        onClose={() => setCanvasModalVisible(false)}
-      />
-
-      {/* App Footer - same as identity view */}
-      <AppFooter />
+    {/* Canva Modal */}
+    <CanvaModal
+      visible={canvasModalVisible}
+      onClose={() => setCanvasModalVisible(false)}
+    />
     </View>
-    </AnimatedBackground>
+
   );
 }

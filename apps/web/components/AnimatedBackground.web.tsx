@@ -33,9 +33,11 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
           gridColor={gridColor}
           showScanlines={showScanlines}
           glowEffect={glowEffect}
+          isDark={isDark}
           className="absolute inset-0"
+          style={{ zIndex: 0 }}
         />
-        <div style={{ position: 'relative', zIndex: 10 }}>
+        <div style={{ position: 'relative', zIndex: 10, backgroundColor: 'transparent' }}>
           {children}
         </div>
       </div>

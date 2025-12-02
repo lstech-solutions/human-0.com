@@ -7,7 +7,10 @@ module.exports = function (api) {
       "nativewind/babel",
     ],
     plugins: [
-      "babel-plugin-transform-import-meta",
+      // Transform import.meta to prevent eval errors in Metro
+      ["babel-plugin-transform-import-meta", {
+        "module": "ES6"
+      }],
       "react-native-reanimated/plugin",
     ],
   };

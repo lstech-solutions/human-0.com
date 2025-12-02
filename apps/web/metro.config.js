@@ -70,6 +70,7 @@ config.resolver.nodeModulesPaths = [
 // Configure transformer to handle ES modules properly
 config.transformer = {
   ...config.transformer,
+  babelTransformerPath: require.resolve('metro-react-native-babel-transformer'),
   getTransformOptions: async () => ({
     transform: {
       experimentalImportSupport: false,
