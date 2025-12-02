@@ -5,21 +5,18 @@ import {
   ScrollView,
   TouchableOpacity,
   Dimensions,
-  StatusBar,
   Platform,
 } from 'react-native';
 import { ExpandableCanvasSection, SectionModal, CanvasSection } from '../components/ExpandableCanvasSection';
-import ParticleTextLogo from '../components/ParticleTextLogo';
-import PDFExport from '../components/PDFExport';
 import { ManifestoModal, useManifestoModal } from '../components/ManifestoModal';
 import { CanvaModal } from '../components/CanvaModal';
-import MultiSummarySection, { SummaryItem } from '../components/MultiSummarySection';
 import AnimatedSummaryRow, { SummaryAction } from '../components/AnimatedSummaryRow';
 import { useRouter } from 'expo-router';
 import { Building2, Activity, Target, Users, Lightbulb, MessageSquare, DollarSign, TrendingUp, Award, ImageIcon, User, ChevronLeft, ChevronRight, FileText, Download, Eye } from 'lucide-react-native';
 import { useTheme } from '../theme/ThemeProvider';
 import { useTranslation } from '@human-0/i18n';
 import { AppFooter } from '../components/AppFooter';
+import { AnimatedBackground } from '../components/AnimatedBackground';
 
 const { width, height } = Dimensions.get('window');
 
@@ -591,9 +588,16 @@ export default function CanvasScreen() {
 };
 
   return (
-    <View className={`flex-1 ${containerBgClass}`}>
-      {/* Scrollable Business Model Canvas sections (cards only) */}
-      <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-4">
+    <AnimatedBackground 
+      isDark={isDark} 
+      type="retro-grid"
+      gridColor={isDark ? "#00FF9C" : "#059669"}
+      showScanlines={true}
+      glowEffect={true}
+    >
+      <View className={`flex-1 ${containerBgClass}`}>
+        {/* Scrollable Business Model Canvas sections (cards only) */}
+        <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-4">
         {/* Header */}
         <View className="mb-8 mt-12">
           <Text className={`text-4xl font-bold mb-2 tracking-widest leading-tight font-digitaldivine ${isDark ? "text-human-primary" : "text-[#0A1628]"}`}>
@@ -836,5 +840,6 @@ export default function CanvasScreen() {
       {/* App Footer - same as identity view */}
       <AppFooter />
     </View>
+    </AnimatedBackground>
   );
 }

@@ -346,7 +346,7 @@ export default function IdentityScreen() {
   );
 
   return (
- /*    <AnimatedBackground isDark={isDark}> */
+/*    <AnimatedBackground isDark={isDark}> */
       <View className="flex-1 relative">
         <ScrollView
           className="flex-1"
@@ -361,11 +361,12 @@ export default function IdentityScreen() {
             {renderContent()}
           </View>
         </ScrollView>
+
         {/* Sticky footer positioned at bottom */}
         <View className="absolute bottom-0 left-0 right-0 bg-white/95 dark:bg-[#0d1117]/95 backdrop-blur-sm border-t border-[#d0d7de] dark:border-[#30363d]">
           <AppFooter />
         </View>
       </View>
- /*    </AnimatedBackground> */
+/*    </AnimatedBackground> */
   );
 }
