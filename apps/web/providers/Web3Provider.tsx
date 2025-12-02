@@ -9,7 +9,7 @@ export default function Web3Provider({ children }: { children: React.ReactNode }
   const pathname = usePathname();
 
   // Routes that don't need Web3 and shouldn't show loading state
-  const nonWeb3Routes = ['/canvas', '/pdf-download', '/privacy', '/terms', '/'];
+  const nonWeb3Routes = ['/canvas', '/resources', '/privacy', '/terms', '/'];
   const isNonWeb3Route = nonWeb3Routes.includes(pathname);
 
   useEffect(() => {

@@ -12,8 +12,10 @@ import { ExpandableCanvasSection, SectionModal, CanvasSection } from '../compone
 import ParticleTextLogo from '../components/ParticleTextLogo';
 import PDFExport from '../components/PDFExport';
 import { ManifestoModal, useManifestoModal } from '../components/ManifestoModal';
+import MultiSummarySection, { SummaryItem } from '../components/MultiSummarySection';
+import AnimatedSummaryRow, { SummaryAction } from '../components/AnimatedSummaryRow';
 import { useRouter } from 'expo-router';
-import { Building2, Activity, Target, Users, Lightbulb, MessageSquare, DollarSign, TrendingUp, Award, ImageIcon, User, ChevronLeft, ChevronRight } from 'lucide-react-native';
+import { Building2, Activity, Target, Users, Lightbulb, MessageSquare, DollarSign, TrendingUp, Award, ImageIcon, User, ChevronLeft, ChevronRight, FileText, Download, Eye } from 'lucide-react-native';
 import { useTheme } from '../theme/ThemeProvider';
 import { useTranslation } from '@human-0/i18n';
 import { AppFooter } from '../components/AppFooter';
@@ -35,6 +37,138 @@ export default function CanvasScreen() {
   const [modalVisible, setModalVisible] = useState(false);
   const { showModal: showManifesto, closeModal: closeManifesto, checked: manifestoChecked } = useManifestoModal();
   const [isSummaryExpanded, setIsSummaryExpanded] = useState(false);
+
+  // Define animated summary actions for the single row
+  const animatedActions: SummaryAction[] = [
+    {
+      id: 'strategic-vision',
+      title: 'Strategic Vision',
+      icon: <TrendingUp size={24} color="#00FF9C" />,
+      action: {
+        type: 'view',
+        target: 'vision',
+        label: 'View Vision',
+      },
+    },
+    {
+      id: 'view-canvas',
+      title: 'View Canvas',
+      icon: <Target size={24} color="#00FF9C" />,
+      action: {
+        type: 'navigate',
+        target: 'canvas',
+        label: 'View Canvas',
+      },
+    },
+    {
+      id: 'whitepaper',
+      title: 'Whitepaper',
+      icon: <FileText size={24} color="#00FF9C" />,
+      action: {
+        type: 'download',
+        target: '/whitepaper.pdf',
+        label: 'Download PDF',
+      },
+    },
+    {
+      id: 'download-resources',
+      title: 'PDF Resources',
+      icon: <Download size={24} color="#00FF9C" />,
+      action: {
+        type: 'navigate',
+        target: '/resources',
+        label: 'Download Resources',
+      },
+    },
+  ];
+  const summaryData: SummaryItem[] = [
+    {
+      id: 'strategic-vision',
+      title: t('canvas.summary.title'),
+      icon: <TrendingUp size={24} color="#00FF9C" />,
+      items: [
+        {
+          id: 'impact',
+          title: t('canvas.summary.items.impact'),
+          description: 'Sustainable impact through verified proofs',
+        },
+        {
+          id: 'growth',
+          title: t('canvas.summary.items.growth'),
+          description: 'Scalable growth with community-driven approach',
+        },
+        {
+          id: 'leadership',
+          title: t('canvas.summary.items.leadership'),
+          description: 'Leading the Web3 sustainability revolution',
+        },
+      ],
+    },
+    {
+      id: 'canvas-actions',
+      title: 'Business Model Canvas',
+      icon: <Target size={24} color="#00FF9C" />,
+      items: [
+        {
+          id: 'view-canvas',
+          title: 'View Full Canvas',
+          description: 'Explore detailed business model sections',
+          action: {
+            type: 'navigate',
+            target: 'canvas',
+            label: 'View Canvas',
+          },
+        },
+        {
+          id: 'export-canvas',
+          title: 'Export Canvas Data',
+          description: 'Download canvas as JSON or PDF',
+          action: {
+            type: 'download',
+            target: 'canvas-export',
+            label: 'Download',
+          },
+        },
+      ],
+    },
+    {
+      id: 'resources',
+      title: 'Resources & Documentation',
+      icon: <FileText size={24} color="#00FF9C" />,
+      items: [
+        {
+          id: 'whitepaper',
+          title: 'Whitepaper',
+          description: 'Complete technical documentation',
+          action: {
+            type: 'download',
+            target: '/whitepaper.pdf',
+            label: 'Download PDF',
+          },
+        },
+        {
+          id: 'api-docs',
+          title: 'API Documentation',
+          description: 'Developer resources and guides',
+          action: {
+            type: 'navigate',
+            target: '/docs',
+            label: 'View Docs',
+          },
+        },
+        {
+          id: 'github',
+          title: 'GitHub Repository',
+          description: 'Source code and contributions',
+          action: {
+            type: 'navigate',
+            target: 'https://github.com/human-0',
+            label: 'View Code',
+          },
+        },
+      ],
+    },
+  ];
   
   const activitiesScrollRef = useRef<ScrollView>(null);
   const resourcesScrollRef = useRef<ScrollView>(null);
@@ -46,7 +180,7 @@ export default function CanvasScreen() {
   
   const isLargeScreen = width >= 1024;
 
-  const scrollToDirection = (scrollRef: React.RefObject<ScrollView>, direction: 'left' | 'right') => {
+  const scrollToDirection = (scrollRef: React.RefObject<ScrollView | null>, direction: 'left' | 'right') => {
     if (!scrollRef.current) return;
     const scrollAmount = 240; // Scroll by one card width + margin
     // @ts-ignore - web specific
@@ -79,7 +213,7 @@ export default function CanvasScreen() {
   useEffect(() => {
     if (Platform.OS !== 'web') return;
 
-    const handleWheel = (scrollRef: React.RefObject<ScrollView>) => (e: Event) => {
+    const handleWheel = (scrollRef: React.RefObject<ScrollView | null>) => (e: Event) => {
       const wheelEvent = e as WheelEvent;
       if (scrollRef.current && Math.abs(wheelEvent.deltaX) > Math.abs(wheelEvent.deltaY)) {
         e.preventDefault();
@@ -451,13 +585,47 @@ export default function CanvasScreen() {
     setSelectedSection(null);
   };
 
+  const handleSummaryAction = (action: any) => {
+  if (!action) return;
+  
+  switch (action.type) {
+    case 'navigate':
+      if (action.target?.startsWith('http')) {
+        // External URL - open in browser
+        window.open(action.target, '_blank');
+      } else {
+        // Internal navigation
+        router.push(action.target || '/');
+      }
+      break;
+    case 'download':
+      if (action.target?.endsWith('.pdf')) {
+        // Create download link for PDF
+        const link = document.createElement('a');
+        link.href = action.target;
+        link.download = action.target.split('/').pop() || 'document.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        // Handle other downloads
+        console.log('Download:', action.target);
+      }
+      break;
+    case 'view':
+      // Handle view action
+      console.log('View:', action.target);
+      break;
+  }
+};
+
   return (
     <View className={`flex-1 ${containerBgClass}`}>
       {/* Scrollable Business Model Canvas sections (cards only) */}
       <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-4">
         {/* Header */}
         <View className="mb-8 mt-12">
-          <Text className="text-[#0A1628] dark:text-[#00FF9C] text-4xl font-bold mb-2">
+          <Text className="text-[#0A1628] dark:text-human-primary text-4xl font-bold mb-2">
             {t('canvas.title')}
           </Text>
           <Text className="text-gray-600 dark:text-gray-400 text-base">
@@ -668,56 +836,8 @@ export default function CanvasScreen() {
         </View>
       </ScrollView>
 
-      {/* Visión Estratégica Summary Footer (fixed, below scroll) - Collapsible */}
-      <View className="px-4 pb-4">
-        <TouchableOpacity
-          onPress={() => setIsSummaryExpanded(!isSummaryExpanded)}
-          className="bg-gradient-to-br from-space-dark to-space-darker border-2 border-neon-green/40 rounded-3xl p-4"
-        >
-          <View className="flex-row items-center justify-between">
-            <View className="flex-row items-center flex-1">
-              <View className="bg-neon-green/10 p-2 rounded-2xl border border-neon-green/30">
-                <TrendingUp size={24} color="#00FF9C" />
-              </View>
-              <Text className={`${summaryTitleColorClass} text-lg font-bold ml-3 flex-1`}>
-                {t('canvas.summary.title')}
-              </Text>
-            </View>
-            <ChevronRight 
-              size={20} 
-              color="#00FF9C" 
-              style={{ 
-                transform: [{ rotate: isSummaryExpanded ? '90deg' : '0deg' }] 
-              }} 
-            />
-          </View>
-          
-          {isSummaryExpanded && (
-            <View className="bg-neon-green/10 p-4 rounded-xl border border-neon-green/30 w-full max-w-md mt-4">
-              <View className="space-y-3">
-                <View className="flex-row items-center">
-                  <Target size={16} color="#00FF9C" className="mr-3" />
-                  <Text className={`${isDark ? 'text-human-primary' : 'text-human-text-light'} text-sm flex-1 font-inter`}>
-                    {t('canvas.summary.items.impact')}
-                  </Text>
-                </View>
-                <View className="flex-row items-center">
-                  <TrendingUp size={16} color="#00FF9C" className="mr-3" />
-                  <Text className={`${isDark ? 'text-human-primary' : 'text-human-text-light'} text-sm flex-1 font-inter`}>
-                    {t('canvas.summary.items.growth')}
-                  </Text>
-                </View>
-                <View className="flex-row items-center">
-                  <Award size={16} color="#00FF9C" className="mr-3" />
-                  <Text className={`${isDark ? 'text-human-primary' : 'text-human-text-light'} text-sm flex-1 font-inter`}>
-                    {t('canvas.summary.items.leadership')}
-                  </Text>
-                </View>
-              </View>
-            </View>
-          )}
-        </TouchableOpacity>
-      </View>
+      {/* Animated Summary Row - Single row with expanding buttons */}
+      <AnimatedSummaryRow actions={animatedActions} onAction={handleSummaryAction} />
 
       {/* Section Modal */}
       <SectionModal

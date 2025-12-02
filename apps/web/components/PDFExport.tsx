@@ -27,7 +27,7 @@ const PDFExport: React.FC<PDFExportProps> = ({ className = '', position = 'float
     : 'bg-emerald-500 border border-emerald-500 shadow-emerald-300/60';
 
   const navigateToPDFDownload = () => {
-    router.push('/pdf-download');
+    router.push('/resources');
   };
 
   if (position === 'navigation') {

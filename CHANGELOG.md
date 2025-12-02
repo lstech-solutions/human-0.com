@@ -2,7 +2,37 @@
 
 ## 📋 Version History
 
-### 🔧 Version 1.9.2 **[CURRENT]**
+### 🔧 Version 1.9.4 **[CURRENT]**
+**Date:** 2025-12-02  
+**Type:** patch
+
+**Changes:**
+- UI component improvements
+- API endpoint updates
+- Version management enhancements
+
+
+### 📚 Previous Versions
+
+### 🔧 Version 1.9.3
+**Date:** 2025-12-01  
+**Type:** patch
+
+**Changes:**
+- Fixed canvas download button click event propagation issues
+- Improved dark mode text contrast across PDF resources page
+- Enhanced strategic vision buttons with glassmorphism transparency effects
+- Updated expandable canvas sections with floating transparent appearance
+- Fixed TypeScript RefObject type compatibility in scroll components
+- Added resources route configuration to Expo Router stack
+- Improved canvas title contrast with human-primary color in dark mode
+- Enhanced language selector and feature badges visual design
+- Optimized button hover effects and z-index layering
+
+
+---
+
+### 🔧 Version 1.9.2
 **Date:** 2025-12-02  
 **Type:** patch
 
@@ -15,7 +45,7 @@
 - Documentation updates
 
 
-### 📚 Previous Versions
+---
 
 ### 🔧 Version 1.9.1
 **Date:** 2025-12-02  

@@ -60,14 +60,18 @@ const ExpandableCanvasSection: React.FC<ExpandableCanvasSectionProps> = ({
   const isDark = colorScheme === 'dark';
 
   const cardBaseClass = isDark
-    ? `bg-[#0A1628] border-2 ${section.borderColor}`
-    : 'bg-human-surface-light border border-human-border';
+    ? `bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-lg shadow-black/20`
+    : 'bg-white/20 backdrop-blur-md border border-white/30 shadow-lg shadow-black/10';
 
   const cardHoverClass = isDark
-    ? 'hover:border-human-primary hover:bg-[#0d1b2e] hover:-translate-y-0.5 hover:shadow-human-soft'
-    : 'hover:border-human-primary hover:bg-white hover:-translate-y-0.5 hover:shadow-human-soft';
+    ? 'hover:border-white/40 hover:bg-white/15 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30'
+    : 'hover:border-white/50 hover:bg-white/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20';
 
-  const previewTextColorClass = isDark ? 'text-gray-300' : 'text-human-text-light';
+  const downloadButtonClass = isDark
+    ? 'hover:border-white/40 hover:bg-white/15 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30'
+    : 'hover:border-white/50 hover:bg-white/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20';
+
+  const previewTextColorClass = isDark ? 'text-gray-100' : 'text-gray-800';
   const handlePress = () => {
     onPress(section);
   };
@@ -83,30 +87,30 @@ const ExpandableCanvasSection: React.FC<ExpandableCanvasSectionProps> = ({
     <View className="flex-1 m-2" style={{ minWidth: 150 }}>
       <TouchableOpacity
         onPress={() => onPress(section)}
-        className={`flex-1 rounded-2xl p-4 justify-between transition-all duration-200 ease-out ${cardBaseClass} ${cardHoverClass}`}
+        className={`flex-1 rounded-2xl p-4 justify-between transition-all duration-200 ease-out ${cardBaseClass}`}
       >
         <View className="flex-1">
           <View className="flex-row items-start justify-between mb-2">
             <View className="flex-row items-center flex-1">
               <View className="mr-2 opacity-70">
-                {React.cloneElement(section.icon, { size: 16, color: '#00FF9C' })}
+                {React.cloneElement(section.icon, { size: 16, color: isDark ? '#FFFFFF' : '#1F2937' })}
               </View>
               <Text
-                className={`${section.color} font-bold text-sm flex-1`}
+                className={`${isDark ? 'text-white' : 'text-gray-900'} font-bold text-sm flex-1 drop-shadow-sm`}
                 numberOfLines={2}
                 ellipsizeMode="tail"
               >
                 {section.title}
               </Text>
             </View>
-            <ChevronRight size={16} color="#00FF9C" className="opacity-60 ml-2" />
+            <ChevronRight size={16} color={isDark ? "#FFFFFF" : "#1F2937"} className="opacity-80 ml-2" />
           </View>
           
           <ScrollView nestedScrollEnabled={true} showsVerticalScrollIndicator={false} className="flex-1 mt-2">
             <View style={{ gap: section.id === 'partners' ? 6 : 8 }}>
               {previewContent.slice(0, section.id === 'partners' ? 6 : 3).map((item, idx) => (
                 <View key={idx} className="flex-row items-start">
-                  <Text className="text-[#00FF9C] text-base mr-2 flex-shrink-0 font-bold leading-tight">•</Text>
+                  <Text className="text-white text-base mr-2 flex-shrink-0 font-bold leading-tight drop-shadow-sm">•</Text>
                   <Text
                     className={`${previewTextColorClass} text-xs leading-snug flex-1 font-inter`}
                     numberOfLines={2}

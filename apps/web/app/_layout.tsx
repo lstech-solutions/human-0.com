@@ -173,6 +173,13 @@ function NavigationStack() {
             }}
           />
           <Stack.Screen
+            name="resources"
+            options={{
+              title: "Resources",
+              headerTitle: () => <ClickableTitle color={headerTint} />,
+            }}
+          />
+          <Stack.Screen
             name="privacy"
             options={{
               title: "Privacy Policy",
