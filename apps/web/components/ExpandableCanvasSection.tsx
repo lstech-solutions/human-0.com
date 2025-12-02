@@ -60,18 +60,18 @@ const ExpandableCanvasSection: React.FC<ExpandableCanvasSectionProps> = ({
   const isDark = colorScheme === 'dark';
 
   const cardBaseClass = isDark
-    ? `bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-lg shadow-black/20`
-    : 'bg-white/20 backdrop-blur-md border border-white/30 shadow-lg shadow-black/10';
+    ? `bg-white/25 backdrop-blur-md border-2 border-white/30 shadow-lg shadow-black/20`
+    : 'bg-white/40 backdrop-blur-md border border-white/40 shadow-lg shadow-black/10';
 
   const cardHoverClass = isDark
-    ? 'hover:border-white/40 hover:bg-white/15 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30'
-    : 'hover:border-white/50 hover:bg-white/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20';
+    ? 'hover:border-white/50 hover:bg-white/35 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30'
+    : 'hover:border-white/60 hover:bg-white/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20';
 
   const downloadButtonClass = isDark
-    ? 'hover:border-white/40 hover:bg-white/15 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30'
-    : 'hover:border-white/50 hover:bg-white/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20';
+    ? 'hover:border-white/50 hover:bg-white/35 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30'
+    : 'hover:border-white/60 hover:bg-white/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20';
 
-  const previewTextColorClass = isDark ? 'text-gray-100' : 'text-gray-800';
+  const previewTextColorClass = isDark ? 'text-gray-100' : 'text-gray-900';
   const handlePress = () => {
     onPress(section);
   };
@@ -96,7 +96,7 @@ const ExpandableCanvasSection: React.FC<ExpandableCanvasSectionProps> = ({
                 {React.cloneElement(section.icon, { size: 16, color: isDark ? '#FFFFFF' : '#1F2937' })}
               </View>
               <Text
-                className={`${isDark ? 'text-white' : 'text-gray-900'} font-bold text-sm flex-1 drop-shadow-sm`}
+                className={`${isDark ? 'text-white' : 'text-black'} font-bold text-sm flex-1 drop-shadow-sm`}
                 numberOfLines={2}
                 ellipsizeMode="tail"
               >
@@ -110,7 +110,7 @@ const ExpandableCanvasSection: React.FC<ExpandableCanvasSectionProps> = ({
             <View style={{ gap: section.id === 'partners' ? 6 : 8 }}>
               {previewContent.slice(0, section.id === 'partners' ? 6 : 3).map((item, idx) => (
                 <View key={idx} className="flex-row items-start">
-                  <Text className="text-white text-base mr-2 flex-shrink-0 font-bold leading-tight drop-shadow-sm">•</Text>
+                  <Text className={`${isDark ? 'text-white' : 'text-black'} text-base mr-2 flex-shrink-0 font-bold leading-tight drop-shadow-sm`}>•</Text>
                   <Text
                     className={`${previewTextColorClass} text-xs leading-snug flex-1 font-inter`}
                     numberOfLines={2}
@@ -164,7 +164,7 @@ const SectionModal: React.FC<SectionModalProps> = ({ visible, section, onClose }
                 })}
                 <Text
                   className={`${
-                    isDark ? 'text-human-primary' : 'text-emerald-900'
+                    isDark ? 'text-human-primary' : 'text-black'
                   } font-bold text-lg`}
                 >
                   {section?.title}
@@ -244,7 +244,7 @@ const SectionModal: React.FC<SectionModalProps> = ({ visible, section, onClose }
                 </View>
                 <Text
                   className={`font-bold text-sm ${
-                    isDark ? 'text-human-primary' : 'text-emerald-900'
+                    isDark ? 'text-human-primary' : 'text-black'
                   }`}
                 >
                   {section.metrics.kpi}
@@ -257,7 +257,7 @@ const SectionModal: React.FC<SectionModalProps> = ({ visible, section, onClose }
                 </View>
                 <Text
                   className={`font-bold text-sm ${
-                    isDark ? 'text-human-primary' : 'text-emerald-900'
+                    isDark ? 'text-human-primary' : 'text-black'
                   }`}
                 >
                   {section.metrics.growth}
@@ -270,7 +270,7 @@ const SectionModal: React.FC<SectionModalProps> = ({ visible, section, onClose }
                 </View>
                 <Text
                   className={`font-bold text-sm ${
-                    isDark ? 'text-human-primary' : 'text-emerald-900'
+                    isDark ? 'text-human-primary' : 'text-black'
                   }`}
                 >
                   {section.metrics.efficiency}
@@ -283,7 +283,7 @@ const SectionModal: React.FC<SectionModalProps> = ({ visible, section, onClose }
                 </View>
                 <Text
                   className={`font-bold text-sm ${
-                    isDark ? 'text-human-primary' : 'text-emerald-900'
+                    isDark ? 'text-human-primary' : 'text-black'
                   }`}
                 >
                   {section.metrics.target}

@@ -1,7 +1,7 @@
 {
   "name": "@human-0/web",
   "main": "expo-router/entry",
-  "version": "1.9.12",
+  "version": "1.10.1",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
@@ -83,6 +83,7 @@
     "util": "^0.12.5",
     "viem": "2.40.3",
     "wagmi": "3.0.2",
+    "ws": "^8.18.0",
     "zustand": "^4.5.5"
   },
   "devDependencies": {

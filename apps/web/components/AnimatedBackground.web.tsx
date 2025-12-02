@@ -5,7 +5,7 @@ import RetroGrid from "./ui/RetroGrid";
 export type BackgroundType = 'pulsar-grid' | 'retro-grid' | 'none';
 
 export interface AnimatedBackgroundProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   isDark: boolean;
   type?: BackgroundType;
   gridColor?: string;
@@ -23,24 +23,24 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
 }) => {
   // If no background type, render children without background
   if (type === 'none') {
-    return <>{children}</>;
+    return <>{children || null}</>;
   }
 
   if (type === 'retro-grid') {
     return (
-      <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+      <>
         <RetroGrid
           gridColor={gridColor}
           showScanlines={showScanlines}
           glowEffect={glowEffect}
           isDark={isDark}
-          className="absolute inset-0"
+          className="fixed inset-0"
           style={{ zIndex: 0 }}
         />
         <div style={{ position: 'relative', zIndex: 10, backgroundColor: 'transparent' }}>
-          {children}
+          {children || null}
         </div>
-      </div>
+      </>
     );
   }
 

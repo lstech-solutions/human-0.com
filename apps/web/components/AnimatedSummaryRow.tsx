@@ -66,7 +66,7 @@ function AnimatedButton({ title, icon, onPress }: AnimatedButtonProps) {
           style={{ minWidth: 120 }}
         >
           <View className="mr-2">{icon}</View>
-          <Text className="text-human-primary text-sm font-semibold flex-1 text-center drop-shadow-md">
+          <Text className="text-black dark:text-human-primary text-sm font-semibold flex-1 text-center drop-shadow-md">
             {title}
           </Text>
         </View>
@@ -108,7 +108,7 @@ function AnimatedButton({ title, icon, onPress }: AnimatedButtonProps) {
         animate={{ opacity: isHovered ? 1 : 0 }}
         transition={{ duration: 0.2, delay: isHovered ? 0.1 : 0 }}
       >
-        <span className="text-human-primary text-sm font-bold whitespace-nowrap text-center drop-shadow-md">
+        <span className="text-black dark:text-human-primary text-sm font-bold whitespace-nowrap text-center drop-shadow-md">
           {title}
         </span>
       </motion.div>

@@ -7,7 +7,9 @@ module.exports = function (api) {
       "nativewind/babel",
     ],
     plugins: [
-      "babel-plugin-transform-import-meta",
+      ["babel-plugin-transform-import-meta", {
+        "module": "ES6"
+      }],
       "react-native-reanimated/plugin",
     ],
   };

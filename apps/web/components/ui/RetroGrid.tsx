@@ -220,7 +220,7 @@ export const RetroGrid: React.FC<RetroGridProps> = ({
         cancelAnimationFrame(animationId);
       }
     };
-  }, [actualGridColor, showScanlines, glowEffect, isDark]);
+  }, [gridColor, showScanlines, glowEffect, isDark]);
 
   return (
     <canvas

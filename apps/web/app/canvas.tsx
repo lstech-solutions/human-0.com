@@ -20,6 +20,7 @@ import { Building2, Activity, Target, Users, Lightbulb, MessageSquare, DollarSig
 import { useTheme } from '../theme/ThemeProvider';
 import { useTranslation } from '@human-0/i18n';
 import { AppFooter } from '../components/AppFooter';
+import { AnimatedBackground } from '../components/AnimatedBackground';
 
 const { width, height } = Dimensions.get('window');
 
@@ -591,11 +592,23 @@ export default function CanvasScreen() {
 };
 
   return (
-    <View className={`flex-1 ${containerBgClass}`}>
-      {/* Scrollable Business Model Canvas sections (cards only) */}
-      <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-4">
-        {/* Header */}
-        <View className="mb-8 mt-12">
+    <View className={`flex-1 ${containerBgClass} relative`}>
+      {/* Full Screen Grid Animation - Fixed Background */}
+      <AnimatedBackground 
+        isDark={isDark} 
+        type="retro-grid"
+        gridColor={isDark ? "#00FF9C" : "#059669"}
+        showScanlines={true}
+        glowEffect={true}
+      />
+      
+      {/* Scrollable Content - Overlay on top of animation */}
+      <View className="absolute inset-0 flex flex-col">
+        {/* Scrollable Business Model Canvas sections */}
+        <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-4">
+          <View style={{ position: 'relative', zIndex: 10 }}>
+            {/* Header */}
+            <View className="mb-8 mt-12">
           <Text className={`text-4xl font-bold mb-2 tracking-widest leading-tight font-digitaldivine ${isDark ? "text-human-primary" : "text-[#0A1628]"}`}>
             <Text className={`${isDark ? "bg-gradient-to-r from-emerald-300 via-emerald-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]" : "bg-gradient-to-r from-emerald-900 via-emerald-600 to-cyan-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]"}`}>
               {t('hero.titleLine1')}
@@ -685,23 +698,23 @@ export default function CanvasScreen() {
                 </ScrollView>
                 
                 {/* Scroll Buttons */}
-                {activitiesCanScrollLeft && (
+                {!isLargeScreen && activitiesCanScrollLeft && (
                   <TouchableOpacity
                     onPress={() => scrollToDirection(activitiesScrollRef, 'left')}
-                    className="absolute left-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
+                    className="absolute left-0 top-1/2 bg-emerald-500 dark:bg-emerald-600 p-2 rounded-full border border-emerald-600 dark:border-emerald-700 z-10"
                     style={{ transform: [{ translateY: -16 }] }}
                   >
-                    <ChevronLeft size={20} color="#00FF9C" />
+                    <ChevronLeft size={20} color={isDark ? "#FFFFFF" : "#FFFFFF"} />
                   </TouchableOpacity>
                 )}
                 
-                {activitiesCanScrollRight && (
+                {!isLargeScreen && activitiesCanScrollRight && (
                   <TouchableOpacity
                     onPress={() => scrollToDirection(activitiesScrollRef, 'right')}
-                    className="absolute right-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
+                    className="absolute right-0 top-1/2 bg-emerald-500 dark:bg-emerald-600 p-2 rounded-full border border-emerald-600 dark:border-emerald-700 z-10"
                     style={{ transform: [{ translateY: -16 }] }}
                   >
-                    <ChevronRight size={20} color="#00FF9C" />
+                    <ChevronRight size={20} color={isDark ? "#FFFFFF" : "#FFFFFF"} />
                   </TouchableOpacity>
                 )}
               </View>
@@ -769,23 +782,23 @@ export default function CanvasScreen() {
                 </ScrollView>
                 
                 {/* Scroll Buttons */}
-                {resourcesCanScrollLeft && (
+                {!isLargeScreen && resourcesCanScrollLeft && (
                   <TouchableOpacity
                     onPress={() => scrollToDirection(resourcesScrollRef, 'left')}
-                    className="absolute left-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
+                    className="absolute left-0 top-1/2 bg-emerald-500 dark:bg-emerald-600 p-2 rounded-full border border-emerald-600 dark:border-emerald-700 z-10"
                     style={{ transform: [{ translateY: -16 }] }}
                   >
-                    <ChevronLeft size={20} color="#00FF9C" />
+                    <ChevronLeft size={20} color={isDark ? "#FFFFFF" : "#FFFFFF"} />
                   </TouchableOpacity>
                 )}
                 
-                {resourcesCanScrollRight && (
+                {!isLargeScreen && resourcesCanScrollRight && (
                   <TouchableOpacity
                     onPress={() => scrollToDirection(resourcesScrollRef, 'right')}
-                    className="absolute right-0 top-1/2 bg-neon-green/20 p-2 rounded-full border border-neon-green/50 z-10"
+                    className="absolute right-0 top-1/2 bg-emerald-500 dark:bg-emerald-600 p-2 rounded-full border border-emerald-600 dark:border-emerald-700 z-10"
                     style={{ transform: [{ translateY: -16 }] }}
                   >
-                    <ChevronRight size={20} color="#00FF9C" />
+                    <ChevronRight size={20} color={isDark ? "#FFFFFF" : "#FFFFFF"} />
                   </TouchableOpacity>
                 )}
               </View>
@@ -810,11 +823,19 @@ export default function CanvasScreen() {
             />
           </View>
         </View>
+
+        {/* Animated Summary Row - Single row with expanding buttons */}
+        <AnimatedSummaryRow actions={animatedActions} onAction={handleSummaryAction} />
+        </View>
       </ScrollView>
 
-      {/* Animated Summary Row - Single row with expanding buttons */}
-      <AnimatedSummaryRow actions={animatedActions} onAction={handleSummaryAction} />
+      {/* Sticky Footer - Bottom of screen */}
+      <View className="bg-white dark:bg-deep-space border-t border-gray-200 dark:border-gray-700">
+        <AppFooter />
+      </View>
+      </View>
 
+      {/* Modals - Overlay everything */}
       {/* Section Modal */}
       <SectionModal
         visible={modalVisible}
@@ -832,9 +853,6 @@ export default function CanvasScreen() {
         visible={canvasModalVisible}
         onClose={() => setCanvasModalVisible(false)}
       />
-
-      {/* App Footer - same as identity view */}
-      <AppFooter />
     </View>
   );
 }
