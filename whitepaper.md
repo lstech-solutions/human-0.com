@@ -11,15 +11,29 @@ keywords:
   - blockchain
   - proof-of-personhood
   - zero-knowledge
-  - climate
-  - web3
 bibliography: apps/docs/docs/refs.bib
 ---
 
+# Proof of Sustainable Humanity (PoSH)
+## Technical Whitepaper v1.0
 
+**A Novel Cryptographic Primitive for Verifying Human-Scale Sustainability Contributions**
 
+Authors: HUMΛN-Ø Research Team  
+Date: 2025  
+Status: Draft
 
+---
 
+### 📄 Download Official PDF
+
+> **Science Approval & Peer Review Disclaimer**  
+> This document is a draft version undergoing scientific review. For the official peer-reviewed publication and detailed technical specifications, please download the complete PDF:
+
+[**📥 Download Official PoSH Whitepaper PDF**](/whitepaper.pdf)  
+*Contains full mathematical proofs, security analysis, and implementation details*
+
+---
 
   Contact: `contact@human0.me`
 
