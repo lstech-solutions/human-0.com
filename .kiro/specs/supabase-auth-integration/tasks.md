@@ -12,7 +12,7 @@
   - **Property 7: Environment-specific redirect URLs**
   - **Validates: Requirements 3.5, 8.1**
 
-- [-] 2. Create SupabaseAuthProvider component
+- [x] 2. Create SupabaseAuthProvider component
   - Create SupabaseAuthProvider.tsx with React Context
   - Implement auth state management (user, session, isLoading)
   - Add signInWithMagicLink method using Supabase signInWithOtp
@@ -22,15 +22,15 @@
   - Handle session persistence in browser storage
   - _Requirements: 1.1, 2.1, 4.1, 4.2_
 
-- [-] 2.1 Write property test for magic link email sending
+- [x] 2.1 Write property test for magic link email sending
   - **Property 1: Magic link email sending**
   - **Validates: Requirements 1.1**
 
-- [ ] 2.2 Write property test for OAuth flow initiation
+- [x] 2.2 Write property test for OAuth flow initiation
   - **Property 3: OAuth flow initiation**
   - **Validates: Requirements 2.1**
 
-- [ ] 2.3 Write property test for session storage
+- [x] 2.3 Write property test for session storage
   - **Property 9: Session storage on authentication**
   - **Validates: Requirements 4.1**
 

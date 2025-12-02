@@ -165,7 +165,13 @@ export function CanvaModal({ visible, onClose }: CanvaModalProps) {
                       isDark ? 'text-gray-400' : 'text-gray-600'
                     }`}
                   >
-                    {t('canvas.modal.attribution')}
+                    {t('canvas.modal.attribution')} -{' '}
+                    <a 
+                      href={`mailto:${isSpanish ? 'contacto@human0.me' : 'contact@human-0.com'}`} 
+                      className="underline hover:text-blue-500 transition-colors"
+                    >
+                      {isSpanish ? 'contacto@human0.me' : 'contact@human0.me'}
+                    </a>
                   </span>
                 </div>
               </>
