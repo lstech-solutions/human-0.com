@@ -2,7 +2,17 @@
 
 ## 📋 Version History
 
-### 🔧 Version 1.9.9 **[CURRENT]**
+### 🔧 Version 1.9.10 **[CURRENT]**
+**Date:** 2025-12-02  
+**Type:** patch
+
+**Changes:**
+- UI component improvements
+
+
+### 📚 Previous Versions
+
+### 🔧 Version 1.9.9
 **Date:** 2025-12-02  
 **Type:** patch
 
@@ -15,7 +25,7 @@
 - Documentation updates
 
 
-### 📚 Previous Versions
+---
 
 ### 🔧 Version 1.9.8
 **Date:** 2025-12-02  

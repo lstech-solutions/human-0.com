@@ -33,6 +33,7 @@ export default function PrivacyScreen() {
       defaultTitle="Privacy Policy"
       showTitle={false}
       showOpenInNewTab={false}
+      makeContentReadOnly={true}
       headerContent={
         <Pressable 
           onPress={handleOpenInNewTab}

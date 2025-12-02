@@ -32,6 +32,7 @@ export default function TermsScreen() {
       defaultTitle="Terms of Service"
       showTitle={false}
       showOpenInNewTab={false}
+      makeContentReadOnly={true}
       headerContent={
         <Pressable 
           onPress={handleOpenInNewTab}
