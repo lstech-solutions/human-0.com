@@ -1,13 +1,13 @@
 {
   "name": "human-zero",
-  "version": "1.9.5",
+  "version": "1.9.8",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251202051146",
+  "build": "20251202064144",
   "changelog": {
     "current": {
-      "version": "1.9.5",
+      "version": "1.9.8",
       "date": "2025-12-02",
-      "timestamp": "2025-12-02T05:11:46.153Z",
+      "timestamp": "2025-12-02T06:41:44.171Z",
       "type": "patch",
       "changes": [
         "Fixed lambda proxy configuration",
@@ -20,14 +20,42 @@
     },
     "history": [
       {
-        "version": "1.9.4",
+        "version": "1.9.7",
         "date": "2025-12-02",
-        "timestamp": "2025-12-02T04:54:49.866Z",
+        "timestamp": "2025-12-02T01:40:00.000Z",
         "type": "patch",
         "changes": [
+          "Fixed navigation error by removing useRouter dependency to prevent hydration issues",
+          "Implemented direct window.location navigation for 'HUMΛN-Ø' branding links",
+          "Removed duplicate full-screen Web3 loader to improve user experience",
+          "Consolidated loading states to show only contextual loaders in connect account card",
+          "Enhanced error handling in navigation components with fallback mechanisms"
+        ]
+      },
+      {
+        "version": "1.9.6",
+        "date": "2025-12-02",
+        "timestamp": "2025-12-02T01:18:00.000Z",
+        "type": "patch",
+        "changes": [
+          "Fixed contract address validation error by updating placeholder addresses to proper 40-character hex format",
+          "Updated all contract addresses in posh-sdk, wagmi-config, and validation utilities",
+          "Added proper internationalized attribution text to CanvaModal component across all locales",
+          "Fixed German locale attribution text and email consistency"
+        ]
+      },
+      {
+        "version": "1.9.5",
+        "date": "2025-12-02",
+        "timestamp": "2025-12-02T05:11:46.153Z",
+        "type": "patch",
+        "changes": [
+          "Fixed lambda proxy configuration",
           "UI component improvements",
           "API endpoint updates",
-          "Version management enhancements"
+          "Version management enhancements",
+          "Configuration updates",
+          "Documentation updates"
         ]
       },
       {
@@ -1002,12 +1030,12 @@
   "semver": {
     "major": 1,
     "minor": 9,
-    "patch": 5,
+    "patch": 8,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-12-02T05:11:46.153Z",
+    "lastModified": "2025-12-02T06:41:44.170Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team",

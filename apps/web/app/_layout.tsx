@@ -54,17 +54,21 @@ const LightTheme = {
 };
 
 function ClickableTitle({ color, isHome }: { color: string; isHome?: boolean }) {
-  const router = useRouter();
-
   const handleClick = () => {
-    if (isHome) {
-      // On home page, scroll to top
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    try {
+      if (isHome) {
+        // On home page, scroll to top
+        if (typeof window !== 'undefined') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      } else {
+        // Use simple window navigation to avoid router issues
+        if (typeof window !== 'undefined') {
+          window.location.href = '/';
+        }
       }
-    } else {
-      // On other pages, navigate home
-      router.push('/');
+    } catch (error) {
+      console.error('Navigation error:', error);
     }
   };
 
@@ -139,19 +143,19 @@ function NavigationStack() {
           <Stack.Screen
             name="impact"
             options={{
-              title: "Impact Tracking",
+              headerTitle: () => <ClickableTitle color={headerTint} />,
             }}
           />
           <Stack.Screen
             name="nfts"
             options={{
-              title: "NFT Collection",
+              headerTitle: () => <ClickableTitle color={headerTint} />,
             }}
           />
           <Stack.Screen
             name="profile"
             options={{
-              title: "Profile",
+              headerTitle: () => <ClickableTitle color={headerTint} />,
             }}
           />
           <Stack.Screen
@@ -205,10 +209,12 @@ import Web3Provider from '../providers/Web3Provider';
 
 // Dynamic import for PoshProvider to avoid import.meta errors on homepage
 let PoshProvider: any = null;
+let poshConfigReady = false;
 
 if (typeof window !== 'undefined') {
   import('@human-0/posh-sdk/react').then(posh => {
     PoshProvider = posh.PoshProvider;
+    poshConfigReady = true;
   }).catch(err => {
     console.warn('Failed to load PoshProvider:', err);
   });
@@ -219,26 +225,18 @@ export default function RootLayout() {
   const poshConfig = {
     chainId: 84532, // Base Sepolia
     contracts: {
-      humanIdentity: '0x...' as `0x${string}`, // TODO: Add actual contract address
-      humanScore: '0x...' as `0x${string}`,
-      proofRegistry: '0x...' as `0x${string}`,
-      poshNFT: '0x...' as `0x${string}`,
+      humanIdentity: '0x00000000000000000000000000000000000000001' as `0x${string}`,
+      humanScore: '0x00000000000000000000000000000000000000004' as `0x${string}`,
+      proofRegistry: '0x00000000000000000000000000000000000000002' as `0x${string}`,
+      poshNFT: '0x00000000000000000000000000000000000000003' as `0x${string}`,
     },
   };
 
   return (
     <Web3Provider>
-      {PoshProvider ? (
-        <PoshProvider config={poshConfig}>
-          <ThemeProvider>
-            <NavigationStack />
-          </ThemeProvider>
-        </PoshProvider>
-      ) : (
-        <ThemeProvider>
-          <NavigationStack />
-        </ThemeProvider>
-      )}
+      <ThemeProvider>
+        <NavigationStack />
+      </ThemeProvider>
     </Web3Provider>
   );
 }

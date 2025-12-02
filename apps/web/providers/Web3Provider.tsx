@@ -106,12 +106,8 @@ export default function Web3Provider({ children }: { children: React.ReactNode }
 
   // Always wait for Web3Components to be set on web to prevent context errors
   if (!Web3Components) {
-    return <div className="flex items-center justify-center min-h-screen">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00FF9C] mx-auto mb-4"></div>
-        <p className="text-gray-600">Loading Web3...</p>
-      </div>
-    </div>;
+    // Return children without loading state to avoid duplicate loaders
+    return <>{children}</>;
   }
 
   // If no config available, use fallback provider

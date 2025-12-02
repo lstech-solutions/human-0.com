@@ -10,7 +10,7 @@ export interface SummaryAction {
   title: string;
   icon: React.ReactNode;
   action: {
-    type: 'navigate' | 'download' | 'view';
+    type: 'navigate' | 'download' | 'view' | 'manifesto' | 'canvas';
     target?: string;
     label?: string;
   };

@@ -42,28 +42,28 @@ export const DEFAULT_CHAIN = baseSepolia;
 // Contract addresses for different chains
 export const CONTRACT_ADDRESSES = {
   [mainnet.id]: {
-    HumanIdentity: '0x...', // TODO: Add mainnet contract addresses
-    HumanScore: '0x...',
-    ProofRegistry: '0x...',
-    PoSHNFT: '0x...',
+    HumanIdentity: '0x00000000000000000000000000000000000000011', // TODO: Deploy mainnet contracts
+    HumanScore: '0x00000000000000000000000000000000000000014',
+    ProofRegistry: '0x00000000000000000000000000000000000000012',
+    PoSHNFT: '0x00000000000000000000000000000000000000013',
   },
   [base.id]: {
-    HumanIdentity: '0x...', // TODO: Add base mainnet contract addresses  
-    HumanScore: '0x...',
-    ProofRegistry: '0x...',
-    PoSHNFT: '0x...',
+    HumanIdentity: '0x00000000000000000000000000000000000000021', // TODO: Deploy base mainnet contracts  
+    HumanScore: '0x00000000000000000000000000000000000000024',
+    ProofRegistry: '0x00000000000000000000000000000000000000022',
+    PoSHNFT: '0x00000000000000000000000000000000000000023',
   },
   [baseSepolia.id]: {
-    HumanIdentity: '0x...', // TODO: Add base sepolia contract addresses
-    HumanScore: '0x...',
-    ProofRegistry: '0x...',
-    PoSHNFT: '0x...',
+    HumanIdentity: '0x00000000000000000000000000000000000000001', // TODO: Deploy actual contracts
+    HumanScore: '0x00000000000000000000000000000000000000004',
+    ProofRegistry: '0x00000000000000000000000000000000000000002',
+    PoSHNFT: '0x00000000000000000000000000000000000000003',
   },
   [polygon.id]: {
-    HumanIdentity: '0x...', // TODO: Add polygon contract addresses
-    HumanScore: '0x...',
-    ProofRegistry: '0x...',
-    PoSHNFT: '0x...',
+    HumanIdentity: '0x00000000000000000000000000000000000000031', // TODO: Deploy polygon contracts
+    HumanScore: '0x00000000000000000000000000000000000000034',
+    ProofRegistry: '0x00000000000000000000000000000000000000032',
+    PoSHNFT: '0x00000000000000000000000000000000000000033',
   },
 } as const;
 

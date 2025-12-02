@@ -14,7 +14,7 @@ describe('Validation Utilities', () => {
   describe('isValidAddress', () => {
     it('should validate correct addresses', () => {
       expect(isValidAddress('0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb0')).toBe(true);
-      expect(isValidAddress('0x0000000000000000000000000000000000000001')).toBe(true);
+      expect(isValidAddress('0x00000000000000000000000000000000000000001')).toBe(true);
       expect(isValidAddress('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF')).toBe(true);
     });
 
@@ -45,10 +45,10 @@ describe('Validation Utilities', () => {
     const validConfig: PoshConfig = {
       chainId: 84532,
       contracts: {
-        humanIdentity: '0x0000000000000000000000000000000000000001' as `0x${string}`,
-        proofRegistry: '0x0000000000000000000000000000000000000002' as `0x${string}`,
-        poshNFT: '0x0000000000000000000000000000000000000003' as `0x${string}`,
-        humanScore: '0x0000000000000000000000000000000000000004' as `0x${string}`,
+        humanIdentity: '0x00000000000000000000000000000000000000001' as `0x${string}`,
+        proofRegistry: '0x00000000000000000000000000000000000000002' as `0x${string}`,
+        poshNFT: '0x00000000000000000000000000000000000000003' as `0x${string}`,
+        humanScore: '0x00000000000000000000000000000000000000004' as `0x${string}`,
       },
     };
 
@@ -170,9 +170,9 @@ describe('Validation Utilities', () => {
       const config = createDefaultConfig({
         contracts: {
           humanIdentity: '0x1111111111111111111111111111111111111111' as `0x${string}`,
-          proofRegistry: '0x0000000000000000000000000000000000000002' as `0x${string}`,
-          poshNFT: '0x0000000000000000000000000000000000000003' as `0x${string}`,
-          humanScore: '0x0000000000000000000000000000000000000004' as `0x${string}`,
+          proofRegistry: '0x00000000000000000000000000000000000000002' as `0x${string}`,
+          poshNFT: '0x00000000000000000000000000000000000000003' as `0x${string}`,
+          humanScore: '0x00000000000000000000000000000000000000004' as `0x${string}`,
         },
       });
       expect(config.contracts.humanIdentity).toBe('0x1111111111111111111111111111111111111111');

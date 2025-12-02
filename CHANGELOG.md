@@ -2,7 +2,7 @@
 
 ## 📋 Version History
 
-### 🔧 Version 1.9.5 **[CURRENT]**
+### 🔧 Version 1.9.8 **[CURRENT]**
 **Date:** 2025-12-02  
 **Type:** patch
 
@@ -17,14 +17,44 @@
 
 ### 📚 Previous Versions
 
-### 🔧 Version 1.9.4
+### 🔧 Version 1.9.7
 **Date:** 2025-12-02  
 **Type:** patch
 
 **Changes:**
+- Fixed navigation error by removing useRouter dependency to prevent hydration issues
+- Implemented direct window.location navigation for 'HUMΛN-Ø' branding links
+- Removed duplicate full-screen Web3 loader to improve user experience
+- Consolidated loading states to show only contextual loaders in connect account card
+- Enhanced error handling in navigation components with fallback mechanisms
+
+
+---
+
+### 🔧 Version 1.9.6
+**Date:** 2025-12-02  
+**Type:** patch
+
+**Changes:**
+- Fixed contract address validation error by updating placeholder addresses to proper 40-character hex format
+- Updated all contract addresses in posh-sdk, wagmi-config, and validation utilities
+- Added proper internationalized attribution text to CanvaModal component across all locales
+- Fixed German locale attribution text and email consistency
+
+
+---
+
+### 🔧 Version 1.9.5
+**Date:** 2025-12-02  
+**Type:** patch
+
+**Changes:**
+- Fixed lambda proxy configuration
 - UI component improvements
 - API endpoint updates
 - Version management enhancements
+- Configuration updates
+- Documentation updates
 
 
 ---

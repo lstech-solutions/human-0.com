@@ -1,9 +1,21 @@
 Source locale: en.json
-Total keys: 222
+Total keys: 234
 
 === Locale: ar-SA.json ===
 Total keys: 230
-  ✅ No missing keys compared to en.json
+  ❗ Missing keys (12):
+    - canvas.modal.browserOnly
+    - canvas.modal.openInBrowser
+    - canvas.modal.subtitle
+    - canvas.modal.title
+    - canvas.subtitle
+    - hero.cta.connectWallet
+    - hero.cta.proveIdentity
+    - legal
+    - legal.termsTitle
+    - privacy
+    - privacy.lastUpdated
+    - privacy.title
   ℹ️ Extra keys (8):
     + plurals.days_few
     + plurals.days_many
@@ -16,49 +28,126 @@ Total keys: 230
 
 
 === Locale: de-DE.json ===
-Total keys: 222
-  ✅ No missing keys compared to en.json
+Total keys: 229
+  ❗ Missing keys (5):
+    - legal
+    - legal.termsTitle
+    - privacy
+    - privacy.lastUpdated
+    - privacy.title
   ✅ No extra keys compared to en.json
 
 
 === Locale: es-CO.json ===
 Total keys: 222
-  ✅ No missing keys compared to en.json
+  ❗ Missing keys (12):
+    - canvas.modal.browserOnly
+    - canvas.modal.openInBrowser
+    - canvas.modal.subtitle
+    - canvas.modal.title
+    - canvas.subtitle
+    - hero.cta.connectWallet
+    - hero.cta.proveIdentity
+    - legal
+    - legal.termsTitle
+    - privacy
+    - privacy.lastUpdated
+    - privacy.title
   ✅ No extra keys compared to en.json
 
 
 === Locale: es-ES.json ===
 Total keys: 222
-  ✅ No missing keys compared to en.json
+  ❗ Missing keys (12):
+    - canvas.modal.browserOnly
+    - canvas.modal.openInBrowser
+    - canvas.modal.subtitle
+    - canvas.modal.title
+    - canvas.subtitle
+    - hero.cta.connectWallet
+    - hero.cta.proveIdentity
+    - legal
+    - legal.termsTitle
+    - privacy
+    - privacy.lastUpdated
+    - privacy.title
   ✅ No extra keys compared to en.json
 
 
 === Locale: es-MX.json ===
 Total keys: 222
-  ✅ No missing keys compared to en.json
+  ❗ Missing keys (12):
+    - canvas.modal.browserOnly
+    - canvas.modal.openInBrowser
+    - canvas.modal.subtitle
+    - canvas.modal.title
+    - canvas.subtitle
+    - hero.cta.connectWallet
+    - hero.cta.proveIdentity
+    - legal
+    - legal.termsTitle
+    - privacy
+    - privacy.lastUpdated
+    - privacy.title
   ✅ No extra keys compared to en.json
 
 
 === Locale: es.json ===
-Total keys: 222
+Total keys: 234
   ✅ No missing keys compared to en.json
   ✅ No extra keys compared to en.json
 
 
 === Locale: fr-FR.json ===
 Total keys: 222
-  ✅ No missing keys compared to en.json
+  ❗ Missing keys (12):
+    - canvas.modal.browserOnly
+    - canvas.modal.openInBrowser
+    - canvas.modal.subtitle
+    - canvas.modal.title
+    - canvas.subtitle
+    - hero.cta.connectWallet
+    - hero.cta.proveIdentity
+    - legal
+    - legal.termsTitle
+    - privacy
+    - privacy.lastUpdated
+    - privacy.title
   ✅ No extra keys compared to en.json
 
 
 === Locale: pt-BR.json ===
 Total keys: 222
-  ✅ No missing keys compared to en.json
+  ❗ Missing keys (12):
+    - canvas.modal.browserOnly
+    - canvas.modal.openInBrowser
+    - canvas.modal.subtitle
+    - canvas.modal.title
+    - canvas.subtitle
+    - hero.cta.connectWallet
+    - hero.cta.proveIdentity
+    - legal
+    - legal.termsTitle
+    - privacy
+    - privacy.lastUpdated
+    - privacy.title
   ✅ No extra keys compared to en.json
 
 
 === Locale: zh-CN.json ===
 Total keys: 222
-  ✅ No missing keys compared to en.json
+  ❗ Missing keys (12):
+    - canvas.modal.browserOnly
+    - canvas.modal.openInBrowser
+    - canvas.modal.subtitle
+    - canvas.modal.title
+    - canvas.subtitle
+    - hero.cta.connectWallet
+    - hero.cta.proveIdentity
+    - legal
+    - legal.termsTitle
+    - privacy
+    - privacy.lastUpdated
+    - privacy.title
   ✅ No extra keys compared to en.json
 

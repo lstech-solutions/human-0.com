@@ -234,8 +234,9 @@ export function useManifestoModal() {
   }, []);
 
   const closeModal = () => setShowModal(false);
+  const openModal = () => setShowModal(true);
 
-  return { showModal, closeModal, checked };
+  return { showModal, closeModal, openModal, checked };
 }
 
 export default ManifestoModal;

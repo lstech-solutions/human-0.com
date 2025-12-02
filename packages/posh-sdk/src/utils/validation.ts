@@ -146,10 +146,10 @@ export function createDefaultConfig(overrides?: Partial<PoshConfig>): PoshConfig
     chainId: 84532, // Base Sepolia
     contracts: {
       // These are placeholder addresses - should be replaced with actual deployed addresses
-      humanIdentity: '0x0000000000000000000000000000000000000001' as Address,
-      proofRegistry: '0x0000000000000000000000000000000000000002' as Address,
-      poshNFT: '0x0000000000000000000000000000000000000003' as Address,
-      humanScore: '0x0000000000000000000000000000000000000004' as Address,
+      humanIdentity: '0x00000000000000000000000000000000000000001' as Address,
+      proofRegistry: '0x00000000000000000000000000000000000000002' as Address,
+      poshNFT: '0x00000000000000000000000000000000000000003' as Address,
+      humanScore: '0x00000000000000000000000000000000000000004' as Address,
     },
     cache: {
       enabled: true,

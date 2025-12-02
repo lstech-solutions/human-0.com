@@ -12,6 +12,7 @@ import { ExpandableCanvasSection, SectionModal, CanvasSection } from '../compone
 import ParticleTextLogo from '../components/ParticleTextLogo';
 import PDFExport from '../components/PDFExport';
 import { ManifestoModal, useManifestoModal } from '../components/ManifestoModal';
+import { CanvaModal } from '../components/CanvaModal';
 import MultiSummarySection, { SummaryItem } from '../components/MultiSummarySection';
 import AnimatedSummaryRow, { SummaryAction } from '../components/AnimatedSummaryRow';
 import { useRouter } from 'expo-router';
@@ -35,7 +36,8 @@ export default function CanvasScreen() {
   const summaryTitleColorClass = isDark ? 'text-human-primary' : 'text-emerald-800';
   const [selectedSection, setSelectedSection] = useState<CanvasSection | null>(null);
   const [modalVisible, setModalVisible] = useState(false);
-  const { showModal: showManifesto, closeModal: closeManifesto, checked: manifestoChecked } = useManifestoModal();
+  const { showModal, closeModal: closeManifesto, openModal: showManifesto, checked: manifestoChecked } = useManifestoModal();
+  const [canvasModalVisible, setCanvasModalVisible] = useState(false);
   const [isSummaryExpanded, setIsSummaryExpanded] = useState(false);
 
   // Define animated summary actions for the single row
@@ -55,19 +57,17 @@ export default function CanvasScreen() {
       title: 'View Canvas',
       icon: <Target size={24} color="#00FF9C" />,
       action: {
-        type: 'navigate',
-        target: 'canvas',
+        type: 'canvas',
         label: 'View Canvas',
       },
     },
     {
-      id: 'whitepaper',
-      title: 'Whitepaper',
+      id: 'manifesto',
+      title: 'Manifesto',
       icon: <FileText size={24} color="#00FF9C" />,
       action: {
-        type: 'download',
-        target: '/whitepaper.pdf',
-        label: 'Download PDF',
+        type: 'manifesto',
+        label: 'View Manifesto',
       },
     },
     {
@@ -127,43 +127,6 @@ export default function CanvasScreen() {
             type: 'download',
             target: 'canvas-export',
             label: 'Download',
-          },
-        },
-      ],
-    },
-    {
-      id: 'resources',
-      title: 'Resources & Documentation',
-      icon: <FileText size={24} color="#00FF9C" />,
-      items: [
-        {
-          id: 'whitepaper',
-          title: 'Whitepaper',
-          description: 'Complete technical documentation',
-          action: {
-            type: 'download',
-            target: '/whitepaper.pdf',
-            label: 'Download PDF',
-          },
-        },
-        {
-          id: 'api-docs',
-          title: 'API Documentation',
-          description: 'Developer resources and guides',
-          action: {
-            type: 'navigate',
-            target: '/docs',
-            label: 'View Docs',
-          },
-        },
-        {
-          id: 'github',
-          title: 'GitHub Repository',
-          description: 'Source code and contributions',
-          action: {
-            type: 'navigate',
-            target: 'https://github.com/human-0',
-            label: 'View Code',
           },
         },
       ],
@@ -616,6 +579,14 @@ export default function CanvasScreen() {
       // Handle view action
       console.log('View:', action.target);
       break;
+    case 'manifesto':
+      // Open manifesto modal
+      showManifesto();
+      break;
+    case 'canvas':
+      // Open canvas modal
+      setCanvasModalVisible(true);
+      break;
   }
 };
 
@@ -625,11 +596,16 @@ export default function CanvasScreen() {
       <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-4">
         {/* Header */}
         <View className="mb-8 mt-12">
-          <Text className="text-[#0A1628] dark:text-human-primary text-4xl font-bold mb-2">
-            {t('canvas.title')}
+          <Text className={`text-4xl font-bold mb-2 tracking-widest leading-tight font-digitaldivine ${isDark ? "text-human-primary" : "text-[#0A1628]"}`}>
+            <Text className={`${isDark ? "bg-gradient-to-r from-emerald-300 via-emerald-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]" : "bg-gradient-to-r from-emerald-900 via-emerald-600 to-cyan-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]"}`}>
+              {t('hero.titleLine1')}
+            </Text>
+            <Text className={`block mt-1 lg:mt-2 ${isDark ? "bg-gradient-to-r from-cyan-300 via-emerald-400 to-emerald-200 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]" : "bg-gradient-to-r from-cyan-900 via-emerald-600 to-emerald-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,156,0.25)]"}`}>
+              {t('hero.titleLine2')}
+            </Text>
           </Text>
           <Text className="text-gray-600 dark:text-gray-400 text-base">
-            {t('canvas.subtitle', 'Explore our business model and strategic vision for sustainable impact.')}
+            {t('canvas.subtitle')}
           </Text>
         </View>
         {/* Main Canvas Grid: Standard Business Model Canvas Layout */}
@@ -847,9 +823,15 @@ export default function CanvasScreen() {
       />
 
       {/* Manifesto Modal - shows on first load */}
-      {manifestoChecked && showManifesto && (
+      {manifestoChecked && showModal && (
         <ManifestoModal onClose={closeManifesto} />
       )}
+
+      {/* Canva Modal */}
+      <CanvaModal
+        visible={canvasModalVisible}
+        onClose={() => setCanvasModalVisible(false)}
+      />
 
       {/* App Footer - same as identity view */}
       <AppFooter />
