@@ -2,7 +2,17 @@
 
 ## 📋 Version History
 
-### 🔧 Version 1.9.10 **[CURRENT]**
+### 🔧 Version 1.9.11 **[CURRENT]**
+**Date:** 2025-12-02  
+**Type:** patch
+
+**Changes:**
+- API endpoint updates
+
+
+### 📚 Previous Versions
+
+### 🔧 Version 1.9.10
 **Date:** 2025-12-02  
 **Type:** patch
 
@@ -10,7 +20,7 @@
 - UI component improvements
 
 
-### 📚 Previous Versions
+---
 
 ### 🔧 Version 1.9.9
 **Date:** 2025-12-02  

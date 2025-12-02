@@ -49,7 +49,8 @@ try {
 }
 
 // Force resolution of CJS builds for viem/wagmi and Supabase
-config.resolver.unstable_conditionNames = ['require', 'react-native'];
+// Add 'import' and 'module' to support ESM packages properly
+config.resolver.unstable_conditionNames = ['require', 'import', 'module', 'react-native'];
 
 // Resolve node_modules from workspace root for pnpm
 // Also watch workspace packages
