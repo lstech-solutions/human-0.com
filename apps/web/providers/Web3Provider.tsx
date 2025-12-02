@@ -17,7 +17,26 @@ export default function Web3Provider({ children }: { children: React.ReactNode }
         import('../components/AuthModal').catch(() => null),
       ]).then(([wagmi, reactQuery, config, authModal]) => {
         if (!wagmi || !reactQuery || !config) {
-          console.warn('Some web3 modules failed to load');
+          console.warn('Some web3 modules failed to load, using fallback');
+          // Use fallback config to prevent context errors
+          const fallbackWagmi = wagmi || { WagmiProvider: ({ children }: any) => children };
+          const fallbackQuery = reactQuery || { QueryClientProvider: ({ children }: any) => children };
+          
+          setWeb3Components({
+            WagmiProvider: fallbackWagmi.WagmiProvider,
+            QueryClientProvider: fallbackQuery.QueryClientProvider,
+            queryClient: reactQuery ? new reactQuery.QueryClient({
+              defaultOptions: {
+                queries: {
+                  refetchOnWindowFocus: false,
+                  retry: false,
+                  staleTime: 5 * 60 * 1000,
+                },
+              },
+            }) : { queryCache: { clear: () => {} } },
+            wagmiConfig: config?.wagmiConfig || config?.fallbackConfig || null,
+            AuthModal: authModal?.AuthModal,
+          });
           return;
         }
         const queryClient = new reactQuery.QueryClient({
@@ -39,6 +58,14 @@ export default function Web3Provider({ children }: { children: React.ReactNode }
         });
       }).catch(err => {
         console.warn('Failed to load web3 providers:', err);
+        // Create minimal fallback providers to prevent context errors
+        setWeb3Components({
+          WagmiProvider: ({ children }: any) => children,
+          QueryClientProvider: ({ children }: any) => children,
+          queryClient: { queryCache: { clear: () => {} } },
+          wagmiConfig: null,
+          AuthModal: null,
+        });
       });
     }
 
@@ -50,9 +77,25 @@ export default function Web3Provider({ children }: { children: React.ReactNode }
     return <>{children}</>;
   }
 
-  // If web3 providers not loaded yet, render children without web3
+  // Always wait for Web3Components to be set on web to prevent context errors
   if (!Web3Components) {
-    return <>{children}</>;
+    return <div className="flex items-center justify-center min-h-screen">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00FF9C] mx-auto mb-4"></div>
+        <p className="text-gray-600">Loading Web3...</p>
+      </div>
+    </div>;
+  }
+
+  // If no config available, use fallback provider
+  if (!Web3Components.wagmiConfig) {
+    return (
+      <Web3Components.WagmiProvider config={null}>
+        <Web3Components.QueryClientProvider client={Web3Components.queryClient}>
+          {children}
+        </Web3Components.QueryClientProvider>
+      </Web3Components.WagmiProvider>
+    );
   }
 
   // Render with web3 providers

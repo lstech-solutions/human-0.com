@@ -9,6 +9,16 @@ if (!projectId && process.env.NODE_ENV === 'production') {
   console.warn('WALLETCONNECT_PROJECT_ID is not set. Get one at https://cloud.walletconnect.com');
 }
 
+// Create fallback config for SSR or when modules fail to load
+export const fallbackConfig = createConfig({
+  chains: [baseSepolia],
+  connectors: [],
+  transports: {
+    [baseSepolia.id]: http(),
+  },
+  ssr: true,
+});
+
 export const wagmiConfig = createConfig({
   chains: [mainnet, base, baseSepolia, polygon],
   connectors: [
