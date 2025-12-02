@@ -12,6 +12,8 @@ import {
 import { X, Mail, Chrome } from 'lucide-react-native';
 import { useConnect, useAccount, useDisconnect } from 'wagmi';
 import { Web3ModalButton } from './Web3ModalButton';
+import { useSupabaseAuth } from '../providers/SupabaseAuthProvider';
+import type { AuthError } from '@supabase/supabase-js';
 
 type AuthMethod = 'wallet' | 'email' | 'otp' | 'social';
 
@@ -35,6 +37,9 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
   const { address, isConnected } = useAccount();
   const { disconnect } = useDisconnect();
   const [web3ModalOpen, setWeb3ModalOpen] = useState(false);
+  
+  // Supabase authentication
+  const { signInWithMagicLink, signInWithGoogle, session } = useSupabaseAuth();
 
   useEffect(() => {
     setIsMounted(true);
@@ -57,6 +62,22 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
       onClose();
     }
   }, [isConnected, address, isLoading, onSuccess, onClose]);
+
+  // Listen for Supabase session establishment
+  useEffect(() => {
+    if (session && session.user && selectedMethod === 'email') {
+      // Supabase session established successfully
+      const userEmail = session.user.email || '';
+      
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('auth_method', 'email');
+        localStorage.setItem('auth_email', userEmail);
+      }
+      
+      onSuccess?.(userEmail, 'email');
+      onClose();
+    }
+  }, [session, selectedMethod, onSuccess, onClose]);
 
   if (!isMounted) {
     return null;
@@ -173,19 +194,38 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
     setError(null);
 
     try {
-      const response = await fetch('/api/auth/magic-link', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to send magic link');
+      // Use Supabase signInWithMagicLink
+      await signInWithMagicLink(email);
+      
+      // Store auth method for later use
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('auth_method', 'email');
+        localStorage.setItem('auth_email', email);
       }
-
+      
       setMagicLinkSent(true);
     } catch (err: any) {
-      setError(err.message || 'Failed to send magic link');
+      // Handle Supabase-specific errors
+      const supabaseError = err as AuthError;
+      
+      // Map Supabase errors to user-friendly messages
+      let errorMessage = 'Failed to send magic link';
+      
+      if (supabaseError.message) {
+        if (supabaseError.message.includes('rate limit')) {
+          errorMessage = 'Too many attempts. Please wait a few minutes before trying again.';
+        } else if (supabaseError.message.includes('invalid email')) {
+          errorMessage = 'Please enter a valid email address';
+        } else if (supabaseError.message.includes('network')) {
+          errorMessage = 'Connection failed. Please check your internet and try again.';
+        } else {
+          // Show sanitized error message
+          errorMessage = 'Failed to send magic link. Please try again.';
+        }
+      }
+      
+      setError(errorMessage);
+      console.error('[AuthModal] Error sending magic link:', err);
     } finally {
       setIsLoading(false);
     }
@@ -226,11 +266,38 @@ export function AuthModal({ visible, onClose, onSuccess }: AuthModalProps) {
     setError(null);
 
     try {
+      // Use Supabase signInWithGoogle
+      await signInWithGoogle();
+      
+      // Store auth method for later use
       if (typeof window !== 'undefined') {
-        window.location.href = '/api/auth/google';
+        localStorage.setItem('auth_method', 'social');
       }
+      
+      // OAuth flow will redirect to Google, then back to our callback
+      // No need to handle success here as it happens in the callback
     } catch (err: any) {
-      setError(err.message || 'Failed to initiate Google login');
+      // Handle Supabase-specific errors
+      const supabaseError = err as AuthError;
+      
+      // Map Supabase errors to user-friendly messages
+      let errorMessage = 'Failed to initiate Google login';
+      
+      if (supabaseError.message) {
+        if (supabaseError.message.includes('rate limit')) {
+          errorMessage = 'Too many attempts. Please wait a few minutes before trying again.';
+        } else if (supabaseError.message.includes('network')) {
+          errorMessage = 'Connection failed. Please check your internet and try again.';
+        } else if (supabaseError.message.includes('redirect')) {
+          errorMessage = 'OAuth configuration error. Please contact support.';
+        } else {
+          // Show sanitized error message
+          errorMessage = 'Authentication with Google failed. Please try again.';
+        }
+      }
+      
+      setError(errorMessage);
+      console.error('[AuthModal] Error initiating Google OAuth:', err);
       setIsLoading(false);
     }
   };

@@ -206,6 +206,7 @@ function NavigationStack() {
 }
 
 import Web3Provider from '../providers/Web3Provider';
+import { SupabaseAuthProvider } from '../providers/SupabaseAuthProvider';
 
 // Dynamic import for PoshProvider to avoid import.meta errors on homepage
 let PoshProvider: any = null;
@@ -233,10 +234,12 @@ export default function RootLayout() {
   };
 
   return (
-    <Web3Provider>
-      <ThemeProvider>
-        <NavigationStack />
-      </ThemeProvider>
-    </Web3Provider>
+    <SupabaseAuthProvider>
+      <Web3Provider>
+        <ThemeProvider>
+          <NavigationStack />
+        </ThemeProvider>
+      </Web3Provider>
+    </SupabaseAuthProvider>
   );
 }

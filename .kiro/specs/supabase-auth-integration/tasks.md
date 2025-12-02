@@ -34,7 +34,7 @@
   - **Property 9: Session storage on authentication**
   - **Validates: Requirements 4.1**
 
-- [ ] 3. Integrate SupabaseAuthProvider into application
+- [x] 3. Integrate SupabaseAuthProvider into application
   - Wrap application root with SupabaseAuthProvider in _layout.tsx
   - Ensure SupabaseAuthProvider wraps Web3Provider to maintain hierarchy
   - Test that both providers coexist without conflicts
@@ -65,7 +65,7 @@
   - **Property 16: Auth method switching cleanup**
   - **Validates: Requirements 6.5**
 
-- [ ] 5. Update AuthModal for Supabase magic link
+- [x] 5. Update AuthModal for Supabase magic link
   - Replace placeholder magic link implementation with Supabase signInWithMagicLink
   - Update handleEmailMagicLink to use SupabaseAuthContext
   - Add proper error handling for Supabase errors
@@ -73,15 +73,15 @@
   - Remove old API route references (/api/auth/magic-link)
   - _Requirements: 1.1, 1.2, 1.4, 7.1, 7.2_
 
-- [ ] 5.1 Write property test for magic link token validation
+- [x] 5.1 Write property test for magic link token validation
   - **Property 2: Magic link token validation**
   - **Validates: Requirements 1.2**
 
-- [ ] 5.2 Write property test for session establishment
+- [x] 5.2 Write property test for session establishment
   - **Property 6: Successful authentication session establishment**
   - **Validates: Requirements 1.4, 2.4**
 
-- [ ] 6. Update AuthModal for Supabase Google OAuth
+- [x] 6. Update AuthModal for Supabase Google OAuth
   - Replace placeholder Google OAuth with Supabase signInWithOAuth
   - Update handleGoogleLogin to use SupabaseAuthContext
   - Configure OAuth redirect URLs based on environment
@@ -89,15 +89,15 @@
   - Remove old API route references (/api/auth/google)
   - _Requirements: 2.1, 2.2, 2.4, 7.3, 8.1_
 
-- [ ] 6.1 Write property test for OAuth user data processing
+- [x] 6.1 Write property test for OAuth user data processing
   - **Property 4: OAuth user data processing**
   - **Validates: Requirements 2.2**
 
-- [ ] 6.2 Write property test for OAuth CSRF protection
+- [x] 6.2 Write property test for OAuth CSRF protection
   - **Property 5: OAuth CSRF protection**
   - **Validates: Requirements 2.3**
 
-- [ ] 6.3 Write property test for redirect URL matching
+- [x] 6.3 Write property test for redirect URL matching
   - **Property 8: Redirect URL exact matching**
   - **Validates: Requirements 8.4**
 

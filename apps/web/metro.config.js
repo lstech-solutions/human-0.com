@@ -29,10 +29,11 @@ try {
   config.resolver.alias = {
     ...config.resolver.alias,
     '@noble/hashes/crypto': require.resolve('@noble/hashes/lib/crypto.js'),
+    '@supabase/postgrest-js': require.resolve('../../node_modules/.pnpm/@supabase+postgrest-js@1.21.4/node_modules/@supabase/postgrest-js'),
   };
 } catch (e) {
   // Fallback if alias resolution fails
-  console.warn('Could not resolve @noble/hashes alias:', e.message);
+  console.warn('Could not resolve aliases:', e.message);
 }
 
 // Force resolution of CJS builds for viem/wagmi
