@@ -1,0 +1,41 @@
+
+> @human-0/web@1.8.5 build
+> expo export -p web
+
+env: load .env
+env: export WALLETCONNECT_PROJECT_ID
+Starting Metro Bundler
+Static rendering is enabled. Learn more: https://docs.expo.dev/router/reference/static-rendering/
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+ WARN  Attempted to import the module "/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@noble+hashes@1.8.0/node_modules/@noble/hashes/crypto.js" which is not listed in the "exports" of "/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@noble+hashes@1.8.0/node_modules/@noble/hashes" under the requested subpath "./crypto.js". Falling back to file-based resolution. Consider updating the call site or asking the package maintainer(s) to expose this API.
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 68.7% (3114/3758)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.6% (4458/4468)
+ WARN  Attempted to import the module "/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@noble+hashes@1.8.0/node_modules/@noble/hashes/crypto.js" which is not listed in the "exports" of "/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@noble+hashes@1.8.0/node_modules/@noble/hashes" under the requested subpath "./crypto.js". Falling back to file-based resolution. Consider updating the call site or asking the package maintainer(s) to expose this API.
+λ Bundled 3663ms node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js (4474 modules)
+
+Metro error: [Worklets] createSerializableObject should never be called in JSWorklets.
+
+  WorkletsError: [Worklets] createSerializableObject should never be called in JSWorklets.
+    at new o (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/WorkletsError.js:10:25)
+    at o.createSerializableObject (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/WorkletsModule/JSWorklets.js:40:11)
+    at clonePlainJSObject (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:314:32)
+    at createSerializable (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:146:12)
+    at cloneObjectProperties (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:224:24)
+    at cloneWorklet (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:273:23)
+    at createSerializable (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:140:12)
+    at cloneObjectProperties (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:224:24)
+    at clonePlainJSObject (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:313:23)
+    at u (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:146:12)
+WorkletsError: [Worklets] createSerializableObject should never be called in JSWorklets.
+WorkletsError: [Worklets] createSerializableObject should never be called in JSWorklets.
+    at new o (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/WorkletsError.js:10:25)
+    at o.createSerializableObject (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/WorkletsModule/JSWorklets.js:40:11)
+    at clonePlainJSObject (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:314:32)
+    at createSerializable (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:146:12)
+    at cloneObjectProperties (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:224:24)
+    at cloneWorklet (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:273:23)
+    at createSerializable (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:140:12)
+    at cloneObjectProperties (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:224:24)
+    at clonePlainJSObject (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:313:23)
+    at u (/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/react-native-worklets@0.5.1_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@types+_3ydajgxyo34mpzt3xhywoangci/node_modules/react-native-worklets/lib/module/serializable.js:146:12)

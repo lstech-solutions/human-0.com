@@ -11,6 +11,23 @@ import {
   ArrowRight
 } from "lucide-react-native";
 
+// Dynamic imports to prevent import.meta errors
+let poshSdkReact: any = null;
+let wagmi: any = null;
+
+// Load modules only when needed
+if (Platform.OS === 'web' && typeof window !== 'undefined') {
+  Promise.all([
+    import('@human-0/posh-sdk/react').catch(() => null),
+    import('wagmi').catch(() => null)
+  ]).then(([posh, w]) => {
+    poshSdkReact = posh;
+    wagmi = w;
+  }).catch(err => {
+    console.warn('Failed to load Web3 modules:', err);
+  });
+}
+
 interface IdentityCardProps {
   onCreateIdentity?: () => void;
 }
@@ -29,6 +46,23 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
   const [account, setAccount] = useState<string | null>(null);
   const [authMethod, setAuthMethod] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [modulesLoaded, setModulesLoaded] = useState(false);
+  
+  // Use dynamically loaded hooks
+  const useAccount = wagmi?.useAccount || (() => ({ address: null, isConnected: false }));
+  const useHumanIdentity = poshSdkReact?.useHumanIdentity || (() => ({ data: null, isLoading: false }));
+  const useScore = poshSdkReact?.useScore || (() => ({ data: null }));
+  const useLevel = poshSdkReact?.useLevel || (() => ({ data: null }));
+  const useRegisterIdentity = poshSdkReact?.useRegisterIdentity || (() => ({ mutate: async () => {}, isPending: false }));
+  
+  // Use wagmi for wallet connection
+  const { address, isConnected } = useAccount();
+  
+  // Use posh-sdk hooks for identity management
+  const { data: identity, isLoading: isIdentityLoading } = useHumanIdentity(address);
+  const { data: score } = useScore(identity?.humanId);
+  const { data: level } = useLevel(identity?.humanId);
+  const { mutate: registerIdentity, isPending: isRegistering } = useRegisterIdentity();
 
   const formatHumanId = (id: string) => `${id.slice(0, 6)}...${id.slice(-4)}`;
 
@@ -43,13 +77,29 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
       const email = localStorage.getItem('auth_email');
       const method = localStorage.getItem('auth_method');
       const walletName = localStorage.getItem('wallet_name');
-      
+
       if (email) {
         setAccount(email);
         // Show wallet name if available, otherwise show method
         setAuthMethod(method === 'wallet' && walletName ? walletName : method);
       }
-      
+
+      // Check if Web3 modules are loaded
+      if (poshSdkReact && wagmi) {
+        setModulesLoaded(true);
+      } else {
+        // Wait for modules to load
+        const checkModules = setInterval(() => {
+          if (poshSdkReact && wagmi) {
+            setModulesLoaded(true);
+            clearInterval(checkModules);
+          }
+        }, 100);
+        
+        // Cleanup after 5 seconds
+        setTimeout(() => clearInterval(checkModules), 5000);
+      }
+
       setIsLoading(false);
     } else {
       setIsLoading(false);
@@ -60,17 +110,17 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
     setAccount(acc);
     setAuthMethod(method);
     setShowAuthModal(false);
-    
+
     // Store wallet name if it's a wallet connection
     if (Platform.OS === "web" && typeof window !== "undefined") {
+      // Try to detect wallet name from account format or connector
       if (acc.startsWith('0x')) {
-        // Detect which wallet is connected
+        // Check which wallet is connected
         if ((window as any).ethereum?.isMetaMask) {
           localStorage.setItem('wallet_name', 'MetaMask');
           setAuthMethod('MetaMask');
         } else if ((window as any).ethereum?.isCoinbaseWallet) {
           localStorage.setItem('wallet_name', 'Coinbase Wallet');
-          setAuthMethod('Coinbase Wallet');
         } else {
           localStorage.setItem('wallet_name', 'Web3 Wallet');
           setAuthMethod('Web3 Wallet');
@@ -81,25 +131,17 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
     onCreateIdentity?.();
   };
   
-  const placeholderData = {
-    status: account ? 'connected' : 'disconnected' as const,
-    identity: {
-      humanId: '0x1234567890abcdef' as `0x${string}`,
-      registrationTime: Date.now() / 1000,
-    } as any,
-    score: {
-      levelName: 'New Member',
-      level: 0,
-      totalScore: 0,
-      proofCount: 0,
-    } as any,
-    isConnected: !!account,
-    isRegistered: false,
-    isRegistering: false,
-    hasContracts: false,
-    expectedHumanId: '0x1234567890abcdef' as `0x${string}`,
-    register: () => {},
-    address: account,
+  // Use posh-sdk data or fallback to basic auth state
+  const data = {
+    isConnected: isConnected || !!account,
+    isRegistered: !!identity,
+    isRegistering,
+    hasContracts: true, // Assuming contracts are available with posh-sdk
+    identity,
+    score: score ? { totalScore: score, proofCount: 0 } : null, // TODO: Add proof count from posh-sdk
+    level: level || { level: 0, name: 'None' as const, minScore: 0, maxScore: null },
+    register: () => registerIdentity(),
+    address: address || account,
   };
 
   // Loading state
@@ -115,7 +157,7 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
   }
 
   // Disconnected state
-  if (!placeholderData.isConnected) {
+  if (!data.isConnected) {
     return (
       <View className="bg-space-dark border-2 border-neon-green/20 rounded-3xl p-6">
         <View className="items-center mb-6">
@@ -184,7 +226,7 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
   }
 
   // Connected but not registered
-  if (!placeholderData.isRegistered) {
+  if (!data.isRegistered) {
     return (
       <View className="bg-space-dark border-2 border-neon-green/30 rounded-3xl p-6">
         <View className="items-center mb-6">
@@ -208,17 +250,17 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
           )}
           
           {/* Preview of expected humanId */}
-          {placeholderData.expectedHumanId && (
+          {data.address && (
             <View className="bg-deep-space rounded-xl px-4 py-3 w-full mb-4">
-              <Text className="text-gray-500 text-xs mb-1">Your Human ID will be:</Text>
+              <Text className="text-gray-500 text-xs mb-1">Your Human ID will be generated from:</Text>
               <Text className="text-neon-green font-mono text-sm">
-                {formatHumanId(placeholderData.expectedHumanId)}
+                {data.address.slice(0, 6)}...{data.address.slice(-4)}
               </Text>
             </View>
           )}
         </View>
 
-        {!placeholderData.hasContracts ? (
+        {!data.hasContracts ? (
           <View className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-4 mb-4">
             <View className="flex-row items-center">
               <AlertCircle size={20} color="#EAB308" />
@@ -229,14 +271,14 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
           </View>
         ) : (
           <TouchableOpacity
-            onPress={placeholderData.register}
-            disabled={placeholderData.isRegistering}
+            onPress={data.register}
+            disabled={data.isRegistering}
             className={`bg-neon-green px-6 py-4 rounded-2xl flex-row items-center justify-center ${
-              placeholderData.isRegistering ? "opacity-70" : ""
+              data.isRegistering ? "opacity-70" : ""
             }`}
             activeOpacity={0.8}
           >
-            {placeholderData.isRegistering ? (
+            {data.isRegistering ? (
               <>
                 <ActivityIndicator color="#050B10" size="small" />
                 <Text className="text-deep-space font-bold text-lg ml-3">
@@ -275,16 +317,16 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
               Verified Human
             </Text>
             <Text className="text-white text-lg font-bold">
-              {placeholderData.score?.levelName ?? "New Member"}
+              {data.level?.name ?? "New Member"}
             </Text>
           </View>
         </View>
         
         {/* Level badge */}
-        {placeholderData.score && placeholderData.score.level > 0 && (
+        {data.level && data.level.level > 0 && (
           <View className="bg-neon-green/20 px-3 py-1 rounded-full">
             <Text className="text-neon-green font-bold">
-              Lvl {placeholderData.score.level}
+              Lvl {data.level.level}
             </Text>
           </View>
         )}
@@ -294,7 +336,7 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
       <View className="bg-deep-space rounded-xl p-4 mb-4">
         <Text className="text-gray-500 text-xs mb-1">Human ID</Text>
         <Text className="text-white font-mono text-sm">
-          {placeholderData.identity ? formatHumanId(placeholderData.identity.humanId) : "—"}
+          {data.identity ? formatHumanId(data.identity.humanId) : "—"}
         </Text>
       </View>
 
@@ -302,25 +344,25 @@ export function IdentityCard({ onCreateIdentity }: IdentityCardProps) {
       <View className="flex-row justify-between mb-6">
         <View className="flex-1 items-center p-3 bg-deep-space rounded-xl mr-2">
           <Text className="text-neon-green text-2xl font-bold">
-            {placeholderData.score?.totalScore ?? 0}
+            {data.score?.totalScore ?? 0}
           </Text>
           <Text className="text-gray-400 text-xs mt-1">PoSH Score</Text>
         </View>
         
         <View className="flex-1 items-center p-3 bg-deep-space rounded-xl ml-2">
           <Text className="text-neon-green text-2xl font-bold">
-            {placeholderData.score?.proofCount ?? 0}
+            {data.score?.proofCount ?? 0}
           </Text>
           <Text className="text-gray-400 text-xs mt-1">Proofs</Text>
         </View>
       </View>
 
       {/* Registration date */}
-      {placeholderData.identity?.registrationTime && placeholderData.identity.registrationTime > 0 && (
+      {data.identity?.registrationTime && data.identity.registrationTime instanceof Date && data.identity.registrationTime.getTime() > 0 && (
         <View className="flex-row items-center justify-center">
           <Award size={14} color="#9CA3AF" />
           <Text className="text-gray-400 text-xs ml-2">
-            Member since {new Date(placeholderData.identity.registrationTime * 1000).toLocaleDateString()}
+            Member since {data.identity.registrationTime.toLocaleDateString()}
           </Text>
         </View>
       )}

@@ -1,12 +1,12 @@
 import { createConfig, http } from 'wagmi';
 import { mainnet, baseSepolia, base, polygon } from 'wagmi/chains';
-import { injected, walletConnect, coinbaseWallet } from 'wagmi/connectors';
+import { injected } from '@wagmi/core';
 
 // Get WalletConnect project ID from environment
-const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || '';
+const projectId = process.env.WALLETCONNECT_PROJECT_ID || '';
 
 if (!projectId && process.env.NODE_ENV === 'production') {
-  console.warn('NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID is not set. Get one at https://cloud.walletconnect.com');
+  console.warn('WALLETCONNECT_PROJECT_ID is not set. Get one at https://cloud.walletconnect.com');
 }
 
 export const wagmiConfig = createConfig({
@@ -15,25 +15,7 @@ export const wagmiConfig = createConfig({
     // Browser extension wallets (MetaMask, Brave, etc.)
     injected({
       shimDisconnect: true,
-    }),
-    
-    // WalletConnect for mobile wallets
-    walletConnect({ 
-      projectId: projectId || 'demo-project-id',
-      showQrModal: true,
-      metadata: {
-        name: 'Human Zero',
-        description: 'Proof of Sustainable Humanity',
-        url: process.env.NEXT_PUBLIC_APP_URL || 'https://human-0.org',
-        icons: ['https://human-0.org/logo.svg'],
-      },
-    }),
-    
-    // Coinbase Wallet
-    coinbaseWallet({
-      appName: 'Human Zero',
-      appLogoUrl: 'https://human-0.org/logo.svg',
-    }),
+    }) as any,
   ],
   transports: {
     [mainnet.id]: http(),
@@ -41,5 +23,45 @@ export const wagmiConfig = createConfig({
     [baseSepolia.id]: http(),
     [polygon.id]: http(),
   },
-  ssr: false,
+  ssr: true,
 });
+
+// Export chain configuration
+export const DEFAULT_CHAIN = baseSepolia;
+
+// Contract addresses for different chains
+export const CONTRACT_ADDRESSES = {
+  [mainnet.id]: {
+    HumanIdentity: '0x...', // TODO: Add mainnet contract addresses
+    HumanScore: '0x...',
+    ProofRegistry: '0x...',
+    PoSHNFT: '0x...',
+  },
+  [base.id]: {
+    HumanIdentity: '0x...', // TODO: Add base mainnet contract addresses  
+    HumanScore: '0x...',
+    ProofRegistry: '0x...',
+    PoSHNFT: '0x...',
+  },
+  [baseSepolia.id]: {
+    HumanIdentity: '0x...', // TODO: Add base sepolia contract addresses
+    HumanScore: '0x...',
+    ProofRegistry: '0x...',
+    PoSHNFT: '0x...',
+  },
+  [polygon.id]: {
+    HumanIdentity: '0x...', // TODO: Add polygon contract addresses
+    HumanScore: '0x...',
+    ProofRegistry: '0x...',
+    PoSHNFT: '0x...',
+  },
+} as const;
+
+export function getContractAddress(
+  chainId: number,
+  contract: keyof typeof CONTRACT_ADDRESSES[typeof baseSepolia.id]
+): `0x${string}` | null {
+  const chainAddresses = CONTRACT_ADDRESSES[chainId as keyof typeof CONTRACT_ADDRESSES];
+  if (!chainAddresses) return null;
+  return chainAddresses[contract] as `0x${string}` | null;
+}

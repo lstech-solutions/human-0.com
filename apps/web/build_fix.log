@@ -1,0 +1,84 @@
+
+> @human-0/web@1.8.5 build
+> expo export -p web
+
+env: load .env
+env: export WALLETCONNECT_PROJECT_ID
+Starting Metro Bundler
+Static rendering is enabled. Learn more: https://docs.expo.dev/router/reference/static-rendering/
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓░░░░░░░░░░░░░░ 16.0% (4/7)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓░░░░░░░░░░░░░░ 15.3% (38/97)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓░░░░░░░░░░░░░░ 16.0% (14/42)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓░░░░░░░░░░░░░░ 18.4% (165/385)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓░░░░░░░░░░░░░░ 16.5% ( 96/236)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 43.4% (351/533)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓░░░░░░░░░░░ 36.7% (217/358)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 48.5% ( 528/2358)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓░░░░░░░░░░░ 37.0% (239/393)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 48.5% (1360/2660)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 50.0% (357/520)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 76.5% (2351/2688)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 50.3% (406/591)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 84.5% (2633/3618)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 62.2% (562/810)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 84.5% (3000/4039)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 62.2% ( 798/2593)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 84.5% (3838/4189)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.9% (2113/2603)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 90.3% (4038/4249)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 83.4% (2611/2975)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 95.0% (4276/4388)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 83.4% (3257/3945)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 97.5% (4411/4467)
+ WARN  Attempted to import the module "/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@noble+hashes@1.8.0/node_modules/@noble/hashes/crypto.js" which is not listed in the "exports" of "/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@noble+hashes@1.8.0/node_modules/@noble/hashes" under the requested subpath "./crypto.js". Falling back to file-based resolution. Consider updating the call site or asking the package maintainer(s) to expose this API.
+λ Bundled 45511ms node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js (4517 modules)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 98.5% (4101/4133)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.9% (4517/4517)
+Web Bundled 46652ms node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js (4143 modules)
+λ Bundled 856ms apps/web/app/api/terms+api.ts (1 module)
+λ Bundled 839ms apps/web/app/api/privacy+api.ts (1 module)
+λ apps/web/app/api/auth/google+api.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 845ms apps/web/app/api/auth/google+api.ts (1 module)
+λ Bundled 799ms apps/web/app/api/human-stats+api.ts (1 module)
+λ Bundled 808ms apps/web/app/api/auth/magic-link+api.ts (1 module)
+λ Bundled 841ms apps/web/app/api/auth/verify-otp+api.ts (1 module)
+λ Bundled 943ms apps/web/app/api/auth/google/callback+api.ts (1 module)
+λ apps/web/app/api/auth/google/callback+api.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+
+› web bundles (5):
+_expo/static/css/web-075b6b5f7611330b14e09b7b6b0442ad.css (45.4 kB)
+_expo/static/js/web/AuthModal-90182a793447ca166061fb27a4bcc64d.js (16.9 kB)
+_expo/static/js/web/entry-afc855044c5bef3ac540539fd6d493a6.js (5.17 MB)
+_expo/static/js/web/native-3e72d394957380da521aa5f0446ab7bd.js (547 B)
+_expo/static/js/web/useAuth-591e0f6a783e28fd198b6a69c8f63d65.js (1.81 kB)
+
+› Static routes (16):
+/nfts (29.9 kB)
+/ (index) (22.4 kB)
+/terms (27.7 kB)
+/canvas (56.5 kB)
+/impact (32 kB)
+/privacy (27.7 kB)
+/profile (32.1 kB)
+/identity (32.9 kB)
+/_sitemap (19.2 kB)
+/+not-found (19.2 kB)
+/pdf-download (40.5 kB)
+/documentation (22.9 kB)
+/dashboard (23.2 kB)
+/dashboard/identity (23.2 kB)
+/documentation/terms (22.6 kB)
+/documentation/privacy (22.6 kB)
+
+› API routes (7):
+/api/terms (5.87 kB) (source map (7.68 kB))
+/api/privacy (5.9 kB) (source map (7.69 kB))
+/api/auth/google (4.64 kB) (source map (6.66 kB))
+/api/human-stats (5.31 kB) (source map (7.25 kB))
+/api/auth/magic-link (4.94 kB) (source map (7.29 kB))
+/api/auth/verify-otp (5.05 kB) (source map (7.34 kB))
+/api/auth/google/callback (5.39 kB) (source map (7.74 kB))
+
+Exported: dist

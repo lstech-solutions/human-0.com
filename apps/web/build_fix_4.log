@@ -1,0 +1,63 @@
+
+> @human-0/web@1.8.5 build
+> expo export -p web
+
+env: load .env
+Could not resolve @noble/hashes alias: Package subpath './lib/crypto.js' is not defined by "exports" in /home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/node_modules/@noble/hashes/package.json
+env: export WALLETCONNECT_PROJECT_ID
+Starting Metro Bundler
+Static rendering is enabled. Learn more: https://docs.expo.dev/router/reference/static-rendering/
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+ WARN  Attempted to import the module "/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@noble+hashes@1.8.0/node_modules/@noble/hashes/crypto.js" which is not listed in the "exports" of "/home/ed/Documents/LSTS/human-0.com/node_modules/.pnpm/@noble+hashes@1.8.0/node_modules/@noble/hashes" under the requested subpath "./crypto.js". Falling back to file-based resolution. Consider updating the call site or asking the package maintainer(s) to expose this API.
+λ Bundled 3362ms node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/node/render.js (2735 modules)
+Web node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 89.6% (3741/3952)
+Web Bundled 3772ms node_modules/.pnpm/expo-router@6.0.15_mdd6eqdmopb2k7mf5aqqgyxzj4/node_modules/expo-router/entry.js (3952 modules)
+λ Bundled 737ms apps/web/app/api/terms+api.ts (1 module)
+λ Bundled 771ms apps/web/app/api/privacy+api.ts (1 module)
+λ Bundled 778ms apps/web/app/api/auth/google+api.ts (1 module)
+λ Bundled 758ms apps/web/app/api/human-stats+api.ts (1 module)
+λ apps/web/app/api/auth/magic-link+api.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 761ms apps/web/app/api/auth/magic-link+api.ts (1 module)
+λ Bundled 783ms apps/web/app/api/auth/verify-otp+api.ts (1 module)
+λ Bundled 768ms apps/web/app/api/auth/google/callback+api.ts (1 module)
+
+› web bundles (9):
+_expo/static/css/web-bb6a7dffa5072b515be04b0ec2d93ae6.css (44.9 kB)
+_expo/static/js/web/__common-89fc98b919f9031efebe36f5749310db.js (830 kB)
+_expo/static/js/web/__expo-metro-runtime-46ac14f77b8d07852b02d57eb3e5b645.js (3.8 kB)
+_expo/static/js/web/AuthModal-fe844676862a0d1bf33bc2775fe86bf9.js (13.3 kB)
+_expo/static/js/web/entry-f2766406689a2c56cc22fc197eea7834.js (4.1 MB)
+_expo/static/js/web/index-4cfe148c030f4c12a5fb6eb0351e5277.js (16.2 kB)
+_expo/static/js/web/native-fd327e5df2506914b07fa9e972c29a26.js (620 B)
+_expo/static/js/web/useAuth-6b358be3865c023c30725b1e0249d975.js (1.8 kB)
+_expo/static/js/web/wagmi-config-32a70cee1f87feca0f6e777c657665d8.js (551 kB)
+
+› Static routes (16):
+/nfts (30.1 kB)
+/ (index) (22.6 kB)
+/terms (27.9 kB)
+/canvas (56.7 kB)
+/impact (32.2 kB)
+/privacy (27.9 kB)
+/profile (32.3 kB)
+/identity (33.2 kB)
+/_sitemap (19.4 kB)
+/+not-found (19.4 kB)
+/pdf-download (40.7 kB)
+/documentation (23.1 kB)
+/dashboard (23.4 kB)
+/dashboard/identity (23.4 kB)
+/documentation/terms (22.8 kB)
+/documentation/privacy (22.8 kB)
+
+› API routes (7):
+/api/terms (5.77 kB) (source map (7.55 kB))
+/api/privacy (5.8 kB) (source map (7.55 kB))
+/api/auth/google (4.65 kB) (source map (6.7 kB))
+/api/human-stats (5.32 kB) (source map (7.27 kB))
+/api/auth/magic-link (4.82 kB) (source map (7.05 kB))
+/api/auth/verify-otp (4.94 kB) (source map (7.12 kB))
+/api/auth/google/callback (5.28 kB) (source map (7.51 kB))
+
+Exported: dist

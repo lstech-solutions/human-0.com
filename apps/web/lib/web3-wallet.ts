@@ -8,11 +8,27 @@ interface EthereumProvider {
   removeListener(event: string, callback: (...args: unknown[]) => void): void;
   isMetaMask?: boolean;
   isCoinbaseWallet?: boolean;
+  isStatus?: boolean;
+  isBraveWallet?: boolean;
 }
 
 declare global {
   interface Window {
-    ethereum?: EthereumProvider;
+    ethereum?: EthereumProvider & {
+      isMetaMask?: boolean;
+      isCoinbaseWallet?: boolean;
+      isStatus?: boolean;
+      isBraveWallet?: boolean;
+      autoRefreshOnNetworkChange?: boolean;
+      chainId?: string;
+      networkVersion?: string;
+      selectedAddress?: string;
+    };
+    UnicornStudio?: {
+      isInitialized?: boolean;
+      init: () => Promise<any>;
+      destroy: () => void;
+    };
   }
 }
 
@@ -25,8 +41,16 @@ function getEthereumProvider(): EthereumProvider | null {
     return null;
   }
   
-  // Use optional chaining and nullish coalescing for safety
-  return window.ethereum ?? null;
+  if (!window.ethereum) {
+    return null;
+  }
+  
+  // Disable auto refresh on network change to prevent infinite loops
+  if (window.ethereum.autoRefreshOnNetworkChange) {
+    window.ethereum.autoRefreshOnNetworkChange = false;
+  }
+  
+  return window.ethereum;
 }
 
 /**
@@ -37,7 +61,6 @@ export async function connectWallet(): Promise<string | null> {
   const provider = getEthereumProvider();
   
   if (!provider) {
-    // Use console.warn instead of alert for better UX
     console.warn('No Web3 wallet detected. Please install MetaMask or another Web3 wallet.');
     return null;
   }
@@ -47,19 +70,16 @@ export async function connectWallet(): Promise<string | null> {
       method: 'eth_requestAccounts',
     });
     
-    // Type guard for the result
     if (Array.isArray(result) && result.length > 0) {
       return result[0] as string;
     }
     
     return null;
   } catch (error) {
-    // Type-safe error handling
     if (error && typeof error === 'object' && 'code' in error) {
       const ethError = error as { code: number; message?: string };
       
       if (ethError.code === 4001) {
-        // User rejected the request
         console.info('User rejected wallet connection');
         return null;
       }
@@ -86,7 +106,6 @@ export async function getConnectedAccount(): Promise<string | null> {
       method: 'eth_accounts',
     });
     
-    // Type guard for the result
     if (Array.isArray(result) && result.length > 0) {
       return result[0] as string;
     }
@@ -107,10 +126,9 @@ export function onAccountsChanged(callback: (accounts: string[]) => void): () =>
   const provider = getEthereumProvider();
   
   if (!provider) {
-    return () => {}; // No-op cleanup function
+    return () => {};
   }
 
-  // Wrap callback with type safety
   const wrappedCallback = (accounts: unknown) => {
     if (Array.isArray(accounts)) {
       callback(accounts as string[]);
@@ -124,7 +142,55 @@ export function onAccountsChanged(callback: (accounts: string[]) => void): () =>
   };
 }
 
-export function formatAddress(address: string): string {
-  if (!address || address.length < 10) return address;
-  return `${address.slice(0, 6)}...${address.slice(-4)}`;
+/**
+ * Subscribe to chain changes
+ * @param callback Function to call when chain changes
+ * @returns Cleanup function to remove the listener
+ */
+export function onChainChanged(callback: (chainId: string) => void): () => void {
+  const provider = getEthereumProvider();
+  
+  if (!provider) {
+    return () => {};
+  }
+
+  const handleChainChanged = (...args: unknown[]) => {
+    const chainId = args[0];
+    if (typeof chainId === 'string') {
+      callback(chainId);
+    }
+  };
+
+  provider.on('chainChanged', handleChainChanged);
+  
+  return () => {
+    provider.removeListener('chainChanged', handleChainChanged);
+  };
+}
+
+/**
+ * Get current chain ID
+ * @returns Chain ID as number or null
+ */
+export async function getChainId(): Promise<number | null> {
+  const provider = getEthereumProvider();
+  
+  if (!provider) {
+    return null;
+  }
+
+  try {
+    const chainId = await provider.request({ method: 'eth_chainId' }) as string;
+    return chainId ? parseInt(chainId, 16) : null;
+  } catch (error) {
+    console.error('Failed to get chain ID:', error);
+    return null;
+  }
+}
+
+export function formatAddress(address: string, start = 6, end = 4): string {
+  if (!address || typeof address !== 'string' || address.length < start + end) {
+    return address || '';
+  }
+  return `${address.slice(0, start)}...${address.slice(-end)}`;
 }

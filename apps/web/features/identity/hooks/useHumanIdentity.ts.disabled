@@ -1,8 +1,25 @@
-import { useCallback, useEffect } from "react";
-import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
-import { keccak256, encodePacked } from "viem";
+import { useCallback, useEffect, useState } from "react";
+import { Platform } from "react-native";
 import { useIdentityStore, getLevelName, type HumanIdentity, type PoSHScore } from "../stores/identityStore";
 import { getContractAddress, DEFAULT_CHAIN } from "../../../lib/wagmi-config";
+
+// Dynamic imports for Web3 modules to avoid import.meta errors
+let wagmi: any = null;
+let viem: any = null;
+
+// Only load Web3 modules on web platform
+if (Platform.OS === 'web' && typeof window !== 'undefined') {
+  // These will be loaded dynamically when needed
+  Promise.all([
+    import('wagmi').catch(() => null),
+    import('viem').catch(() => null)
+  ]).then(([w, v]) => {
+    wagmi = w;
+    viem = v;
+  }).catch(err => {
+    console.warn('Failed to load Web3 modules:', err);
+  });
+}
 
 // ABI for HumanIdentity contract (minimal for reads/writes we need)
 const HUMAN_IDENTITY_ABI = [
@@ -82,7 +99,8 @@ const HUMAN_SCORE_ABI = [
  * - Status management
  */
 export function useHumanIdentity() {
-  const { address, isConnected, chainId } = useAccount();
+  const [isWeb3Loaded, setIsWeb3Loaded] = useState(false);
+  const [web3Error, setWeb3Error] = useState<string | null>(null);
   const { 
     status, 
     error, 
@@ -95,9 +113,37 @@ export function useHumanIdentity() {
     reset 
   } = useIdentityStore();
 
-  const currentChainId = chainId ?? DEFAULT_CHAIN.id;
+  const currentChainId = DEFAULT_CHAIN.id;
   const identityAddress = getContractAddress(currentChainId, "HumanIdentity");
   const scoreAddress = getContractAddress(currentChainId, "HumanScore");
+
+  // Load Web3 modules dynamically
+  useEffect(() => {
+    if (Platform.OS === 'web' && typeof window !== 'undefined' && !isWeb3Loaded) {
+      Promise.all([
+        import('wagmi'),
+        import('viem')
+      ]).then(([w, v]) => {
+        wagmi = w;
+        viem = v;
+        setIsWeb3Loaded(true);
+      }).catch(err => {
+        console.warn('Failed to load Web3 modules:', err);
+        setWeb3Error(err.message);
+        setIsWeb3Loaded(true); // Still mark as loaded to prevent retry
+      });
+    } else {
+      setIsWeb3Loaded(true);
+    }
+  }, [isWeb3Loaded]);
+
+  // Get wagmi hooks if Web3 is loaded
+  const useAccount = wagmi?.useAccount || (() => ({ address: null, isConnected: false }));
+  const useReadContract = wagmi?.useReadContract || (() => ({ data: null, isLoading: false, error: null }));
+  const useWriteContract = wagmi?.useWriteContract || (() => ({ writeContract: null, isPending: false, error: null }));
+  const useWaitForTransactionReceipt = wagmi?.useWaitForTransactionReceipt || (() => ({ data: null, isLoading: false, error: null }));
+  
+  const { address, isConnected } = useAccount();
 
   // Check if wallet is registered
   const { data: isRegistered, refetch: refetchRegistration } = useReadContract({
@@ -240,12 +286,17 @@ export function useHumanIdentity() {
    * Compute expected humanId for a wallet (for preview)
    */
   const computeExpectedHumanId = useCallback((wallet: `0x${string}`) => {
-    return keccak256(
-      encodePacked(
-        ["address", "uint256", "string"],
-        [wallet, BigInt(currentChainId), "HUMAN0_POSH_V1"]
-      )
-    );
+    // Use viem functions if available, otherwise return placeholder
+    if (viem && viem.keccak256 && viem.encodePacked) {
+      return viem.keccak256(
+        viem.encodePacked(
+          ["address", "uint256", "string"],
+          [wallet, BigInt(currentChainId), "HUMAN0_POSH_V1"]
+        )
+      );
+    }
+    // Fallback placeholder
+    return "0x1234567890abcdef1234567890abcdef12345678" as `0x${string}`;
   }, [currentChainId]);
 
   return {

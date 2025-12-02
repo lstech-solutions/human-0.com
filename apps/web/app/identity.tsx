@@ -4,14 +4,17 @@ import { Shield, Fingerprint, Zap, Globe, Lock } from "lucide-react-native";
 import { useTheme } from "../theme/ThemeProvider";
 import { AppFooter } from "../components/AppFooter";
 import { AnimatedBackground } from "../components/AnimatedBackground";
+import { useRouter } from "expo-router";
 
 export default function IdentityScreen() {
   const { colorScheme } = useTheme();
+  const router = useRouter();
   const [account, setAccount] = useState<string | null>(null);
   const [authMethod, setAuthMethod] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [AuthModal, setAuthModal] = useState<any>(null);
   const [showAuthModal, setShowAuthModal] = useState(false);
+  const [identityConnected, setIdentityConnected] = useState(false);
 
   useEffect(() => {
     if (Platform.OS === "web" && typeof window !== "undefined") {
@@ -41,6 +44,7 @@ export default function IdentityScreen() {
     setAccount(acc);
     setAuthMethod(method);
     setShowAuthModal(false);
+    setIdentityConnected(true); // Set identity as connected
 
     // Store wallet name if it's a wallet connection
     if (Platform.OS === "web" && typeof window !== "undefined") {
@@ -49,13 +53,21 @@ export default function IdentityScreen() {
         // Check which wallet is connected
         if ((window as any).ethereum?.isMetaMask) {
           localStorage.setItem('wallet_name', 'MetaMask');
+          setAuthMethod('MetaMask');
         } else if ((window as any).ethereum?.isCoinbaseWallet) {
           localStorage.setItem('wallet_name', 'Coinbase Wallet');
+          setAuthMethod('Coinbase Wallet');
         } else {
           localStorage.setItem('wallet_name', 'Web3 Wallet');
+          setAuthMethod('Web3 Wallet');
         }
       }
     }
+  };
+
+  const handleCreateIdentity = () => {
+    // Navigate to authenticated identity view
+    router.push('/(authenticated)/identity');
   };
 
   const handleDisconnect = async () => {
@@ -115,7 +127,7 @@ export default function IdentityScreen() {
   const isDark = colorScheme === "dark";
 
   const renderContent = () => (
-    <>
+    <View className="w-full">
       {/* Header */}
       <View className="mb-8">
         <Text className="text-[#0A1628] dark:text-[#00FF9C] text-4xl font-bold mb-2">
@@ -188,6 +200,7 @@ export default function IdentityScreen() {
                 </Text>
                 <View className="mt-6 w-full space-y-3 max-w-sm">
                   <button
+                    onClick={handleCreateIdentity}
                     className="w-full px-6 py-3 bg-[#00FF9C] hover:bg-[#00FF9C]/90 text-[#0A1628] font-mono text-sm rounded-lg transition-all"
                   >
                     CREATE IDENTITY
@@ -324,22 +337,35 @@ export default function IdentityScreen() {
       </View>
 
       {/* Info Footer */}
-      <View className="items-center pt-4 pb-20 border-t border-gray-200 dark:border-[#00FF9C]/10">
+      <View className="items-center pt-4 pb-8 border-t border-gray-200 dark:border-[#00FF9C]/10">
         <Text className="text-gray-500 text-xs text-center">
           PoSH is non-extractive. Only network gas fees apply.
         </Text>
       </View>
-    </>
+    </View>
   );
 
   return (
-    <AnimatedBackground isDark={isDark}>
-      <ScrollView className="flex-1">
-        <View className="px-6 py-12 max-w-2xl mx-auto w-full">
-          {renderContent()}
+ /*    <AnimatedBackground isDark={isDark}> */
+      <View className="flex-1 relative">
+        <ScrollView
+          className="flex-1"
+          contentContainerStyle={{
+            paddingBottom: 80 // Proper space for footer height
+          }}
+          showsVerticalScrollIndicator={true}
+          keyboardShouldPersistTaps="handled"
+          nestedScrollEnabled={true}
+        >
+          <View className="px-6 py-12 max-w-2xl mx-auto w-full">
+            {renderContent()}
+          </View>
+        </ScrollView>
+        {/* Sticky footer positioned at bottom */}
+        <View className="absolute bottom-0 left-0 right-0 bg-white/95 dark:bg-[#0d1117]/95 backdrop-blur-sm border-t border-[#d0d7de] dark:border-[#30363d]">
+          <AppFooter />
         </View>
-      </ScrollView>
-      <AppFooter />
-    </AnimatedBackground>
+      </View>
+ /*    </AnimatedBackground> */
   );
 }

@@ -9,6 +9,14 @@ import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import { View } from "react-native";
 import "react-native-reanimated";
+
+// Polyfills for Viem + WalletConnect in React Native
+import 'react-native-get-random-values'
+import 'react-native-url-polyfill/auto'
+import { Buffer } from 'buffer'
+
+global.Buffer = Buffer
+
 import "../global.css";
 
 // Initialize i18n - must be imported before any components that use translations
@@ -188,12 +196,42 @@ function NavigationStack() {
 
 import Web3Provider from '../providers/Web3Provider';
 
+// Dynamic import for PoshProvider to avoid import.meta errors on homepage
+let PoshProvider: any = null;
+
+if (typeof window !== 'undefined') {
+  import('@human-0/posh-sdk/react').then(posh => {
+    PoshProvider = posh.PoshProvider;
+  }).catch(err => {
+    console.warn('Failed to load PoshProvider:', err);
+  });
+}
+
 export default function RootLayout() {
+  // PoSH SDK configuration
+  const poshConfig = {
+    chainId: 84532, // Base Sepolia
+    contracts: {
+      humanIdentity: '0x...' as `0x${string}`, // TODO: Add actual contract address
+      humanScore: '0x...' as `0x${string}`,
+      proofRegistry: '0x...' as `0x${string}`,
+      poshNFT: '0x...' as `0x${string}`,
+    },
+  };
+
   return (
     <Web3Provider>
-      <ThemeProvider>
-        <NavigationStack />
-      </ThemeProvider>
+      {PoshProvider ? (
+        <PoshProvider config={poshConfig}>
+          <ThemeProvider>
+            <NavigationStack />
+          </ThemeProvider>
+        </PoshProvider>
+      ) : (
+        <ThemeProvider>
+          <NavigationStack />
+        </ThemeProvider>
+      )}
     </Web3Provider>
   );
 }

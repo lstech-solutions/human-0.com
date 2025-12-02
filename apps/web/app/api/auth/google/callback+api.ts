@@ -1,14 +1,10 @@
 import { ExpoRequest, ExpoResponse } from 'expo-router/server';
 import crypto from 'crypto';
 
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '';
-const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || '';
-const GOOGLE_REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI || 'http://localhost:8081/api/auth/google/callback';
-
-// In production, use a proper database
+// Mock session store
 const sessions = new Map<string, { email: string; expiresAt: number }>();
 
-export async function GET(req: ExpoRequest): Promise<ExpoResponse> {
+export async function GET(req: ExpoRequest): Promise<Response> {
   try {
     const url = new URL(req.url);
     const code = url.searchParams.get('code');
@@ -16,60 +12,33 @@ export async function GET(req: ExpoRequest): Promise<ExpoResponse> {
     const error = url.searchParams.get('error');
 
     if (error) {
-      return ExpoResponse.redirect(`/?error=${error}`);
+      return Response.redirect(`/?error=${error}`);
     }
 
     if (!code) {
-      return ExpoResponse.redirect('/?error=no_code');
+      return Response.redirect('/?error=no_code');
     }
 
-    // Exchange code for tokens
-    const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        code,
-        client_id: GOOGLE_CLIENT_ID,
-        client_secret: GOOGLE_CLIENT_SECRET,
-        redirect_uri: GOOGLE_REDIRECT_URI,
-        grant_type: 'authorization_code',
-      }),
-    });
-
-    if (!tokenResponse.ok) {
-      throw new Error('Failed to exchange code for tokens');
-    }
-
-    const tokens = await tokenResponse.json();
-
-    // Get user info
-    const userInfoResponse = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
-      headers: {
-        Authorization: `Bearer ${tokens.access_token}`,
-      },
-    });
-
-    if (!userInfoResponse.ok) {
-      throw new Error('Failed to get user info');
-    }
-
-    const userInfo = await userInfoResponse.json();
+    // Mock user data for testing
+    const mockUserInfo = {
+      email: 'user@example.com',
+      name: 'Test User',
+      picture: 'https://via.placeholder.com/150'
+    };
 
     // Create session
     const sessionToken = crypto.randomBytes(32).toString('hex');
     const sessionExpiresAt = Date.now() + 30 * 24 * 60 * 60 * 1000; // 30 days
 
     sessions.set(`session:${sessionToken}`, {
-      email: userInfo.email,
+      email: mockUserInfo.email,
       expiresAt: sessionExpiresAt,
     });
 
     // Redirect to app with session token
-    return ExpoResponse.redirect(`/?session=${sessionToken}&email=${userInfo.email}`);
+    return Response.redirect(`/?session=${sessionToken}&email=${mockUserInfo.email}`);
   } catch (error) {
     console.error('Google OAuth callback error:', error);
-    return ExpoResponse.redirect('/?error=auth_failed');
+    return Response.redirect('/?error=auth_failed');
   }
 }

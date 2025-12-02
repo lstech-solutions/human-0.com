@@ -1,16 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 
-// TypeScript declarations for UnicornStudio
-declare global {
-  interface Window {
-    UnicornStudio?: {
-      isInitialized?: boolean;
-      init: () => Promise<any>;
-      destroy: () => void;
-    };
-  }
-}
-
 interface UnicornStudioBackgroundProps {
   projectId: string;
   className?: string;
