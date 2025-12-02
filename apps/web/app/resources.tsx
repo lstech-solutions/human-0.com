@@ -162,28 +162,30 @@ export default function PDFDownloadScreen() {
   };
 
   const renderLanguageSelector = () => (
-    <View className="bg-gradient-to-br from-space-dark to-space-darker border-2 border-neon-green/40 rounded-3xl p-4 mb-6">
-      <View className="flex-row items-center mb-3">
-        <Globe size={20} color="#00FF9C" />
+    <View className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 mb-6 shadow-lg shadow-black/10">
+      <View className="flex-row items-center mb-4">
+        <View className="bg-neon-green/10 rounded-2xl p-3">
+          <Globe size={20} color="#00FF9C" />
+        </View>
         <Text className="text-human-primary text-lg font-bold ml-3">
-          Select Language / Seleccionar Idioma
+          Choose Language
         </Text>
       </View>
       
-      <View className="flex-row space-x-3">
+      <View className="flex-row gap-3">
         {languages.map((lang) => (
           <TouchableOpacity
             key={lang.code}
             onPress={() => setSelectedLanguage(lang.code)}
-            className={`flex-1 p-3 rounded-xl border-2 flex-row items-center justify-center ${
+            className={`flex-1 p-4 rounded-2xl border flex-row items-center justify-center transition-all ${
               selectedLanguage === lang.code
-                ? 'bg-neon-green/20 border-neon-green'
-                : isDark ? 'bg-space-dark/50 border-gray-600' : 'bg-gray-100 border-gray-300'
+                ? 'bg-white/20 border-white/40 shadow-lg shadow-black/20'
+                : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20'
             }`}
           >
-            <Text className="text-xl mr-2">{lang.flag}</Text>
+            <Text className="text-lg mr-2">{lang.flag}</Text>
             <Text className={`text-sm font-semibold ${
-              selectedLanguage === lang.code ? 'text-neon-green' : isDark ? 'text-gray-300' : 'text-gray-700'
+              selectedLanguage === lang.code ? 'text-human-primary' : 'text-gray-300'
             }`}>
               {lang.name}
             </Text>
@@ -198,82 +200,99 @@ export default function PDFDownloadScreen() {
       key={pdf.id}
       onPress={() => downloadPDF(pdf)}
       disabled={selectedPDF === pdf.id}
-      className={`bg-gradient-to-br from-space-dark to-space-darker border-2 rounded-3xl p-6 mb-4 transition-all ${
-        pdf.type === 'standard' 
-          ? 'border-neon-green/40' 
-          : 'border-purple-500/40'
-      } ${selectedPDF === pdf.id ? 'opacity-50' : ''}`}
+      className={`bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 mb-4 transition-all shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/20 ${
+        selectedPDF === pdf.id ? 'opacity-60' : ''
+      }`}
     >
       <View className="flex-row items-start mb-4">
-        <View className={`p-3 rounded-2xl border ${
+        <View className={`p-4 rounded-2xl border shadow-md ${
           pdf.type === 'standard'
-            ? 'bg-neon-green/10 border-neon-green/30'
-            : 'bg-purple-500/10 border-purple-500/30'
+            ? 'bg-neon-green/10 border-neon-green/30 shadow-neon-green/20'
+            : 'bg-purple-500/10 border-purple-500/30 shadow-purple-500/20'
         }`}>
           {pdf.icon}
         </View>
         <View className="ml-4 flex-1">
-          <Text className={`text-xl font-bold mb-1 ${
-            pdf.type === 'standard' ? 'text-neon-green' : 'text-purple-400'
+          <Text className={`text-xl font-bold mb-2 ${
+            pdf.type === 'standard' ? 'text-human-primary' : 'text-purple-400'
           }`}>
             {pdf.title}
           </Text>
-          <Text className={isDark ? 'text-gray-200 text-sm leading-relaxed' : 'text-gray-600 text-sm leading-relaxed'}>
+          <Text className={isDark ? 'text-gray-200 text-sm leading-relaxed mb-3' : 'text-gray-600 text-sm leading-relaxed mb-3'}>
             {pdf.description}
           </Text>
-          <Text className={isDark ? 'text-gray-400 text-xs mt-2' : 'text-gray-500 text-xs mt-2'}>
-            File size: {pdf.size}
-          </Text>
-          {pdf.languages && (
-            <View className="flex-row items-center mt-2">
-              <Globe size={12} color="#00FF9C" />
-              <Text className={isDark ? 'text-gray-300 text-xs ml-1' : 'text-gray-600 text-xs ml-1'}>
-                Available in: {pdf.languages.map(l => 
-                  languages.find(lang => lang.code === l)?.name
-                ).join(' • ')}
+          
+          {/* Metadata */}
+          <View className="flex-row items-center justify-between mb-3">
+            <View className="flex-row items-center">
+              <FileText size={14} color={isDark ? '#9CA3AF' : '#6B7280'} className="mr-1" />
+              <Text className={isDark ? 'text-gray-400 text-xs' : 'text-gray-500 text-xs'}>
+                {pdf.size}
               </Text>
             </View>
-          )}
+            {pdf.languages && (
+              <View className="flex-row items-center">
+                <Globe size={14} color="#00FF9C" className="mr-1" />
+                <Text className="text-gray-300 text-xs">
+                  {pdf.languages.length} languages
+                </Text>
+              </View>
+            )}
+          </View>
+          
+          {/* Features */}
+          <View className="flex-row flex-wrap gap-2">
+            {pdf.features.slice(0, 2).map((feature, index) => (
+              <View key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1">
+                <Text className="text-gray-300 text-xs">
+                  {feature}
+                </Text>
+              </View>
+            ))}
+          </View>
         </View>
       </View>
 
-      <View className="space-y-2 mb-4">
-        {pdf.features.map((feature, index) => (
-          <View key={index} className="flex-row items-center">
-            <CheckCircle size={14} color="#00FF9C" className="mr-2" />
-            <Text className={isDark ? 'text-gray-200 text-sm flex-1' : 'text-gray-700 text-sm flex-1'}>
-              {feature}
-            </Text>
-          </View>
-        ))}
-      </View>
-
-      <View className={`flex-row items-center justify-center p-3 rounded-xl border ${
-        pdf.type === 'standard'
-          ? 'bg-neon-green/20 border-neon-green/50'
-          : 'bg-purple-500/20 border-purple-500/50'
+      {/* Download Button */}
+      <View className={`flex-row items-center justify-between p-4 rounded-2xl border ${
+        pdf.type === 'standard' 
+          ? 'bg-neon-green/10 border-neon-green/30' 
+          : 'bg-purple-500/10 border-purple-500/30'
       }`}>
-        <Download size={20} color={pdf.type === 'standard' ? "#00FF9C" : "#A855F7"} />
-        <Text className={`ml-2 font-semibold ${
-          pdf.type === 'standard' ? 'text-neon-green' : 'text-purple-400'
-        }`}>
-          {selectedPDF === pdf.id ? 'Downloading...' : 'Download PDF'}
-        </Text>
+        <View className="flex-row items-center">
+          <Download size={16} color={pdf.type === 'standard' ? '#00FF9C' : '#A855F7'} />
+          <Text className={`ml-2 text-sm font-medium ${
+            pdf.type === 'standard' ? 'text-human-primary' : 'text-white'
+          }`}>
+            {selectedPDF === pdf.id ? 'Preparing download...' : 'Download now'}
+          </Text>
+        </View>
+        <View className="bg-white/10 rounded-full p-2">
+          <ArrowLeft size={14} color={isDark ? '#FFFFFF' : '#1F2937'} style={{ transform: [{ rotate: '-90deg' }] }} />
+        </View>
       </View>
     </TouchableOpacity>
   );
 
   return (
-    <View className="flex-1 bg-gradient-to-b from-deep-space to-space-dark">
-      {/* Header */}
-      <View className="px-6 pt-12 pb-6">
-        <View className="items-center">
-          <Text className="text-human-primary text-3xl font-bold">
-            PDF Downloads
-          </Text>
-          <Text className={isDark ? 'text-human-primary text-sm mt-1' : 'text-gray-600 text-sm mt-1'}>
-            Choose your language and Business Model Canvas format
-          </Text>
+    <View className="flex-1">
+      {/* Glassmorphism Header */}
+      <View className="relative overflow-hidden">
+        <View className="absolute inset-0 bg-gradient-to-br from-neon-green/5 to-emerald-600/5 backdrop-blur-xl" />
+        <View className="relative px-6 pt-12 pb-8">
+          <View className="items-center">
+            <View className="mb-4">
+              <View className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full p-4 shadow-lg shadow-black/20">
+                <Download size={32} color="#00FF9C" />
+              </View>
+            </View>
+            <Text className="text-human-primary text-4xl font-bold mb-2 text-center">
+              Resource Library
+            </Text>
+            <Text className={isDark ? 'text-gray-200 text-base text-center leading-relaxed' : 'text-gray-600 text-base text-center leading-relaxed'}>
+              Access comprehensive documentation and business model resources
+            </Text>
+          </View>
         </View>
       </View>
 
@@ -282,32 +301,40 @@ export default function PDFDownloadScreen() {
         {/* Language Selector */}
         {renderLanguageSelector()}
         
-        {/* Info Card */}
-        <View className="bg-gradient-to-br from-space-dark to-space-darker border-2 border-neon-green/40 rounded-3xl p-6 mb-6">
-          <Text className="text-human-primary text-lg font-bold mb-3">
-            📊 Business Model Documentation
-          </Text>
-          <Text className={isDark ? 'text-gray-200 text-sm leading-relaxed mb-4' : 'text-gray-600 text-sm leading-relaxed mb-4'}>
-            Download comprehensive documentation of HUMΛN-Ø's Business Model Canvas in 
-            your preferred language. Choose between the quick visual reference or the 
-            detailed extended version with full analysis and strategic insights.
-          </Text>
-          <View className="flex-row space-x-4">
-            <View className="flex-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-2">
-              <View className="flex-row items-center justify-center">
-                <Globe size={12} color="#00FF9C" className="mr-1" />
-                <Text className="text-gray-300 text-xs font-medium">
-                  Multi-Language Support
-                </Text>
-              </View>
+        {/* Modern Info Card */}
+        <View className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 mb-6 shadow-lg shadow-black/10">
+          <View className="flex-row items-center mb-4">
+            <View className="bg-neon-green/10 rounded-2xl p-3">
+              <BookOpen size={24} color="#00FF9C" />
             </View>
-            <View className="flex-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-2">
-              <View className="flex-row items-center justify-center">
-                <FileText size={12} color="#A855F7" className="mr-1" />
-                <Text className="text-gray-300 text-xs font-medium">
-                  Print Ready
-                </Text>
-              </View>
+            <Text className="text-human-primary text-2xl font-bold ml-3">
+              Business Model Resources
+            </Text>
+          </View>
+          <Text className={isDark ? 'text-gray-200 text-base leading-relaxed mb-6' : 'text-gray-600 text-base leading-relaxed mb-6'}>
+            Explore our comprehensive collection of business model documentation, 
+            from quick visual references to detailed strategic analyses with actionable insights.
+          </Text>
+          
+          {/* Feature Pills */}
+          <View className="flex-row flex-wrap gap-3">
+            <View className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 flex-row items-center">
+              <Globe size={14} color="#00FF9C" className="mr-2" />
+              <Text className="text-gray-300 text-sm font-medium">
+                Multi-Language Support
+              </Text>
+            </View>
+            <View className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 flex-row items-center">
+              <FileText size={14} color="#A855F7" className="mr-2" />
+              <Text className="text-gray-300 text-sm font-medium">
+                Print Ready
+              </Text>
+            </View>
+            <View className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 flex-row items-center">
+              <CheckCircle size={14} color="#10B981" className="mr-2" />
+              <Text className="text-gray-300 text-sm font-medium">
+                High Quality
+              </Text>
             </View>
           </View>
         </View>
@@ -316,10 +343,15 @@ export default function PDFDownloadScreen() {
         {pdfOptions.map(renderPDFCard)}
 
         {/* Footer Info */}
-        <View className={isDark ? 'bg-space-dark/50 rounded-2xl p-4 mb-8' : 'bg-gray-100 rounded-2xl p-4 mb-8'}>
-          <Text className={isDark ? 'text-gray-300 text-xs text-center' : 'text-gray-600 text-xs text-center'}>
-            💡 Tip: Download both versions for complete documentation
-          </Text>
+        <View className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 mb-8 shadow-lg shadow-black/10">
+          <View className="flex-row items-center justify-center">
+            <View className="bg-neon-green/10 rounded-2xl p-3 mr-3">
+              <BookOpen size={20} color="#00FF9C" />
+            </View>
+            <Text className="text-gray-200 text-sm text-center flex-1">
+              💡 Download both versions for complete business model documentation
+            </Text>
+          </View>
         </View>
       </ScrollView>
     </View>
