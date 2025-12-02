@@ -3,14 +3,15 @@ const { withNativeWind } = require("nativewind/metro");
 
 const config = getDefaultConfig(__dirname);
 
-// Allow .cjs + ESM packages used by wagmi/viem
+// Allow .cjs + ESM packages used by wagmi/viem and Supabase
 config.resolver.sourceExts = [
   'ts',
   'tsx',
   'js',
   'jsx',
   'json',
-  'cjs'
+  'cjs',
+  'mjs'
 ];
 
 // Necessary shims for viem + walletconnect in RN
@@ -25,19 +26,45 @@ config.resolver.extraNodeModules = {
 };
 
 // Handle ESM packages and Web3 dependencies
+const path = require('path');
+
+// Alias configuration for workspace packages and dependencies
 try {
   config.resolver.alias = {
     ...config.resolver.alias,
-    '@noble/hashes/crypto': require.resolve('@noble/hashes/lib/crypto.js'),
-    '@supabase/postgrest-js': require.resolve('../../node_modules/.pnpm/@supabase+postgrest-js@1.21.4/node_modules/@supabase/postgrest-js'),
+    '@noble/hashes/crypto': require.resolve('@noble/hashes/crypto'),
+    // Workspace packages
+    '@human-0/i18n': path.resolve(__dirname, '../../packages/i18n'),
+    '@human-0/posh-sdk': path.resolve(__dirname, '../../packages/posh-sdk'),
+    '@human-0/ui': path.resolve(__dirname, '../../packages/ui'),
   };
 } catch (e) {
-  // Fallback if alias resolution fails
-  console.warn('Could not resolve aliases:', e.message);
+  // If @noble/hashes/crypto can't be resolved, skip it but keep workspace aliases
+  config.resolver.alias = {
+    ...config.resolver.alias,
+    '@human-0/i18n': path.resolve(__dirname, '../../packages/i18n'),
+    '@human-0/posh-sdk': path.resolve(__dirname, '../../packages/posh-sdk'),
+    '@human-0/ui': path.resolve(__dirname, '../../packages/ui'),
+  };
 }
 
-// Force resolution of CJS builds for viem/wagmi
+// Force resolution of CJS builds for viem/wagmi and Supabase
 config.resolver.unstable_conditionNames = ['require', 'react-native'];
+
+// Resolve node_modules from workspace root for pnpm
+// Also watch workspace packages
+config.watchFolders = [
+  path.resolve(__dirname, '../../node_modules'),
+  path.resolve(__dirname, 'node_modules'),
+  path.resolve(__dirname, '../../packages'),
+];
+
+// Add node_modules paths for better resolution
+config.resolver.nodeModulesPaths = [
+  path.resolve(__dirname, 'node_modules'),
+  path.resolve(__dirname, '../../node_modules'),
+  path.resolve(__dirname, '../../node_modules/.pnpm/node_modules'),
+];
 
 // Configure transformer to handle ES modules properly
 config.transformer = {

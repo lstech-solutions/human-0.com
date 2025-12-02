@@ -171,12 +171,6 @@ function NavigationStack() {
             }}
           />
           <Stack.Screen
-            name="pdf-download"
-            options={{
-              title: "PDF Downloads",
-            }}
-          />
-          <Stack.Screen
             name="resources"
             options={{
               title: "Resources",

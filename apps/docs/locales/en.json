@@ -38,6 +38,7 @@
   },
   "canvas": {
     "title": "Business Model Canvas",
+    "subtitle": "Explore our business model and strategic vision for sustainable impact.",
     "keyPartners": "Key Partners",
     "keyActivities": "Key Activities",
     "keyResources": "Key Resources",
@@ -228,7 +229,12 @@
         "growth": "Growth",
         "efficiency": "Efficiency",
         "target": "Target"
-      }
+      },
+      "title": "Business Model Canvas",
+      "subtitle": "Interactive strategic visualization",
+      "browserOnly": "The interactive canvas is best viewed on a web browser.",
+      "openInBrowser": "Open in Browser",
+      "attribution": "EN - HUMAN-0: Transparent Sustainable Impact Verification"
     }
   },
   "auth": {

@@ -87,11 +87,11 @@ export const LimelightNav: React.FC<LimelightNavProps> = ({
   const Limelight = useMemo(
     () => (
       <Animated.View
-        pointerEvents="none"
         style={{
           position: "absolute",
           top: 0,
           left: leftAnim,
+          pointerEvents: "none",
           width: widthAnim,
           height: 4,
           borderRadius: 999,

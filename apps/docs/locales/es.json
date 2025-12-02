@@ -38,6 +38,7 @@
   },
   "canvas": {
     "title": "Modelo de Negocio Canvas",
+    "subtitle": "Explora nuestro modelo de negocio y visión estratégica para el impacto sostenible.",
     "keyPartners": "Socios Clave",
     "keyActivities": "Actividades Clave",
     "keyResources": "Recursos Clave",
@@ -228,7 +229,12 @@
         "growth": "Crecimiento",
         "efficiency": "Eficiencia",
         "target": "Objetivo"
-      }
+      },
+      "title": "Modelo de Negocio Canvas",
+      "subtitle": "Visualización estratégica interactiva",
+      "browserOnly": "El canvas interactivo se visualiza mejor en un navegador web.",
+      "openInBrowser": "Abrir en Navegador",
+      "attribution": "ES - HUMAN-0: Verificación de Impacto Sostenible Transparente"
     }
   },
   "auth": {
@@ -308,7 +314,9 @@
     "subtitle": "Donde el impacto ambiental se encuentra con la transparencia digital — Neutralidad de carbono mediante innovación Web3",
     "cta": {
       "exploreCanvas": "EXPLORAR CANVAS",
-      "downloadPdf": "DESCARGAR PDF"
+      "downloadPdf": "DESCARGAR PDF",
+      "proveIdentity": "PROBAR IDENTIDAD",
+      "connectWallet": "CONECTAR BILLETERA"
     }
   },
   "footer": {

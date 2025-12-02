@@ -38,6 +38,7 @@
   },
   "canvas": {
     "title": "Business Model Canvas",
+    "subtitle": "Erkunde unser Geschäftsmodell und strategische Vision für nachhaltige Wirkung.",
     "keyPartners": "Schlüsselpartner",
     "keyActivities": "Schlüsselaktivitäten",
     "keyResources": "Schlüsselressourcen",
@@ -228,7 +229,12 @@
         "growth": "Wachstum",
         "efficiency": "Effizienz",
         "target": "Zielwert"
-      }
+      },
+      "title": "Business-Modell-Canvas",
+      "subtitle": "Interaktive strategische Visualisierung",
+      "browserOnly": "Der interaktive Canvas wird am besten in einem Webbrowser angezeigt.",
+      "openInBrowser": "Im Browser öffnen",
+      "attribution": "DE - HUMAN-0: Nachhaltigkeits-Impakt-Verifizierung"
     }
   },
   "auth": {
@@ -308,7 +314,9 @@
     "subtitle": "Wo ökologische Wirkung auf digitale Transparenz trifft – Klimaneutralität durch Web3-Innovation",
     "cta": {
       "exploreCanvas": "CANVAS ERKUNDEN",
-      "downloadPdf": "PDF HERUNTERLADEN"
+      "downloadPdf": "PDF HERUNTERLADEN",
+      "proveIdentity": "IDENTITÄT NACHWEISEN",
+      "connectWallet": "BILLETTE VERBINDEN"
     }
   },
   "footer": {
