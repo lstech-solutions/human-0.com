@@ -16,6 +16,7 @@ import { useRouter } from 'expo-router';
 import { Building2, Activity, Target, Users, Lightbulb, MessageSquare, DollarSign, TrendingUp, Award, ImageIcon, User, ChevronLeft, ChevronRight } from 'lucide-react-native';
 import { useTheme } from '../theme/ThemeProvider';
 import { useTranslation } from '@human-0/i18n';
+import { AppFooter } from '../components/AppFooter';
 
 const { width, height } = Dimensions.get('window');
 
@@ -49,13 +50,13 @@ export default function CanvasScreen() {
     if (!scrollRef.current) return;
     const scrollAmount = 240; // Scroll by one card width + margin
     // @ts-ignore - web specific
-    const currentScroll = scrollRef.current.scrollLeft || 0;
+    const currentScroll = (scrollRef.current as any).scrollLeft || 0;
     const newScroll = direction === 'right' 
       ? currentScroll + scrollAmount 
       : Math.max(0, currentScroll - scrollAmount);
     
     // @ts-ignore - web specific
-    scrollRef.current.scrollTo({
+    (scrollRef.current as any).scrollTo({
       x: newScroll,
       animated: true
     });
@@ -78,12 +79,13 @@ export default function CanvasScreen() {
   useEffect(() => {
     if (Platform.OS !== 'web') return;
 
-    const handleWheel = (scrollRef: React.RefObject<ScrollView>) => (e: WheelEvent) => {
-      if (scrollRef.current && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+    const handleWheel = (scrollRef: React.RefObject<ScrollView>) => (e: Event) => {
+      const wheelEvent = e as WheelEvent;
+      if (scrollRef.current && Math.abs(wheelEvent.deltaX) > Math.abs(wheelEvent.deltaY)) {
         e.preventDefault();
         // @ts-ignore - web specific
-        scrollRef.current.scrollTo({
-          x: scrollRef.current.scrollLeft + e.deltaX,
+        (scrollRef.current as any).scrollTo({
+          x: (scrollRef.current as any).scrollLeft + wheelEvent.deltaX,
           animated: false
         });
       }
@@ -95,13 +97,13 @@ export default function CanvasScreen() {
     if (activitiesEl?._nativeTag) {
       const activitiesNode = document.querySelector(`[data-scroll="activities"]`);
       const activitiesHandler = handleWheel(activitiesScrollRef);
-      activitiesNode?.addEventListener('wheel', activitiesHandler, { passive: false });
+      activitiesNode?.addEventListener('wheel', activitiesHandler as EventListener, { passive: false });
     }
 
     if (resourcesEl?._nativeTag) {
       const resourcesNode = document.querySelector(`[data-scroll="resources"]`);
       const resourcesHandler = handleWheel(resourcesScrollRef);
-      resourcesNode?.addEventListener('wheel', resourcesHandler, { passive: false });
+      resourcesNode?.addEventListener('wheel', resourcesHandler as EventListener, { passive: false });
     }
 
     return () => {
@@ -512,7 +514,6 @@ export default function CanvasScreen() {
                   showsHorizontalScrollIndicator={false}
                   decelerationRate="fast"
                   contentContainerStyle={{ paddingRight: 16 }}
-                  style={{ cursor: 'grab' }}
                   onScroll={(e) => handleScroll(e, setActivitiesCanScrollLeft, setActivitiesCanScrollRight)}
                   scrollEventThrottle={16}
                 >
@@ -597,7 +598,6 @@ export default function CanvasScreen() {
                   showsHorizontalScrollIndicator={false}
                   decelerationRate="fast"
                   contentContainerStyle={{ paddingRight: 16 }}
-                  style={{ cursor: 'grab' }}
                   onScroll={(e) => handleScroll(e, setResourcesCanScrollLeft, setResourcesCanScrollRight)}
                   scrollEventThrottle={16}
                 >
@@ -730,6 +730,9 @@ export default function CanvasScreen() {
       {manifestoChecked && showManifesto && (
         <ManifestoModal onClose={closeManifesto} />
       )}
+
+      {/* App Footer - same as identity view */}
+      <AppFooter />
     </View>
   );
 }
