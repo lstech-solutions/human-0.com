@@ -126,15 +126,14 @@ export const LimelightNav: React.FC<LimelightNavProps> = ({
             accessibilityLabel={item.label}
           >
             {React.cloneElement(Icon, {
-              size: (Icon.props as any)?.size ?? 16,
+              size: 16,
               color: isActive ? activeTint : inactiveTint,
               className: cn(
                 "transition-opacity",
                 isActive ? "opacity-100" : "opacity-50",
-                Icon.props.className,
                 iconClassName,
               ),
-            })}
+            } as any)}
           </Pressable>
         );
       })}
