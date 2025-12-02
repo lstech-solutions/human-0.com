@@ -2,7 +2,22 @@
 
 ## 📋 Version History
 
-### 🔧 Version 1.8.3 **[CURRENT]**
+### ✨ Version 1.9.0 **[CURRENT]**
+**Date:** 2025-12-02  
+**Type:** minor
+
+**Changes:**
+- Fixed lambda proxy configuration
+- UI component improvements
+- API endpoint updates
+- Version management enhancements
+- Configuration updates
+- Documentation updates
+
+
+### 📚 Previous Versions
+
+### 🔧 Version 1.8.3
 **Date:** 2025-12-02  
 **Type:** patch
 
@@ -11,7 +26,7 @@
 - API endpoint updates
 
 
-### 📚 Previous Versions
+---
 
 ### 🔧 Version 1.8.2
 **Date:** 2025-12-01  
