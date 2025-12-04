@@ -161,6 +161,10 @@ const config: Config = {
           title: 'Community',
           items: [
             {
+              label: 'X (Twitter)',
+              href: 'https://x.com/human_0_com',
+            },
+            {
               label: 'GitHub',
               href: 'https://github.com/lstech-solutions/human-0.com',
             },

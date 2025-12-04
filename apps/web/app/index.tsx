@@ -701,6 +701,10 @@ export default function Home() {
             <a href={getDocsUrl('/', currentLanguage, isDark)} target="_blank" rel="noopener noreferrer" className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] underline decoration-dotted underline-offset-2 transition-colors">
               Docs
             </a>
+            <span className="hidden lg:inline text-[#57606a] dark:text-[#8b949e] mx-1">·</span>
+            <a href="https://x.com/human_0_com" target="_blank" rel="noopener noreferrer" className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] underline decoration-dotted underline-offset-2 transition-colors">
+              X
+            </a>
           </div>
 
           <div className="flex items-center gap-2 lg:gap-4">

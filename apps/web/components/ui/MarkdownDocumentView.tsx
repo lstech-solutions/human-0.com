@@ -25,6 +25,8 @@ export interface MarkdownDocumentConfig {
   footerContent?: React.ReactNode;
   /** Whether to show the main title in the document */
   showTitle?: boolean;
+  /** Whether to show the main Footer component */
+  showFooter?: boolean;
 }
 
 export function MarkdownDocumentView({
@@ -35,7 +37,8 @@ export function MarkdownDocumentView({
   onOpenInNewTab,
   headerContent,
   footerContent,
-  showTitle = true
+  showTitle = true,
+  showFooter = true
 }: MarkdownDocumentConfig) {
   const { t } = useTranslation();
   const { currentLanguage } = useLanguagePicker();
@@ -411,7 +414,7 @@ export function MarkdownDocumentView({
 
         {footerContent}
       </ScrollView>
-      <Footer />
+      {showFooter && <Footer />}
     </SafeAreaView>
   );
 }

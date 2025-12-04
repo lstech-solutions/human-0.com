@@ -92,7 +92,7 @@ export function Footer() {
             © 2025 LSTS SAS. All rights reserved.
           </Text>
           <Text className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
-            Built with ❤️ and Web3 technology
+            Built with ❤️ and Web3 technology · <Pressable onPress={() => handleExternalLink('https://x.com/human_0_com')}><Text className={`${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}>X (Twitter)</Text></Pressable>
           </Text>
           {version && (
             <Pressable onPress={() => setIsVersionDrawerOpen(true)}>
@@ -167,6 +167,23 @@ export function Footer() {
                     </Text>
                   </Pressable>
                 ))}
+              </View>
+
+              {/* Community */}
+              <View className="flex flex-col gap-2">
+                <Text className={`text-xs font-semibold uppercase tracking-wider ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
+                  Community
+                </Text>
+                <Pressable onPress={() => handleExternalLink('https://x.com/human_0_com')}>
+                  <Text className={`text-sm ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}>
+                    X (Twitter)
+                  </Text>
+                </Pressable>
+                <Pressable onPress={() => handleExternalLink('https://github.com/lstech-solutions/human-0.com')}>
+                  <Text className={`text-sm ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}>
+                    GitHub
+                  </Text>
+                </Pressable>
               </View>
             </View>
           </View>

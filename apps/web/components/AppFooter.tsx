@@ -50,6 +50,17 @@ export function AppFooter() {
                 Docs
               </a>
             )}
+            <Text className="hidden lg:inline text-[#57606a] dark:text-[#8b949e]">·</Text>
+            {Platform.OS === "web" && (
+              <a 
+                href="https://x.com/human_0_com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-[#57606a] hover:text-[#24292f] dark:text-[#8b949e] dark:hover:text-[#c9d1d9] text-[9px] lg:text-[10px] underline decoration-dotted underline-offset-2 transition-colors"
+              >
+                X
+              </a>
+            )}
           </View>
 
           <View className="flex-row items-center gap-2">
