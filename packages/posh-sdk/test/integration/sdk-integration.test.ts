@@ -11,10 +11,10 @@ describe('SDK Integration Tests', () => {
     config = {
       chainId: 84532,
       contracts: {
-        humanIdentity: '0x00000000000000000000000000000000000000001' as `0x${string}`,
-        proofRegistry: '0x00000000000000000000000000000000000000002' as `0x${string}`,
-        poshNFT: '0x00000000000000000000000000000000000000003' as `0x${string}`,
-        humanScore: '0x00000000000000000000000000000000000000004' as `0x${string}`,
+        humanIdentity: '0x0000000000000000000000000000000000000001' as `0x${string}`,
+        proofRegistry: '0x0000000000000000000000000000000000000002' as `0x${string}`,
+        poshNFT: '0x0000000000000000000000000000000000000003' as `0x${string}`,
+        humanScore: '0x0000000000000000000000000000000000000004' as `0x${string}`,
       },
       cache: {
         enabled: true,
@@ -41,10 +41,10 @@ describe('SDK Integration Tests', () => {
       const minimalConfig: PoshConfig = {
         chainId: 84532,
         contracts: {
-          humanIdentity: '0x00000000000000000000000000000000000000001' as `0x${string}`,
-          proofRegistry: '0x00000000000000000000000000000000000000002' as `0x${string}`,
-          poshNFT: '0x00000000000000000000000000000000000000003' as `0x${string}`,
-          humanScore: '0x00000000000000000000000000000000000000004' as `0x${string}`,
+          humanIdentity: '0x0000000000000000000000000000000000000001' as `0x${string}`,
+          proofRegistry: '0x0000000000000000000000000000000000000002' as `0x${string}`,
+          poshNFT: '0x0000000000000000000000000000000000000003' as `0x${string}`,
+          humanScore: '0x0000000000000000000000000000000000000004' as `0x${string}`,
         },
       };
 
@@ -76,7 +76,7 @@ describe('SDK Integration Tests', () => {
     });
 
     it('should validate contract addresses format', () => {
-      const testAddress = '0x00000000000000000000000000000000000000001';
+      const testAddress = '0x0000000000000000000000000000000000000001';
       expect(testAddress).toMatch(/^0x[a-fA-F0-9]{40}$/);
     });
 
@@ -114,7 +114,7 @@ describe('SDK Integration Tests', () => {
 
   describe('Type Safety', () => {
     it('should enforce Address type format', () => {
-      const validAddress: `0x${string}` = '0x00000000000000000000000000000000000000001';
+      const validAddress: `0x${string}` = '0x0000000000000000000000000000000000000001';
       expect(validAddress).toMatch(/^0x[a-fA-F0-9]{40}$/);
     });
 
