@@ -9,7 +9,7 @@ import {
   Modal,
   Platform,
 } from 'react-native';
-import { X, Play, Pause, Square, Volume2 } from 'lucide-react-native';
+import { X, Play, Pause, Square, Volume2, Gauge } from 'lucide-react-native';
 import { useTheme } from '../theme/ThemeProvider';
 import { useTranslation } from '@human-0/i18n';
 import { useTextToSpeech } from '../hooks/useTextToSpeech';
@@ -145,19 +145,26 @@ export function ManifestoModal({ onClose }: ManifestoModalProps) {
     setCurrentSectionIndex(index);
   };
 
-  const handleToggleSpeech = () => {
-    if (isSpeaking) {
-      if (isPaused) {
-        resume();
-      } else {
-        pause();
-      }
+  const handleUnifiedButton = () => {
+    if (!isSpeaking) {
+      // Start speaking full manifesto
+      handleSpeakFullManifesto();
+    } else if (isPaused) {
+      // Resume from pause
+      resume();
+    } else {
+      // When playing, cycle speed instead of stopping
+      cycleSpeed();
+    }
+  };
+
+  const handleLongPress = () => {
+    if (isSpeaking || isPaused) {
+      handleStopSpeech();
     }
   };
 
   const handleStopSpeech = () => {
-    console.log('STOP BUTTON PRESSED - forcing immediate stop');
-    
     // Cancel speech multiple times aggressively
     cancel();
     cancel();
@@ -315,84 +322,80 @@ export function ManifestoModal({ onClose }: ManifestoModalProps) {
             
             {/* Speech Controls */}
             {isSupported && (
-              <View className="flex-row items-center space-x-2">
-                {/* Speed Control Button */}
+              <View className="flex-row items-center justify-center space-x-3">
+                {/* Unified Play/Pause/Speed Button */}
                 <TouchableOpacity
-                  onPress={cycleSpeed}
+                  onPress={handleUnifiedButton}
+                  onPressIn={() => {}}
                   disabled={isLoading}
-                  accessibilityLabel={t('common.speech.speedControl')}
+                  accessibilityLabel={!isSpeaking ? t('common.speech.playFull') : isPaused ? t('common.speech.resume') : t('common.speech.speedControl')}
                   accessibilityRole="button"
-                  className={`p-2 rounded-full border ${
-                    isDark
-                      ? 'bg-emerald-500/10 border-emerald-500/30'
-                      : 'bg-emerald-100 border-emerald-400/70'
+                  hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                  activeOpacity={0.6}
+                  delayPressIn={0}
+                  delayPressOut={0}
+                  delayLongPress={0}
+                  className={`px-3 py-2 rounded-full border flex-row items-center justify-center ${
+                    !isSpeaking 
+                      ? isDark
+                        ? 'bg-emerald-500/20 border-emerald-500'
+                        : 'bg-emerald-200 border-emerald-500'
+                      : isPaused
+                      ? isDark
+                        ? 'bg-yellow-500/20 border-yellow-500'
+                        : 'bg-yellow-200 border-yellow-500'
+                      : isDark
+                        ? 'bg-blue-500/20 border-blue-500'
+                        : 'bg-blue-200 border-blue-500'
                   } ${isLoading ? 'opacity-50' : ''}`}
                 >
-                  <Text className={`text-xs font-bold ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`}>
-                    {localSpeechRate}x
-                  </Text>
+                  {!isSpeaking ? (
+                    <>
+                      <Play size={16} color={isDark ? '#10b981' : '#047857'} />
+                      <Text className={`ml-2 text-sm font-bold ${isDark ? 'text-emerald-400' : 'text-emerald-700'}`}>
+                        {localSpeechRate}x
+                      </Text>
+                    </>
+                  ) : isPaused ? (
+                    <>
+                      <Play size={16} color={isDark ? '#eab308' : '#ca8a04'} />
+                      <Text className={`ml-2 text-sm font-bold ${isDark ? 'text-yellow-400' : 'text-yellow-700'}`}>
+                        {localSpeechRate}x
+                      </Text>
+                    </>
+                  ) : (
+                    <>
+                      <Gauge size={16} color={isDark ? '#3b82f6' : '#2563eb'} />
+                      <Text className={`ml-2 text-sm font-bold ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>
+                        {localSpeechRate}x
+                      </Text>
+                    </>
+                  )}
                 </TouchableOpacity>
-                
-                <TouchableOpacity
-                  onPress={handleSpeakFullManifesto}
-                  disabled={isLoading}
-                  accessibilityLabel={t('common.speech.playFull')}
-                  accessibilityRole="button"
-                  className={`p-2 rounded-full border ${
-                    isDark
-                      ? 'bg-emerald-500/10 border-emerald-500/30'
-                      : 'bg-emerald-100 border-emerald-400/70'
-                  } ${isLoading ? 'opacity-50' : ''}`}
-                >
-                  <Volume2 size={20} color={isDark ? '#10b981' : '#047857'} />
-                </TouchableOpacity>
-                
+
+                {/* Stop Button - Only show when speaking or paused */}
                 {(isSpeaking || isPaused) && (
-                  <>
-                    <TouchableOpacity
-                      onPress={handleToggleSpeech}
-                      accessibilityLabel={isPaused ? t('common.speech.resume') : t('common.speech.pause')}
-                      accessibilityRole="button"
-                      className={`p-2 rounded-full border ${
-                        isDark
-                          ? 'bg-emerald-500/10 border-emerald-500/30'
-                          : 'bg-emerald-100 border-emerald-400/70'
-                      }`}
-                    >
-                      {isPaused ? (
-                        <Play size={20} color={isDark ? '#10b981' : '#047857'} />
-                      ) : (
-                        <Pause size={20} color={isDark ? '#10b981' : '#047857'} />
-                      )}
-                    </TouchableOpacity>
-                    
-                    <TouchableOpacity
-                      onPress={handleStopSpeech}
-                      accessibilityLabel={t('common.speech.stop')}
-                      accessibilityRole="button"
-                      className={`p-2 rounded-full border ${
-                        isDark
-                          ? 'bg-red-500/10 border-red-500/30'
-                          : 'bg-red-100 border-red-400/70'
-                      }`}
-                    >
-                      <Square size={20} color={isDark ? '#ef4444' : '#dc2626'} />
-                    </TouchableOpacity>
-                  </>
+                  <TouchableOpacity
+                    onPress={handleStopSpeech}
+                    onPressIn={() => {}}
+                    accessibilityLabel={t('common.speech.stop')}
+                    accessibilityRole="button"
+                    hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                    activeOpacity={0.6}
+                    delayPressIn={0}
+                    delayPressOut={0}
+                    delayLongPress={0}
+                    className={`p-2 rounded-full border ${
+                      isDark
+                        ? 'bg-red-500/20 border-red-500'
+                        : 'bg-red-200 border-red-500'
+                    }`}
+                  >
+                    <Square size={16} color={isDark ? '#ef4444' : '#dc2626'} />
+                  </TouchableOpacity>
                 )}
               </View>
             )}
-            
-            <TouchableOpacity
-              onPress={handleClose}
-              className={`ml-2 p-2 rounded-full border shrink-0 ${
-                isDark
-                  ? 'bg-emerald-500/10 border-emerald-500/30'
-                  : 'bg-emerald-100 border-emerald-400/70'
-              }`}
-            >
-              <X size={24} color={isDark ? '#10b981' : '#047857'} />
-            </TouchableOpacity>
           </View>
 
           {/* Subtitle */}
