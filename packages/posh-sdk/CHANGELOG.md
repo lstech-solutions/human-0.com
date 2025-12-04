@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.5] - 2024-12-03
+
+### Fixed
+- Corrected Ethereum address format in tests and validation utilities
+- Fixed placeholder addresses to have exactly 40 hex characters (not 41)
+- All test addresses now properly match `/^0x[a-fA-F0-9]{40}$/` pattern
+
+## [1.0.4] - 2024-12-02
+
+### Fixed
+- Fixed contract address validation error by updating placeholder addresses to proper 40-character hex format
+- Updated all contract addresses in posh-sdk, wagmi-config, and validation utilities
+
+## [1.0.3] - 2024-12-01
+
+### Fixed
+- Various bug fixes and improvements
+
+## [1.0.2] - 2024-12-01
+
+### Fixed
+- Build and configuration improvements
+
 ## [1.0.1] - 2024-11-30
 
 ### Fixed
@@ -100,7 +123,11 @@ This is the first stable release of `@human-0/posh-sdk` with independent version
 - Comprehensive error messages
 - IDE autocomplete support
 
-[Unreleased]: https://github.com/lstech-solutions/human-0.com/compare/posh-sdk-v1.0.1...HEAD
+[Unreleased]: https://github.com/lstech-solutions/human-0.com/compare/posh-sdk-v1.0.5...HEAD
+[1.0.5]: https://github.com/lstech-solutions/human-0.com/compare/posh-sdk-v1.0.4...posh-sdk-v1.0.5
+[1.0.4]: https://github.com/lstech-solutions/human-0.com/compare/posh-sdk-v1.0.3...posh-sdk-v1.0.4
+[1.0.3]: https://github.com/lstech-solutions/human-0.com/compare/posh-sdk-v1.0.2...posh-sdk-v1.0.3
+[1.0.2]: https://github.com/lstech-solutions/human-0.com/compare/posh-sdk-v1.0.1...posh-sdk-v1.0.2
 [1.0.1]: https://github.com/lstech-solutions/human-0.com/compare/posh-sdk-v1.0.0...posh-sdk-v1.0.1
 [1.0.0]: https://github.com/lstech-solutions/human-0.com/releases/tag/posh-sdk-v1.0.0
 [0.2.0]: https://github.com/lstech-solutions/human-0.com/releases/tag/v0.2.0
