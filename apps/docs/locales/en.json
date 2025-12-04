@@ -14,7 +14,19 @@
     "close": "Close",
     "search": "Search",
     "settings": "Settings",
-    "language": "Language"
+    "language": "en-US",
+    "speech": {
+      "playFull": "Play Full Manifesto",
+      "playSection": "Play Section",
+      "pause": "Pause",
+      "resume": "Resume",
+      "stop": "Stop",
+      "loading": "Loading speech...",
+      "speaking": "Reading...",
+      "paused": "Speech paused",
+      "notSupported": "Speech synthesis not supported",
+      "error": "Speech error"
+    }
   },
   "welcome": {
     "title": "Welcome to HUMΛN-Ø",

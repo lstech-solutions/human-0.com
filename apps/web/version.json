@@ -1,23 +1,86 @@
 {
   "name": "human-zero",
-  "version": "1.9.12",
+  "version": "1.9.13",
   "description": "HUMΛN-Ø - Sustainable impact through Web3 technology",
-  "build": "20251202064144",
+  "build": "20251204023437",
   "changelog": {
     "current": {
-      "version": "1.9.12",
-      "date": "2025-12-02",
-      "timestamp": "2025-12-02T06:41:44.171Z",
+      "version": "1.9.13",
+      "date": "2025-12-04",
+      "timestamp": "2025-12-04T02:34:37.343Z",
       "type": "patch",
       "changes": [
-        "Emergency rollback with stable Metro configuration",
-        "Fixed ESM module resolution issues",
-        "Added @types/minimatch for TypeScript compatibility",
-        "Integrated fixes from v1.9.9-v1.9.12",
-        "Production stability improvements"
+        "UI component improvements",
+        "API endpoint updates",
+        "Documentation updates"
       ]
     },
     "history": [
+      {
+        "version": "1.9.12",
+        "date": "2025-12-02",
+        "timestamp": "2025-12-02T08:56:02.083Z",
+        "type": "patch",
+        "changes": [
+          "Fixed lambda proxy configuration",
+          "UI component improvements",
+          "API endpoint updates",
+          "Version management enhancements",
+          "Configuration updates",
+          "Documentation updates"
+        ]
+      },
+      {
+        "version": "1.9.12",
+        "date": "2025-12-02",
+        "timestamp": "2025-12-02T03:55:00.000Z",
+        "type": "patch",
+        "changes": [
+          "Optimized RetroGrid animation with requestAnimationFrame throttling and performance improvements",
+          "Added theme-aware background gradients that adapt to light/dark mode automatically",
+          "Fixed canvas layout structure with proper scrolling and sticky footer positioning",
+          "Enhanced grid animation speed adjustment based on theme (slower in light mode)",
+          "Resolved React hook call order violations in animation components",
+          "Improved scanline and vignette effects for both light and dark themes"
+        ]
+      },
+      {
+        "version": "1.9.10",
+        "date": "2025-12-02",
+        "timestamp": "2025-12-02T08:15:19.893Z",
+        "type": "patch",
+        "changes": [
+          "UI component improvements"
+        ]
+      },
+      {
+        "version": "1.9.9",
+        "date": "2025-12-02",
+        "timestamp": "2025-12-02T07:08:03.764Z",
+        "type": "patch",
+        "changes": [
+          "Fixed lambda proxy configuration",
+          "UI component improvements",
+          "API endpoint updates",
+          "Version management enhancements",
+          "Configuration updates",
+          "Documentation updates"
+        ]
+      },
+      {
+        "version": "1.9.8",
+        "date": "2025-12-02",
+        "timestamp": "2025-12-02T06:41:44.171Z",
+        "type": "patch",
+        "changes": [
+          "Fixed lambda proxy configuration",
+          "UI component improvements",
+          "API endpoint updates",
+          "Version management enhancements",
+          "Configuration updates",
+          "Documentation updates"
+        ]
+      },
       {
         "version": "1.9.7",
         "date": "2025-12-02",
@@ -1029,12 +1092,12 @@
   "semver": {
     "major": 1,
     "minor": 9,
-    "patch": 8,
+    "patch": 13,
     "prerelease": null,
     "build": null
   },
   "metadata": {
-    "lastModified": "2025-12-02T06:41:44.170Z",
+    "lastModified": "2025-12-04T02:34:37.342Z",
     "commitHash": "initial",
     "branch": "main",
     "author": "HUMΛN-Ø Team",

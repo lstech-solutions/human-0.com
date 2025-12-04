@@ -94,29 +94,29 @@ export function MarkdownDocumentView({
   // Enhanced HTML markdown renderer for web mode with better styling
   const renderHTMLMarkdown = (md: string) => {
     if (Platform.OS === 'web') {
-      // Convert markdown to HTML with enhanced styling
+      // Convert markdown to HTML with enhanced styling and no-select
       let html = md
         // Handle headers with better styling
-        .replace(/^# (.*$)/gim, `<h1 style="color: ${isDark ? '#E6ECE8' : '#1F2937'}; font-size: 28px; font-weight: bold; margin: 24px 0 12px 0; line-height: 1.3;">$1</h1>`)
-        .replace(/^## (.*$)/gim, `<h2 style="color: ${isDark ? '#E6ECE8' : '#1F2937'}; font-size: 20px; font-weight: 600; margin: 20px 0 10px 0; line-height: 1.4;">$1</h2>`)
-        .replace(/^### (.*$)/gim, `<h3 style="color: ${isDark ? '#E6ECE8' : '#1F2937'}; font-size: 18px; font-weight: 600; margin: 16px 0 8px 0; line-height: 1.4;">$1</h3>`)
+        .replace(/^# (.*$)/gim, `<h1 style="color: ${isDark ? '#E6ECE8' : '#1F2937'}; font-size: 28px; font-weight: bold; margin: 24px 0 12px 0; line-height: 1.3; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;">$1</h1>`)
+        .replace(/^## (.*$)/gim, `<h2 style="color: ${isDark ? '#E6ECE8' : '#1F2937'}; font-size: 20px; font-weight: 600; margin: 20px 0 10px 0; line-height: 1.4; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;">$1</h2>`)
+        .replace(/^### (.*$)/gim, `<h3 style="color: ${isDark ? '#E6ECE8' : '#1F2937'}; font-size: 18px; font-weight: 600; margin: 16px 0 8px 0; line-height: 1.4; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;">$1</h3>`)
         // Handle bold with better weight
-        .replace(/\*\*(.*?)\*\*/gim, '<strong style="font-weight: 700; color: inherit;">$1</strong>')
+        .replace(/\*\*(.*?)\*\*/gim, '<strong style="font-weight: 700; color: inherit; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;">$1</strong>')
         // Handle italic
-        .replace(/\*(.*?)\*/gim, '<em style="font-style: italic; color: inherit;">$1</em>')
-        .replace(/_(.*?)_/gim, '<em style="font-style: italic; color: inherit;">$1</em>')
+        .replace(/\*(.*?)\*/gim, '<em style="font-style: italic; color: inherit; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;">$1</em>')
+        .replace(/_(.*?)_/gim, '<em style="font-style: italic; color: inherit; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;">$1</em>')
         // Handle inline code
-        .replace(/`([^`]+)`/gim, `<code style="background-color: ${isDark ? '#1F2937' : '#F3F4F6'}; color: ${isDark ? '#00FF9C' : '#059669'}; padding: 2px 6px; border-radius: 4px; font-family: 'Monaco', 'Menlo', monospace; font-size: 0.9em;">$1</code>`)
+        .replace(/`([^`]+)`/gim, `<code style="background-color: ${isDark ? '#1F2937' : '#F3F4F6'}; color: ${isDark ? '#00FF9C' : '#059669'}; padding: 2px 6px; border-radius: 4px; font-family: 'Monaco', 'Menlo', monospace; font-size: 0.9em; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;">$1</code>`)
         // Handle links with better hover effects
-        .replace(/\[([^\]]+)\]\(([^)]+)\)/gim, `<a href="$2" target="_blank" rel="noopener noreferrer" style="color: ${isDark ? '#00FF9C' : '#059669'}; text-decoration: underline; font-weight: 500; transition: color 0.2s ease;" onmouseover="this.style.color='${isDark ? '#00E6CC' : '#047857'}'" onmouseout="this.style.color='${isDark ? '#00FF9C' : '#059669'}'">$1</a>`)
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/gim, `<a href="$2" target="_blank" rel="noopener noreferrer" style="color: ${isDark ? '#00FF9C' : '#059669'}; text-decoration: underline; font-weight: 500; transition: color 0.2s ease; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;" onmouseover="this.style.color='${isDark ? '#00E6CC' : '#047857'}'" onmouseout="this.style.color='${isDark ? '#00FF9C' : '#059669'}'">$1</a>`)
         // Handle ordered lists
-        .replace(/^\d+\. (.*$)/gim, '<li style="list-style-type: decimal; margin-left: 20px; margin-bottom: 6px; color: inherit;">$1</li>')
+        .replace(/^\d+\. (.*$)/gim, '<li style="list-style-type: decimal; margin-left: 20px; margin-bottom: 6px; color: inherit; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;">$1</li>')
         // Handle unordered lists with better styling
-        .replace(/^- (.*$)/gim, '<li style="list-style-type: disc; margin-left: 20px; margin-bottom: 6px; color: inherit;">$1</li>')
+        .replace(/^- (.*$)/gim, '<li style="list-style-type: disc; margin-left: 20px; margin-bottom: 6px; color: inherit; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;">$1</li>')
         // Wrap lists in proper containers
-        .replace(/(<li style.*?<\/li>)/s, '<ul style="margin: 12px 0; padding-left: 20px; color: inherit;">$1</ul>')
+        .replace(/(<li style.*?<\/li>)/s, '<ul style="margin: 12px 0; padding-left: 20px; color: inherit; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;">$1</ul>')
         // Handle blockquotes with better styling
-        .replace(/^> (.*$)/gim, `<blockquote style="border-left: 3px solid ${isDark ? '#00FF9C' : '#059669'}; padding-left: 16px; margin: 16px 0; font-style: italic; color: ${isDark ? '#E6ECE8' : '#4B5563'}; background-color: ${isDark ? 'rgba(0, 255, 156, 0.05)' : 'rgba(5, 150, 105, 0.05)'}; padding: 12px 16px; border-radius: 0 8px 8px 0;">$1</blockquote>`)
+        .replace(/^> (.*$)/gim, `<blockquote style="border-left: 3px solid ${isDark ? '#00FF9C' : '#059669'}; padding-left: 16px; margin: 16px 0; font-style: italic; color: ${isDark ? '#E6ECE8' : '#4B5563'}; background-color: ${isDark ? 'rgba(0, 255, 156, 0.05)' : 'rgba(5, 150, 105, 0.05)'}; padding: 12px 16px; border-radius: 0 8px 8px 0; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;">$1</blockquote>`)
         // Handle horizontal rules with better styling
         .replace(/^---$/gim, `<hr style="border: none; height: 1px; background: linear-gradient(to right, transparent, ${isDark ? '#00FF9C' : '#059669'}, transparent); opacity: 0.5; margin: 24px 0;" />`)
         // Handle line breaks
@@ -124,7 +124,7 @@ export function MarkdownDocumentView({
         .replace(/\n/gim, '<br />');
       
       // Wrap in paragraphs with enhanced theme-aware styling
-      html = `<div style="color: ${isDark ? '#E6ECE8' : '#374151'}; font-size: 16px; line-height: 1.7; max-width: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0 auto;"><p style="margin: 0 0 16px 0; text-align: justify;">${html}</p></div>`;
+      html = `<div style="color: ${isDark ? '#E6ECE8' : '#374151'}; font-size: 16px; line-height: 1.7; max-width: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0 auto; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none;"><p style="margin: 0 0 16px 0; text-align: justify;">${html}</p></div>`;
       
       return {
         __html: html
@@ -157,7 +157,7 @@ export function MarkdownDocumentView({
           if (match.index > lastIndex) {
             const beforeText = text.slice(lastIndex, match.index);
             codeElements.push(
-              <Text key={`text-${lastIndex}`} style={{ color: isDark ? '#E6ECE8' : '#374151' }}>
+              <Text key={`text-${lastIndex}`} style={[styles.textBase, { color: isDark ? '#E6ECE8' : '#374151' }]}>
                 {beforeText}
               </Text>
             );
@@ -176,7 +176,7 @@ export function MarkdownDocumentView({
         // Add remaining text
         if (lastIndex < text.length) {
           codeElements.push(
-            <Text key={`text-${lastIndex}`} style={{ color: isDark ? '#E6ECE8' : '#374151' }}>
+            <Text key={`text-${lastIndex}`} style={[styles.textBase, { color: isDark ? '#E6ECE8' : '#374151' }]}>
               {text.slice(lastIndex)}
             </Text>
           );
@@ -193,9 +193,9 @@ export function MarkdownDocumentView({
       processedText = processedText.replace(/_([^_]+)_/g, '$1');
       
       if (hasBold) {
-        return [<Text key="text" style={[styles.bold, { color: isDark ? '#E6ECE8' : '#1F2937' }]}>{processedText}</Text>];
+        return [<Text key="text" style={[styles.textBase, styles.bold, { color: isDark ? '#E6ECE8' : '#1F2937' }]}>{processedText}</Text>];
       } else {
-        return [<Text key="text" style={{ color: isDark ? '#E6ECE8' : '#4B5563' }}>{processedText}</Text>];
+        return [<Text key="text" style={[styles.textBase, { color: isDark ? '#E6ECE8' : '#4B5563' }]}>{processedText}</Text>];
       }
     };
 
@@ -212,7 +212,7 @@ export function MarkdownDocumentView({
         if (match.index > lastIndex) {
           const beforeText = text.slice(lastIndex, match.index);
           elements.push(
-            <Text key={`text-${lastIndex}`} style={{ color: isDark ? '#E6ECE8' : '#4B5563' }}>
+            <Text key={`text-${lastIndex}`} style={[styles.textBase, { color: isDark ? '#E6ECE8' : '#4B5563' }]}>
               {text.slice(lastIndex, match.index)}
             </Text>
           );
@@ -237,7 +237,7 @@ export function MarkdownDocumentView({
         const remainingText = text.slice(lastIndex);
         if (remainingText.trim()) {
           elements.push(
-            <Text key={`text-${lastIndex}`} style={{ color: isDark ? '#E6ECE8' : '#4B5563' }}>
+            <Text key={`text-${lastIndex}`} style={[styles.textBase, { color: isDark ? '#E6ECE8' : '#4B5563' }]}>
               {remainingText}
             </Text>
           );
@@ -287,7 +287,7 @@ export function MarkdownDocumentView({
         
         currentList.push(
           <View key={i} style={[styles.li, indent > listIndent && styles.liNested]}>
-            <Text style={{ color: isDark ? '#E6ECE8' : '#4B5563', fontWeight: '600', marginRight: 8 }}>
+            <Text style={[styles.textBase, { color: isDark ? '#E6ECE8' : '#4B5563', fontWeight: '600', marginRight: 8 }]}>
               {line.match(/^(\s*)(\d+)\./)?.[2]}.
             </Text>
             {content}
@@ -309,7 +309,7 @@ export function MarkdownDocumentView({
         
         currentList.push(
           <View key={i} style={[styles.li, indent > listIndent && styles.liNested]}>
-            <Text style={{ color: isDark ? '#E6ECE8' : '#4B5563' }}>• </Text>
+            <Text style={[styles.textBase, { color: isDark ? '#E6ECE8' : '#4B5563' }]}>• </Text>
             {renderInlineFormatting(line.replace(/^(\s*)- /, '').trim())}
           </View>
         );
@@ -325,35 +325,35 @@ export function MarkdownDocumentView({
       if (line.startsWith('# ')) {
         flushList();
         elements.push(
-          <Text key={i} style={[styles.h1, { color: isDark ? '#E6ECE8' : '#1F2937' }]}>
+          <Text key={i} style={[styles.textBase, styles.h1, { color: isDark ? '#E6ECE8' : '#1F2937' }]}>
             {renderInlineFormatting(line.slice(2).trim())}
           </Text>
         );
       } else if (line.startsWith('## ')) {
         flushList();
         elements.push(
-          <Text key={i} style={[styles.h2, { color: isDark ? '#E6ECE8' : '#1F2937' }]}>
+          <Text key={i} style={[styles.textBase, styles.h2, { color: isDark ? '#E6ECE8' : '#1F2937' }]}>
             {renderInlineFormatting(line.slice(3).trim())}
           </Text>
         );
       } else if (line.startsWith('### ')) {
         flushList();
         elements.push(
-          <Text key={i} style={[styles.h3, { color: isDark ? '#E6ECE8' : '#1F2937' }]}>
+          <Text key={i} style={[styles.textBase, styles.h3, { color: isDark ? '#E6ECE8' : '#1F2937' }]}>
             {renderInlineFormatting(line.slice(4).trim())}
           </Text>
         );
       } else if (line.startsWith('> ')) {
         flushList();
         elements.push(
-          <Text key={i} style={[styles.blockquote, { color: isDark ? '#E6ECE8' : '#4B5563', borderLeftColor: isDark ? '#00FF9C' : '#059669' }]}>
+          <Text key={i} style={[styles.textBase, styles.blockquote, { color: isDark ? '#E6ECE8' : '#4B5563', borderLeftColor: isDark ? '#00FF9C' : '#059669' }]}>
             {renderInlineFormatting(line.slice(2).trim())}
           </Text>
         );
       } else if (trimmedLine !== '') {
         flushList();
         elements.push(
-          <Text key={i} style={[styles.p, { color: isDark ? '#E6ECE8' : '#4B5563' }]}>
+          <Text key={i} style={[styles.textBase, styles.p, { color: isDark ? '#E6ECE8' : '#4B5563' }]}>
             {renderInlineFormatting(line.trim())}
           </Text>
         );
@@ -371,11 +371,15 @@ export function MarkdownDocumentView({
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: isDark ? '#050B10' : '#ffffff' }]}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView 
+        contentContainerStyle={styles.scrollContent}
+        className="select-none"
+        style={{ userSelect: 'none' }}
+      >
         {(showTitle || headerContent || showOpenInNewTab) && (
           <View style={styles.headerSection}>
             {showTitle && (
-              <Text style={[styles.title, { color: isDark ? '#E6ECE8' : '#1F2937' }]}>
+              <Text style={[styles.textBase, styles.title, { color: isDark ? '#E6ECE8' : '#1F2937' }]}>
                 {t(titleKey, defaultTitle)}
               </Text>
             )}
@@ -385,7 +389,7 @@ export function MarkdownDocumentView({
                 {headerContent}
                 {showOpenInNewTab && onOpenInNewTab && (
                   <Pressable onPress={onOpenInNewTab} style={styles.openNewTabButton}>
-                    <Text style={[styles.openNewTabIcon, { color: isDark ? '#00FF9C' : '#059669' }]}>
+                    <Text style={[styles.textBase, styles.openNewTabIcon, { color: isDark ? '#00FF9C' : '#059669' }]}>
                       ⬈
                     </Text>
                   </Pressable>
@@ -396,9 +400,9 @@ export function MarkdownDocumentView({
         )}
 
         {loading ? (
-          <Text style={[styles.p, { color: isDark ? '#E6ECE8' : '#4B5563' }]}>Loading…</Text>
+          <Text style={[styles.textBase, styles.p, { color: isDark ? '#E6ECE8' : '#4B5563' }]}>Loading…</Text>
         ) : error ? (
-          <Text style={[styles.error, { color: '#dc2626' }]}>Error: {error}</Text>
+          <Text style={[styles.textBase, styles.error, { color: '#dc2626' }]}>Error: {error}</Text>
         ) : Platform.OS === 'web' ? (
           <div dangerouslySetInnerHTML={renderHTMLMarkdown(content) || { __html: '' }} />
         ) : (
@@ -429,6 +433,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 8,
   },
+  // Base text style
+  textBase: {},
   title: {
     fontSize: 28,
     fontWeight: 'bold',

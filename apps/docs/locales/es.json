@@ -14,7 +14,19 @@
     "close": "Cerrar",
     "search": "Buscar",
     "settings": "Configuración",
-    "language": "Idioma"
+    "language": "es-ES",
+    "speech": {
+      "playFull": "Reproducir Manifiesto Completo",
+      "playSection": "Reproducir Sección",
+      "pause": "Pausar",
+      "resume": "Reanudar",
+      "stop": "Detener",
+      "loading": "Cargando voz...",
+      "speaking": "Leyendo...",
+      "paused": "Voz en pausa",
+      "notSupported": "Síntesis de voz no compatible",
+      "error": "Error de voz"
+    }
   },
   "welcome": {
     "title": "Bienvenido a HUMΛN-Ø",
