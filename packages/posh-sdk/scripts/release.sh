@@ -61,14 +61,66 @@ npm version $RELEASE_TYPE --no-git-tag-version
 NEW_VERSION=$(node -p "require('./package.json').version")
 echo -e "${GREEN}New version: $NEW_VERSION${NC}"
 
-# Update CHANGELOG
-echo -e "${YELLOW}📝 Don't forget to update CHANGELOG.md!${NC}"
-echo -e "${YELLOW}Press Enter when ready to continue...${NC}"
-read
+# Auto-update CHANGELOG
+echo -e "${YELLOW}📝 Updating CHANGELOG.md...${NC}"
+
+# Get current date
+RELEASE_DATE=$(date +%Y-%m-%d)
+
+# Detect changes from git log since last tag
+LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+if [[ -n "$LAST_TAG" ]]; then
+  CHANGES=$(git log ${LAST_TAG}..HEAD --pretty=format:"- %s" --no-merges | grep -v "chore(posh-sdk): release" || echo "")
+else
+  CHANGES=$(git log --pretty=format:"- %s" --no-merges -5 | grep -v "chore(posh-sdk): release" || echo "")
+fi
+
+# If no changes detected, use generic message
+if [[ -z "$CHANGES" ]]; then
+  CHANGES="- Bug fixes and improvements"
+fi
+
+# Create new changelog entry
+NEW_ENTRY="## [${NEW_VERSION}] - ${RELEASE_DATE}
+
+### Changed
+${CHANGES}
+
+"
+
+# Insert new entry after [Unreleased] section
+if [[ -f "CHANGELOG.md" ]]; then
+  # Use awk to insert after the [Unreleased] section
+  awk -v new_entry="$NEW_ENTRY" '
+    /^## \[Unreleased\]/ {
+      print $0
+      print ""
+      print new_entry
+      next
+    }
+    {print}
+  ' CHANGELOG.md > CHANGELOG.md.tmp && mv CHANGELOG.md.tmp CHANGELOG.md
+  
+  # Update comparison links at the bottom
+  if [[ -n "$LAST_TAG" ]]; then
+    # Extract version from last tag (remove posh-sdk-v prefix)
+    LAST_VERSION=${LAST_TAG#posh-sdk-v}
+    
+    # Update [Unreleased] link
+    sed -i "s|\[Unreleased\]:.*|[Unreleased]: https://github.com/lstech-solutions/human-0.com/compare/posh-sdk-v${NEW_VERSION}...HEAD|" CHANGELOG.md
+    
+    # Add new version comparison link after [Unreleased]
+    sed -i "/\[Unreleased\]:/a [${NEW_VERSION}]: https://github.com/lstech-solutions/human-0.com/compare/posh-sdk-v${LAST_VERSION}...posh-sdk-v${NEW_VERSION}" CHANGELOG.md
+  fi
+  
+  echo -e "${GREEN}✅ CHANGELOG.md updated${NC}"
+else
+  echo -e "${RED}Warning: CHANGELOG.md not found${NC}"
+fi
 
 # Commit changes
 echo -e "${YELLOW}💾 Committing version bump...${NC}"
-git add package.json CHANGELOG.md
+git add package.json package-lock.json CHANGELOG.md
 git commit -m "chore(posh-sdk): release v$NEW_VERSION"
 
 # Create and push tag
